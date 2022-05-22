@@ -1,55 +1,44 @@
+<?php
+    session_start();
+    if(isset($_SESSION['user_id']))
+    {
+        header("Location: /qatarclic/hincha.php");
+        die() ;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Qatar Clic</title>
-    </head>
-
+    <head>
     <body>
-        <?php require 'header.php' ?>
-
-        <?php if(!empty($message)): ?>
-            <p><?= $message ?></p>
+        <?php require 'header.php';?>
+        
+        <?php if(!empty($user)): ?>
+            <?php header('Location: qatarclic/hincha.php'); ?>
+        <?php else: ?>
+            <h1>Por favor, ingrese o registrese</h1>
+            <a href="login.php">Ingresar</a> o
+            <a href="signup.php">Registrarse</a>
         <?php endif; ?>
-
-        <form action="index.php" method="post">
-            <h1>Login</h1>
-            <input type="text" name="username" placeholder="Nombre de usuario">
-            <input type="password" name="password" placeholder="Contraseña">
-            <input type="submit" value="Enviar">
-            <br><br>
-            <a href="signup.php">Signup</a>
-        </form>
     </body>
 </html>
 
 <?php
     require 'database.php';
 
-    if (isset($_SESSION['user_id']))
-    {
-        header('Location: /qatarclic');
-    }  
-    
-    if (!empty($_POST['username']) && !empty($_POST['password']))
-    {
-        $records = $conn->prepare('SELECT id, username, password FROM users WHERE username = :username');        
-        $records->bindParam(':username', $_POST['username']);
+    if(isset($_SESSION['user_id'])){
+        $records = $conn->prepare('SELECT id,, password FROM users WHERE id = :id');
+        $records->bindParam(':id', $_SESSION['user_id']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
-        $message = '';
-        
-        if (is_countable($results) > 0 && password_verify($_POST['password'], $results['password']))
-        {
-            session_start();
-            $_SESSION['user_id'] = $results['id'];
-            header("Location: /qatarclic/hincha.php");
-        } 
-        else 
-        {
-            $message = 'Nombre de usuario o contraseña incorrectos';
-            echo($message);
+        $user = null;
+
+        if(count($results) > 0){
+            $user = $results;
         }
     }
 ?>

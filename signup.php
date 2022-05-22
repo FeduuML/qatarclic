@@ -44,7 +44,7 @@
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $stmt->bindParam(':password', $password);
 
-        if ($_POST["password"] == $_PpOST["confirm_password"]){
+        if ($_POST["password"] == $_POST["confirm_password"]){
             if($stmt->execute()) {
                 $message = 'La cuenta ha sido exitosamente creada';
             }else{
