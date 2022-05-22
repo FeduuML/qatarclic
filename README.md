@@ -1,2 +1,2 @@
-# Qatar-Al-Instante
+# qatarclic
 Proyecto 7°C
