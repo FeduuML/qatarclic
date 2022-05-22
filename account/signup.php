@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Signup</title>
-        <link href="signup.css" rel="stylesheet" type="text/css">
+        <link href="../styles/signup.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
@@ -25,7 +25,7 @@
             <br>
             <input class="control_registrarse" type="submit" value="Registrarse">
             <br><br>
-            <p class="iniciar_sesion"> ¿Ya tenes cuenta? <a href="index.php">Iniciar sesion</a></p>
+            <p class="iniciar_sesion"> ¿Ya tenes cuenta? <a href="login.php">Iniciar sesion</a></p>
         </form>
         </section>
     </body>

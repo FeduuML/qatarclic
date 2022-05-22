@@ -43,7 +43,7 @@
         {
             session_start();
             $_SESSION['user_id'] = $results['id'];
-            header("Location: /qatarclic/hincha.php");
+            header("Location: ../main/hincha.php");
         } 
         else
         {
