@@ -1,0 +1,56 @@
+*
+{
+ padding: 0px;
+ margin: 0px;
+ box-sizing: border-box;
+}
+
+body
+{
+    background-color: rgb(145, 28, 44);
+}
+
+.titulo_principal
+{
+ color: white;
+ text-align: center;
+ font-size: 400%;
+}
+
+.navegacion
+{
+    width: 100%;
+    margin: 20px auto;
+    background: white;
+}
+
+.navegacion ul
+{
+ list-style: none;
+ text-align: center;
+}
+
+.menu > li
+{
+    position: relative;
+    display: inline-block;
+}
+
+.menu > li > a
+{
+    display: block;
+    padding: 15px 20px;
+    color: rgb(145, 28, 44) ;
+    text-decoration: none;
+}
+
+.menu li a:hover 
+{
+    color: rgb(68, 129, 184)
+}
+
+.noticias
+{
+    margin: 30px 80px 100px 80px;
+    background-color: white;
+}
