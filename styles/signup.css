@@ -1,8 +1,8 @@
 *
 {
- padding: 0px;
- margin: 0px;
- box-sizing: border-box;
+ 	padding: 0px;
+ 	margin: 0px;
+ 	box-sizing: border-box;
 }
 
 body
@@ -10,49 +10,35 @@ body
     background-color:rgb(145, 28, 44); ;
 }
 
-.registro
+section
 {
-    width: 400px;
+    width: 500px;
     background:white ;
     padding: 30px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 40px;
     border-radius: 10px;
     font-family:'calibri';
     color:rgb(145, 28, 44);
-
 }
 
 .signup
 {
- color:rgb(145, 28, 44);
- text-align: center;
- font-size: 200%;
- margin-bottom: 7%;
+ 	color:rgb(145, 28, 44);
+ 	text-align: center;
+ 	font-size: 200%;
+ 	margin-bottom: 7%;
 }
 
-.controls
+.formulario__input
 {
     width: 100%;
-    background: rgba(32, 31, 31, 0.432);
+    background: rgba(128, 124, 124, 0.432);
     padding: 2%;
     border-radius: 5px;
     margin-bottom: 4%;
     border: 1px solid #ffffff;
     font-size: 14px ;
-}
-
-.control_registrarse
-{
-    left: 25%;
-    width: 50%;
-    background: rgb(145, 28, 44);
-    color: #ffffff;
-    padding: 7px ;
-    border-radius: 10px;
-    margin-bottom: 4%;
-    border: 1px solid #ffffff;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .iniciar_sesion
@@ -61,7 +47,104 @@ body
     text-align: center;
 }
 
-input
-{
-    position: relative;
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	left: 25%;
+    width: 50%;
+    background: rgb(145, 28, 44);
+    color: #ffffff;
+    padding: 7px ;
+    margin-left:25%;
+    border-radius: 10px;
+    margin-bottom: 4%;
+    border: 1px solid #ffffff;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	cursor: pointer;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+    margin-bottom:3%;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+    margin-bottom:2.5%;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+    margin-bottom:3%;
 }

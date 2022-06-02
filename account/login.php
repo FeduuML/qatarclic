@@ -3,24 +3,29 @@
     <head>
         <meta charset="utf-8">
         <title>Qatar Clic</title>
+        <link href="../styles/login.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
-        <?php require 'header.php' ?>
-
         <?php if(!empty($message)): ?>
             <p><?= $message ?></p>
         <?php endif; ?>
 
-        <form action="login.php" method="post">
-            <h1>Login</h1>
-            <input type="text" name="username" placeholder="Nombre de usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <input type="submit" value="Enviar">
-            <br><br>
-            <a href="signup.php">Signup</a>
-        </form>
+        <section>
+            <form action="login.php" method="post">
+                <h1 class="titulo_login">Login</h1>
+                <input class="formulario__input" type="text" name="username" placeholder="Nombre de usuario" required>
+                <br><br>
+                <input class="formulario__input" type="password" name="password" placeholder="Contraseña" required>
+                <br><br>
+                <button class="control_login" type="submit">Enviar</button>
+                <br><br>
+                <p class="signup"> ¿No tenes cuenta? <a href="signup.php">Registrarse</a></p>
+            </form>
+        </section>
+
     </body>
+
 </html>
 
 <?php

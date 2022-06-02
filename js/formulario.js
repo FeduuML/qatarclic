@@ -1,0 +1,106 @@
+const formulario = document.getElementById('formulario'); //Llamo al formulario
+const inputs = document.querySelectorAll('#formulario input'); //Llamo a todos los inputs del formulario
+
+const expresiones = { //Expresiones regulares
+	username: /^[a-zA-Z0-9\_\-]{4,16}$/,
+	password: /^.{8,20}$/,
+	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+}
+
+const campos = { //Los campos siempre son inválidos al abrir o recargar la pagina (siempre vacios)
+	username: false,
+	password: false,
+	email: false
+}
+
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+		case "username":
+			validarCampo(expresiones.username, e.target, 'username'); //Llamo a la función determinando los parámetros
+		break;
+		case "password":
+			validarCampo(expresiones.password, e.target, 'password');
+			validarPassword();
+		break;
+		case "confirm_password":
+			validarPassword();
+		break;
+		case "email":
+			validarCampo(expresiones.email, e.target, 'email');
+		break;
+	}
+}
+
+const validarCampo = (expresion, input, campo) => { //Parámetros
+	if(expresion.test(input.value)) { //Si lo ingresado cumple con las expresiones regulares
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos[campo] = true; //El campo es válido
+	}
+	else { //Si lo ingresado no cumple con las expresiones regulares
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false; //El campo sigue sin ser válido
+	}
+}
+
+const validarPassword = () => {
+	const inputPassword1 = document.getElementById('password');
+	const inputPassword2 = document.getElementById('confirm_password');
+
+	if(inputPassword1.value !== inputPassword2.value){
+		document.getElementById(`grupo__confirm_password`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__confirm_password`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__confirm_password i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__confirm_password i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__confirm_password .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos['password'] = false;
+	}
+	else {
+		document.getElementById(`grupo__confirm_password`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__confirm_password`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__confirm_password i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__confirm_password i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__confirm_password .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos['password'] = true;
+	}
+}
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario); //Apenas toque una tecla ya se lleva a cabo la validación
+	input.addEventListener('blur', validarFormulario); //Si le doy clic afuera del input también se lleva a cabo la validación
+});
+
+formulario.addEventListener('submit', (e) => { //Se lleva a cabo lo siguiente si le doy al boton
+	e.preventDefault();
+
+	if(campos.username && campos.password && campos.email){ //Si TODO esta correcto
+		formulario.submit(); //Envio de datos al servidor PHP
+		formulario.reset(); //Se reinicia el formulario
+
+		Object.entries(campos).forEach(([key, val]) => { //Permite repetir el formulario varias veces sin recargar la página
+            campos[key] = false;
+        });
+
+		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo'); //Mensaje correcto
+		setTimeout(() => { //Solo lo muestro por 5 segundos
+			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+		}, 5000);
+
+		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+			icono.classList.remove('formulario__grupo-correcto'); //Se eliminan los iconos correctos
+		});
+	} 
+	else { //Si todo NO esta correcto
+		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'); //Muestro mensaje de error
+		setTimeout(() => { //Solo lo muestro por 5 segundos
+			document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo'); 
+		}, 5000);
+	}
+});
