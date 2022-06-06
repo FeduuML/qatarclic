@@ -47,13 +47,30 @@
         if (is_countable($results) > 0 && password_verify($_POST['password'], $results['password']))
         {
             session_start();
+            $sql = $conn->query= "SELECT * from users u inner join roles r on r.id=u.rol_id";
             $_SESSION['user_id'] = $results['id'];
             header("Location: ../main/hincha.php");
-        } 
+        }
         else
         {
             $message = 'Nombre de usuario o contraseña incorrectos';
             echo($message);
         }
+    }
+     
+    $sql = $conn->query= "SELECT * from users u join roles r on r.id=u.rol_id";
+    if (isset($_SESSION['user_id'])){
+        switch($_SESSION['user_id']){
+        case 1:
+            'rol_id' == '1';
+            header("Location: ../main/administrador.php");
+        break;
+        case 2:
+            'rol_id' == '2';
+            header("Location: ../main/moderador.php");
+        break;
+        default:
+            header("Location ../main/hincha.php");
+    }
     }
 ?>
