@@ -22,7 +22,7 @@ section
     color:rgb(145, 28, 44);
 }
 
-.signup
+h1
 {
  	color:rgb(145, 28, 44);
  	text-align: center;
@@ -41,7 +41,7 @@ section
     font-size: 14px ;
 }
 
-.iniciar_sesion
+.alternative
 {
     color:black;
     text-align: center;

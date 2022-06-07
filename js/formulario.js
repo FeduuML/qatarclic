@@ -4,13 +4,15 @@ const inputs = document.querySelectorAll('#formulario input'); //Llamo a todos l
 const expresiones = { //Expresiones regulares
 	username: /^[a-zA-Z0-9\_\-]{4,16}$/,
 	password: /^.{8,20}$/,
+	confirm_password: /^.{8,20}$/,
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 }
 
 const campos = { //Los campos siempre son inválidos al abrir o recargar la pagina (siempre vacios)
 	username: false,
 	password: false,
-	email: false
+	email: false,
+	confirm_password: false
 }
 
 const validarFormulario = (e) => {
@@ -23,6 +25,7 @@ const validarFormulario = (e) => {
 			validarPassword();
 		break;
 		case "confirm_password":
+			validarCampo(expresiones.confirm_password, e.target, 'confirm_password');
 			validarPassword();
 		break;
 		case "email":
@@ -61,8 +64,9 @@ const validarPassword = () => {
 		document.querySelector(`#grupo__confirm_password i`).classList.remove('fa-check-circle');
 		document.querySelector(`#grupo__confirm_password .formulario__input-error`).classList.add('formulario__input-error-activo');
 		campos['password'] = false;
+		campos['confirm_password'] = false;
 	}
-	else {
+	else{
 		document.getElementById(`grupo__confirm_password`).classList.remove('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__confirm_password`).classList.add('formulario__grupo-correcto');
 		document.querySelector(`#grupo__confirm_password i`).classList.remove('fa-times-circle');
@@ -80,8 +84,7 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => { //Se lleva a cabo lo siguiente si le doy al boton
 	e.preventDefault();
 
-	if(campos.username && campos.password && campos.email){ //Si TODO esta correcto
-		formulario.submit(); //Envio de datos al servidor PHP
+	if(campos.username && campos.password && campos.email && campos.confirm_password){ //Si TODO esta correcto
 		formulario.reset(); //Se reinicia el formulario
 
 		Object.entries(campos).forEach(([key, val]) => { //Permite repetir el formulario varias veces sin recargar la página
@@ -104,3 +107,12 @@ formulario.addEventListener('submit', (e) => { //Se lleva a cabo lo siguiente si
 		}, 5000);
 	}
 });
+
+function enviar(username,email,password) {
+	var parametros = {username,email,password};
+	$.ajax({
+		data:parametros,
+		url:'procesoAjax.php',
+		type: 'post',
+	});
+}
