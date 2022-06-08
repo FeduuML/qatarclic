@@ -16,10 +16,11 @@
 
                 <div class="formulario__grupo" id="grupo__username">
 				    <div class="formulario__grupo-input">
-                        <input class="formulario__input" type="text" name="username" id="username" placeholder="Nombre de usuario">
+                        <input class="formulario__input" type="text" name="username" id="username" onInput="disponibilidad(this)" placeholder="Nombre de usuario">
 					    <i class="formulario__validacion-estado fas fa-times-circle"></i>
 				    </div>
 				    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                    <span id="comprobarUsuario"></span>
 			    </div>
 
                 <br>
@@ -55,7 +56,7 @@
                 <br>
 
                 <div class="formulario__grupo" id="formulario__grupo-btn-enviar">
-				    <button type="submit" class="formulario__btn" href="javascript:;" onclick="enviar($('#username').val(),$('#email').val(),$('#password').val());">Enviar</button>
+				    <button type="submit" class="formulario__btn">Enviar</button>
                     <br>
 				    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Cuenta creada exitosamente</p>
 			    </div>
@@ -72,3 +73,17 @@
         <script src="../js/formulario.js"></script> <!--Script de validacion de datos y carga de datos con AJAX-->
     </body>
 </html>
+
+<script>
+    function disponibilidad(username) {
+	    jQuery.ajax({
+            url:'comprobarDisponibilidad.php',
+            data:'username='+$("username").val(),
+            type:"POST",
+            success:function(data){
+                $("#comprobarUsuario").html(data);
+            },
+            error:function(){}
+        });
+    }
+</script>

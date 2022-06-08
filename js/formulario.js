@@ -81,10 +81,12 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario); //Si le doy clic afuera del input también se lleva a cabo la validación
 });
 
-formulario.addEventListener('submit', (e) => { //Se lleva a cabo lo siguiente si le doy al boton
+formulario.addEventListener('submit', (e) => {//Se lleva a cabo lo siguiente si le doy al boton
 	e.preventDefault();
 
 	if(campos.username && campos.password && campos.email && campos.confirm_password){ //Si TODO esta correcto
+		enviar($('#username').val(),$('#email').val(),$('#password').val());
+		
 		formulario.reset(); //Se reinicia el formulario
 
 		Object.entries(campos).forEach(([key, val]) => { //Permite repetir el formulario varias veces sin recargar la página
@@ -113,6 +115,6 @@ function enviar(username,email,password) {
 	$.ajax({
 		data:parametros,
 		url:'procesoAjax.php',
-		type: 'post',
+		type:'post',
 	});
 }
