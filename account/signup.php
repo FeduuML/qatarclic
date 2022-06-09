@@ -16,7 +16,7 @@
 
                 <div class="formulario__grupo" id="grupo__username">
 				    <div class="formulario__grupo-input">
-                        <input class="formulario__input" type="text" name="username" id="username" onInput="disponibilidad(this)" placeholder="Nombre de usuario">
+                        <input class="formulario__input" type="text" name="username" id="username" oninput="disponibilidad()" placeholder="Nombre de usuario">
 					    <i class="formulario__validacion-estado fas fa-times-circle"></i>
 				    </div>
 				    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
@@ -76,14 +76,14 @@
 
 <script>
     function disponibilidad(username) {
-	    jQuery.ajax({
+	    $.ajax({
             url:'comprobarDisponibilidad.php',
             data:'username='+$("username").val(),
             type:"POST",
             success:function(data){
                 $("#comprobarUsuario").html(data);
             },
-            error:function(){}
+            error:function (){}
         });
     }
 </script>
