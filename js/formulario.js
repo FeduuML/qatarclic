@@ -86,12 +86,16 @@ formulario.addEventListener('submit', (e) => {//Se lleva a cabo lo siguiente si 
 
 	if(campos.username && campos.password && campos.email && campos.confirm_password){ //Si TODO esta correcto
 		enviar($('#username').val(),$('#email').val(),$('#password').val());
+		document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo'); 
 		
 		formulario.reset(); //Se reinicia el formulario
 
 		Object.entries(campos).forEach(([key, val]) => { //Permite repetir el formulario varias veces sin recargar la página
             campos[key] = false;
         });
+
+		document.getElementById('comprobarUsuario').style.display = "none";
+		username.addEventListener('keyup', validarUsername);
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo'); //Mensaje correcto
 		setTimeout(() => { //Solo lo muestro por 5 segundos
@@ -117,4 +121,15 @@ function enviar(username,email,password) {
 		url:'procesoAjax.php',
 		type:'post',
 	});
+}
+
+function validarUsername(){
+	document.getElementById('comprobarUsuario').style.display = "block";
+}
+
+function mostrarMensaje(){
+	document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo'); //Muestro mensaje de error
+	setTimeout(() => { //Solo lo muestro por 5 segundos
+		document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo'); 
+	}, 5000);
 }

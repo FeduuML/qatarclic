@@ -94,17 +94,17 @@
             echo($message);
         }
     }
-     
-    $sql = $conn->query= "SELECT * from users u join roles r on r.id=u.rol_id";
+    $username = $_POST['username'];
+    $sql = "SELECT u.id, r.name AS rol_id, password FROM users u INNER JOIN roles r ON r.id = u.rol_id WHERE username = '$username'";
     if (isset($_SESSION['user_id'])){
         switch($_SESSION['user_id']){
         case 1:
             'rol_id' == '1';
-            header("Location: ../main/administrador.php");
+            header("Location: ../main/moderador.php");
         break;
         case 2:
             'rol_id' == '2';
-            header("Location: ../main/moderador.php");
+            header("Location: ../main/administrador.php");
         break;
         default:
             header("Location ../main/hincha.php");

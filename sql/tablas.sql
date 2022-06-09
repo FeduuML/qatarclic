@@ -19,3 +19,9 @@ CREATE TABLE users (
     PRIMARY KEY(id),
     FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`)
 );
+
+create table users_roles (
+    user_id int(10) NOT NULL,
+    role_id int(10) NOT NULL,
+    PRIMARY KEY (user_id,role_id)
+);
