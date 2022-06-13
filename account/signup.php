@@ -10,7 +10,16 @@
     </head>
 
     <body>
-        <section>
+        <header>
+            <div class="wrapper">
+                <div class="logo"><?php require 'header.php';?></div>
+                <nav>
+                    <a href="#">Ingresar en modo invitado</a></li>
+                </nav>
+            </div>
+        </header>
+
+        <section style="margin-top:20px;">
             <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
                 <h1>Registrarse</h1>
 
@@ -67,7 +76,7 @@
                 <div id="resultado"></div>
                 <br>
 
-                <p class="alternative"> ¿Ya tenes cuenta? <a href="login.php">Iniciar sesion</a></p>
+                <p class="alternative"> ¿Ya tenes cuenta? <a href="../">Iniciar sesion</a></p>
             </form>
         </section>
         <script src="../js/formulario.js"></script> <!--Script de validacion de datos y carga de datos con AJAX-->

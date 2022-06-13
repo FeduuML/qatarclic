@@ -16,7 +16,6 @@ section
     background:white ;
     padding: 30px;
     margin: auto;
-    margin-top: 40px;
     border-radius: 10px;
     font-family:'calibri';
     color:rgb(145, 28, 44);
@@ -26,14 +25,6 @@ h1
 {
  	color:rgb(145, 28, 44);
  	text-align: center;
- 	font-size: 200%;
- 	margin-bottom: 7%;
-}
-
-.header
-{
-	color:rgb(145, 28, 44);
- 	text-align: left;
  	font-size: 200%;
  	margin-bottom: 7%;
 }
@@ -157,35 +148,32 @@ h1
     margin-bottom:3%;
 }
 
-header {
-	width:100%; /* Establecemos que el header abarque el 100% del documento */
-	overflow:hidden; /* Eliminamos errores de float */
-	background:#252932;
-	margin-bottom:10px;
+header{
+	width:100%;
+	overflow:hidden;
+	background:#ffffff;
 }
 
 .wrapper {
-	width:90%; /* Establecemos que el ancho sera del 90% */
-	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
-	margin:auto; /* Centramos los elementos */
-	overflow:hidden; /* Eliminamos errores de float */
+	width:98%;
+	margin:auto;
+	overflow:hidden;
 }
 
 header .logo {
 	color:#f2f2f2;
-	font-size:50px;
+	font-size:40px;
 	line-height:50px;
 	float:left;
 }
 
 header nav {
 	float:right;
-	line-height:200px;
 }
 
 header nav a {
+	margin-top:3px;
 	display:inline-block;
-	color:#fff;
 	text-decoration:none;
 	padding:10px 20px;
 	line-height:normal;
@@ -194,9 +182,12 @@ header nav a {
 	-webkit-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
 	transition:all 500ms ease;
+	font-family:calibri; 
+	color:rgb(145, 28, 44);
 }
 
 header nav a:hover {
-	background:#f56f3a;
+	background:#181716;
 	border-radius:50px;
+	color:rgb(255, 255, 255);
 }
