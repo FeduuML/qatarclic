@@ -14,7 +14,7 @@
             <div class="wrapper">
                 <div class="logo"><?php require 'header.php';?></div>
                 <nav>
-                    <a href="#">Ingresar en modo invitado</a></li>
+                    <a href="../main/hincha.php">Ingresar en modo invitado</a></li>
                 </nav>
             </div>
         </header>
@@ -40,7 +40,8 @@
 					    <i class="formulario__validacion-estado fas fa-times-circle"></i>
 				    </div>
 				    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-			    </div>
+                    <span id="comprobarEmail"></span>
+                </div>
 
                 <br>
 
@@ -86,7 +87,7 @@
 <script>
     function disponibilidad(username) {
 	    $.ajax({
-            url:'comprobarDisponibilidad.php',
+            url:'comprobarDisponibilidadUsername.php',
             data:'username='+username,
             type:"POST",
             success:function(data){

@@ -5,9 +5,13 @@
  	box-sizing: border-box;
 }
 
+html,body{
+	height:100%;
+}
+
 body
 {
-    background-color:rgb(145, 28, 44); ;
+	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
 }
 
 section

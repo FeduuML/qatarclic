@@ -26,11 +26,10 @@
             <div class="wrapper">
                 <div class="logo"><?php require 'account/header.php';?></div>
                 <nav>
-                    <a href="#">Ingresar en modo invitado</a></li>
+                    <a href="main/hincha.php">Ingresar en modo invitado</a></li>
                 </nav>
             </div>
         </header>
-
         <section style="margin-top:100px">
             <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
                 <h1>Iniciar sesion</h1>
@@ -42,6 +41,7 @@
 			    </div>
 
                 <br>
+
 
                 <div class="formulario__grupo" id="grupo__password">
 				    <div class="formulario__grupo-input">
@@ -64,6 +64,7 @@
                 <p class="alternative"> ¿No tenes cuenta? <a href="account/signup.php">Registrarse</a></p>
             </form>
         </section>
+        </div>
     </body>
 </html>
 
