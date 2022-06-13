@@ -1,3 +1,3 @@
 <header>
-    <a href="/qatarclic">Qatar Clic</a>  
+    <a style="text-decoration:none;" href="/qatarclic">Qatar Clic</a>  
 </header>

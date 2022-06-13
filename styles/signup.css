@@ -30,6 +30,14 @@ h1
  	margin-bottom: 7%;
 }
 
+.header
+{
+	color:rgb(145, 28, 44);
+ 	text-align: left;
+ 	font-size: 200%;
+ 	margin-bottom: 7%;
+}
+
 .formulario__input
 {
     width: 100%;
@@ -147,4 +155,48 @@ h1
 .formulario__grupo-incorrecto .formulario__input {
 	border: 3px solid #bb2929;
     margin-bottom:3%;
+}
+
+header {
+	width:100%; /* Establecemos que el header abarque el 100% del documento */
+	overflow:hidden; /* Eliminamos errores de float */
+	background:#252932;
+	margin-bottom:10px;
+}
+
+.wrapper {
+	width:90%; /* Establecemos que el ancho sera del 90% */
+	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+	margin:auto; /* Centramos los elementos */
+	overflow:hidden; /* Eliminamos errores de float */
+}
+
+header .logo {
+	color:#f2f2f2;
+	font-size:50px;
+	line-height:50px;
+	float:left;
+}
+
+header nav {
+	float:right;
+	line-height:200px;
+}
+
+header nav a {
+	display:inline-block;
+	color:#fff;
+	text-decoration:none;
+	padding:10px 20px;
+	line-height:normal;
+	font-size:20px;
+	font-weight:bold;
+	-webkit-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+
+header nav a:hover {
+	background:#f56f3a;
+	border-radius:50px;
 }
