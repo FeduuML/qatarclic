@@ -30,7 +30,8 @@
                 </nav>
             </div>
         </header>
-        <section style="margin-top:100px">
+        
+        <section style="margin-top:4%;">
             <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
                 <h1>Iniciar sesion</h1>
 
@@ -62,6 +63,8 @@
                 <br>
 
                 <p class="alternative"> ¿No tenes cuenta? <a href="account/signup.php">Registrarse</a></p>
+                <br>
+                <p class="alternative"> ¿Olvidaste tu contraseña? <a href="account/changepass.php">Clic aqui</a></p>
             </form>
         </section>
         </div>
