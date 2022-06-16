@@ -1,5 +1,5 @@
 <?php
-    session_start();
-    session_destroy();
-    header("Location: /qatarclic");
+    session_start(); //Esencial para que funcione el logout
+    session_destroy(); //Logout
+    header("Location: /qatarclic"); //Redirect
 ?>

@@ -84,10 +84,10 @@
     </body>
 </html>
 
-<script>
+<script> //Validación de disponibilidad de username a través de AJAX
     function disponibilidad(username) {
 	    $.ajax({
-            url:'comprobarDisponibilidadUsername.php',
+            url:'availableUser.php',
             data:'username='+username,
             type:"POST",
             success:function(data){

@@ -1,4 +1,6 @@
 <?php
+    //Usando PDO!!! NO USAR nada relacionado a MYSQLI porque NO FUNCIONA
+
     $server = 'localhost';
     $username = 'root';
     $password = '';
