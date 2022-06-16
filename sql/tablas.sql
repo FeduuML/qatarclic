@@ -8,7 +8,7 @@ CREATE TABLE roles (
     PRIMARY KEY(id)
 );
 
-INSERT INTO `roles` VALUES ('1', 'Moderador'), ('2', 'Administrador');
+INSERT INTO `roles` VALUES ('1', 'Moderador'),('2', 'Administrador');
 
 CREATE TABLE users (
     id int NOT NULL AUTO_INCREMENT,
@@ -20,8 +20,19 @@ CREATE TABLE users (
     FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`)
 );
 
-create table users_roles (
-    user_id int(10) NOT NULL,
-    role_id int(10) NOT NULL,
-    PRIMARY KEY (user_id,role_id)
+CREATE TABLE teams (
+    id int(36) NOT NULL AUTO_INCREMENT,
+    nombre varchar(30) NOT NULL,
+    grupo varchar(1) NOT NULL,
+    PRIMARY KEY(id)
 );
+
+INSERT INTO `teams` VALUES
+('1', 'Qatar', 'A'),('2', 'Ecuador', 'A'),('3', 'Senegal', 'A'),('4','Paises Bajos', 'A'),
+('5', 'Inglaterra', 'B'),('6', 'Iran', 'B'),('7', 'Estados Unidos', 'B'),('8','Gales', 'B'),
+('9', 'Argentina', 'C'),('10', 'Arabia Saudita', 'C'),('11', 'Mexico', 'C'),('12','Polonia', 'C'),
+('13', 'Francia', 'D'),('14', 'Australia', 'D'),('15', 'Dinamarca', 'D'),('16', 'Tunez', 'D'),
+('17', 'España', 'E'),('18', 'Costa Rica', 'E'),('19', 'Alemania', 'E'),('20','Japon', 'E'),
+('21', 'Belgica', 'F'),('22', 'Canada', 'F'),('23', 'Marruecos', 'F'),('24','Croacia', 'F'),
+('25', 'Brasil', 'G'),('26', 'Serbia', 'G'),('27', 'Suiza', 'G'),('28','Camerun', 'G'),
+('29', 'Portugal', 'H'),('30', 'Ghana', 'H'),('31', 'Uruguay', 'H'),('32','Corea del Sur', 'H');

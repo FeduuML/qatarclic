@@ -1,3 +1,31 @@
+*
+{
+ 	padding: 0px;
+ 	margin: 0px;
+ 	box-sizing: border-box;
+}
+
+html,body{
+	height:100%;
+}
+
+body
+{
+	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
+	background-attachment: fixed;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5px;
+    padding: 20px;
+}
+
 div{
     text-align: center;
     width: 300px;
@@ -5,22 +33,12 @@ div{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#test{
-    display:none;
-    position: absolute;
-    width:1000px;
-    height:500px;
-    background-color:rgb(165, 159, 159);
-    left:10%;
-    top:5%;
-    z-index: 1;
-}
-
 .meses{
     display: inline-block;
     position: absolute;
     left: 25%;
     top: 25%;
+    background-color:white;
 }
 
 #mes-noviembre
@@ -74,4 +92,53 @@ h1{
     padding: 4px;
     text-align: center;
     margin-bottom: 15px;
+}
+
+.container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:800px;
+    height:500px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#popup.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transform: 0.5s;
+}
+
+.cerrar{
+    width: 30%;
+    background: rgb(145, 28, 44);
+    color: #ffffff;
+    padding: 7px ;
+    margin-top:35%;
+    border-radius: 10px;
+    margin-bottom: 4%;
+    border: 1px solid #ffffff;
+    font-family:'calibri';
+	cursor: pointer;
+}
+
+.cerrar:hover{
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+#n1{
+    background-color: rgb(145, 28, 44);
 }
