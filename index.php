@@ -3,7 +3,17 @@
 
     session_start();
     if(isset($_SESSION['user_id'])){
-        header("Location: main/hincha.php");
+        if(isset($_SESSION['rol_id'])){
+            if($_SESSION['rol_id'] == 1){
+                header("Location: main/moderador.php");
+            }
+            else if($_SESSION['rol_id'] == 2){
+                header("Location: main/administrador.php");
+            }
+            else if($_SESSION['rol_id'] == 3){
+                header("Location: main/hincha.php");
+            }
+        }
     }
 ?>
 
@@ -32,42 +42,48 @@
             </div>
         </header>
         
-        <section style="margin-top:4%;">
-            <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
-                <h1>Iniciar sesion</h1>
+        <div class="container">
+            <div class="intro" id="bloque">
+                <div class="logo"> 
+                    <img src="images/logo.png">
+        </div>
+            </div>
 
-                <div class="formulario__grupo" id="grupo__username">
-				    <div class="formulario__grupo-input">
-                        <input class="formulario__input" type="text" name="username" id="username" placeholder="Nombre de usuario">
-				    </div>
-			    </div>
+            <section class="form" id="bloque">
+                <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
+                    <h1>Iniciar sesion</h1>
 
-                <br>
+                    <div class="formulario__grupo" id="grupo__username">
+				        <div class="formulario__grupo-input">
+                            <input class="formulario__input" type="text" name="username" id="username" placeholder="Nombre de usuario">
+				        </div>
+			        </div>
 
+                    <br>
 
-                <div class="formulario__grupo" id="grupo__password">
-				    <div class="formulario__grupo-input">
-                        <input class="formulario__input" type="password" name="password" id="password" placeholder="Contraseña">
-				    </div>
-			    </div>
+                    <div class="formulario__grupo" id="grupo__password">
+				        <div class="formulario__grupo-input">
+                            <input class="formulario__input" type="password" name="password" id="password" placeholder="Contraseña">
+				        </div>
+			        </div>
 
-                <br>
+                    <br>
 
-                <div class="formulario__grupo" id="formulario__grupo-btn-enviar">
-				    <button type="submit" class="formulario__btn">Enviar</button>
-			    </div>
+                    <div class="formulario__grupo" id="formulario__grupo-btn-enviar">
+				        <button type="submit" class="formulario__btn">Enviar</button>
+			        </div>
 
-                <div class="formulario__mensaje" id="formulario__mensaje">
-				    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-			    </div>
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+				        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			        </div>
 
-                <br>
+                    <br>
 
-                <p class="alternative"> ¿No tenes cuenta? <a href="account/signup.php">Registrarse</a></p>
-                <br>
-                <p class="alternative"> ¿Olvidaste tu contraseña? <a href="account/changepass.php">Clic aqui</a></p>
-            </form>
-        </section>
+                    <p class="alternative"> ¿No tenes cuenta? <a href="account/signup.php">Registrarse</a></p>
+                    <br>
+                    <p class="alternative"> ¿Olvidaste tu contraseña? <a href="account/changepass.php">Clic aqui</a></p>
+                </form>
+            </section>
         </div>
     </body>
 </html>
@@ -99,16 +115,31 @@
 
     if(!empty($_POST['username']) && !empty($_POST['password']))
     {
-        $records = $conn->prepare('SELECT id, username, password FROM users WHERE username = :username OR email = :username');        
+        $records = $conn->prepare('SELECT * FROM users WHERE username = :username OR email = :username');        
         $records->bindParam(':username', $_POST['username']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
         
         if (is_countable($results) > 0 && password_verify($_POST['password'], $results['password']))
         {
-            session_start();
-            $_SESSION['user_id'] = $results['id'];
-            header("Location: main/hincha.php");
+            if($results['rol_id'] == 1){
+                session_start();
+                $_SESSION['user_id'] = $results['id'];
+                $_SESSION['rol_id'] = $results['rol_id'];
+                header("Location: main/moderador.php");
+            }
+            else if($results['rol_id'] == 2){
+                session_start();
+                $_SESSION['user_id'] = $results['id'];
+                $_SESSION['rol_id'] = $results['rol_id'];
+                header("Location: main/administrador.php");
+            }
+            else{
+                session_start();
+                $_SESSION['user_id'] = $results['id'];
+                $_SESSION['rol_id'] = $results['rol_id'];
+                header("Location: main/hincha.php");
+            }
         }
         else
         {
