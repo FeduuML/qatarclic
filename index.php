@@ -17,12 +17,12 @@
     }
 ?>
 
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Qatar Clic</title>
         <link href="styles/signup.css" rel="stylesheet" type="text/css">
+        <link href="styles/header.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
@@ -35,7 +35,7 @@
 
         <header>
             <div class="wrapper">
-                <div class="logo"><?php require 'account/header.php';?></div>
+                <div class="logo"><?php require 'header/header.php';?></div>
                 <nav>
                     <a href="main/hincha.php">Ingresar en modo invitado</a></li>
                 </nav>
@@ -43,12 +43,6 @@
         </header>
         
         <div class="container">
-            <div class="intro" id="bloque">
-                <div class="logo"> 
-                    <img src="images/logo.png">
-        </div>
-            </div>
-
             <section class="form" id="bloque">
                 <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
                     <h1>Iniciar sesion</h1>
@@ -137,7 +131,7 @@
             else{
                 session_start();
                 $_SESSION['user_id'] = $results['id'];
-                $_SESSION['rol_id'] = $results['rol_id'];
+                $_SESSION['rol_id'] = 3;
                 header("Location: main/hincha.php");
             }
         }

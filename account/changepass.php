@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <html>
     <head>
             <title>Qatar clic</title>
             <meta charset="utf-8">
             <link href="../styles/signup.css" rel="stylesheet" type="text/css">
+            <link href="../styles/header.css" rel="stylesheet" type="text/css">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
     </head> 
@@ -11,7 +11,7 @@
     <body>
         <header>
             <div class="wrapper">
-                <div class="logo"><?php require 'header.php';?></div>
+                <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
                     <a href="../main/hincha.php">Ingresar en modo invitado</a></li>
                 </nav>
@@ -26,6 +26,7 @@
                 <br>
                 <h4 align ="center">Introduce tu correo electrónico y te enviaremos un enlace para que vuelvas a entrar en tu cuenta</h4>
                 <br>
+
                 <div class="formulario__grupo" id="grupo__email">
                     <input class="formulario__input" type="text" name="email" id="email" placeholder="Correo electronico">
                 </div>
@@ -37,7 +38,7 @@
 			    </div>
 
                 <div class="formulario__mensaje" id="formulario__mensaje">
-				    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+				    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor introduce un correo válido. </p>
 			    </div>
 
                 <br>

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>Qatar Clic</title>
         <link href="../styles/signup.css" rel="stylesheet" type="text/css">
+        <link href="../styles/header.css" rel="stylesheet" type="text/css">
         <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
@@ -12,7 +12,7 @@
     <body>
         <header>
             <div class="wrapper">
-                <div class="logo"><?php require 'header.php';?></div>
+                <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
                     <a href="../main/hincha.php">Ingresar en modo invitado</a></li>
                 </nav>
@@ -75,6 +75,7 @@
 				    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			    </div>
                 <div id="resultado"></div>
+                
                 <br>
 
                 <p class="alternative"> ¿Ya tenes cuenta? <a href="../">Iniciar sesion</a></p>

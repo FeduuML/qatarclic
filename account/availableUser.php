@@ -1,5 +1,5 @@
 <style>
-        <?php include '../styles/signup.css'; ?>
+    <?php include '../styles/signup.css'; ?>
 </style>
 
 <?php
