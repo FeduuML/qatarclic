@@ -27,7 +27,11 @@ body
     display: inline-block;
 	margin-top:5%;
 }
-
+.copa{
+	display: inline-block;
+	margin-top:5%;
+	margin-left:5%;
+}
 .intro{
 	height:410px;
 	width:200px;
