@@ -4,7 +4,7 @@
 
 <html>
     <head>
-    <meta charset="utf-8">
+        <meta charset="utf-8">
         <title>Qatar Clic</title>
         <link href="../styles/main.css" rel="stylesheet" type="text/css">
         <link href="../styles/header.css" rel="stylesheet" type="text/css">
@@ -36,8 +36,14 @@
                     <li><a href="#">Selecciones</a></li>
                     <li><a href="#">Sobre Qatar</a></li>
                     <li><a href="#">Mundial</a></li>
-                    <?php 
+                    <?php
                     if(isset($_SESSION['user_id'])){
+                        if($_SESSION['rol_id'] == 1){
+                            echo('<li><a href="moderador.php">Panel de control</a></li>');
+                        }
+                        else if($_SESSION['rol_id'] == 2){
+                            echo('<li><a href="administrador.php">Panel de noticias</a></li>');
+                        }
                         echo('<li><a href="../account/logout.php">Cerrar sesion</a></li>');
                     } ?>
                 </ul> 

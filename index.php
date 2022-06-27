@@ -3,17 +3,7 @@
 
     session_start();
     if(isset($_SESSION['user_id'])){
-        if(isset($_SESSION['rol_id'])){
-            if($_SESSION['rol_id'] == 1){
-                header("Location: main/moderador.php");
-            }
-            else if($_SESSION['rol_id'] == 2){
-                header("Location: main/administrador.php");
-            }
-            else if($_SESSION['rol_id'] == 3){
-                header("Location: main/hincha.php");
-            }
-        }
+        header("Location: main/hincha.php");
     }
 ?>
 
@@ -120,20 +110,18 @@
                 session_start();
                 $_SESSION['user_id'] = $results['id'];
                 $_SESSION['rol_id'] = $results['rol_id'];
-                header("Location: main/moderador.php");
             }
             else if($results['rol_id'] == 2){
                 session_start();
                 $_SESSION['user_id'] = $results['id'];
                 $_SESSION['rol_id'] = $results['rol_id'];
-                header("Location: main/administrador.php");
             }
             else{
                 session_start();
                 $_SESSION['user_id'] = $results['id'];
                 $_SESSION['rol_id'] = 3;
-                header("Location: main/hincha.php");
             }
+            header("Location: main/hincha.php");
         }
         else
         {
