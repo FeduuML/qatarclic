@@ -65,7 +65,7 @@
 
                     <p class="alternative"> ¿No tenes cuenta? <a href="account/signup.php">Registrarse</a></p>
                     <br>
-                    <p class="alternative"> ¿Olvidaste tu contraseña? <a href="account/changepass.php">Clic aqui</a></p>
+                    <p class="alternative"> ¿Olvidaste tu contraseña? <a href="account/forgotpass.php">Clic aqui</a></p>
                 </form>
             </section>
         </div>
