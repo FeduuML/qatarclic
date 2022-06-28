@@ -8,7 +8,7 @@ CREATE TABLE roles (
     PRIMARY KEY(id)
 );
 
-INSERT INTO `roles` VALUES ('1', 'Moderador'),('2', 'Administrador'),('3', 'Hincha');
+INSERT INTO `roles` VALUES ('1', 'Moderador'),('2', 'Administrador');
 
 CREATE TABLE users (
     id int NOT NULL AUTO_INCREMENT,

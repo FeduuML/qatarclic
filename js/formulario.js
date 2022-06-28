@@ -83,6 +83,7 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {//Se lleva a cabo lo siguiente si le doy al boton
 	e.preventDefault();
+	document.activeElement.blur();
 
 	if(campos.username && campos.password && campos.email && campos.confirm_password){ //Si TODO esta correcto
 		enviar($('#username').val(),$('#email').val(),$('#password').val()); //formulario.submit() pero con AJAX

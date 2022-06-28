@@ -1,32 +1,28 @@
-<!DOCTYPE html>
 <html>
     <head>
-            <title>Qatar clic</title>
-            <meta charset="utf-8">
-            <link href="correoenv.css" rel="stylesheet" type="text/css">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head> 
-
+        <title>Qatar Clic</title>
+        <link href="../styles/signup.css" rel="stylesheet" type="text/css">
+        <link href="../styles/header.css" rel="stylesheet" type="text/css">
+        <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
+    </head>
 
     <body>
-            <div class="cabeza">
-                <h1 class="sesion">Qatar Clic</h1>
-                <p class="sesion"><a href="signup.php">Iniciar sesion en otra cuenta</a></p>
-                <br><br><br><br><br><br>
-                </div>
-            
-    <div class="confirmacion">
-            
-            
+        <header>
+            <div class="wrapper">
+                <div class="logo"><?php require '../header/header.php';?></div>
+                <nav>
+                    <a href="../main/hincha.php">Ingresar en modo invitado</a></li>
+                </nav>
+            </div>
+        </header>
 
-            <h1 align="center">Correo electronico enviado</h1>
-            <br><br>
-            <h2 align="center">Hemos enviado un correo electrónico a m*******s@gmail.com con un enlace para que recuperes el acceso a tu cuenta.</h2>
-            <br><br>
-            <br><br>
-            <h3 align="center">Aceptar </h3>
-
-           
-        </div>
-</body>
+        <section style="margin-top:10%;">
+            <h1 align="center">Correo enviado exitosamente!</h1>
+            <p align="center">Por favor, revisa tu casilla de correo de entrada</p>
+            <br>
+            <p align="center"><a href="../index.php">Volver</a></p>
+        </section>
+    </body>
 </html>

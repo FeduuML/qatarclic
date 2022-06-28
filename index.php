@@ -35,7 +35,7 @@
         <div class="container">
             <section class="form" id="bloque">
                 <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
-                    <h1>Iniciar sesion</h1>
+                    <h1>Bienvenido!</h1>
 
                     <div class="formulario__grupo" id="grupo__username">
 				        <div class="formulario__grupo-input">
