@@ -19,7 +19,7 @@
         </header>
 
         <section style="margin-top:3%;">
-            <form action="correo.php" method="post" id="formulario" class="formulario" autocomplete="off">
+            <form action="" method="post" id="formulario" class="formulario" autocomplete="off">
                 <center><i class="fa fa-solid fa-lock fa-5x"></i></center>
                 <br>
                 <h3 align ="center">¿Tienes problemas para entrar?</h3>
@@ -64,3 +64,26 @@
             formulario.submit();
     }
 </script>
+
+<?php
+    require 'database.php';
+
+    if(!empty($_POST['email']))
+    {
+        $records = $conn->prepare('SELECT * FROM users WHERE email = :email');        
+        $records->bindParam(':email', $_POST['email']);
+        $records->execute();
+        $results = $records->fetch(PDO::FETCH_ASSOC);
+        
+        if (is_countable($results) > 0)
+        {
+            session_start();
+            $_SESSION['user_email'] = $results['email'];
+            header("Location: correo.php");
+        }
+        else
+        {
+            echo "Este correo no existe";
+        }
+    }
+?>

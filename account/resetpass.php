@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <html>
     <head>
         <title>Qatar Clic</title>
@@ -19,7 +23,7 @@
         </header>
 
         <section style="margin-top:7%;">
-            <form action="../index.php" method="post" id="formulario" class="formulario" autocomplete="off">
+            <form action="" method="post" id="formulario" class="formulario" autocomplete="off">
                 <h1>Restablecer contraseña</h1>
 
                 <div class="formulario__grupo" id="grupo__password">
@@ -134,7 +138,6 @@
 	    e.preventDefault();
 
 	    if(campos.password && campos.confirm_password){ //Si TODO esta correcto
-		    formulario.reset(); //Se reinicia el formulario
             formulario.submit();
 	    } 
 	    else { //Si todo NO esta correcto
@@ -145,3 +148,18 @@
 	    }
     });
 </script>
+
+<?php
+	require 'database.php';
+
+	if(isset($_SESSION['user_email']) && !empty($_POST['password'])){
+		$email = $_SESSION['user_email'];
+		$password = password_hash($_POST['password'], PASSWORD_BCRYPT); //Encriptado de la contraseña
+
+		$records = $conn->prepare("UPDATE users SET password = '$password' WHERE email = '$email'");     
+    	$records->execute();
+    	$results = $records->fetch(PDO::FETCH_ASSOC);
+
+		echo('<script>window.location.href = "changedpass.php";</script>');
+	}
+?>
