@@ -15,6 +15,42 @@ body
 	background-attachment: fixed;
 }
 
+.navicon{
+    margin-top: 30%;
+}
+
+.navegacion
+{
+    width: 100%;
+    background: rgb(148, 146, 146);
+}
+
+.navegacion ul
+{
+    list-style: none;
+    text-align: center;
+}
+
+.menu > li
+{
+    position: relative;
+    display: inline-block;
+}
+
+.menu > li > a
+{
+    display: block;
+    color: rgb(145, 28, 44) ;
+    text-decoration: none;
+    margin-top:3%;
+    margin-bottom:3%;
+}
+
+.menu li a:hover 
+{
+    color: rgb(255, 255, 255)
+}
+
 .container{
     position: relative;
     width: 100%;

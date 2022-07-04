@@ -3,7 +3,7 @@
     <head>
             <title>Qatar clic</title>
             <meta charset="utf-8">
-            <link href="../styles/profile.css" rel="stylesheet" type="text/css">
+            <link href="profile.css" rel="stylesheet" type="text/css">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head> 
 

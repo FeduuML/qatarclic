@@ -13,7 +13,7 @@
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../main/hincha.php">Ingresar en modo invitado</a></li>
+                    <a href="../main/index.php">Ingresar en modo invitado</a></li>
                 </nav>
             </div>
         </header>

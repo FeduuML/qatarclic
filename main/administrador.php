@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <title>Qatar Clic</title>
-        <link href="../styles/main.css" rel="stylesheet" type="text/css">
+        <link href="styles/main.css" rel="stylesheet" type="text/css">
         <link href="../styles/header.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
