@@ -13,7 +13,7 @@
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../main/index.php">Ingresar en modo invitado</a></li>
+                    <a href="../index.php">Ingresar en modo invitado</a></li>
                 </nav>
             </div>
         </header>
@@ -22,7 +22,7 @@
             <h1 align="center">Correo enviado exitosamente!</h1>
             <p align="center">Por favor, revisa tu casilla de correo de entrada</p>
             <br>
-            <p align="center"><a href="../index.php">Volver</a></p>
+            <p align="center"><a href="login.php">Volver</a></p>
         </section>
     </body>
 </html>

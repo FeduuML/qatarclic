@@ -13,7 +13,7 @@
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../main/index.php">Ingresar en modo invitado</a></li>
+                    <a href="../index.php">Ingresar en modo invitado</a></li>
                 </nav>
             </div>
         </header>
@@ -43,7 +43,7 @@
 
                 <br>
 
-                <p class="alternative">Volver al <a href="../index.php">inicio de sesion</a></p>
+                <p class="alternative">Volver al <a href="login.php">inicio de sesion</a></p>
             </form>
 
         </section>

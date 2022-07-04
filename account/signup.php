@@ -14,7 +14,7 @@
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../main/index.php">Ingresar en modo invitado</a></li>
+                    <a href="../index.php">Ingresar en modo invitado</a></li>
                 </nav>
             </div>
         </header>
@@ -78,7 +78,7 @@
                 
                 <br>
 
-                <p class="alternative"> ¿Ya tenes cuenta? <a href="../">Iniciar sesion</a></p>
+                <p class="alternative"> ¿Ya tenes cuenta? <a href="login.php">Iniciar sesion</a></p>
             </form>
         </section>
         <script src="../js/formulario.js"></script> <!--Script de validacion de datos y carga de datos con AJAX-->
