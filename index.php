@@ -18,7 +18,7 @@
     </head>
     
     <body>
-        <header class="header">
+       <header class="header">
             <div class="wrapper">
                 <div class="logo"><?php require 'header/header.php';?></div>
                 <nav>
@@ -32,7 +32,7 @@
                 </nav>
             </div>
 
-            <nav class="navegacion">
+         <nav class="navegacion">
                 <ul class="menu">
                     <li><a href="#">Perfil</a></li>
                     <li><a href="#">Comunidad</a></li>
@@ -55,26 +55,25 @@
             </nav>
         </header>
         
-        <div class="contenedor">
+      
             
             <div class="noticias">
-                <center><h1>Noticias</h1></center>
-                <br>
-                <h2>Hola2</h2>  
-                <p>En los primeros días del diseño web, las páginas se diseñaban para llenar un tamaño de pantalla en particular. Si el usuario tenía una pantalla más grande o más pequeña que la del diseñador, los resultados esperados iban desde barras de desplazamiento no deseadas hasta longitudes de línea excesivamente largas y un mal uso del espacio. A medida que estuvieron disponibles tamaños de pantalla más diversos, apareció el concepto de diseño web responsivo (RWD, responsive web design), un conjunto de prácticas que permite a las páginas web alterar su diseño y apariencia para adaptarse a diferentes anchos de pantalla, resoluciones, etc. Es una idea que cambió la forma en que diseñamos para una web multidispositivo, y en este artículo te ayudaremos a comprender las principales técnicas que necesitas saber para dominarlo.</p>
-                <p>En los primeros días del diseño web, las páginas se diseñaban para llenar un tamaño de pantalla en particular. Si el usuario tenía una pantalla más grande o más pequeña que la del diseñador, los resultados esperados iban desde barras de desplazamiento no deseadas hasta longitudes de línea excesivamente largas y un mal uso del espacio. A medida que estuvieron disponibles tamaños de pantalla más diversos, apareció el concepto de diseño web responsivo (RWD, responsive web design), un conjunto de prácticas que permite a las páginas web alterar su diseño y apariencia para adaptarse a diferentes anchos de pantalla, resoluciones, etc. Es una idea que cambió la forma en que diseñamos para una web multidispositivo, y en este artículo te ayudaremos a comprender las principales técnicas que necesitas saber para dominarlo.</p>
-            
+                <h1 class="text">Noticias</h1>
             </div>
 
             <div class="partidos">
-                <center><h1>Partidos:</h1></center>
-                <br>
-                <h2>Hola2</h2>  
-                <p>En los primeros días del diseño web, las páginas se diseñaban para llenar un tamaño de pantalla en particular. Si el usuario tenía una pantalla más grande o más pequeña que la del diseñador, los resultados esperados iban desde barras de desplazamiento no deseadas hasta longitudes de línea excesivamente largas y un mal uso del espacio. A medida que estuvieron disponibles tamaños de pantalla más diversos, apareció el concepto de diseño web responsivo (RWD, responsive web design), un conjunto de prácticas que permite a las páginas web alterar su diseño y apariencia para adaptarse a diferentes anchos de pantalla, resoluciones, etc. Es una idea que cambió la forma en que diseñamos para una web multidispositivo, y en este artículo te ayudaremos a comprender las principales técnicas que necesitas saber para dominarlo.</p>
-                <p>En los primeros días del diseño web, las páginas se diseñaban para llenar un tamaño de pantalla en particular. Si el usuario tenía una pantalla más grande o más pequeña que la del diseñador, los resultados esperados iban desde barras de desplazamiento no deseadas hasta longitudes de línea excesivamente largas y un mal uso del espacio. A medida que estuvieron disponibles tamaños de pantalla más diversos, apareció el concepto de diseño web responsivo (RWD, responsive web design), un conjunto de prácticas que permite a las páginas web alterar su diseño y apariencia para adaptarse a diferentes anchos de pantalla, resoluciones, etc. Es una idea que cambió la forma en que diseñamos para una web multidispositivo, y en este artículo te ayudaremos a comprender las principales técnicas que necesitas saber para dominarlo.</p>
+                <h1 class="text">Partidos</h1>
+            </div> 
+            
+            <div class="qatar">
+                <h1 class="text">Qatar<h1>
             </div>
 
-        </div>
+            <div class="calendario">
+                <h1 class="text">Calendario</h1>
+            </div>
+
+        
             
     </body>
 </html>
