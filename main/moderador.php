@@ -3,7 +3,7 @@
 
     require '../account/database.php';
 
-    $sql = "SELECT * FROM users";   
+    $sql = "SELECT * FROM users JOIN roles ON users.rol_id = roles.rol";
     $query = $conn->prepare($sql);
     $query->execute();
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
@@ -13,8 +13,8 @@
     <head>
         <meta charset="utf-8">
         <title>Qatar Clic</title>
-        <link href="styles/main.css" rel="stylesheet" type="text/css">
         <link href="../styles/header.css" rel="stylesheet" type="text/css">
+        <link href="moderador.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
     </head>
@@ -60,7 +60,12 @@
         <div>
             <table class="table">
                 <thead>
-                    <tr><th>ID</th><th>Email</th><th>Username</th><th>Role</th></tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                    </tr>
                 </thead>
         
                 <tbody>
@@ -71,7 +76,7 @@
                         <th><?php echo $result -> id ?></th>
                         <th><?php echo $result -> email ?></th>
                         <th><?php echo $result -> username ?></th>
-                        <th><?php echo $result -> rol_id ?></th>
+                        <th><?php echo $result -> rol ?></th>
                     </tr>
                     <?php
                         }
