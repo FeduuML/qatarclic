@@ -56,16 +56,30 @@
             </div>
         </article>
 
+        <div class ="cajas">
         <article class="caja_derecha">
 
           <h2 class="tu_seleccion">Tu seleccion:</h2>
              <ul class="lista_seleccion">
-               <li>noticias</li> 
+               <li>Noticias</li> 
                <li>11 inicial</li>
                <li>Partidos</li>
                <li>Grupo</li> 
              </ul>
 
         </article>
+
+        <article class="caja_izquierda">
+
+          <h2 class="noticias_principal">Noticias</h2>
+             <ul class="lista_seleccion">
+               <li>Noticias</li> 
+               <li>11 inicial</li>
+               <li>Partidos</li>
+               <li>Grupo</li> 
+             </ul>
+
+        </article>
+        </div>
     </body>
 </html>
