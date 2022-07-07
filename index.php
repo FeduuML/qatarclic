@@ -54,11 +54,18 @@
             <div class="comunidad">
                 <h1 class="text">Comunidad<h1>
             </div>
-        </article>   
-        
-        <article class="partidos">
-          <h2>Partidos</h2>
         </article>
-        
+
+        <article class="caja_derecha">
+
+          <h2 class="tu_seleccion">Tu seleccion:</h2>
+             <ul class="lista_seleccion">
+               <li>noticias</li> 
+               <li>11 inicial</li>
+               <li>Partidos</li>
+               <li>Grupo</li> 
+             </ul>
+
+        </article>
     </body>
 </html>

@@ -205,17 +205,19 @@ header nav a:hover {
 	transition: .4s;
 }
 
-.comunidad:hover{
-	transition: .4s;
-}
-
 .comunidad h1:hover{
 	background-color: white;
 	color: black;
 	cursor: pointer;
 }
 
+.comunidad:hover{
+	transition: .4s;
+}
+
+
 .text{
+	width: 194px;
 	font-family: Yanone Kaffeesatz;
 	background-color: black;
 	margin-top: 84.5px;       
@@ -224,15 +226,24 @@ header nav a:hover {
 	font-size: 30px;
 	border-bottom-left-radius: 7px;
 	border-bottom-right-radius: 7px;
+	text-decoration: none;
+	display: inline-block;
+	position: absolute;
 }
 
-.partidos{
-	background-color: white;
-	width: 350px;
-	height: 600px;
-	display: inline-block;
+.caja_derecha{
 	position: relative;
-	margin-top: 1%;
-	margin-left: 74.01%;
-	border-top-left-radius: 8px;
+	display: inline-block;
+    width: 20%;
+	height: 100%;
+	margin-top: 1.5%;
+	margin-left: 80%;
+	background-color: white;
+	border-top-left-radius: 10px;
+}
+
+.tu_seleccion{
+	text-align: center;
+	font-size: 40px;
+
 }
