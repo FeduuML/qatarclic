@@ -44,3 +44,17 @@ INSERT INTO `teams` VALUES
 ('21', 'Belgica', 'F'),('22', 'Canada', 'F'),('23', 'Marruecos', 'F'),('24','Croacia', 'F'),
 ('25', 'Brasil', 'G'),('26', 'Serbia', 'G'),('27', 'Suiza', 'G'),('28','Camerun', 'G'),
 ('29', 'Portugal', 'H'),('30', 'Ghana', 'H'),('31', 'Uruguay', 'H'),('32','Corea del Sur', 'H');
+
+CREATE TABLE `comments` (
+    `id` int(2) NOT NULL,
+    `id_news` text NOT NULL,
+    `user` varchar(20) NOT NULL,
+    `comments` text NOT NULL
+);
+
+CREATE TABLE `news` (
+    `id` int(2) NOT NULL,
+    `user` varchar(20) NOT NULL,
+    `title` text NOT NULL,
+    `content` text NOT NULL
+);
