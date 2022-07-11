@@ -15,20 +15,9 @@ body
 	background-attachment: fixed;
 }
 
-.fijo{
-	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
-	width: 100%;
-	height: 200px;
-	position: fixed;
-	z-index: 3;
-}
-
 header{
 	width:100%;
-	height: 7%;
 	background:#ffffff;
-	position: fixed;
-	z-index: 2;
 }
 
 .wrapper {
@@ -37,19 +26,10 @@ header{
 	overflow:hidden;
 }
 
-.imagen_logo{
- 	position: relative;
- 	display: inline-block;
- 	width: 50px;
- 	height: 47px;
-	
-}
-
 header .logo {
 	font-size:40px;
 	line-height:50px;
 	float:left;
-	margin-left: 56px;
 }
 
 header nav {
@@ -78,13 +58,11 @@ header nav a:hover {
 }
 
 .navegador_general{
-	position: fixed;
 	background-color: white;
 	width: 100%;
 	height:140px;
 	margin-top:1%;
 	display: inline-block;
-	z-index: 2;
 }
 
 .noticias{
@@ -239,10 +217,10 @@ header nav a:hover {
 
 
 .text{
-	width: 195.9px;
+	width: 194px;
 	font-family: Yanone Kaffeesatz;
 	background-color: black;
-	margin-top: 87px;       
+	margin-top: 84.5px;       
 	text-align: center;
 	color: white;
 	font-size: 30px;
@@ -254,10 +232,11 @@ header nav a:hover {
 }
 
 .cajas{
-	margin-top: 200px;
-	position: relative;
-	display: inline-block;
-	width: 100%;
+position: relative;
+display: inline-block;
+
+width: 100%;
+  
 }
 
 .caja_derecha{
@@ -270,6 +249,11 @@ header nav a:hover {
 	background-color: white;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
+}
+
+.noticias_principal{
+	text-align: center;
+	font-size: 40px;
 }
 
 .tu_seleccion{
@@ -288,30 +272,10 @@ header nav a:hover {
 	position:relative;
 	display: inline-block;
 	width: 75%;
-	height: 200%;
+	height: 40%;
 	border-radius: 10px;
-	background-color: rgb(216, 215, 215);
+	background-color: white;
 	margin-top: 1.5%;
 	margin-left: 2%;
 }
-
-/*.caja_izquierda_imagen{
-	width: 100%;
-	height: 35%;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	opacity: 0.6;
-}*/
-
-.noticias_principal{
-	position: relative;
-	color: rgb(145, 28, 44);
-	-webkit-text-stroke: 2px rgb(0, 0, 0);
-	font-size: 90px;
-	margin-left: 40%;
-	margin-top: 1.5%;
-	z-index: 1;
-}
-
-
 

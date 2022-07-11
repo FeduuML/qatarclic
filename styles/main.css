@@ -16,9 +16,7 @@ body
 }
 
 .navicon{
-    position: fixed;
-    margin-top: 3%;
-    z-index: 1;
+    margin-top: 30%;
 }
 
 .navegacion

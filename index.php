@@ -14,13 +14,9 @@
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
     </head>
    
-
     <body>
-
-     <div class=fijo>
        <header class="header">
             <div class="wrapper">
-                <img class="imagen_logo" src="images/copa.jpg.png">
                 <div class="logo"><?php require 'header/header.php';?></div>
                 <nav>
                     <?php 
@@ -32,8 +28,9 @@
                     } ?>
                 </nav>
             </div>
-
-            <article class="navegador_general">
+        </header>
+        
+        <article class="navegador_general">
             <div class="noticias">
                 <h1 class="text">Noticias</h1>
             </div>
@@ -58,8 +55,6 @@
                 <h1 class="text">Comunidad<h1>
             </div>
         </article>
-    </div>
-        </header>
 
         <div class ="cajas">
         <article class="caja_derecha">
@@ -74,37 +69,17 @@
 
         </article>
 
-        <div class="articulo_imagen">
-             <img class="caja_izquierda_imagen" src="images/noticias.jpg">
-        </div>    
-
         <article class="caja_izquierda">
 
           <h2 class="noticias_principal">Noticias</h2>
-             <!--<img class="caja_izquierda_imagen" src="images/noticias.jpg">-->
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1><h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-        </article>
+             <ul class="lista_seleccion">
+               <li>Noticias</li> 
+               <li>11 inicial</li>
+               <li>Partidos</li>
+               <li>Grupo</li> 
+             </ul>
 
-        
+        </article>
         </div>
     </body>
 </html>
