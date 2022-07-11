@@ -1,21 +1,7 @@
-*
-{
- 	padding: 0px;
- 	margin: 0px;
- 	box-sizing: border-box;
-}
-
-html,body{
-	height:100%;
-}
-
-body
-{
-	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
-	background-attachment: fixed;
-}
-
-header{
+.header{
+	position:fixed;
+	z-index:1;
+	top:0;
 	width:100%;
 	background:#ffffff;
 }
@@ -26,17 +12,17 @@ header{
 	overflow:hidden;
 }
 
-header .logo {
+.header .logo {
 	font-size:40px;
 	line-height:50px;
 	float:left;
 }
 
-header nav {
+.header nav {
 	float:right;
 }
 
-header nav a {
+.header nav a {
 	margin-top:3px;
 	display:inline-block;
 	text-decoration:none;
@@ -51,7 +37,7 @@ header nav a {
 	color:rgb(145, 28, 44);
 }
 
-header nav a:hover {
+.header nav a:hover {
 	background:#181716;
 	border-radius:50px;
 	color:rgb(255, 255, 255);
@@ -59,223 +45,182 @@ header nav a:hover {
 
 .navegador_general{
 	background-color: white;
-	width: 100%;
-	height:140px;
-	margin-top:1%;
-	display: inline-block;
+	width:100%;
+	text-align:center;
 }
 
 .noticias{
-	position: absolute;
-	width: 200px;
-	height: 120px;	
+	width: 14.65%;
+	height: 19.2%;	
 	border-radius: 10px;
-	display: inline-block;
 	background-image: url('../images/noticias.jpg');
     background-size:100% 100%;
 	background-repeat: no-repeat;
-	margin-left: 35px;
-	margin-top:10px;
+	margin-top:1%;
+	margin-bottom:1%;
 	border: #000000 solid;
 	transition: .4s;
+	display:inline-block;
+	position:relative;
 }
 
 .noticias:hover{
 	transition: .4s;
+	background-image: url('../images/noticias_darken.jpg');
 }
 
 .noticias h1:hover{
-	background-color: white;
+	background-color: rgb(218, 218, 218);
 	color: black;
 	cursor: pointer;
 }
 
 .fixture{
-	position: absolute;
-	width: 200px;
-	height: 120px;	
+	width: 14.65%;
+	height: 19.2%;	
 	border-radius: 10px;
-	display: inline-block;
-	background-image: url('../images/partidos.jpg');
+	background-image: url('../images/fixture.jpg');
     background-size:100% 100%;
 	background-repeat: no-repeat;
-	margin-left: 255px;
-	margin-top: 10px;
+	margin-left:1.2%;
+	margin-top:1%;
+	margin-bottom:1%;
 	border: #000000 solid;
 	transition: .4s;
+	display:inline-block;
+	position:relative;
 }
 
 .fixture:hover{
 	transition: .4s;
-	}
+	background-image: url('../images/fixture_darken.jpg');
+}
 
 .fixture h1:hover{
-	background-color: white;
+	background-color: rgb(218, 218, 218);
 	color: black;
     cursor: pointer;
 }
 
 .calendario{
-	position: absolute;
-	width: 200px;
-	height: 120px;		
+	width: 14.65%;
+	height: 19.2%;	
 	border-radius: 10px;
-	display: inline-block;
-	background-image: url('../images/cale.jpg');
+	background-image: url('../images/calendario.jpg');
     background-size:100% 100%;
 	background-repeat: no-repeat;
-	margin-left: 475px;
-	margin-top: 10px;
+	margin-left:1.2%;
+	margin-top:1%;
+	margin-bottom:1%;
 	border: #000000 solid;
 	transition: .4s;
+	display:inline-block;
+	position:relative;
 }
 
 .calendario:hover{
 	transition: .4s;
+	background-image: url('../images/calendario_darken.jpg');
 }
 
 .calendario h1:hover{
-	background-color: white;
+	background-color: rgb(218, 218, 218);
 	color: black;
 	cursor: pointer;
 }
 
 .qatar{
-	position: absolute;
-	width: 200px;
-	height: 120px;		
+	width: 14.65%;
+	height: 19.2%;		
 	border-radius: 10px;
-	display: inline-block;
 	background-image: url('../images/bandera.jpg');
     background-size:100% 100%;
 	background-repeat: no-repeat;
-	margin-left: 695px;
-	margin-top: 10px;
+	margin-left:1.2%;
+	margin-top:1%;
+	margin-bottom:1%;
 	border: #000000 solid;
 	transition: .4s;
+	display:inline-block;
+	position:relative;
 }
 
 .qatar:hover{
 	transition: .4s;
+	background-image: url('../images/bandera_darken.jpg');
 }
 
 .qatar h1:hover{
-	background-color: white;
+	background-color: rgb(218, 218, 218);
 	color: black;
 	cursor: pointer;
 }
 
 .selecciones{
-	position: absolute;
-	width: 200px;
-	height: 120px;		
+	width: 14.65%;
+	height: 19.2%;		
 	border-radius: 10px;
-	display: inline-block;
 	background-image: url('../images/selecciones.jpg');
     background-size:100% 100%;
 	background-repeat: no-repeat;
-	margin-left: 915px;
-	margin-top: 10px;
+	margin-left:1.2%;
+	margin-top:1%;
+	margin-bottom:1%;
 	border: #000000 solid;
 	transition: .4s;
+	display:inline-block;
+	position:relative;
 }
 
 .selecciones:hover{
 	transition: .4s;
+	background-image: url('../images/selecciones_darken.jpg');
 }
 
 .selecciones h1:hover{
-	background-color: white;
+	background-color: rgb(218, 218, 218);
 	color: black;
 	cursor: pointer;
 }
 
 .comunidad{
-	position: absolute;
-	width: 200px;
-	height: 120px;		
+	width: 14.65%;
+	height: 19.2%;	
 	border-radius: 10px;
-	display: inline-block;
 	background-image: url('../images/comunidad.jpg');
     background-size:100% 100%;
 	background-repeat: no-repeat;
-	margin-left: 1135px;
-	margin-top: 10px;
+	margin-left:1.2%;
+	margin-top:1%;
+	margin-bottom:1%;
 	border: #000000 solid;
 	transition: .4s;
+	display:inline-block;
+	position:relative;
 }
 
 .comunidad h1:hover{
-	background-color: white;
+	background-color: rgb(218, 218, 218);
 	color: black;
 	cursor: pointer;
 }
 
 .comunidad:hover{
 	transition: .4s;
+	background-image: url('../images/comunidad_darken.jpg');
 }
-
 
 .text{
-	width: 194px;
+	width: 100%;
 	font-family: Yanone Kaffeesatz;
 	background-color: black;
-	margin-top: 84.5px;       
+	margin-top:40%;     
 	text-align: center;
-	color: white;
-	font-size: 30px;
+	color:white;
+	font-size: 5vh;
+	font-size: 2.3vw;
 	border-bottom-left-radius: 7px;
 	border-bottom-right-radius: 7px;
+	bottom: 0;
 	text-decoration: none;
-	display: inline-block;
-	position: absolute;
 }
-
-.cajas{
-position: relative;
-display: inline-block;
-
-width: 100%;
-  
-}
-
-.caja_derecha{
-	position: relative;
-	display: inline-block;
-    width: 20%;
-	height: 30%;
-	margin-top: 1.5%;
-	float:right;
-	background-color: white;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-.noticias_principal{
-	text-align: center;
-	font-size: 40px;
-}
-
-.tu_seleccion{
-	text-align: center;
-	font-size: 30px;
-	font-family: Yanone Kaffeesatz;
-	padding-top: 10px;
-}
-
-.lista_seleccion{
-	padding-left: 22px;
-	font-size:20px;
-}
-
-.caja_izquierda{
-	position:relative;
-	display: inline-block;
-	width: 75%;
-	height: 40%;
-	border-radius: 10px;
-	background-color: white;
-	margin-top: 1.5%;
-	margin-left: 2%;
-}
-
