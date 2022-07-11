@@ -15,9 +15,9 @@
     </head>
    
 
-    <body>
+<body>
 
-     <div class=fijo>
+    <div class=fijo>
        <header class="header">
             <div class="wrapper">
                 <img class="imagen_logo" src="images/copa.jpg.png">
@@ -33,46 +33,37 @@
                 </nav>
             </div>
 
-            <article class="navegador_general">
-            <div class="noticias">
-                <h1 class="text">Noticias</h1>
-            </div>
+            <nav class="navegador_general">
 
-            <div class="fixture">
-                <h1 class="text">Fixture</h1>
-            </div> 
+                <div class="noticias">
+                    <h1 class="text">Noticias</h1>
+                </div>
+
+                <div class="fixture">
+                    <h1 class="text">Fixture</h1>
+                </div> 
             
-            <div class="calendario">
-                <h1 class="text">Calendario</h1>
-            </div>
+                <div class="calendario">
+                    <h1 class="text">Calendario</h1>
+                </div>
 
-            <div class="qatar">
-                <h1 class="text">Sobre Qatar<h1>
-            </div>
+                <div class="qatar">
+                    <h1 class="text">Sobre Qatar<h1>
+                </div>
 
-            <div class="selecciones">
-                <h1 class="text">Selecciones<h1>
-            </div>
+                <div class="selecciones">
+                    <h1 class="text">Selecciones<h1>
+                </div>
 
-            <div class="comunidad">
-                <h1 class="text">Comunidad<h1>
-            </div>
-        </article>
+                <div class="comunidad">
+                    <h1 class="text">Comunidad<h1>
+                 </div>
+
+            </nav>
     </div>
-        </header>
 
-        <div class ="cajas">
-        <article class="caja_derecha">
+ </header>
 
-          <h2 class="tu_seleccion">Tu seleccion:</h2>
-             <ul class="lista_seleccion">
-               <li>Noticias</li> 
-               <li>11 inicial</li>
-               <li>Partidos</li>
-               <li>Grupo</li> 
-             </ul>
-
-        </article>
 
         <div class="articulo_imagen">
              <img class="caja_izquierda_imagen" src="images/noticias.jpg">
@@ -100,11 +91,15 @@
              <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
              <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
              <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
-             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1><h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
+             <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
              <h1>hfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h1>
         </article>
 
         
         </div>
-    </body>
+
+        <footer>
+            <span class="disclaimer">Qatar Clic: Chaves Maximiliano, Farina Lorenzo, Fernandez Carou Mateo, Liber Federico 7°C</span>
+        </footer>
+</body>
 </html>
