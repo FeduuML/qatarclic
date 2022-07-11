@@ -1,37 +1,10 @@
-*
-{
- 	padding: 0px;
- 	margin: 0px;
- 	box-sizing: border-box;
-}
-
-html,body{
-	height:100%;
-}
-
-body
-{
-	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
-	background-attachment: fixed;
-}
-
-.fijo{
-	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
-	width: 100%;
-	height: 200px;
-	position: fixed;
-	z-index: 3;
-}
-
 .header{
 	position:fixed;
 	z-index:1;
-
+	top:0;
 	width:100%;
-	height: 7%;
 	background:#ffffff;
-	position: fixed;
-	z-index: 2;
+	transition: top 1s;
 }
 
 .wrapper {
@@ -40,19 +13,10 @@ body
 	overflow:hidden;
 }
 
-.imagen_logo{
- 	position: relative;
- 	display: inline-block;
- 	width: 50px;
- 	height: 47px;
-	
-}
-
 .header .logo {
 	font-size:40px;
 	line-height:50px;
 	float:left;
-	margin-left: 56px;
 }
 
 .header nav {
@@ -81,17 +45,13 @@ body
 }
 
 .navegador_general{
-	position: fixed;
 	background-color: white;
-	width: 100%;
-	height:140px;
-	margin-top:1%;
-	display: inline-block;
-	z-index: 2;
+	top:0;
+	width:100%;
 	text-align:center;
 }
 
-.noticias{
+.perfil{
 	width: 14.65%;
 	height: 19.2%;	
 	border-radius: 10px;
@@ -106,12 +66,12 @@ body
 	position:relative;
 }
 
-.noticias:hover{
+.perfil:hover{
 	transition: .4s;
 	background-image: url('../images/noticias_darken.jpg');
 }
 
-.noticias h1:hover{
+.perfil h1:hover{
 	background-color: rgb(218, 218, 218);
 	color: black;
 	cursor: pointer;
@@ -253,7 +213,7 @@ body
 }
 
 .text{
-	width: 195.9px;
+	width: 100%;
 	font-family: Yanone Kaffeesatz;
 	background-color: black;     
 	margin-top:40%;     
@@ -265,67 +225,14 @@ body
 	border-bottom-right-radius: 7px;
 	bottom: 0;
 	text-decoration: none;
-	display: inline-block;
-	position: absolute;
 }
 
-.cajas{
-	margin-top: 200px;
-	position: relative;
-	display: inline-block;
-	width: 100%;
+.link_calendario{
+	text-decoration: none;
 }
 
-.caja_derecha{
-	position: relative;
-	display: inline-block;
-    width: 20%;
-	height: 30%;
-	margin-top: 1.5%;
-	float:right;
-	background-color: white;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
 
-.tu_seleccion{
-	text-align: center;
-	font-size: 30px;
-	font-family: Yanone Kaffeesatz;
-	padding-top: 10px;
-}
-
-.lista_seleccion{
-	padding-left: 22px;
-	font-size:20px;
-}
-
-.caja_izquierda{
-	position:relative;
-	display: inline-block;
-	width: 75%;
-	height: 200%;
-	border-radius: 10px;
-	background-color: rgb(216, 215, 215);
-	margin-top: 1.5%;
-	margin-left: 2%;
-}
-
-/*.caja_izquierda_imagen{
-	width: 100%;
-	height: 35%;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	opacity: 0.6;
-}*/
-
-.noticias_principal{
-	position: relative;
-	color: rgb(145, 28, 44);
-	-webkit-text-stroke: 2px rgb(0, 0, 0);
-	font-size: 90px;
-	margin-left: 40%;
-	margin-top: 1.5%;
-	z-index: 1;
+.link_calendario:visited { 
+	text-decoration: none; color:rgb(255, 255, 255); 
 }
 

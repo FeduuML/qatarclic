@@ -9,7 +9,7 @@
     </head> 
 
     <body>
-        <header>
+        <header class="header">
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
@@ -18,7 +18,7 @@
             </div>
         </header>
 
-        <section style="margin-top:3%;">
+        <section class="recuperar_contraseña">
             <form action="" method="post" id="formulario" class="formulario" autocomplete="off">
                 <center><i class="fa fa-solid fa-lock fa-5x"></i></center>
                 <br>

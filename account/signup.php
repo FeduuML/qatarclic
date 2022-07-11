@@ -10,11 +10,11 @@
     </head>
 
     <body>
-        <header>
+        <header class="header">
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../index.php">Ingresar en modo invitado</a></li>
+                    <a href="../index.php">Volver al modo invitado</a></li>
                 </nav>
             </div>
         </header>
