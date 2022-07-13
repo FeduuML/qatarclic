@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require 'account/database.php';
 ?>
 
 <html>
@@ -22,7 +23,8 @@
                 <nav>
                     <?php 
                     if(isset($_SESSION['user_id'])){
-                        echo("<i class='navicon fas fa-solid fa-user fa-2x'></i>");
+                        echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
+                        echo("<div id='user_options' class='user_options'><h1>Cerrar sesion</h1></div>");
                     }
                     else{
                         echo("<a href='account/login.php'>Iniciar sesion</a>");
@@ -93,5 +95,6 @@
             </section>
         </content>
         <script src="js/scroll.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>

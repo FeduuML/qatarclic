@@ -9,16 +9,16 @@
     </head>
 
     <body>
-        <header>
+        <header class="header">
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../index.php">Ingresar en modo invitado</a></li>
+                    <a href="../index.php">Volver al modo invitado</a></li>
                 </nav>
             </div>
         </header>
 
-        <section style="margin-top:10%;">
+        <section style="margin-top:15%;">
             <h1 align="center">Correo enviado exitosamente!</h1>
             <p align="center">Por favor, revisa tu casilla de correo de entrada</p>
             <br>

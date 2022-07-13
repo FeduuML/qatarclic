@@ -13,16 +13,16 @@
     </head>
 
     <body>
-        <header>
+        <header class="header">
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../index.php">Ingresar en modo invitado</a></li>
+                    <a href="../index.php">Volver al modo invitado</a></li>
                 </nav>
             </div>
         </header>
 
-        <section style="margin-top:7%;">
+        <section style="margin-top:10%;">
             <form action="" method="post" id="formulario" class="formulario" autocomplete="off">
                 <h1>Restablecer contraseña</h1>
 

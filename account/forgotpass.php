@@ -13,12 +13,12 @@
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../index.php">Ingresar en modo invitado</a></li>
+                    <a href="../index.php">Volver al modo invitado</a></li>
                 </nav>
             </div>
         </header>
 
-        <section class="recuperar_contraseña">
+        <section style="margin-top:10%;">
             <form action="" method="post" id="formulario" class="formulario" autocomplete="off">
                 <center><i class="fa fa-solid fa-lock fa-5x"></i></center>
                 <br>
@@ -83,7 +83,7 @@
         }
         else
         {
-            echo "Este correo no existe";
+            echo("<script>alert('Este correo no existe');e.preventDefault();</script>");
         }
     }
 ?>

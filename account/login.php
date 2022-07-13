@@ -12,7 +12,7 @@
     <body>
         <?php if(!empty($message)): ?>
             <p><?= $message ?></p>
-        <?php endif; ?>
+        <?php endif; ?> 
 
         <header class="header">
             <div class="wrapper">
@@ -24,7 +24,7 @@
         </header>
         
         <div class="container">
-            <section class="form" id="bloque">
+            <section style="margin-top:10%;">
                 <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
                     <h1>Iniciar sesion</h1>
 
