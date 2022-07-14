@@ -1,0 +1,49 @@
+body
+{
+	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
+	background-attachment: fixed;
+}
+.cuadrados
+{
+    width: 800px;  
+    height: 460px;
+    background-color: rgb(184, 22, 22); 
+    margin-left: 220px;
+    color: white;
+    
+} 
+.grupoae{
+    width: 200px;  
+    height: 380px;
+    display: inline-block;
+    position: absolute;
+    font-size: 12px;  
+    color: black;
+}
+.grupobf{
+    width: 200px;  
+    height: 380px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 200px;
+    font-size: 12px;
+    color: black;
+}
+.grupocg{
+    width: 200px;  
+    height: 380px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 400px;
+    font-size: 12px;
+    color: black;
+}
+.grupodh{
+    width: 200px;  
+    height: 380px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 600px;
+    font-size: 12px;
+    color: black;
+}
