@@ -18,7 +18,7 @@
             </div>
         </header>
 
-        <section style="margin-top:15%;">
+        <section style="margin-top:225px;">
             <h1 align="center">Correo enviado exitosamente!</h1>
             <p align="center">Por favor, revisa tu casilla de correo de entrada</p>
             <br>

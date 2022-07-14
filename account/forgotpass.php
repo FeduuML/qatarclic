@@ -18,7 +18,7 @@
             </div>
         </header>
 
-        <section style="margin-top:10%;">
+        <section style="margin-top:120px;">
             <form action="" method="post" id="formulario" class="formulario" autocomplete="off">
                 <center><i class="fa fa-solid fa-lock fa-5x"></i></center>
                 <br>

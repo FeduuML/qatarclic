@@ -16,45 +16,6 @@ body
 	background-attachment: fixed;
 }
 
-.navicon_box{
-    margin-top:15%;
-    width:40px;
-    height:40px;
-    border-radius: 10px;
-    transition: 0.5s;
-}
-
-.navicon{
-    padding:3px 6px;
-    cursor:pointer;
-    color:rgb(145, 28, 44) ;
-}
-
-.navicon_box:hover{
-    background-color:rgb(177, 177, 177);
-    transition: 0.5s;
-}
-
-.navicon:hover{
-    color: black;
-}
-
-.user_options{
-    left:89%;
-    position:absolute;
-    z-index:1;
-    margin-top: 5px;
-    border-radius:10px;
-    width:10%;
-    height:80px;
-    display:none;
-    background-color:rgb(214, 214, 214)
-}
-
-.user_options > h1{
-    font-size:90%;
-}
-
 .categoria{
     /*background: linear-gradient(to bottom right, rgb(219, 50, 73),rgb(0, 0, 0));*/
     background-color: white;

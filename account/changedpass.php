@@ -13,12 +13,12 @@
             <div class="wrapper">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
-                    <a href="../index.php">Ingresar en modo invitado</a></li>
+                    <a href="../index.php">Volver al modo invitado</a></li>
                 </nav>
             </div>
         </header>
 
-        <section style="margin-top:15%;">
+        <section style="margin-top:200px;">
             <h1 align="center">Contraseña cambiada exitosamente!</h1>
             <p align="center">Por favor, cierre esta pestaña y vuelva a la abierta anteriormente</p>
         </section>
