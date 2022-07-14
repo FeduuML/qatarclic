@@ -22,7 +22,7 @@
             </div>
         </header>
 
-        <section style="margin-top:10%;">
+        <section style="margin-top:150px;">
             <form action="" method="post" id="formulario" class="formulario" autocomplete="off">
                 <h1>Restablecer contraseña</h1>
 

@@ -24,7 +24,7 @@
         </header>
         
         <div class="container">
-            <section style="margin-top:10%;">
+            <section style="margin-top:120px;">
                 <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
                     <h1>Iniciar sesion</h1>
 

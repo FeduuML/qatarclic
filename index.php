@@ -1,6 +1,17 @@
 <?php
     session_start();
     require 'account/database.php';
+
+    if(isset($_SESSION['user_id'])){
+        $user_id = $_SESSION['user_id'];
+
+        $sql = "SELECT * FROM users WHERE id = $user_id";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        
+        $username = $results['username'];
+    }
 ?>
 
 <html>
@@ -24,7 +35,13 @@
                     <?php 
                     if(isset($_SESSION['user_id'])){
                         echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
-                        echo("<div id='user_options' class='user_options'><h1>Cerrar sesion</h1></div>");
+
+                        if($_SESSION['rol_id'] == 1){
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/moderador.php'>Gestionar usuarios</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                        }
+                        else{
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                        }
                     }
                     else{
                         echo("<a href='account/login.php'>Iniciar sesion</a>");
