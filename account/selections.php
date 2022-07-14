@@ -11,10 +11,10 @@
             <div class="cuadrados">
                 <div class= "grupoae">
                     <h1> Grupo A </h1>
-                    <h2><img src="../images/flags/qatar.jpg">Qatar</h2>  
+                    <h2><img src="../images/flags/qatar.jpg"><a href="../teams/qatar/qatar_team.php">Qatar</a></h2>  
                     <h2><img src="../images/flags/ecuador.jpg">Ecuador</h2>
                     <h2><img src="../images/flags/senegal.jpg">Senegal</h2>
-                    <h2><img src="../images/flags/paises_bajos.jpg">Holanda</h2>
+                    <h2><img src="../images/flags/holanda.jpg">Holanda</h2>
                     
                     <br>
                     
@@ -81,52 +81,5 @@
                     <br>
                 </div>
             </div>
-        
-    </html>
 
-<!--.cuadrados
-{
-    width: 860px;  
-    height: 380px;
-    background-color: rgb(192, 29, 11); 
-    margin-left: 220px;
-    color: white;
-} 
-.grupoae{
-    width: 200px;  
-    height: 380px;
-    display: inline-block;
-    position: absolute;
-    background-color: rgb(192, 29, 11);
-    font-size: 12px;  
-}
-.grupobf{
-    width: 200px;  
-    height: 380px;
-    display: inline-block;
-    position: absolute;
-    background-color: rgb(192, 29, 11);
-    margin-left: 220px;
-    font-size: 12px;
-}
-.grupocg{
-    width: 200px;  
-    height: 380px;
-    display: inline-block;
-    position: absolute;
-    background-color: rgb(192, 29, 11);
-    margin-left: 220px;
-    margin-top: -409px;
-    font-size: 12px;
-}
-.grupodh{
-    width: 200px;  
-    height: 380px;
-    display: inline-block;
-    position: absolute;
-    background-color: rgb(192, 29, 11);
-    margin-left: 220px;
-    margin-top: -409px;
-    font-size: 12px;
-}
-!--> 
+    </html>

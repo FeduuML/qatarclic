@@ -23,7 +23,7 @@
 	float:right;
 }
 
-.header nav a {
+.header nav > a {
 	margin-top:3px;
 	display:inline-block;
 	text-decoration:none;
@@ -38,10 +38,57 @@
 	color:rgb(145, 28, 44);
 }
 
-.header nav a:hover {
+.header nav > a:hover {
 	background:#181716;
 	border-radius:50px;
 	color:rgb(255, 255, 255);
+}
+
+.navicon_box{
+    margin-top:15%;
+    width:40px;
+    height:40px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.navicon{
+    padding:3px 6px;
+    cursor:pointer;
+    color:rgb(145, 28, 44) ;
+}
+
+.navicon_box:hover{
+    background-color:rgb(177, 177, 177);
+    transition: 0.5s;
+}
+
+.navicon:hover{
+    color: black;
+}
+
+.user_options{
+    font-family: Yanone Kaffeesatz;
+    padding:10px;
+    left:84%;
+    position:absolute;
+    z-index:1;
+    margin-top: 5px;
+    border-radius:10px;
+    width:15%;
+    height:60%;
+    display:none;
+    background-color:rgb(214, 214, 214)
+}
+
+.user_options > h1{
+    text-align:center;
+    font-size:1.5vw;
+}
+
+.user_options > a{
+    text-decoration:none;
+    font-size:1.3vw;
 }
 
 .navegador_general{

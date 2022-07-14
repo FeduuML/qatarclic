@@ -19,7 +19,7 @@
             </div>
         </header>
 
-        <section style="margin-top:20px;">
+        <section style="margin-top:80px;">
             <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
                 <h1>Registrarse</h1>
 

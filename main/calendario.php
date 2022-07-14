@@ -120,13 +120,13 @@
         <div id="popup6">
             <h1>Partidos correspondientes al dia 26 de noviembre del 2022</h1>
             <br>
-            <p><img src="../images/flags/tunez.jpg">Tunez vs Australia <p><img src="../images/flags/australia.jpg"></p>
+            <p><img src="../images/flags/tunez.jpg">Tunez vs Australia<img src="../images/flags/australia.jpg"></p>
             <p><center> 7:00 </center></p>
-            <p><img src="../images/flags/polonia.jpg">Polonia vs Arabia Saudita <p><img src="../images/flags/arabia.jpg"></p>
+            <p><img src="../images/flags/polonia.jpg">Polonia vs Arabia Saudita<img src="../images/flags/arabia.jpg"></p>
             <p><center> 10:00 </center></p>
-            <p><img src="../images/flags/francia.jpg">Francia vs Dinamarca <p><img src="../images/flags/dinamarca.jpg"></p>
+            <p><img src="../images/flags/francia.jpg">Francia vs Dinamarca<img src="../images/flags/dinamarca.jpg"></p>
             <p><center> 13:00 </center></p>
-            <p><img src="../images/flags/argentina.jpg">Argentina vs Mexico <p><img src="../images/flags/mexico.jpg"></p>
+            <p><img src="../images/flags/argentina.jpg">Argentina vs Mexico<img src="../images/flags/mexico.jpg"></p>
             <p><center> 16:00 </center></p>
             <button class="cerrar" href="#" onclick="toggle6()">Cerrar</button>
         </div>
@@ -162,13 +162,13 @@
         <div id="popup9">
             <h1>Partidos correspondientes al dia 29 de noviembre del 2022</h1>
             <br>
-            <p><p><img src="../images/flags/holanda.jpg">Paises Bajos vs Qatar <p><img src="../images/flags/qatar.jpg">7:00</p>
+            <p><p><img src="../images/flags/holanda.jpg">Paises Bajos vs Qatar<img src="../images/flags/qatar.jpg">7:00</p>
             <p><center> 7:00 </center></p>
-            <p><p><img src="../images/flags/ecuador.jpg">Ecuador vs Senegal <p><img src="../images/flags/senegal.jpg">10:00</p>
+            <p><p><img src="../images/flags/ecuador.jpg">Ecuador vs Senegal<img src="../images/flags/senegal.jpg">10:00</p>
             <p><center> 10:00 </center></p>
-            <p><p><img src="../images/flags/gales.jpg">Gales vs Inglaterra <p><img src="../images/flags/inglaterra.jpg">13:00</p>
+            <p><p><img src="../images/flags/gales.jpg">Gales vs Inglaterra<img src="../images/flags/inglaterra.jpg">13:00</p>
             <p><center> 13:00 </center></p>
-            <p><p><img src="../images/flags/iran.jpg">Irán vs Estados Unidos <p><img src="../images/flags/eeuu.jpg">16:00</p>
+            <p><p><img src="../images/flags/iran.jpg">Irán vs Estados Unidos<img src="../images/flags/eeuu.jpg">16:00</p>
             <p><center> 16:00 </center></p>
             <button class="cerrar" href="#" onclick="toggle9()">Cerrar</button>
         </div>
@@ -176,106 +176,134 @@
         <div id="popup10">
             <h1>Partidos correspondientes al dia 30 de noviembre del 2022</h1>
             <br>
-            <p>Túnez vs Francia 7:00</p>
-            <p>Australia vs Dinamarca 10:00</p>
-            <p>Polonia vs Argentina 16:00</p>
-            <p>Arabia Saudita vs México 16:00</p>
+            <p><img src="../images/flags/tunez.jpg">Túnez vs Francia<img src="../images/flags/francia.jpg"></p>
+            <p><center> 7:00 </center></p>
+            <p><img src="../images/flags/australia.jpg">Australia vs Dinamarca<img src="../images/flags/dinamarca.jpg"></p>
+            <p><center> 10:00 </center></p>
+            <p><img src="../images/flags/polonia.jpg">Polonia vs Argentina<img src="../images/flags/argentina.jpg"></p>
+            <p><center> 16:00 </center></p>
+            <p><img src="../images/flags/arabia.jpg">Arabia Saudita vs México<img src="../images/flags/mexico.jpg"></p>
+            <p><center> 16:00 </center></p>
             <button class="cerrar" href="#" onclick="toggle10()">Cerrar</button>
         </div>
 
         <div id="popup11">
             <h1>Partidos correspondientes al dia 1 de diciembre del 2022</h1>
             <br>
-            <p>Croacia vs Belgica 7:00</p>
-            <p>Canadá vs Marruecos 10:00</p>
-            <p>Japón vs España 16:00</p>
-            <p>Costa Rica vs Alemania 16:00</p>
+            <p><img src="../images/flags/croacia.jpg">Croacia vs Belgica<img src="../images/flags/belgica.jpg"></p>
+            <p><center> 7:00 </center></p>
+            <p><img src="../images/flags/canada.jpg">Canadá vs Marruecos<img src="../images/flags/marruecos.jpg"> 10:00</p>
+            <p><center> 10:00 </center></p>
+            <p><img src="../images/flags/japon.jpg">Japón vs España<img src="../images/flags/españa.jpg"> 16:00</p>
+            <p><center> 16:00 </center></p>
+            <p><img src="../images/flags/costa_rica.jpg">Costa Rica vs Alemania<img src="../images/flags/alemania.jpg"> 16:00</p>
+            <p><center> 16:00 </center></p>
             <button class="cerrar" href="#" onclick="toggle11()">Cerrar</button>
         </div>
 
         <div id="popup12">
             <h1>Partidos correspondientes al dia 2 de diciembre del 2022</h1>
             <br>
-            <p>Corea del Sur vs Portugal 7:00</p>
-            <p>Ghana vs Ghana 10:00</p>
-            <p>Camerún vs Brasil 16:00</p>
-            <p>Serbia vs Suiza 16:00</p>
+            <p><img src="../images/flags/korea.jpg">Corea del Sur vs Portugal<img src="../images/flags/portugal.jpg"></p>
+            <p><center> 7:00 </center></p>
+            <p><img src="../images/flags/uruguay.jpg">Uruguay vs Ghana<img src="../images/flags/ghana.jpg"></p>
+            <p><center> 10:00 </center></p>
+            <p><img src="../images/flags/camerun.jpg">Camerún vs Brasil<img src="../images/flags/brasil.jpg"></p>
+            <p><center> 16:00 </center></p>
+            <p><img src="../images/flags/serbia.jpg">Serbia vs Suiza<img src="../images/flags/suiza.jpg"></p>
+            <p><center> 16:00 </center></p>
             <button class="cerrar" href="#" onclick="toggle12()">Cerrar</button>
         </div>
 
         <div id="popup13">
             <h1>Partidos correspondientes al dia 3 de diciembre del 2022</h1>
             <br>
-            <p>Octavos de final - A definir 12:00</p>
-            <p>Octavos de final - A definir 16:00</p>
+            <p><img src="../images/flags/definir.jpg">Octavos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 12:00 </center></p>
+            <p><img src="../images/flags/definir.jpg">Octavos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle13()">Cerrar</button>
         </div>
 
         <div id="popup14">
             <h1>Partidos correspondientes al dia 4 de diciembre del 2022</h1>
             <br>
-            <p>Octavos de final - A definir 12:00</p>
-            <p>Octavos de final - A definir 16:00</p>
+            <p><img src="../images/flags/definir.jpg">Octavos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 12:00 </center></p>
+            <p><img src="../images/flags/definir.jpg">Octavos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle14()">Cerrar</button>
         </div>
 
         <div id="popup15">
             <h1>Partidos correspondientes al dia 5 de diciembre del 2022</h1>
             <br>
-            <p>Octavos de final - A definir 12:00</p>
-            <p>Octavos de final - A definir 16:00</p>
+            <p><img src="../images/flags/definir.jpg">Octavos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 12:00 </center></p>
+            <p><img src="../images/flags/definir.jpg">Octavos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle15()">Cerrar</button>
         </div>
 
         <div id="popup16">
             <h1>Partidos correspondientes al dia 6 de diciembre del 2022</h1>
             <br>
-            <p>Octavos de final - A definir 12:00</p>
-            <p>Octavos de final - A definir 16:00</p>
+            <p><img src="../images/flags/definir.jpg">Octavos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 12:00 </center></p>
+            <p><img src="../images/flags/definir.jpg">Octavos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle16()">Cerrar</button>
         </div>
 
         <div id="popup17">
             <h1>Partidos correspondientes al dia 9 de diciembre del 2022</h1>
             <br>
-            <p>Cuartos de final - A definir 12:00</p>
-            <p>Cuartos de final - A definir 16:00</p>
+            <p><img src="../images/flags/definir.jpg">Cuartos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 12:00 </center></p>
+            <p><img src="../images/flags/definir.jpg">Cuartos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle17()">Cerrar</button>
         </div>
 
         <div id="popup18">
             <h1>Partidos correspondientes al dia 10 de diciembre del 2022</h1>
             <br>
-            <p>Cuartos de final - A definir 12:00</p>
-            <p>Cuartos de final - A definir 16:00</p>
+            <p><img src="../images/flags/definir.jpg">Cuartos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 12:00 </center></p>
+            <p><img src="../images/flags/definir.jpg">Cuartos de final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle18()">Cerrar</button>
         </div>
 
         <div id="popup19">
             <h1>Partidos correspondientes al dia 13 de diciembre del 2022</h1>
             <br>
-            <p>Semifinal - A definir 16:00</p>
+            <p><img src="../images/flags/definir.jpg">Semifinal<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle19()">Cerrar</button>
         </div>
 
         <div id="popup20">
             <h1>Partidos correspondientes al dia 14 de diciembre del 2022</h1>
             <br>
-            <p>Semifinal - A definir 16:00</p>
+            <p><img src="../images/flags/definir.jpg">Semifinal<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle20()">Cerrar</button>
         </div>
 
         <div id="popup21">
             <h1>Partidos correspondientes al dia 17 de diciembre del 2022</h1>
             <br>
-            <p>3º y 4º puesto - A definir 12:00</p>
+            <p><img src="../images/flags/definir.jpg">3° y 4° puesto<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 16:00 </center></p><br><br><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle21()">Cerrar</button>
         </div>
 
         <div id="popup22">
             <h1>Partidos correspondientes al dia 17 de diciembre del 2022</h1>
             <br>
-            <p>FINAL - A definir 12:00</p>
+            <p><img src="../images/flags/definir.jpg">Final<img src="../images/flags/definir.jpg"></p>
+            <p><center> A definir - 12:00 </center></p><br><br><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle22()">Cerrar</button>
         </div>
 

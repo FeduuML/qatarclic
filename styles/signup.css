@@ -6,7 +6,6 @@
 }
 
 html,body{
-	
 	width:100%;
 }
 
@@ -21,12 +20,6 @@ body
     display:flex;
     justify-content: center;
     align-items: center;
-	
-}
-
-#bloque{
-    display: inline-block;
-	margin-top:10%;
 }
 
 .intro{
@@ -36,20 +29,9 @@ body
 	border-radius:10px;
 }
 
-.recuperar_contraseña{
-	width: 35%;
-    background:white;
-    padding: 30px;
-    margin: auto;
-    border-radius: 10px;
-    font-family:'calibri';
-    color:rgb(145, 28, 44);
-	margin-top: 12%;
-}
-
 section
 {
-    width: 35%;
+    width: 500px;
     background:white;
     padding: 30px;
     margin: auto;
