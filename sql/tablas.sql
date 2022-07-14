@@ -49,12 +49,15 @@ CREATE TABLE `comments` (
     `id` int(2) NOT NULL,
     `id_news` text NOT NULL,
     `user` varchar(20) NOT NULL,
-    `comments` text NOT NULL
+    `comments` text NOT NULL,
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE `news` (
     `id` int(2) NOT NULL,
     `user` varchar(20) NOT NULL,
     `title` text NOT NULL,
-    `content` text NOT NULL
+    `content` text NOT NULL,
+    `image` varchar (255) NOT NULL,
+    PRIMARY KEY (id)
 );
