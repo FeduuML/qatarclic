@@ -10,7 +10,7 @@
 ?>
 
 <html>
-<head>
+    <head>
         <meta charset="utf-8">
         <title>Qatar Clic</title>
         <link href="moderador.css" rel="stylesheet" type="text/css">
@@ -53,7 +53,7 @@
                 </div> 
             
                 <div class="calendario">
-                   <h1 class="text" id="calendario" onclick="calendario()">Calendario</h1>
+                   <h1 class="text" id="calendario">Calendario</h1>
                 </div>
 
                 <div class="qatar">
@@ -70,32 +70,97 @@
             </nav>
         </header>
 
-        <div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Email</th>
-                        <th>Username</th>
-                        <th>Role</th>
-                    </tr>
-                </thead>
+        <div id="blur">
+            <center><table class="table" id="table"></center>
+                <tr>
+                    <th onclick="sortTable(0)">ID</th>
+                    <th onclick="sortTable(1)">Correo electronico</th>
+                    <th onclick="sortTable(2)">Usuario</th>
+                    <th onclick="sortTable(3)">Rol</th>
+                    <th>Acciones</th>
+                </tr>
         
-                <tbody>
-                    <?php
-                        foreach($results as $result) {
-                    ?>
-                    <tr>
-                        <th><?php echo $result -> id ?></th>
-                        <th><?php echo $result -> email ?></th>
-                        <th><?php echo $result -> username ?></th>
-                        <th><?php echo $result -> rol_id ?></th>
-                    </tr>
-                    <?php
-                        }
-                    ?>
-                </tbody>
+                <?php
+                    foreach($results as $result) {
+                ?>
+                <tr>
+                    <td><?php echo $result -> id ?></td>
+                    <td><?php echo $result -> email ?></td>
+                    <td><?php echo $result -> username ?></td>
+                    <td><?php echo $result -> rol_id ?></td>
+                    <td>
+                        <?php echo('<button onclick="areYouSure()">Eliminar</button>');?>
+                    </td>
+                </tr>
+                <?php
+                    }
+                ?>
             </table>
+        </div>
+        <script src="../js/scroll.js"></script>
+        <script src="../js/index.js"></script>
+
+        <div id="popup">
+            <h1>¿Estas seguro de querer eliminar esta cuenta permanentemente?</h1>
+            <br>
+            <p>No hay vuelta atras!</p>
+            <button class="aceptar" onclick="aceptar()">Aceptar</button>
+            <button class="cancelar" onclick="areYouSure()">Cancelar</button>
         </div>
     </body>
 </html>
+
+<script>
+    var blur=document.getElementById('blur');
+    var popup = document.getElementById('popup');
+
+    function aceptar(){
+        
+    }
+
+    function areYouSure() {
+        blur.classList.toggle('active');
+        popup.classList.toggle('active');
+    }
+
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("table");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                    break;
+                    }
+                } 
+                else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                    break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount ++;
+            } 
+            else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+</script>
