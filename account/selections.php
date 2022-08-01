@@ -12,7 +12,7 @@
                 <div class= "grupoae">
                     <h1> Grupo A </h1>
                     <h2><img src="../images/flags/qatar.jpg"><a href="../teams/qatar/qatar_team.php">Qatar</a></h2>  
-                    <h2><img src="../images/flags/ecuador.jpg">Ecuador</h2>
+                    <h2><img src="../images/flags/ecuador.jpg"><a href="../teams/Ecuador/ecuador-team.php">Ecuador</a></h2>
                     <h2><img src="../images/flags/senegal.jpg">Senegal</h2>
                     <h2><img src="../images/flags/holanda.jpg">Holanda</h2>
                     
