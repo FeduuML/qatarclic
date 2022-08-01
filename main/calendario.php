@@ -1,17 +1,84 @@
 <?php
     session_start();
+
+    require '../account/database.php';
+
+    if(isset($_SESSION['user_id'])){
+        $user_id = $_SESSION['user_id'];
+
+        $sql = "SELECT * FROM users WHERE id = $user_id";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        
+        $username = $results['username'];
+    }
 ?>
 
 <html>
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="calendario.css" />
+        <title>Qatar Clic</title>
+        <link href="../styles/header.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
     </head>
 
     <body>
+        <header class="header" id="header">
+            <div class="wrapper">
+                <div class="logo"><?php require '../header/header.php';?></div>
+                <nav>
+                    <?php 
+                    if(isset($_SESSION['user_id'])){
+                        echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
+
+                        if($_SESSION['rol_id'] == 1){
+                            echo("<div id='user_options' style='height:80%;' class='user_options'><h1>$username</h1><hr><br><a href='moderador.php'>Gestionar usuarios</a><br><br><a href='../account/settings.php'>Ajustes</a><br><br><a href='../account/logout.php'>Cerrar sesion</a></div>");
+                        }
+                        else{
+                            echo("<div id='user_options' style='height:60%;' class='user_options'><h1>$username</h1><hr><br><a href='../account/settings.php'>Ajustes</a><br><br><a href='../account/logout.php'>Cerrar sesion</a></div>");
+                        }
+                    }
+                    else{
+                        echo("<a href='account/login.php'>Iniciar sesion</a>");
+                    } ?>
+                </nav>
+            </div>
+            <hr>
+            <nav class="navegador_general" id="navbar">
+                <div class="perfil">
+                    <h1 class="text">Perfil</h1>
+                </div>
+
+                <div class="fixture">
+                    <h1 class="text">Fixture</h1>
+                </div> 
+            
+                <div class="calendario">
+                   <h1 class="text" id="calendario" onclick="calendario()">Calendario</h1>
+                </div>
+
+                <div class="qatar">
+                    <h1 class="text">Sobre Qatar<h1>
+                </div>
+
+                <div class="selecciones">
+                    <h1 class="text">Selecciones<h1>
+                </div>
+
+                <div class="comunidad">
+                    <h1 class="text">Comunidad<h1>
+                </div>
+            </nav>
+        </header>
+
         <div class="container" id="blur">
             <div class="meses" id="mes-noviembre">
-                <h1>Noviembre 2022</h1>
+                <h1 class="mes">Noviembre 2022</h1>
                 <ol>
                     <li class="day-name">Lun</li>
                     <li class="day-name">Mar</li>
@@ -29,7 +96,7 @@
             </div>
 
             <div class="meses" id="mes-diciembre">
-                <h1>Diciembre 2022</h1>
+                <h1 class="mes">Diciembre 2022</h1>
                 <ol>
                     <li class="day-name">Lun</li>
                     <li class="day-name">Mar</li>
@@ -45,7 +112,11 @@
                     <li>15</li><li>16</li><li type="button" onclick="toggle21()">17</li><li type="button" onclick="toggle22()">18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li>
                 </ol>
             </div>
-        </div>   
+
+            <div class="display">
+                <p>a</p>
+            </div>
+        </div>
 
         <div id="popup1">
             <h1>Partidos correspondientes al dia 21 de noviembre del 2022</h1>
@@ -306,12 +377,16 @@
             <p><center> A definir - 12:00 </center></p><br><br><br><br><br><br><br>
             <button class="cerrar" href="#" onclick="toggle22()">Cerrar</button>
         </div>
-
-        
+        <script src="../js/scroll.js"></script>
+        <script src="../js/index.js"></script>
     </body>
 </html>
 
 <script>
+    function calendario(){
+        window.location.href = 'calendario.php'
+    }
+
     function toggle1() {
         var blur=document.getElementById('blur');
         blur.classList.toggle('active');

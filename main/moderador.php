@@ -3,6 +3,17 @@
 
     require '../account/database.php';
 
+    if(isset($_SESSION['user_id'])){
+        $user_id = $_SESSION['user_id'];
+
+        $sql = "SELECT * FROM users WHERE id = $user_id";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        
+        $username = $results['username'];
+    }
+
     $sql = "SELECT * FROM users";
     $query = $conn->prepare($sql);
     $query->execute();
@@ -31,7 +42,7 @@
                         echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
                         if($_SESSION['rol_id'] == 1){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/moderador.php'>Gestionar usuarios</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='moderador.php'>Gestionar usuarios</a><br><br><a href='../account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
                             echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='account/logout.php'>Cerrar sesion</a></div>");
@@ -53,7 +64,7 @@
                 </div> 
             
                 <div class="calendario">
-                   <h1 class="text" id="calendario">Calendario</h1>
+                    <h1 class="text" onclick='calendario()'>Calendario</h1>
                 </div>
 
                 <div class="qatar">
@@ -70,7 +81,7 @@
             </nav>
         </header>
 
-        <div id="blur">
+        <div>
             <center><table class="table" id="table"></center>
                 <tr>
                     <th onclick="sortTable(0)">ID</th>
@@ -89,7 +100,7 @@
                     <td><?php echo $result -> username ?></td>
                     <td><?php echo $result -> rol_id ?></td>
                     <td>
-                        <?php echo('<button onclick="areYouSure()">Eliminar</button>');?>
+                        <a href="dropAccount.php?id= <?=$result -> id ?>">Eliminar</a>
                     </td>
                 </tr>
                 <?php
@@ -99,28 +110,12 @@
         </div>
         <script src="../js/scroll.js"></script>
         <script src="../js/index.js"></script>
-
-        <div id="popup">
-            <h1>¿Estas seguro de querer eliminar esta cuenta permanentemente?</h1>
-            <br>
-            <p>No hay vuelta atras!</p>
-            <button class="aceptar" onclick="aceptar()">Aceptar</button>
-            <button class="cancelar" onclick="areYouSure()">Cancelar</button>
-        </div>
     </body>
 </html>
 
 <script>
-    var blur=document.getElementById('blur');
-    var popup = document.getElementById('popup');
-
-    function aceptar(){
-        
-    }
-
-    function areYouSure() {
-        blur.classList.toggle('active');
-        popup.classList.toggle('active');
+    function calendario(){
+        window.location.href = 'calendario.php'
     }
 
     function sortTable(n) {

@@ -26,7 +26,6 @@
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
     </head>
    
-
     <body>
        <header class="header" id="header">
             <div class="wrapper">
@@ -37,10 +36,10 @@
                         echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
                         if($_SESSION['rol_id'] == 1){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/moderador.php'>Gestionar usuarios</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' style='height:80%;' class='user_options'><h1>$username</h1><hr><br><a href='main/moderador.php'>Gestionar usuarios</a><br><br><a href='account/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' style='height:60%;' class='user_options'><h1>$username</h1><hr><br><a href='account/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                     }
                     else{

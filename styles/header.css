@@ -5,6 +5,7 @@
 	width:100%;
 	background:#ffffff;
 	transition: top 1s;
+	user-select: none;
 }
 
 .wrapper {
@@ -76,7 +77,6 @@
     margin-top: 5px;
     border-radius:10px;
     width:15%;
-    height:60%;
     display:none;
     background-color:rgb(214, 214, 214)
 }
@@ -282,4 +282,3 @@
 .link_calendario:visited { 
 	text-decoration: none; color:rgb(255, 255, 255); 
 }
-
