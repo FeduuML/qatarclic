@@ -39,9 +39,9 @@
 }
 
 .header nav > a:hover {
-	background:#181716;
+	background:black;
 	border-radius:50px;
-	color:rgb(255, 255, 255);
+	color:white;
 }
 
 .navicon_box{
@@ -92,7 +92,8 @@
 }
 
 .navegador_general{
-	background-color: white;
+	
+	background: rgba(42, 0, 10, 0.918);
 	top:0;
 	width:100%;
 	text-align:center;
@@ -107,7 +108,7 @@
 	background-repeat: no-repeat;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #000000 solid;
+	border: #eeeee4 solid;
 	transition: .4s;
 	display:inline-block;
 	position:relative;
@@ -134,7 +135,7 @@
 	margin-left:1.2%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #000000 solid;
+	border: #eeeee4 solid;
 	transition: .4s;
 	display:inline-block;
 	position:relative;
@@ -161,7 +162,7 @@
 	margin-left:1.2%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #000000 solid;
+	border: #eeeee4 solid;
 	transition: .4s;
 	display:inline-block;
 	position:relative;
@@ -188,7 +189,7 @@
 	margin-left:1.2%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #000000 solid;
+	border: #eeeee4 solid;
 	transition: .4s;
 	display:inline-block;
 	position:relative;
@@ -215,7 +216,7 @@
 	margin-left:1.2%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #000000 solid;
+	border: #eeeee4 solid;
 	transition: .4s;
 	display:inline-block;
 	position:relative;
@@ -242,7 +243,7 @@
 	margin-left:1.2%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #000000 solid;
+	border: #eeeee4 solid;
 	transition: .4s;
 	display:inline-block;
 	position:relative;
@@ -262,10 +263,10 @@
 .text{
 	width: 100%;
 	font-family: Yanone Kaffeesatz;
-	background-color: black;     
+	background-color: #eeeee4;     
 	margin-top:40%;     
 	text-align: center;
-	color:white;
+	color:black;
 	font-size: 5vh;
 	font-size: 2.3vw;
 	border-bottom-left-radius: 7px;
