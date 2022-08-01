@@ -11,7 +11,3 @@ window.onscroll = function() {
         prevScrollpos = currentScrollPos;
     }
 }
-
-function calendario(){
-    window.location.href = "main/calendario.php";
-}
