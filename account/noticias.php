@@ -2,6 +2,7 @@
     require 'database.php';
 
     if(isset($_POST['news'])):
+
         if(empty($_POST['title']) || empty($_POST['content']) || empty($_POST['image'])):
             echo 'Hay campos en blanco';
         else:
@@ -28,6 +29,7 @@
     <input name="news" type="submit" value="Crear noticia">
     <form enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]?>
     <input name="image" type="file">
+    <img src=' echo ['image']' 
     </form>';
 
     if(isset($_GET['id'])):
