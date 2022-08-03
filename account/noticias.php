@@ -1,9 +1,7 @@
 <?php
     require 'database.php';
-
     if(isset($_POST['news'])):
-
-        if(empty($_POST['title']) || empty($_POST['content']) || empty($_POST['image'])):
+        if(empty($_POST['title']) || empty($_POST['content']) || empty($_FILES['image'])):
             echo 'Hay campos en blanco';
         else:
             $title = $conn->prepare("SELECT title FROM news WHERE title = :title");
@@ -11,11 +9,11 @@
             $title->execute();
             if($title->fetchColumn() == $_POST['title']):
                 echo 'Existe una noticia con el mismo titulo';
-            else:
+           else:
                 $news = $conn->prepare("INSERT INTO news(title,content,image) VALUES (:title, :content, :image)");
                 $news->bindParam(':title',$_POST['title']);
                 $news->bindParam(':content',$_POST['content']);
-                $news->bindParam(':image',$_POST['image']);
+                $news->bindParam(':image',$_FILES['image']);
                 $news->execute();
                     echo 'Noticia creada correctamente';
             endif;
@@ -29,7 +27,6 @@
     <input name="news" type="submit" value="Crear noticia">
     <form enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]?>
     <input name="image" type="file">
-    <img src=' echo ['image']' 
     </form>';
 
     if(isset($_GET['id'])):
