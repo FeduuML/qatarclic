@@ -15,17 +15,8 @@ body
     position: relative;
     display: flex;
     margin-top:18%;
-    justify-content: left;
-    align-items: center;
+    justify-content: center;
     padding: 20px;
-}
-
-.display{
-    display:inline-block;
-    margin-left:20%;
-    width:300px;
-    height:300px;
-    background-color:black;
 }
 
 .container, .meses{
@@ -60,15 +51,18 @@ ol{
 }
   
 li{
+    color: rgb(31, 29, 29);
     font-size: 1.7vw;
     border: solid black 1px;
+    border-radius: 20px;
+    background-color: rgb(255, 234, 205);
 }
 
 li:hover{
     cursor: pointer;
-    background-color:rgb(165, 159, 159);
+    filter:brightness(50%);
 }
-  
+
 .mes{
     margin-bottom: 2px;
     padding: 0;
@@ -137,4 +131,9 @@ li:hover{
 
 .cerrar:hover{
 	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.group_ab{
+    background-color: red;
+    color: white;
 }
