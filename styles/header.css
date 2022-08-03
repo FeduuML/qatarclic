@@ -92,7 +92,6 @@
 }
 
 .navegador_general{
-	
 	background: rgba(42, 0, 10, 0.918);
 	top:0;
 	width:100%;
@@ -119,12 +118,6 @@
 	background-image: url('../images/noticias_darken.jpg');
 }
 
-.perfil h1:hover{
-	background-color: rgb(218, 218, 218);
-	color: black;
-	cursor: pointer;
-}
-
 .fixture{
 	width: 14.65%;
 	height: 19.2%;	
@@ -144,12 +137,6 @@
 .fixture:hover{
 	transition: .4s;
 	background-image: url('../images/fixture_darken.jpg');
-}
-
-.fixture h1:hover{
-	background-color: rgb(218, 218, 218);
-	color: black;
-    cursor: pointer;
 }
 
 .calendario{
@@ -173,12 +160,6 @@
 	background-image: url('../images/calendario_darken.jpg');
 }
 
-.calendario h1:hover{
-	background-color: rgb(218, 218, 218);
-	color: black;
-	cursor: pointer;
-}
-
 .qatar{
 	width: 14.65%;
 	height: 19.2%;		
@@ -198,12 +179,6 @@
 .qatar:hover{
 	transition: .4s;
 	background-image: url('../images/bandera_darken.jpg');
-}
-
-.qatar h1:hover{
-	background-color: rgb(218, 218, 218);
-	color: black;
-	cursor: pointer;
 }
 
 .selecciones{
@@ -227,12 +202,6 @@
 	background-image: url('../images/selecciones_darken.jpg');
 }
 
-.selecciones h1:hover{
-	background-color: rgb(218, 218, 218);
-	color: black;
-	cursor: pointer;
-}
-
 .comunidad{
 	width: 14.65%;
 	height: 19.2%;	
@@ -249,10 +218,12 @@
 	position:relative;
 }
 
-.comunidad h1:hover{
-	background-color: rgb(218, 218, 218);
+h1:hover{
+	background-color: rgb(173, 173, 173);
 	color: black;
 	cursor: pointer;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 }
 
 .comunidad:hover{
@@ -269,8 +240,8 @@
 	color:black;
 	font-size: 5vh;
 	font-size: 2.3vw;
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 	bottom: 0;
 	text-decoration: none;
 }

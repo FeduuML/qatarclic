@@ -40,7 +40,7 @@ content{
     position:relative;
     display:inline-block;
     width:100%;
-    height:90%;
+    height:68%;
 }
 
 aside{
@@ -55,13 +55,13 @@ aside{
     
 .title{
     text-align: center;
-    font-size: 40px;
+    font-size:3vw;
 }  
     
 .news{
     position:relative;
-    display:grid;
     width:75%;
+    height:100%;
     float:left;
     border-radius: 10px;
     background-color: white;
@@ -75,26 +75,28 @@ aside{
 }
 
 .news_image{
+    width:30vw;
     padding: 20px;
 }
 
 .text_news{
-  margin-top: 20px ;
-  margin-left: 55px;
-  position: relative;
-  height: 40px;
-  width: 1000px;
-  background-color: #eeeee4;
-  border-radius: 8px;
-  align-content: center;
+    margin-top:3%;
+    position: relative;
+    height:40px;
+    width:100%;
+    background-color: #eeeee4;
+    border-radius: 8px;
+    align-content: center;
 }
 
 .text_news p{
     text-align: center;
     padding: 10px;
-    font-size: 22px;
+    font-size: 1.5vw;
     color: black;
 }
+
 .simbolo{
     text-align: center;
+    width:100%;
 }

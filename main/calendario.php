@@ -48,7 +48,7 @@
                     } ?>
                 </nav>
             </div>
-            <hr>
+
             <nav class="navegador_general" id="navbar">
                 <div class="perfil">
                     <h1 class="text">Perfil</h1>
@@ -90,7 +90,7 @@
 
                     <li class="first-day-november">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
                     <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
-                    <li type="button" onclick="toggle1()">21</li><li type="button" onclick="toggle2()">22</li><li type="button" onclick="toggle3()">23</li><li type="button" onclick="toggle4()">24</li><li type="button" onclick="toggle5()">25</li><li type="button" onclick="toggle6()">26</li><li type="button" onclick="toggle7()">27</li>
+                    <li class="group_ab" type="button" onclick="toggle1()">21</li><li type="button" onclick="toggle2()">22</li><li type="button" onclick="toggle3()">23</li><li type="button" onclick="toggle4()">24</li><li type="button" onclick="toggle5()">25</li><li type="button" onclick="toggle6()">26</li><li type="button" onclick="toggle7()">27</li>
                     <li type="button" onclick="toggle8()">28</li><li type="button" onclick="toggle9()">29</li><li type="button" onclick="toggle10()">30</li>
                 </ol>
             </div>
@@ -111,10 +111,6 @@
                     <li type="button" onclick="toggle17()">9</li><li type="button" onclick="toggle18()">10</li><li>11</li><li>12</li><li type="button" onclick="toggle19()">13</li><li type="button" onclick="toggle20()">14</li>
                     <li>15</li><li>16</li><li type="button" onclick="toggle21()">17</li><li type="button" onclick="toggle22()">18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li>
                 </ol>
-            </div>
-
-            <div class="display">
-                <p>a</p>
             </div>
         </div>
 
