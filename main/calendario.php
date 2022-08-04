@@ -84,6 +84,8 @@
 
         <div id="showReferences">
             <center><h1>Referencias</h1></center>
+            <ol><li class="match">Hola</li></ol>
+            <ol><li class="match">Hola</li></ol>
         </div>
 
         <div class="container" id="blur">
@@ -98,10 +100,36 @@
                     <li class="day-name">Sab</li>
                     <li class="day-name">Dom</li>
 
-                    <li class="first-day-november">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
-                    <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li>
-                    <li class="group_ab" type="button" onclick="toggle1()">21</li><li type="button" onclick="toggle2()">22</li><li type="button" onclick="toggle3()">23</li><li type="button" onclick="toggle4()">24</li><li type="button" onclick="toggle5()">25</li><li type="button" onclick="toggle6()">26</li><li type="button" onclick="toggle7()">27</li>
-                    <li type="button" onclick="toggle8()">28</li><li type="button" onclick="toggle9()">29</li><li type="button" onclick="toggle10()">30</li>
+                    <li class="day" id="first-day-november">1</li>
+                    <li class="day">2</li>
+                    <li class="day">3</li>
+                    <li class="day">4</li>
+                    <li class="day">5</li>
+                    <li class="day">6</li>
+                    <li class="day">7</li>
+                    <li class="day">8</li>
+                    <li class="day">9</li>
+                    <li class="day">10</li>
+                    <li class="day">11</li>
+                    <li class="day">12</li>
+                    <li class="day">13</li>
+                    <li class="day">14</li>
+                    <li class="day">15</li>
+                    <li class="day">16</li>
+                    <li class="day">17</li>
+                    <li class="day">18</li>
+                    <li class="day">19</li>
+                    <li class="day">20</li>
+                    <li class="day" id="group_ab" type="button" onclick="toggle1()">21</li>
+                    <li class="day" type="button" onclick="toggle2()">22</li>
+                    <li class="day" type="button" onclick="toggle3()">23</li>
+                    <li class="day" type="button" onclick="toggle4()">24</li>
+                    <li class="day" type="button" onclick="toggle5()">25</li>
+                    <li class="day" type="button" onclick="toggle6()">26</li>
+                    <li class="day" type="button" onclick="toggle7()">27</li>
+                    <li class="day" type="button" onclick="toggle8()">28</li>
+                    <li class="day" type="button" onclick="toggle9()">29</li>
+                    <li class="day" type="button" onclick="toggle10()">30</li>
                 </ol>
             </div>
 
@@ -116,10 +144,37 @@
                     <li class="day-name">Sab</li>
                     <li class="day-name">Dom</li>
 
-                    <li class="first-day-december" type="button" onclick="toggle11()">1</li><li type="button" onclick="toggle12()">2</li><li type="button" onclick="toggle13()">3</li>
-                    <li type="button" onclick="toggle14()">4</li><li type="button" onclick="toggle15()">5</li><li type="button" onclick="toggle16()">6</li><li>7</li><li>8</li>
-                    <li type="button" onclick="toggle17()">9</li><li type="button" onclick="toggle18()">10</li><li>11</li><li>12</li><li type="button" onclick="toggle19()">13</li><li type="button" onclick="toggle20()">14</li>
-                    <li>15</li><li>16</li><li type="button" onclick="toggle21()">17</li><li type="button" onclick="toggle22()">18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li>
+                    <li class="day" id="first-day-december" type="button" onclick="toggle11()">1</li>
+                    <li class="day" type="button" onclick="toggle12()">2</li>
+                    <li class="day" type="button" onclick="toggle13()">3</li>
+                    <li class="day" type="button" onclick="toggle14()">4</li>
+                    <li class="day" type="button" onclick="toggle15()">5</li>
+                    <li class="day" type="button" onclick="toggle16()">6</li>
+                    <li class="day">7</li>
+                    <li class="day">8</li>
+                    <li class="day" type="button" onclick="toggle17()">9</li>
+                    <li class="day" type="button" onclick="toggle18()">10</li>
+                    <li class="day" >11</li>
+                    <li class="day" >12</li>
+                    <li class="day" type="button" onclick="toggle19()">13</li>
+                    <li class="day" type="button" onclick="toggle20()">14</li>
+                    <li class="day">15</li>
+                    <li class="day">16</li>
+                    <li class="day" type="button" onclick="toggle21()">17</li>
+                    <li class="day" type="button" onclick="toggle22()">18</li>
+                    <li class="day">19</li>
+                    <li class="day">20</li>
+                    <li class="day">21</li>
+                    <li class="day">22</li>
+                    <li class="day">23</li>
+                    <li class="day">24</li>
+                    <li class="day">25</li>
+                    <li class="day">26</li>
+                    <li class="day">27</li>
+                    <li class="day">28</li>
+                    <li class="day">29</li>
+                    <li class="day">30</li>
+                    <li class="day">31</li>
                 </ol>
             </div>
         </div>
