@@ -14,7 +14,7 @@
                     <h2><img src="../images/flags/qatar.jpg"><a href="../teams/qatar/qatar_team.php">Qatar</a></h2>  
                     <h2><img src="../images/flags/ecuador.jpg"><a href="../teams/Ecuador/ecuador-team.php">Ecuador</a></h2>
                     <h2><img src="../images/flags/senegal.jpg"><a href="../teams/Senegal/senegal-team.php">Senegal</a></h2>
-                    <h2><img src="../images/flags/holanda.jpg">Holanda</h2>
+                    <h2><img src="../images/flags/holanda.jpg"><a href="../teams/Senegal/senegal-team.php">Holanda</a></h2>
                     
                     <br>
                     

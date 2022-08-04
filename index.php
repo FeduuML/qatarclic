@@ -111,12 +111,12 @@ $desde = @$_GET['pag'] * 20;
         while($news1 = $news->fetch(PDO::FETCH_ASSOC)):
             echo '<h1>'.$news1['title'].'</h1>';
             echo '<h2>'.$news1['content'].'</h2>';
-            echo '<img src="data:image/jpg;base64, '.base64_encode($news1['image']);
+            echo '<img src="data:image/jpg;base64,'.base64_encode($news1['image']).'"/>';
         endwhile;
 ?>
 
 <script>
     function calendario(){
-        window.location.href="main/calendario.php"
+        window.location.href="main/calendario.php";
     }
 </script>
