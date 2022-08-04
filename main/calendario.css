@@ -89,7 +89,7 @@ ol{
     padding: 10px;
 }
   
-li{
+.day, .day-name{
     color: rgb(31, 29, 29);
     font-size: 1.7vw;
     border: solid black 1px;
@@ -97,7 +97,7 @@ li{
     background-color: rgb(255, 234, 205);
 }
 
-li:hover{
+.day:hover, .day-name:hover{
     cursor: pointer;
     filter:brightness(50%);
 }
@@ -108,10 +108,11 @@ li:hover{
     font-size:2.5vw;
 }
   
-.first-day-november{
+#first-day-november{
     grid-column-start: 6;
 }
-.first-day-december{
+
+#first-day-december{
     grid-column-start: 5;
 }
   
