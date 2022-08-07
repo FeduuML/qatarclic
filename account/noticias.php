@@ -1,6 +1,25 @@
 <?php
     require 'database.php';
     if(isset($_POST['news'])):
+        $news = $conn->prepare("INSERT INTO news(image) VALUES (:image)");
+        $news->bindParam(':image',$_FILES['image']);
+        $images=$_FILES['image']['name'];
+        $tmp_dir=$_FILES['image']['tmp_name'];
+        $imageSize=$_FILES['image']['size'];
+        $imagetype=$_FILES['image']['type'];
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+        $allowed = array('jpg','jpeg','png','gif');
+        if(in_array($fileActualExt, $allowed)):
+            if($filesize < 1000000):
+                echo "El archivo es muy grande";
+
+            $filenamenew = uniqid('',true).".".$fileActualExt;
+            $filedestination = 'imágenes/'.$filenamenew;
+            move_uploaded_file($tmp_dir, $filedestination); 
+            header("Location: ../index.php");
+            endif;
+        endif;
         if(empty($_POST['title']) || empty($_POST['content']) || empty($_FILES['image'])):
             echo 'Hay campos en blanco';
         else:
