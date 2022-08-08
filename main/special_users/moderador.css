@@ -24,11 +24,11 @@ body
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
+    background-color: #545f5b;
     color: white;
 }
 
 .table th:hover{
-    background-color: #1a805a;
+    background-color: #393f3c;
     cursor:pointer;
 }

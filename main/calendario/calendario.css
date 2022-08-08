@@ -1,5 +1,6 @@
 *
 {
+    font-family: Yanone Kaffeesatz;
  	padding: 0px;
  	margin: 0px;
  	box-sizing: border-box;
@@ -44,10 +45,28 @@ body
     display:none;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    margin-top:2%;
-    width:15%;
-    height:50%;
+    margin-top:-2%;
+    left:0;
+    font-size:1.2vw;
+    padding:10px;
     background-color:white;
+}
+
+.table{
+    top:0;
+    bottom:0;
+    margin:auto;
+}
+
+.table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size:1vw;
+    text-align: center;
+    background-color: #545f5b;
+    color: white;
 }
 
 .container{
@@ -60,7 +79,6 @@ body
 
 .container, .meses{
     text-align: center;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .meses{
@@ -91,7 +109,7 @@ ol{
   
 .day, .day-name{
     color: rgb(31, 29, 29);
-    font-size: 1.7vw;
+    font-size:2vw;
     border: solid black 1px;
     border-radius: 20px;
     background-color: rgb(255, 234, 205);
@@ -114,12 +132,13 @@ ol{
 
 #first-day-december{
     grid-column-start: 5;
+    background-color:#A9A9A9;
 }
   
 .day-name{
     background: #eee;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 2vw;
     padding: 4px;
     text-align: center;
     margin-bottom: 15px;
@@ -131,15 +150,23 @@ ol{
     user-select: none;
 }
 
+.references#blur2.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
 #popup1, #popup2, #popup3, #popup4, #popup5, #popup6, #popup7, #popup8, #popup9, #popup10, #popup11, #popup12,  #popup13, #popup14, #popup15, #popup16,
 #popup16, #popup17, #popup18, #popup19,  #popup20, #popup21, #popup22{
     position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width:800px;
-    height:500px;
-    padding: 50px;
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-30%);
+    width:50%;
+    height:60%;
+    text-align:center;
+    font-size:1.2vw;
+    padding:25px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
     background: #fff;
     visibility: hidden;
@@ -158,14 +185,13 @@ ol{
 
 .cerrar{
     width: 30%;
+    font-size:1.5vw;
     background: rgb(145, 28, 44);
     color: #ffffff;
-    padding: 7px ;
-    margin-top:19%;
+    padding: 7px;
+    margin-top:10%;
     border-radius: 10px;
-    margin-bottom: 4%;
     border: 1px solid #ffffff;
-    font-family:'calibri'; 
 	cursor: pointer;
 }
 
@@ -173,7 +199,26 @@ ol{
 	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 }
 
-.group_ab{
-    background-color: red;
-    color: white;
+#grupos{
+    background-color:#A9A9A9;
+}
+
+#octavos{
+    background: linear-gradient(135deg,#1100ff 10%, #ff7b00);
+}
+
+#cuartos{
+    background: linear-gradient(135deg,#fffb00, #cc00ff);
+}
+
+#semifinal{
+    background: linear-gradient(135deg,#ff0000 10%, #33ff00);
+}
+
+#tercerpuesto{
+    background: linear-gradient(135deg,#ffffff 10%, #000000);
+}
+
+#final{
+    background: linear-gradient(135deg,#fcc742 10%, #ff6004);
 }

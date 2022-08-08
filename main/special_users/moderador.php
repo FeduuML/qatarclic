@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require '../account/database.php';
+    require '../../account/database.php';
 
     if(isset($_SESSION['user_id'])){
         $user_id = $_SESSION['user_id'];
@@ -25,7 +25,7 @@
         <meta charset="utf-8">
         <title>Qatar Clic</title>
         <link href="moderador.css" rel="stylesheet" type="text/css">
-        <link href="../styles/header.css" rel="stylesheet" type="text/css">
+        <link href="../../styles/header.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,25 +35,24 @@
     <body>
         <header class="header" id="header">
             <div class="wrapper">
-                <div class="logo"><?php require '../header/header.php';?></div>
+                <div class="logo"><?php require '../../header/header.php';?></div>
                 <nav>
                     <?php 
                     if(isset($_SESSION['user_id'])){
                         echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
                         if($_SESSION['rol_id'] == 1){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='moderador.php'>Gestionar usuarios</a><br><br><a href='../account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='moderador.php'>Gestionar usuarios</a><br><br><a href='../settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../settings.php'>Ajustes</a><a href='../../account/logout.php'>Cerrar sesion</a></div>");
                         }
                     }
                     else{
-                        echo("<a href='account/login.php'>Iniciar sesion</a>");
+                        echo("<a href='../../account/login.php'>Iniciar sesion</a>");
                     } ?>
                 </nav>
             </div>
-            <hr>
             <nav class="navegador_general" id="navbar">
                 <div class="perfil">
                     <h1 class="text">Perfil</h1>
@@ -108,14 +107,14 @@
                 ?>
             </table>
         </div>
-        <script src="../js/scroll.js"></script>
-        <script src="../js/index.js"></script>
+        <script src="../../js/scroll.js"></script>
+        <script src="../../js/index.js"></script>
     </body>
 </html>
 
 <script>
     function calendario(){
-        window.location.href = 'calendario.php'
+        window.location.href = '../calendario/calendario.php'
     }
 
     function sortTable(n) {
