@@ -1,5 +1,5 @@
 <?php
-    require '../account/database.php';
+    require '../../account/database.php';
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];

@@ -37,10 +37,10 @@
                             echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
                             if($_SESSION['rol_id'] == 1){
-                                echo("<div id='user_options' style='height:80%;' class='user_options'><h1>$username</h1><hr><br><a href='main/moderador.php'>Gestionar usuarios</a><br><br><a href='account/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                echo("<div id='user_options' style='height:80%;' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                             }
                             else{
-                                echo("<div id='user_options' style='height:60%;' class='user_options'><h1>$username</h1><hr><br><a href='account/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                echo("<div id='user_options' style='height:60%;' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                             }
                         }
                         else{
@@ -80,7 +80,12 @@
         <content>
             <aside>
                 <h2 class="title">Seleccion</h2>
-                <p>Hola</p>
+                <br>
+                <p>Mi seleccion:</p>
+                <br><br><br>
+                <p>Goleador de mi seleccion:</p>
+                <br><br><br>
+                <p>Proximo partido:
             </aside>
 
             <section class="news">
@@ -109,9 +114,13 @@ $desde = @$_GET['pag'] * 20;
             $news->execute();
 
         while($news1 = $news->fetch(PDO::FETCH_ASSOC)):
-            echo '<h1>'.$news1['title'].'</h1>';
+            echo'<h1>'.$news1['title'].'</h1>';
             echo '<h2>'.$news1['content'].'</h2>';
+
             echo '<h2>'.$news1['date'].'</h2>';
+
+            echo '<img src="data:image/png;base64,'.base64_encode($news1['image']).'"/>';
+
         endwhile;
 ?>
 
@@ -120,7 +129,7 @@ $desde = @$_GET['pag'] * 20;
 
 <script>
     function calendario(){
-        window.location.href="main/calendario.php";
+        window.location.href="main/calendario/calendario.php";
     }
     function selections(){
         window.location.href="account/selections.php";
