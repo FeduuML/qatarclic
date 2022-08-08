@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="selecciones">
-                        <h1 class="text">Selecciones<h1>
+                        <h1 class="text" id="selections" onclick="selections()">Selecciones<h1>
                     </div>
 
                     <div class="comunidad">
@@ -105,18 +105,24 @@
 require 'account/database.php';
 $desde = @$_GET['pag'] * 20;
             $hasta = (@$_GET['pag'] * 20) + 20;
-            $news = $conn->prepare("SELECT id,title,content, image FROM news LIMIT $desde,$hasta");
+            $news = $conn->prepare("SELECT * FROM news where date (date)");
             $news->execute();
 
         while($news1 = $news->fetch(PDO::FETCH_ASSOC)):
             echo '<h1>'.$news1['title'].'</h1>';
             echo '<h2>'.$news1['content'].'</h2>';
-            echo '<img src="data:image/jpg;base64,'.base64_encode($news1['image']).'"/>';
+            echo '<h2>'.$news1['date'].'</h2>';
         endwhile;
 ?>
+
+<div> <img src="../images/mundo.png"> </div>
+
 
 <script>
     function calendario(){
         window.location.href="main/calendario.php";
+    }
+    function selections(){
+        window.location.href="account/selections.php";
     }
 </script>

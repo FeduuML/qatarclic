@@ -51,31 +51,5 @@
 <h2><img src="../Ecuador/images/11jordy.png">11 - Jordy Caicedo 24 años</h2>
 <h2><img src="../Ecuador/images/9.png">9 - Leonardo Campana 22 años</h2>
 <h2><img src="../Ecuador/images/10djorkaeff.png">10 - Djorkaeff Reasco 23 años</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

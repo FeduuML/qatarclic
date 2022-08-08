@@ -1,7 +1,7 @@
 <?php
     require 'database.php';
     if(isset($_POST['news'])):
-        if(empty($_POST['title']) || empty($_POST['content']) || empty($_FILES['image'])):
+        if(empty($_POST['title']) || empty($_POST['content']) || empty($_POST['image'])):
             echo 'Hay campos en blanco';
         else:
             $title = $conn->prepare("SELECT title FROM news WHERE title = :title");
@@ -13,14 +13,13 @@
                 $news = $conn->prepare("INSERT INTO news(title,content,image) VALUES (:title, :content, :image)");
                 $news->bindParam(':title',$_POST['title']);
                 $news->bindParam(':content',$_POST['content']);
-                $news->bindParam(':image',$_FILES['image']);
+                $news->bindParam(':image',$_POST['image']);
                 $news->execute();
                     echo 'Noticia creada correctamente';
             endif;
         endif;
     endif;
 
-  
     echo '<form action="" method="post">
     <input name="title" placeholder="Titulo de la noticia"><br>
     <textarea name="content" placeholder="Contenido de la noticia" rows="10" cols="40"></textarea><br>
@@ -40,7 +39,7 @@
 
             $desde = @$_GET['pag'] * 10;
             $hasta = (@$_GET['pag'] * 10) + 10;
-            $news = $conn->prepare("SELECT id,title FROM news LIMIT $desde,$hasta");
+            $news = $conn->prepare("SELECT id,title FROM news where date (date)");
             $news->execute();
 
         while($news1 = $news->fetch(PDO::FETCH_ASSOC)):
