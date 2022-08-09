@@ -59,5 +59,6 @@ CREATE TABLE `news` (
     `title` text NOT NULL,
     `content` text NOT NULL,
     `image` varchar (255) NOT NULL,
+    `date` date NOT NULL,
     PRIMARY KEY (id)
 );

@@ -107,30 +107,26 @@
 </html>
 
 <?php
-require 'account/database.php';
-$desde = @$_GET['pag'] * 20;
-            $hasta = (@$_GET['pag'] * 20) + 20;
-            $news = $conn->prepare("SELECT * FROM news where date (date)");
-            $news->execute();
+    require 'account/database.php';
 
-        while($news1 = $news->fetch(PDO::FETCH_ASSOC)):
-            echo'<h1>'.$news1['title'].'</h1>';
-            echo '<h2>'.$news1['content'].'</h2>';
+    $desde = @$_GET['pag'] * 20;
+    $hasta = (@$_GET['pag'] * 20) + 20;
+    $news = $conn->prepare("SELECT * FROM news where date (date)");
+    $news->execute();
 
-            echo '<h2>'.$news1['date'].'</h2>';
-
-            echo '<img src="data:image/png;base64,'.base64_encode($news1['image']).'"/>';
-
-        endwhile;
+    while($news1 = $news->fetch(PDO::FETCH_ASSOC)):
+        echo'<h1>'.$news1['title'].'</h1>';
+        echo '<h2>'.$news1['content'].'</h2>';
+        echo '<h2>'.$news1['date'].'</h2>';
+        echo '<img src="data:image/png;base64,'.base64_encode($news1['image']).'"/>';
+    endwhile;
 ?>
-
-<div> <img src="../images/mundo.png"> </div>
-
 
 <script>
     function calendario(){
         window.location.href="main/calendario/calendario.php";
     }
+    
     function selections(){
         window.location.href="account/selections.php";
     }

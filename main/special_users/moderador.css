@@ -3,6 +3,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: Yanone Kaffeesatz;
 }
 
 body
@@ -14,7 +15,6 @@ body
 .table {
     width:100%;
     margin-top:21%;
-    font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
 }
   
@@ -23,6 +23,7 @@ body
     padding: 8px;
     padding-top: 12px;
     padding-bottom: 12px;
+    font-size:1.5vw;
     text-align: left;
     background-color: #545f5b;
     color: white;
