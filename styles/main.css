@@ -60,12 +60,11 @@ aside{
     
 .news{
     position:relative;
-    width:75%;
+    width:45%;
     height:65%;
-    float:left;
     border-radius: 10px;
     background-color: white;
-    margin-left:2.3%;
+    margin-left:30%;
     padding: 0.5%;
     color: #8a1538
 }
