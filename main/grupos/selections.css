@@ -6,44 +6,143 @@ body
 .cuadrados
 {
     width: 800px;  
-    height: 460px;
-    background-color: rgb(184, 22, 22); 
+    height: 460px; 
     margin-left: 220px;
-    color: white;
+    color:#F5F5DC;
     
 } 
-.grupoae{
+.grupoa{
     width: 200px;  
-    height: 380px;
+    height: 250px;
     display: inline-block;
     position: absolute;
     font-size: 12px;  
     color: black;
+    background-color: #e3dad5;
+    border-radius: 15%;
+    margin-top: 70px;
+    text-align: center;
 }
-.grupobf{
+.grupoa .imagen_bandera{
+    float: left;
+    margin-left: 25px;
+}
+.grupoe{
     width: 200px;  
-    height: 380px;
+    height: 250px;
     display: inline-block;
     position: absolute;
-    margin-left: 200px;
-    font-size: 12px;
+    font-size: 12px;  
     color: black;
+    background-color:  #e3dad5   ;
+    border-radius: 15%;
+    margin-top: 335px;
+    text-align: center;
 }
-.grupocg{
+
+.grupoe .imagen_bandera{
+    float: left;
+    margin-left: 25px;
+}
+.grupob{
     width: 200px;  
-    height: 380px;
+    height: 250px;
     display: inline-block;
     position: absolute;
-    margin-left: 400px;
+    margin-left: 235px;
     font-size: 12px;
     color: black;
+    background-color:#e3dad5;
+    border-radius: 15%;
+    margin-top: 34px;
+    text-align: center;
+
 }
-.grupodh{
+.grupob .imagen_bandera{
+    float: left;
+    margin-left: 25px;
+}
+.grupof{
     width: 200px;  
-    height: 380px;
+    height: 250px;
     display: inline-block;
     position: absolute;
-    margin-left: 600px;
+    margin-left: 235px;
     font-size: 12px;
     color: black;
+    background-color:#e3dad5;
+    border-radius: 15%;
+    margin-top: 300px;
+    text-align: center;
+}
+.grupof .imagen_bandera{
+    float: left;
+    margin-left: 25px;
+}
+.grupoc{
+    width: 200px;  
+    height: 250px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 470px;
+    font-size: 12px;
+    color: black;
+    background-color:#e3dad5;
+    border-radius: 15%;
+    text-align: center;
+}
+.grupoc .imagen_bandera{
+    float: left;
+    margin-left: 25px;
+}
+.grupog{
+    width: 200px;  
+    height: 250px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 470px;
+    font-size: 12px;
+    color: black;
+    background-color:#e3dad5;
+    border-radius: 15%;
+    margin-top: 265px;
+    text-align: center;
+}
+.grupog .imagen_bandera{
+    float: left;
+    margin-left: 25px;
+}
+.grupod{
+    width: 200px;  
+    height: 250px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 710px;
+    font-size: 12px;
+    color: black;
+    background-color:#e3dad5;
+    border-radius: 15%;
+    margin-top: -35px;
+    text-align: center;
+}
+.grupod .imagen_bandera{
+    float: left;
+    margin-left: 25px;
+}
+.grupoh{
+    width: 200px;  
+    height: 250px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 710px;
+    font-size: 12px;
+    color: black;
+    background-color: #e3dad5;
+    border-radius: 15%;
+    margin-top: 230px;
+    text-align: center;
+}
+.grupoh .imagen_bandera{
+    float: left;
+    margin-left: 25px;
 }
