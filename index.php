@@ -106,22 +106,33 @@
     </body>
 </html>
 
-<?php
-    require 'account/database.php';
+<?php 
+			$stmt=$conn->prepare('SELECT * FROM news ORDER BY id DESC');
+				$stmt->execute();
+				if($stmt->rowCount()>0)
+				{
+					while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+					{
+						extract($row);
+						?>
+			<div class="col-sm-3">
+			<p><?php echo $username ?></p>
+			<img src="../uploads/<?php echo $row['picProfile']?>"><br><br>			
+			</div>
 
-    $desde = @$_GET['pag'] * 20;
-    $hasta = (@$_GET['pag'] * 20) + 20;
-    $news = $conn->prepare("SELECT * FROM news where date (date)");
-    $news->execute();
+			<?php 
 
-    while($news1 = $news->fetch(PDO::FETCH_ASSOC)):
-        echo'<h1>'.$news1['title'].'</h1>';
-        echo '<h2>'.$news1['content'].'</h2>';
-        echo '<h2>'.$news1['date'].'</h2>';
-        echo '<img src="data:image/png;base64,'.base64_encode($news1['image']).'"/>';
-    endwhile;
-?>
+				}
+			}
+			?>
+		</div>
 
+	</div>
+</div>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
 <script>
     function calendario(){
         window.location.href="main/calendario/calendario.php";
