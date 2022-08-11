@@ -79,10 +79,21 @@
         <script src="../../js/scroll.js"></script>
         <script src="../../js/index.js"></script>
 
-        <div class="changename">
-            <h1>Cambiar nombre de usuario</h1>
+        <div class="wrap">
+            <div class="changename">
+                <h1>Cambiar nombre de usuario</h1>
+                <button onclick="changename()">Cambiar nombre de usuario</button>
+                <br><br>
+                <span id="changedname">No podrás cambiarlo de nuevo en 48 horas</span>
+            </div>
+
+            <div class="changepass">
+                <h1>Cambiar contraseña</h1>
+                <button onclick="changepass()">Cambiar contraseña</button>
+                <br><br>
+                <span id="changedpass">No podrás cambiarla de nuevo en 48 horas</span>
+            </div>
         </div>
-        
     </body>
 </html>
 
@@ -90,4 +101,23 @@
     function calendario(){
         window.location.href="../calendario/calendario.php";
     }
+
+    function changename(){
+        window.location.href="changename.php";
+    }
+
+    function changepass(){
+        window.location.href="changepass.php";
+    }
 </script>
+
+<?php
+    if(isset($_GET['val'])){
+        if($_GET['val']==1){
+            echo('<script>document.getElementById("changedpass").innerHTML="La contraseña ha sido cambiada";</script>');
+        }
+        else if($_GET['val']==2){
+            echo('<script>document.getElementById("changedname").innerHTML="El nombre de usuario ha sido cambiado";</script>');
+        }
+    }
+?>
