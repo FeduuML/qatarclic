@@ -97,25 +97,30 @@
 }
 
 .navegador_general{
-	height:100%;
-	background: rgba(42, 0, 10, 0.918);
+	height:440%;
 	width:100%;
+	background: rgba(16, 2, 44, 0.918);
+    display: inline;
+	position: absolute;
 	text-align:center;
 }
 
 .perfil{
 	width: 14.65%;
-	height: 19.2%;	
+	height: 55%;
+	display:flexbox;
+	justify-content:center;
+	position:absolute;
+	margin-left: 2%;
+	margin-top:1.05%;
+	
+ 	
 	border-radius: 10px;
+	
 	background-image: url('../images/noticias.jpg');
     background-size:100% 100%;
 	background-repeat: no-repeat;
-	margin-top:1%;
-	margin-bottom:1%;
-	border: #eeeee4 solid;
 	transition: .4s;
-	display:inline-block;
-	position:relative;
 }
 
 .perfil:hover{
@@ -125,126 +130,137 @@
 
 .fixture{
 	width: 14.65%;
-	height: 19.2%;	
-	border-radius: 10px;
-	background-image: url('../images/fixture.jpg');
-    background-size:100% 100%;
-	background-repeat: no-repeat;
-	margin-left:1.2%;
+	height: 55%;
+	display:flexbox;
+	position:absolute;
+	margin-left:18%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #eeeee4 solid;
+
+	border-radius: 10px;
+	background-image: url('../images/fixture_violeta.png');
+    background-size:100% 100%;
+	background-repeat: no-repeat;
 	transition: .4s;
-	display:inline-block;
-	position:relative;
 }
 
 .fixture:hover{
 	transition: .4s;
-	background-image: url('../images/fixture_darken.jpg');
 }
 
 .calendario{
 	width: 14.65%;
-	height: 19.2%;	
-	border-radius: 10px;
-	background-image: url('../images/calendario_bordo.jpg');
-    background-size:100% 100%;
-	background-repeat: no-repeat;
-	margin-left:1.2%;
+	height: 55%;
+	display:flexbox;
+	position:absolute;
+	margin-left:34%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #eeeee4 solid;
+
+
+	border-radius: 10px;
+	background-image: url('../images/calendario_bordo.png');
+    background-size:100% 100%;
+	background-repeat: no-repeat;
 	transition: .4s;
-	display:inline-block;
-	position:relative;
 }
 
 .calendario:hover{
 	transition: .4s;
-	background-image: url('../images/calendario_darken.jpg');
+	
 }
 
 .qatar{
 	width: 14.65%;
-	height: 19.2%;		
-	border-radius: 10px;
-	background-image: url('../images/bandera.jpg');
-    background-size:100% 100%;
-	background-repeat: no-repeat;
-	margin-left:1.2%;
+	height: 55%;
+	display:flexbox;
+	position:absolute;
+	margin-left:50%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #eeeee4 solid;
+	
+	border-radius: 10px;
+	background-image: url('../images/qatar_rosa.png');
+    background-size:100% 100%;
+	background-repeat: no-repeat;
 	transition: .4s;
-	display:inline-block;
-	position:relative;
 }
 
 .qatar:hover{
 	transition: .4s;
-	background-image: url('../images/bandera_darken.jpg');
+	
 }
+
 
 .selecciones{
 	width: 14.65%;
-	height: 19.2%;		
-	border-radius: 10px;
-	background-image: url('../images/selecciones.jpg');
-    background-size:100% 100%;
-	background-repeat: no-repeat;
-	margin-left:1.2%;
+	height: 55%;	
+	display:flexbox;
+	position:absolute;
+	margin-left:66%;
 	margin-top:1%;
 	margin-bottom:1%;
-	border: #eeeee4 solid;
+
+	border-radius: 10px;
+	background-image: url('../images/selecciones.png');
+    background-size:100% 100%;
+	background-repeat: no-repeat;
+	
+	/*border: #eeeee4 solid;*/
 	transition: .4s;
-	display:inline-block;
-	position:relative;
 }
 
 .selecciones:hover{
 	transition: .4s;
-	background-image: url('../images/selecciones_darken.jpg');
 }
 
 .comunidad{
 	width: 14.65%;
-	height: 19.2%;	
+	height: 55%;	
+	display:flexbox;
+	position:absolute;
+	margin-left:82%;
+	margin-top:1%;
+	margin-bottom:1%;
+
 	border-radius: 10px;
 	background-image: url('../images/comunidad.jpg');
     background-size:100% 100%;
 	background-repeat: no-repeat;
-	margin-left:1.2%;
-	margin-top:1%;
-	margin-bottom:1%;
-	border: #eeeee4 solid;
+
+	/*border: #eeeee4 solid;*/
 	transition: .4s;
-	display:inline-block;
-	position:relative;
 }
 
-.text:hover{
-	background-color: rgb(173, 173, 173);
-	color: black;
-	cursor: pointer;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-}
 
 .comunidad:hover{
 	transition: .4s;
 	background-image: url('../images/comunidad_darken.jpg');
 }
 
+.text_nav{
+	width: 100%;
+	font-family: Yanone Kaffeesatz;    
+	margin-top:1.5%; 
+	margin-left: 2%;    
+	text-align: left;
+	color: #eeeee4;     
+	font-size: 5vh;
+	font-size: 1.5vw;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	bottom: 0;
+	text-decoration: none;
+}
+
 .text{
 	width: 100%;
-	font-family: Yanone Kaffeesatz;
-	background-color: #eeeee4;     
-	margin-top:40%;     
-	text-align: center;
-	color:black;
+	font-family: Yanone Kaffeesatz;    
+	margin-top:55%;     
+	text-align: left;
+	color: #eeeee4;     
 	font-size: 5vh;
-	font-size: 2.3vw;
+	font-size: 1.8vw;
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 	bottom: 0;

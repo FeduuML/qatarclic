@@ -49,9 +49,12 @@
                     </nav>
                 </div>
 
-                <nav class="navegador_general" id="navbar">
-                    <div class="perfil">
-                        <h1 class="text">Perfil</h1>
+            <nav class="navegador_general" id="navbar">
+
+                <h1 class="text_nav">Mundial de Qatar 2022</h1>
+
+                    <div class="perfil" >
+                        <h1 class="text" >Perfil</h1>
                     </div>
 
                     <div class="fixture">
@@ -73,7 +76,9 @@
                     <div class="comunidad">
                         <h1 class="text">Comunidad<h1>
                     </div>
-                </nav>
+
+             </nav>
+
             </header>
         </div>
      
