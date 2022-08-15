@@ -1,0 +1,41 @@
+*
+{
+    font-family: Yanone Kaffeesatz;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+}
+
+body
+{
+    background: rgba(42, 0, 10, 0.918);
+    background-attachment: fixed;
+}
+
+.wrap{
+    width:100%;
+    margin-top:5%;
+}
+
+.changename, .changepass{
+    padding:50px;
+    background-color:white;
+    width:30%;
+    display:inline-block;
+    text-align:center;
+    border-radius:20px;
+    vertical-align: middle;
+}
+
+.changepass{
+    margin-left:10%;
+}
+
+.changename{
+    margin-left:15%;
+}
