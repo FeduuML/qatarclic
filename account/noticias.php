@@ -48,16 +48,21 @@ if(isset($_POST['btn-add']))
 			<form method="post" enctype="multipart/form-data">
 				<label>Usuario</label>
 				<input type="text" name="user" class="form-control" required="">
-                <label>Titulo</label>
+                <br>
+				<label>Titulo</label>
                 <input type="text" name="title" class="form-control" required="">
-                <label>Contenido</label>
+                <br>
+				<label>Contenido</label>
                 <input type="text" name="content" class="form-control" required="">
+				<br>
 				<label>Imagen</label>
 				<input type="file" name="image" class="form-control" required="" accept="*/image">
-				<button type="submit" name="btn-add">Subir</button>				
+				<br>
+				<div class="subir">
+				<button type="submit" name="btn-add">Subir</button></div>				
 			</form>
 		</div>
-		<hr style="border-top: 2px red solid;">
+		
 	</div>	
 
 <div class="container">
@@ -77,6 +82,11 @@ if(isset($_POST['btn-add']))
 						?>
 			<div class="col-sm-3">
 
-
+			<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Qatar Clic</title>
+        <link href="../styles/noticias.css" rel="stylesheet" type="text/css">
+    </head></html>
 
         
