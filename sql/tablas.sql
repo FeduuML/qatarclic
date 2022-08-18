@@ -45,14 +45,6 @@ INSERT INTO `teams` VALUES
 ('25', 'Brasil', 'G'),('26', 'Serbia', 'G'),('27', 'Suiza', 'G'),('28','Camerun', 'G'),
 ('29', 'Portugal', 'H'),('30', 'Ghana', 'H'),('31', 'Uruguay', 'H'),('32','Corea del Sur', 'H');
 
-CREATE TABLE `comments` (
-    `id` int(2) NOT NULL,
-    `id_news` text NOT NULL,
-    `user` varchar(20) NOT NULL,
-    `comments` text NOT NULL,
-    PRIMARY KEY (id)
-);
-
 CREATE TABLE `news` (
     `id` int(2) NOT NULL,
     `user` varchar(20) NOT NULL,
@@ -62,3 +54,37 @@ CREATE TABLE `news` (
     `date` date NOT NULL,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE players-ecuador (
+    id int(2) NOT NULL AUTO_INCREMENT,
+    nombre varchar(50) NOT NULL,
+    numero int(2) NOT NULL,
+    edad int(2) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO `players-ecuador` VALUES
+('1', 'Hernán Galíndez', '1', '35'),('2', 'Alexander Domínguez', '22', '35'),('3', 'Piero Hincapié', '3', '20'),('4','Félix Torres', '2', '25'),
+('5', 'Jackson Porozo', '14', '21'),('6', 'Robert Arboleda', '4', '30'),('7', 'Xavier Arreaga', '14', '27'),('8','Pervis Estupiñán', '7', '24'),
+('9', 'Diego Palacios', '18', '23'),('10', 'Byron Castillo', '6', '23'),('11', 'Angelo Preciado', '17', '24'),('12','Carlos Gruezo', '8', '27'),
+('13', 'Jhegson Méndez', '32', '25'),('14', 'Dixon Arroyo', '5', '30'),('15', 'José Cifuentes', '20', '23'),('16', 'Moisés Caicedo', '23', '20'),
+('17', 'Alan Franco', '21', '23'),('18', 'Jeremy Sarmiento', '16', '20'),('19', 'Romario Ibarra', '10', '27'),('20','Alexander Alvarado', '5', '23'),
+('21', 'Gonzalo Plata', '19', '21'),('22', 'Ángel Mena', '15', '34'),('23', 'Michael Estrada', '11', '26'),('24','Enner Valencia', '13', '32'),
+('25', 'Jordy Caicedo', '11', '24'),('26', 'Leonardo Campana', '9', '22'),('27', 'Djorkaeff Reasco', '10', '23');
+
+CREATE TABLE players-holanda (
+    id int(2) NOT NULL AUTO_INCREMENT,
+    nombre varchar(50) NOT NULL,
+    numero int(2) NOT NULL,
+    edad int(2) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO `players-holanda` VALUES
+('1', 'Mark Flekken', '13', '29'),('2', 'Jasper Cillesen', '1', '33'),('3', 'Kjell Scherpen', '23', '22'),('4','Matthijs de Ligt', '3', '22'),
+('5', 'Jurrien Timber', '2', '21'),('6', 'Stefan de Vrij', '6', '30'),('7', 'Nathan Aké', '6', '27'),('8','Jordan Teze', '2', '22'),
+('9', 'Bruno Martins Indi', '4', '30'),('10', 'Tyrell Malacia', '5', '22'),('11', 'Daley Blind', '17', '32'),('12','Hans Hateboer', '15', '28'),
+('13', 'Jhegson Méndez', '32', '25'),('14', 'Dixon Arroyo', '5', '30'),('15', 'José Cifuentes', '20', '23'),('16', 'Moisés Caicedo', '23', '20'),
+('17', 'Alan Franco', '21', '23'),('18', 'Jeremy Sarmiento', '16', '20'),('19', 'Romario Ibarra', '10', '27'),('20','Alexander Alvarado', '5', '23'),
+('21', 'Gonzalo Plata', '19', '21'),('22', 'Ángel Mena', '15', '34'),('23', 'Michael Estrada', '11', '26'),('24','Enner Valencia', '13', '32'),
+('25', 'Jordy Caicedo', '11', '24'),('26', 'Leonardo Campana', '9', '22'),('27', 'Djorkaeff Reasco', '10', '23');
