@@ -144,6 +144,6 @@
     }
     
     function selections(){
-        window.location.href="account/selections.php";
+        window.location.href="main/grupos/selections.php";
     }
 </script>

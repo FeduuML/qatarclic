@@ -79,7 +79,7 @@
                     <h2 class="contornos"><img class="imagen_bandera"src="../../images/flags/portugal.jpg">Portugal</h2>  
                     <h2 class="contornos"><img class="imagen_bandera"src="../../images/flags/ghana.jpg">Ghana</h2>
                     <h2 class="contornos"><img class="imagen_bandera"src="../../images/flags/uruguay.jpg">Uruguay</h2>
-                    <h2 class="contornos">  <img class="imagen_bandera"src="../../images/flags/korea.jpg">Korea del Sur</h2>   
+                    <h2 class="contornos"><img class="imagen_bandera"src="../../images/flags/korea.jpg">Korea del Sur</h2>   
                 </div>
                     <br>
                     
