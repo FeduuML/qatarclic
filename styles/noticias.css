@@ -1,0 +1,16 @@
+body
+{
+	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
+	background-attachment: fixed;
+}
+.add-form{
+    width: 800px;  
+    height: 460px; 
+    margin-left: 220px;
+    margin-top: 80px;
+    background-color:#ffffff;  
+}
+.text-center{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}

@@ -1,8 +1,7 @@
 <html>
     <head>
         <title>Qatar clic</title>
-        <link href="../Teams/Ecuador/qatar_team.css" rel="stylesheet" type="text/css">
-        <link href="../styles/header.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head> 
 
@@ -10,12 +9,14 @@
 
 <h1> Ecuador </h1>
 
-        <h2> ARQUEROS </h2>
 
-
-<h2><img src="../Ecuador/images/12.png">12 - Moisés Ramírez   21 años</h2>
-<h2><img src="../Ecuador/images/1.png">1 - Hernán Galíndez  35 años</h2>
-<h2><img src="../Ecuador/images/22.png">22 - Alexander Domínguez 35 años</h2>
+<div class="arqueros"> ARQUEROS 
+    <div ><img src="../Ecuador/images/12.png">
+    <p> 12 - Moisés Ramírez</p> 
+    <p>21 años</p><br></div>
+    <h2><img src="../Ecuador/images/1.png">1 - Hernán Galíndez  35 años</h2>
+    <h2><img src="../Ecuador/images/22.png">22 - Alexander Domínguez 35 años</h2>
+</div>
 
         <h2> DEFENSORES </h2>
 

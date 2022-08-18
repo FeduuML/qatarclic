@@ -96,22 +96,7 @@
             <section class="news">
                 <h2 class="title">Noticias</h2>
                 <hr>
-                <div class="news_image_box">
-                    <img class="news_image" src="images/fixture.jpg">
-                </div>
-                <hr>
-                 
-                <div class="text_news">
-                    <p>¿Cuales seran los equipos que pasaran a la siguiente ronda?</p>
-                </div>
-            </section>
-        </content>
-        <script src="js/scroll.js"></script>
-        <script src="js/index.js"></script>
-    </body>
-</html>
-
-<?php 
+                <?php 
 			$stmt=$conn->prepare('SELECT * FROM news ORDER BY id DESC');
 				$stmt->execute();
 				if($stmt->rowCount()>0)
@@ -121,8 +106,11 @@
 						extract($row);
 						?>
 			<div class="col-sm-3">
-			<p><?php echo $username ?></p>
-			<img src="../uploads/<?php echo $row['picProfile']?>"><br><br>			
+            <p><?php echo '<h1><center>'.$title.'</center></h1>'?></p>			
+            <p><?php echo '<h4>'.$date.'</h4>' ?></p>
+            <p><?php echo '<h4>'.$row['user'].'</h4>' ?></p>
+            <p><?php echo '<h3><center>'.$content.'</center></h3>' ?></p>
+			<?php echo '<center><img src="uploads/'.$row['image'].'"</center><br><br>'?>		
 			</div>
 
 			<?php 
@@ -135,6 +123,22 @@
 	</div>
 </div>
 
+                <div class="news_image_box">
+                    <img class="news_image" src="images/fixture.jpg">
+                </div>
+                
+                <hr>
+                 
+                <div class="text_news">
+                    <p>¿Cuales seran los equipos que pasaran a la siguiente ronda?</p>
+                </div>
+            </section>
+        </content>
+        <script src="js/scroll.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
+
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
@@ -144,6 +148,6 @@
     }
     
     function selections(){
-        window.location.href="account/selections.php";
+        window.location.href="main/grupos/selections.php";
     }
 </script>
