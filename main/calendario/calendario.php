@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="selecciones">
-                    <h1 class="text">Selecciones<h1>
+                    <h1 class="text" id="selections" onclick="selections()">Selecciones<h1>
                 </div>
 
                 <div class="comunidad">
@@ -449,3 +449,13 @@
         <script src="../../js/index.js"></script>
     </body>
 </html>
+
+<script>
+    function calendario(){
+        window.location.href="calendario.php";
+    }
+    
+    function selections(){
+        window.location.href="../grupos/selections.php";
+    }
+</script>
