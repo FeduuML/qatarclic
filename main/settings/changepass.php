@@ -186,6 +186,8 @@
     
                 if($records->execute()){
                     $result = $records->fetch(PDO::FETCH_ASSOC);
+                    $update = $conn->prepare("UPDATE `users` SET cooldown_password = CURRENT_TIMESTAMP() WHERE username = '$username'");
+                    $update->execute();
                     echo('<script>window.location.href = "settings.php?val=1";</script>');
                 }
             }

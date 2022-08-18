@@ -39,3 +39,15 @@ body
 .changename{
     margin-left:15%;
 }
+
+#changename, #changepass{
+    border-radius:10px;
+    width:10vw;
+    height:5vh;
+    background-color:rgb(217, 217, 217)
+}
+
+#changename:hover, #changepass:hover{
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+    cursor:pointer;
+}

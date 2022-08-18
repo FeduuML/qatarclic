@@ -138,7 +138,7 @@
 	margin-bottom:1%;
 
 	border-radius: 10px;
-	background-image: url('../images/fixture_violeta.png');
+	background-image: url('../images/calendario_bordo.png');
     background-size:100% 100%;
 	background-repeat: no-repeat;
 	transition: .4s;
@@ -159,7 +159,7 @@
 
 
 	border-radius: 10px;
-	background-image: url('../images/calendario_bordo.png');
+	background-image: url('../images/fixture_violeta.png');
     background-size:100% 100%;
 	background-repeat: no-repeat;
 	transition: .4s;
@@ -228,7 +228,6 @@
     background-size:100% 100%;
 	background-repeat: no-repeat;
 
-	/*border: #eeeee4 solid;*/
 	transition: .4s;
 }
 
