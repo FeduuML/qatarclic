@@ -86,7 +86,7 @@ INSERT INTO `players-holanda` VALUES
 ('1', 'Mark Flekken', '13', '29'),('2', 'Jasper Cillesen', '1', '33'),('3', 'Kjell Scherpen', '23', '22'),('4','Matthijs de Ligt', '3', '22'),
 ('5', 'Jurrien Timber', '2', '21'),('6', 'Stefan de Vrij', '6', '30'),('7', 'Nathan Aké', '6', '27'),('8','Jordan Teze', '2', '22'),
 ('9', 'Bruno Martins Indi', '4', '30'),('10', 'Tyrell Malacia', '5', '22'),('11', 'Daley Blind', '17', '32'),('12','Hans Hateboer', '15', '28'),
-('13', 'Jhegson Méndez', '32', '25'),('14', 'Dixon Arroyo', '5', '30'),('15', 'José Cifuentes', '20', '23'),('16', 'Moisés Caicedo', '23', '20'),
-('17', 'Alan Franco', '21', '23'),('18', 'Jeremy Sarmiento', '16', '20'),('19', 'Romario Ibarra', '10', '27'),('20','Alexander Alvarado', '5', '23'),
-('21', 'Gonzalo Plata', '19', '21'),('22', 'Ángel Mena', '15', '34'),('23', 'Michael Estrada', '11', '26'),('24','Enner Valencia', '13', '32'),
-('25', 'Jordy Caicedo', '11', '24'),('26', 'Leonardo Campana', '9', '22'),('27', 'Djorkaeff Reasco', '10', '23');
+('13', 'Teun Koopmeiners', '20', '24'),('14', 'Jerdy Schouten', '18', '25'),('15', 'Frenkie de Jong', '21', '25'),('16', 'Denzel Dumfries', '22', '26'),
+('17', 'Steven Berghuis', '11', '30'),('18', 'Davy Klaassen', '14', '29'),('19', 'Guus Til', '8', '24'),('20','Cody Gakpo', '9', '23'),
+('21', 'Noa Lang', '12', '23'),('22', 'Steven Bergwijn', '7', '24'),('23', 'Memphis Depay', '10', '28'),('24','Wout Weghworst', '19', '30'),
+('25', 'Vincent Janssen', '16', '28');
