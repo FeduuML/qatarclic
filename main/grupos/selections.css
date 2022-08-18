@@ -18,14 +18,15 @@ body
     position: absolute;
     font-size: 12px;  
     color: black;
-    background-color: #e3dad5;
-    border-radius: 15%;
+    background-color: #ffffff;
+    border-radius: 50px;
     margin-top: 70px;
     text-align: center;
 }
 .grupoa .imagen_bandera{
     float: left;
     margin-left: 25px;
+   
 }
 .grupoe{
     width: 200px;  
@@ -34,7 +35,7 @@ body
     position: absolute;
     font-size: 12px;  
     color: black;
-    background-color:  #e3dad5   ;
+    background-color:  #ffffff   ;
     border-radius: 15%;
     margin-top: 335px;
     text-align: center;
@@ -52,7 +53,7 @@ body
     margin-left: 235px;
     font-size: 12px;
     color: black;
-    background-color:#e3dad5;
+    background-color:#ffffff;
     border-radius: 15%;
     margin-top: 34px;
     text-align: center;
@@ -70,7 +71,7 @@ body
     margin-left: 235px;
     font-size: 12px;
     color: black;
-    background-color:#e3dad5;
+    background-color:#ffffff;
     border-radius: 15%;
     margin-top: 300px;
     text-align: center;
@@ -87,7 +88,7 @@ body
     margin-left: 470px;
     font-size: 12px;
     color: black;
-    background-color:#e3dad5;
+    background-color:#ffffff;
     border-radius: 15%;
     text-align: center;
 }
@@ -103,7 +104,7 @@ body
     margin-left: 470px;
     font-size: 12px;
     color: black;
-    background-color:#e3dad5;
+    background-color:#ffffff;
     border-radius: 15%;
     margin-top: 265px;
     text-align: center;
@@ -120,7 +121,7 @@ body
     margin-left: 710px;
     font-size: 12px;
     color: black;
-    background-color:#e3dad5;
+    background-color:#ffffff;
     border-radius: 15%;
     margin-top: -35px;
     text-align: center;
@@ -137,7 +138,7 @@ body
     margin-left: 710px;
     font-size: 12px;
     color: black;
-    background-color: #e3dad5;
+    background-color: #ffffff;
     border-radius: 15%;
     margin-top: 230px;
     text-align: center;
@@ -145,4 +146,16 @@ body
 .grupoh .imagen_bandera{
     float: left;
     margin-left: 25px;
+}
+
+.text_group{
+    text-decoration: none;
+}  
+.contornos{
+    width: 190px;  
+    height: 25px;
+    background-color: rgb(238, 238, 228);
+    border-radius: 15px;
+    margin-left: 4px;
+    text-align: center;
 }
