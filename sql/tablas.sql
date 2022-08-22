@@ -57,36 +57,44 @@ CREATE TABLE `news` (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE players-ecuador (
-    id int(2) NOT NULL AUTO_INCREMENT,
-    nombre varchar(50) NOT NULL,
+CREATE TABLE `players` (
+    id int(3) NOT NULL AUTO_INCREMENT,
+    nombre varchar(75) NOT NULL,
+    pais varchar(30) NOT NULL,
     numero int(2) NOT NULL,
     edad int(2) NOT NULL,
     PRIMARY KEY(id)
 );
 
-INSERT INTO `players-ecuador` VALUES
-('1', 'Hernán Galíndez', '1', '35'),('2', 'Alexander Domínguez', '22', '35'),('3', 'Piero Hincapié', '3', '20'),('4','Félix Torres', '2', '25'),
-('5', 'Jackson Porozo', '14', '21'),('6', 'Robert Arboleda', '4', '30'),('7', 'Xavier Arreaga', '14', '27'),('8','Pervis Estupiñán', '7', '24'),
-('9', 'Diego Palacios', '18', '23'),('10', 'Byron Castillo', '6', '23'),('11', 'Angelo Preciado', '17', '24'),('12','Carlos Gruezo', '8', '27'),
-('13', 'Jhegson Méndez', '32', '25'),('14', 'Dixon Arroyo', '5', '30'),('15', 'José Cifuentes', '20', '23'),('16', 'Moisés Caicedo', '23', '20'),
-('17', 'Alan Franco', '21', '23'),('18', 'Jeremy Sarmiento', '16', '20'),('19', 'Romario Ibarra', '10', '27'),('20','Alexander Alvarado', '5', '23'),
-('21', 'Gonzalo Plata', '19', '21'),('22', 'Ángel Mena', '15', '34'),('23', 'Michael Estrada', '11', '26'),('24','Enner Valencia', '13', '32'),
-('25', 'Jordy Caicedo', '11', '24'),('26', 'Leonardo Campana', '9', '22'),('27', 'Djorkaeff Reasco', '10', '23');
+INSERT INTO `players` VALUES
+('1', 'Hernán Galíndez', 'Ecuador', '1', '35'),('2', 'Alexander Domínguez', 'Ecuador', '22', '35'),('3', 'Piero Hincapié', 'Ecuador', '3', '20'),('4','Félix Torres', 'Ecuador', '2', '25'),
+('5', 'Jackson Porozo', 'Ecuador', '14', '21'),('6', 'Robert Arboleda', 'Ecuador', '4', '30'),('7', 'Xavier Arreaga', 'Ecuador', '14', '27'),('8','Pervis Estupiñán', 'Ecuador', '7', '24'),
+('9', 'Diego Palacios', 'Ecuador', '18', '23'),('10', 'Byron Castillo', 'Ecuador', '6', '23'),('11', 'Angelo Preciado', 'Ecuador', '17', '24'),('12','Carlos Gruezo', 'Ecuador', '8', '27'),
+('13', 'Jhegson Méndez', 'Ecuador', '32', '25'),('14', 'Dixon Arroyo', 'Ecuador', '5', '30'),('15', 'José Cifuentes', 'Ecuador', '20', '23'),('16', 'Moisés Caicedo', 'Ecuador', '23', '20'),
+('17', 'Alan Franco', 'Ecuador', '21', '23'),('18', 'Jeremy Sarmiento', 'Ecuador', '16', '20'),('19', 'Romario Ibarra', 'Ecuador', '10', '27'),('20','Alexander Alvarado', 'Ecuador', '5', '23'),
+('21', 'Gonzalo Plata', 'Ecuador', '19', '21'),('22', 'Ángel Mena', 'Ecuador', '15', '34'),('23', 'Michael Estrada', 'Ecuador', '11', '26'),('24','Enner Valencia', 'Ecuador', '13', '32'),
+('25', 'Jordy Caicedo', 'Ecuador', '11', '24'),('26', 'Leonardo Campana', 'Ecuador', '9', '22'),('27', 'Djorkaeff Reasco', 'Ecuador', '10', '23');
 
-CREATE TABLE players-holanda (
-    id int(2) NOT NULL AUTO_INCREMENT,
-    nombre varchar(50) NOT NULL,
-    numero int(2) NOT NULL,
-    edad int(2) NOT NULL,
-    PRIMARY KEY(id)
-);
+('28', 'Mark Flekken', 'Holanda', '13', '29'),('29', 'Jasper Cillesen', 'Holanda', '1', '33'),('30', 'Kjell Scherpen', 'Holanda', '23', '22'),('31','Matthijs de Ligt', 'Holanda', '3', '22'),
+('32', 'Jurrien Timber', 'Holanda', '2', '21'),('33', 'Stefan de Vrij', 'Holanda', '6', '30'),('34', 'Nathan Aké', 'Holanda', '6', '27'),('35','Jordan Teze', 'Holanda', '2', '22'),
+('36', 'Bruno Martins Indi', 'Holanda', '4', '30'),('37', 'Tyrell Malacia','Holanda', '5', '22'),('38', 'Daley Blind', 'Holanda', '17', '32'),('39','Hans Hateboer', 'Holanda', '15', '28'),
+('40', 'Teun Koopmeiners', 'Holanda', '20', '24'),('41', 'Jerdy Schouten', 'Holanda', '18', '25'),('42', 'Frenkie de Jong', 'Holanda', '21', '25'),('43', 'Denzel Dumfries',  'Holanda', '22', '26'),
+('44', 'Steven Berghuis',  'Holanda', '11', '30'),('45', 'Davy Klaassen',  'Holanda', '14', '29'),('46', 'Guus Til',  'Holanda', '8', '24'),('47','Cody Gakpo',  'Holanda', '9', '23'),
+('48', 'Noa Lang',  'Holanda', '12', '23'),('49', 'Steven Bergwijn',  'Holanda', '7', '24'),('50', 'Memphis Depay',  'Holanda', '10', '28'),('51','Wout Weghworst',  'Holanda', '19', '30'),
+('52', 'Vincent Janssen',  'Holanda','16', '28');
 
-INSERT INTO `players-holanda` VALUES
-('1', 'Mark Flekken', '13', '29'),('2', 'Jasper Cillesen', '1', '33'),('3', 'Kjell Scherpen', '23', '22'),('4','Matthijs de Ligt', '3', '22'),
-('5', 'Jurrien Timber', '2', '21'),('6', 'Stefan de Vrij', '6', '30'),('7', 'Nathan Aké', '6', '27'),('8','Jordan Teze', '2', '22'),
-('9', 'Bruno Martins Indi', '4', '30'),('10', 'Tyrell Malacia', '5', '22'),('11', 'Daley Blind', '17', '32'),('12','Hans Hateboer', '15', '28'),
-('13', 'Teun Koopmeiners', '20', '24'),('14', 'Jerdy Schouten', '18', '25'),('15', 'Frenkie de Jong', '21', '25'),('16', 'Denzel Dumfries', '22', '26'),
-('17', 'Steven Berghuis', '11', '30'),('18', 'Davy Klaassen', '14', '29'),('19', 'Guus Til', '8', '24'),('20','Cody Gakpo', '9', '23'),
-('21', 'Noa Lang', '12', '23'),('22', 'Steven Bergwijn', '7', '24'),('23', 'Memphis Depay', '10', '28'),('24','Wout Weghworst', '19', '30'),
-('25', 'Vincent Janssen', '16', '28');
+('53', 'Saad Abdullah Al Sheeb', 'Qatar', '1', '32'),('54', 'Yousef Hassan Mohamed Ali', 'Qatar', '21', '26'),('55', 'Meshaal Aissa Barsham', 'Qatar', '22', '24'),('56','Pedro Miguel Correia', 'Qatar', '2', '31'),
+('57', 'Abdelkarim Hassan Al Haj Fadlalla', 'Qatar', '3', '28'),('58', 'Mohammed Waed Abdulwahhab Al Bayati', 'Qatar', '4', '22'),('59', 'Salem Ali Al Hajri', 'Qatar', '7', '26'),('60','Mosaab Khoder Jibril', 'Qatar', '13', '28'),
+('61', 'Bassam Hisham Al Riwi', 'Qatar', '15', '24'),('62', 'Boualem Khoukhi', 'Qatar', '16', '32'),('63', 'Ahmed Fathy', 'Qatar', '8', '29'),('64','Terek Salman', 'Qatar', '5', '24'),
+('65', 'Hazem Ahmed Shehata', 'Qatar', '6', '24'),('66', 'Ali Assadalla Thaimn Qambar', 'Qatar', '8', '29'),('67', 'Abdulrahman Mohamed Fahmi Moutafa', 'Qatar', '9', '25'),('68', 'Karim Boudiaf', 'Qatar', '12', '31'),
+('69', 'Homam Alamin Ahmed', 'Qatar', '14', '22'),('70', 'Naif Abdulraheem Al Hadhrami', 'Qatar', '18', '22'),('71', 'Abdullah Abdulsalam Alahrak', 'Qatar', '20', '25'),('72','Assim Omer Al Haj Madibo', 'Qatar', '23', '25'),
+('73', 'Mohammed Alaa Eldin Abdelmotaal', 'Qatar', '23', '28'),('74', 'Ahmed Alaa Eldin Abdelmotaal', 'Qatar', '7', '29'),('75', 'Khalid Muneer Mazeed', 'Qatar', '10', '29'),('76','Akram Hassan Afif', 'Qatar', '11', '25'),
+('77', 'Ismael Mohammad Mohammad', 'Qatar', '17', '28'),('78', 'Yusuf Abdurisag', 'Qatar', '17', '22'),('79', 'Almoez Ali Zainalabiddin Abdulla', 'Qatar', '19', '25');
+
+('80', 'Edouard Mendy ', 'Senegal', '16', '30'),('81', 'Alfred Gomis', 'Senegal', '16', '28'),('82', 'Seny Dieng', 'Senegal', '1', '27'),('83','Kalidou Koulibaly', 'Senegal', '3', '31'),
+('84', 'Abdou Diallo', 'Senegal', '22', '26'),('85', 'Pape Abou Cissé', 'Senegal', '4', '26'),('86', 'Abdoulaye Seck', 'Senegal', '14', '30'),('87','Alpha Dionkou ', 'Senegal', '2', '20'),
+('88', 'Fodé Ballo-Touré', 'Senegal', '12', '25'),('89', 'Saliou Ciss', 'Senegal', '2', '32'),('90', 'Youssouf Sabaly', 'Senegal', '12', '29'),('91','Pape Gueye', 'Senegal', '26', '23'),
+('92', 'Nampalys Mendy', 'Senegal', '6', '30'),('93', 'Cheikhou Kouyaté', 'Senegal', '8', '32'),('94', 'Mamadou Loum', 'Senegal', '25', '25'),('95', 'Moustapha Name', 'Senegal', '24', '27'),
+('96', 'Pape Matar Sarr', 'Senegal', '17', '19'),('97', 'Idrissa Gueye', 'Senegal', '5', '32'),('98', 'Iliman Ndiaye', 'Senegal', '29', '22'),('99','Sadio Mané', 'Senegal', '10', '30'),
+('100', 'Ismaïla Sarr', 'Senegal', '18', '24'),('101', 'Demba Seck', 'Senegal', '23', '21'),('102', 'Boulaye Dia', 'Senegal', '9', '25'),('103','Habib Diallo', 'Senegal', '11', '27'),
+('104', 'Famara Diédhiou', 'Senegal', '19', '29'),('105', 'Keita Baldé', 'Senegal', '7', '27');

@@ -123,7 +123,7 @@
 	</div>
 </div>
 
-                <div class="news_image_box">
+                <!--<div class="news_image_box">
                     <img class="news_image" src="images/fixture.jpg">
                 </div>
                 
@@ -132,6 +132,7 @@
                 <div class="text_news">
                     <p>¿Cuales seran los equipos que pasaran a la siguiente ronda?</p>
                 </div>
+        -->
             </section>
         </content>
         <script src="js/scroll.js"></script>

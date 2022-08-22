@@ -124,8 +124,7 @@
 }
 
 .perfil:hover{
-	transition: .4s;
-	background-image: url('../images/noticias_darken.jpg');
+	transform: scale(0.9); 
 }
 
 .fixture{
@@ -145,7 +144,7 @@
 }
 
 .fixture:hover{
-	transition: .4s;
+	transform: scale(0.9); 
 }
 
 .calendario{
@@ -166,8 +165,7 @@
 }
 
 .calendario:hover{
-	transition: .4s;
-	
+	transform: scale(0.9); 
 }
 
 .qatar{
@@ -187,8 +185,7 @@
 }
 
 .qatar:hover{
-	transition: .4s;
-	
+	transform: scale(0.9); 
 }
 
 
@@ -211,7 +208,7 @@
 }
 
 .selecciones:hover{
-	transition: .4s;
+	transform: scale(0.9); 
 }
 
 .comunidad{
@@ -233,7 +230,7 @@
 
 
 .comunidad:hover{
-	transition: .4s;
+	transform: scale(0.9); 
 	
 }
 
