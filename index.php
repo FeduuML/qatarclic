@@ -27,61 +27,68 @@
     </head>
    
     <body>
-        <div id="wrapper">
-            <header class="header" id="header">
-                <div class="wrapper">
-                    <div class="logo"><?php require 'header/header.php';?></div>
-                    <nav>
-                        <?php 
-                        if(isset($_SESSION['user_id'])){
-                            echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
+        <header class="header" id="header">
+            <div class="wrapper">
+                <div class="logo"><?php require 'header/header.php';?></div>
+                <nav>
+                    <?php 
+                    if(isset($_SESSION['user_id'])){
+                        echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
-                            if($_SESSION['rol_id'] == 1){
-                                echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                            }
-                            else{
-                                echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                            }
+                        if($_SESSION['rol_id'] == 1){
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
-                            echo("<a href='account/login.php'>Iniciar sesion</a>");
-                        } ?>
-                    </nav>
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                        }
+                    }
+                    else{
+                        echo("<a href='account/login.php'>Iniciar sesion</a>");
+                    } ?>
+                </nav>
+            </div>
+        </header>
+
+        <div class="margin"></div>
+
+        <nav class="navegador_general" id="navbar">
+            <h1 class="text_nav">Mundial de Qatar 2022</h1>
+
+            <div class="wrapper_nav">
+                <div class="first_element">
+                    <img src="images/fixture_violeta.png" alt="Perfil" class="responsive">
+                    <span class="text">Perfil</span>
                 </div>
 
-            <nav class="navegador_general" id="navbar">
+                <div class="element">
+                    <img src="images/fixture_violeta.png" alt="Fixture" class="responsive">
+                    <span class="text">Fixture</span>
+                </div> 
+            
+                <div class="element">
+                    <img src="images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
+                    <span class="text">Calendario</span>
+                </div>
 
-                <h1 class="text_nav">Mundial de Qatar 2022</h1>
+                <div class="element">
+                    <img src="images/qatar_rosa.png" alt="Qatar" class="responsive">
+                    <span class="text">Sobre Qatar</span>
+                </div>
 
-                    <div class="perfil" >
-                        <h1 class="text" >Perfil</h1>
-                    </div>
+                <div class="element">
+                    <img src="images/selecciones.png" alt="Selecciones" onclick="selections()" class="responsive">
+                    <span class="text">Equipos</span>
+                </div>
 
-                    <div class="fixture">
-                        <h1 class="text">Fixture</h1>
-                    </div> 
-                
-                    <div class="calendario">
-                    <h1 class="text" id="calendario" onclick="calendario()">Calendario</h1>
-                    </div>
+                <div class="element">
+                    <img src="images/fixture_violeta.png" alt="Comunidad" class="responsive">
+                    <span class="text">Comunidad</span>
+                </div>
+            </div>
+        </nav>
+ 
+        <div class="margin2"></div>
 
-                    <div class="qatar">
-                        <h1 class="text">Sobre Qatar<h1>
-                    </div>
-
-                    <div class="selecciones">
-                        <h1 class="text" id="selections" onclick="selections()">Selecciones<h1>
-                    </div>
-
-                    <div class="comunidad">
-                        <h1 class="text">Comunidad<h1>
-                    </div>
-
-             </nav>
-
-            </header>
-        </div>
-     
         <content>
             <aside>
                 <h2 class="title">Seleccion</h2>
@@ -97,52 +104,35 @@
                 <h2 class="title">Noticias</h2>
                 <hr>
                 <?php 
-			$stmt=$conn->prepare('SELECT * FROM news ORDER BY id DESC');
-				$stmt->execute();
-				if($stmt->rowCount()>0)
-				{
-					while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-					{
-						extract($row);
-						?>
-			<div class="col-sm-3">
-            <p><?php echo '<h1><center>'.$title.'</center></h1>'?></p>			
-            <p><?php echo '<h4>'.$date.'</h4>' ?></p>
-            <p><?php echo '<h4>'.$row['user'].'</h4>' ?></p>
-            <p><?php echo '<h3><center>'.$content.'</center></h3>' ?></p>
-			<?php echo '<center><img src="uploads/'.$row['image'].'"</center><br><br>'?>		
-			</div>
-
-			<?php 
-
-				}
-			}
-			?>
-		</div>
-
-	</div>
-</div>
-
-                <!--<div class="news_image_box">
-                    <img class="news_image" src="images/fixture.jpg">
-                </div>
-                
-                <hr>
-                 
-                <div class="text_news">
-                    <p>¿Cuales seran los equipos que pasaran a la siguiente ronda?</p>
-                </div>
-        -->
+			        $stmt=$conn->prepare('SELECT * FROM news ORDER BY id DESC');
+				    $stmt->execute();
+				    if($stmt->rowCount()>0)
+				    {
+					    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+					    {
+						    extract($row);
+				?>
+			    <div class="col-sm-3">
+                    <p><?php echo '<h1><center>'.$title.'</center></h1>'?></p>			
+                    <p><?php echo '<h4>'.$date.'</h4>' ?></p>
+                    <p><?php echo '<h4>'.$row['user'].'</h4>' ?></p>
+                    <p><?php echo '<h3><center>'.$content.'</center></h3>' ?></p>
+			        <?php echo '<center><img src="uploads/'.$row['image'].'"</center><br><br>'?>		
+			    </div>
+			    <?php 
+				        }
+			        }
+			    ?>
             </section>
+            <a class="twitter-timeline" href="https://twitter.com/fifaworldcup_es">Tweets by @fifaworldcup_es</a>
         </content>
+
         <script src="js/scroll.js"></script>
         <script src="js/index.js"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </body>
 </html>
 
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-</body>
-</html>
 <script>
     function calendario(){
         window.location.href="main/calendario/calendario.php";
@@ -151,4 +141,8 @@
     function selections(){
         window.location.href="main/grupos/selections.php";
     }
+
+    twttr.widgets.createTimeline({sourceType: "profile",screenName: "fifaworldcup_es"},
+        document.getElementById("twitter-timeline")
+    );
 </script>

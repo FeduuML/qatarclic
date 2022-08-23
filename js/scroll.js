@@ -3,10 +3,10 @@ window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
     if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
         if (prevScrollpos > currentScrollPos) {
-            document.getElementById("header").style.top = "0";
+            document.getElementById("navbar").style.top = "50";
         } 
         else {
-            document.getElementById("header").style.top = "-200px";
+            document.getElementById("navbar").style.top = "-200px";
         }
         prevScrollpos = currentScrollPos;
     }
