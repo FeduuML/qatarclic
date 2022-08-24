@@ -3,9 +3,8 @@
 	z-index:1;
 	top:0;
 	width:100%;
-	background:#ffffff;
+	background:#f3f3f3;
 	user-select: none;
-	height:50px;
 }
 
 .wrapper {
@@ -16,7 +15,6 @@
 
 .header .logo {
 	font-size:40px;
-	line-height:50px;
 	float:left;
 }
 
@@ -25,24 +23,23 @@
 }
 
 .header nav > a {
-	margin-top:3px;
+	margin:1% 0 1%;
 	display:inline-block;
+	padding:0 20px;
 	text-decoration:none;
-	padding:10px 20px;
-	line-height:normal;
+	line-height:50px;
 	font-size:20px;
 	font-weight:bold;
-	-webkit-transition:all 500ms ease;
-	-o-transition:all 500ms ease;
-	transition:all 500ms ease;
 	font-family:calibri; 
 	color:rgb(145, 28, 44);
+	transition:500ms;
 }
 
 .header nav > a:hover {
 	background:black;
 	border-radius:50px;
 	color:white;
+	transition:500ms;
 }
 
 .navicon_box{
@@ -102,7 +99,7 @@
 	position:relative;
 	width:100%;
 	height:1px;
-	margin-top:12%;
+	margin-top:15%;
 }
 
 .navegador_general{

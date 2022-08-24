@@ -1,8 +1,22 @@
+*
+{
+    font-family: Yanone Kaffeesatz;
+ 	padding: 0px;
+ 	margin: 0px;
+ 	box-sizing: border-box;
+}
+
+html,body{
+	height:100%;
+    width:100%;
+}
+
 body
 {
-	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
+	background: rgba(42, 0, 10, 0.918);
 	background-attachment: fixed;
 }
+
 .add-form{
     width: 800px;  
     height: 460px; 

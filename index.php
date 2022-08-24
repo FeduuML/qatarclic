@@ -38,6 +38,9 @@
                         if($_SESSION['rol_id'] == 1){
                             echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
+                        else if($_SESSION['rol_id'] == 2){
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                        }
                         else{
                             echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
@@ -89,18 +92,8 @@
  
         <div class="margin2"></div>
 
-        <content>
-            <aside>
-                <h2 class="title">Seleccion</h2>
-                <br>
-                <p>Mi seleccion:</p>
-                <br><br><br>
-                <p>Goleador de mi seleccion:</p>
-                <br><br><br>
-                <p>Proximo partido:
-            </aside>
-
-            <section class="news">
+        <div class="big_container">
+            <div class="news">
                 <h2 class="title">Noticias</h2>
                 <hr>
                 <?php 
@@ -123,9 +116,26 @@
 				        }
 			        }
 			    ?>
-            </section>
-            <a class="twitter-timeline" href="https://twitter.com/fifaworldcup_es">Tweets by @fifaworldcup_es</a>
-        </content>
+            </div>
+
+            <div class="small_container">
+                <div class="container1">
+                    <h2 class="title">Seleccion</h2>
+                    <br>
+                    <p>Mi seleccion:</p>
+                    <br><br><br>
+                    <p>Goleador de mi seleccion:</p>
+                    <br><br><br>
+                    <p>Proximo partido:
+                </div>
+
+                <div class="container2">
+                    <a class="twitter-timeline" href="https://twitter.com/fifaworldcup_es">Tweets by @fifaworldcup_es</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="margin3">
 
         <script src="js/scroll.js"></script>
         <script src="js/index.js"></script>
