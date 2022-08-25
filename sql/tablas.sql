@@ -48,12 +48,12 @@ INSERT INTO `teams` VALUES
 ('29', 'Portugal', 'H'),('30', 'Ghana', 'H'),('31', 'Uruguay', 'H'),('32','Corea del Sur', 'H');
 
 CREATE TABLE `news` (
-    `id` int(2) NOT NULL,
+    `id` int(2) NOT NULL AUTO_INCREMENT,
     `user` varchar(20) NOT NULL,
     `title` text NOT NULL,
     `content` text NOT NULL,
     `image` varchar (255) NOT NULL,
-    `date` date NOT NULL,
+    `datetime` datetime NOT NULL,
     PRIMARY KEY (id)
 );
 

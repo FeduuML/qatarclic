@@ -105,12 +105,11 @@
 					    {
 						    extract($row);
 				?>
-			    <div class="col-sm-3">
-                    <p><?php echo '<h1><center>'.$title.'</center></h1>'?></p>			
-                    <p><?php echo '<h4>'.$date.'</h4>' ?></p>
-                    <p><?php echo '<h4>'.$row['user'].'</h4>' ?></p>
-                    <p><?php echo '<h3><center>'.$content.'</center></h3>' ?></p>
-			        <?php echo '<center><img src="uploads/'.$row['image'].'"</center><br><br>'?>		
+			    <div class="new_container">
+                    <p><?php echo '<h1 class="new_title">'.$title.'</h1>'?></p>			
+                    <p><?php echo '<h4 class="new_userdata">Subido por '.$row['user'].' el '.$row['datetime'].'</h4>' ?></p>
+                    <div class="new_image_container"><?php echo '<center><img class="new_image" src="uploads/'.$row['image'].'"</center>'?></div>
+                    <p><?php echo '<h3 class="new_content">'.$content.'</h3>' ?></p>	
 			    </div>
 			    <?php 
 				        }

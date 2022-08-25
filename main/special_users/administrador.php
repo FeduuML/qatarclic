@@ -1,49 +1,5 @@
 <?php
 	require ('../../account/database.php');
-
-	if(isset($_POST['btn-add']))
-	{
-		$name=$_POST['user'];
-        $title=$_POST['title'];
-        $content=$_POST['content'];
-		$images=$_FILES[ 'image']['name'];
-		$tmp_dir=$_FILES['image']['tmp_name'];
-		$imageSize=$_FILES['image']['size'];
-		$upload_dir=dirname(__DIR__).'../uploads/';
-		$imgExt=strtolower(pathinfo($images,PATHINFO_EXTENSION));
-		$valid_extensions=array('jpeg', 'jpg', 'png', 'gif', 'pdf');
-		$pic=rand(1000, 1000000).".".$imgExt;
-		// move_uploaded_file($tmp_dir, $upload_dir.$picProfile);
-		move_uploaded_file($tmp_dir, $upload_dir.$pic);
-		$stmt=$conn->prepare('INSERT INTO news(user, image, content, title) VALUES (:uname, :uima, :ucont, :utitl)');
-		$stmt->bindParam(':uname', $name);
-		//$stmt->bindParam(':uname', $_SESSION['user_id']);
-		$stmt->bindParam(':uima', $pic);
-        $stmt->bindParam(':ucont', $content);
-        $stmt->bindParam(':utitl', $title);
-
-		if($stmt->execute()){
-?>
-			<script>
-				alert("new record successul");
-				window.location.href=('../index.php');
-			</script>
-
-			<?php
-		}
-		else{
-			?>
-			<script>
-				alert("Error");
-				window.location.href=('../index.php');
-			</script>
-
-			<?php
-		}
-	}
-			?>
-
-<?php
     session_start();
 
     if(isset($_SESSION['user_id'])){
@@ -56,7 +12,50 @@
         
         $username = $results['username'];
     }
+    
+	if(isset($_POST['btn-add']))
+	{
+        date_default_timezone_set('America/Buenos_Aires');
+        $fecha = date('Y-m-d H:i:s');
+		$name=$username;
+        $title=$_POST['title'];
+        $content=$_POST['content'];
+		$images=$_FILES['image']['name'];
+		$tmp_dir=$_FILES['image']['tmp_name'];
+		$imageSize=$_FILES['image']['size'];
+		$upload_dir=dirname(__DIR__).'../../uploads/';
+		$imgExt=strtolower(pathinfo($images,PATHINFO_EXTENSION));
+		$valid_extensions=array('jpeg', 'jpg', 'png', 'gif', 'pdf');
+		$pic=rand(1000, 1000000).".".$imgExt;
+		// move_uploaded_file($tmp_dir, $upload_dir.$picProfile);
+		move_uploaded_file($tmp_dir, $upload_dir.$pic);
+		$stmt=$conn->prepare("INSERT INTO news(user, image, content, title, datetime) VALUES (:uname, :uima, :ucont, :utitl, '$fecha')");
+		$stmt->bindParam(':uname', $name);
+		//$stmt->bindParam(':uname', $_SESSION['user_id']);
+		$stmt->bindParam(':uima', $pic);
+        $stmt->bindParam(':ucont', $content);
+        $stmt->bindParam(':utitl', $title);
+
+		if($stmt->execute()){
 ?>
+			<script>
+				alert("Noticia cargada exitosamente");
+				window.location.href=('../../index.php');
+			</script>
+
+			<?php
+		}
+		else{
+			?>
+			<script>
+				alert("Error en la carga de la noticia");
+				window.location.href=('../../index.php');
+			</script>
+
+			<?php
+		}
+	}
+			?>
 
 <html>
     <head>
@@ -137,42 +136,24 @@
         <div class="margin2"></div>
 
 		<div class="container">
-			<div class="add-form">
-				<h1 class="text-center">Crear noticia</h1>
-				<form method="post" enctype="multipart/form-data">
-					<label>Usuario</label>
-					<input type="text" name="user" class="form-control" required="">
-					<br>
-					<label>Titulo</label>
-					<input type="text" name="title" class="form-control" required="">
-					<br>
-					<label>Contenido</label>
-					<input type="text" name="content" class="form-control" required="">
-					<br>
-					<label>Imagen</label>
-					<input type="file" name="image" class="form-control" required="" accept="*/image">
-					<br>
-					<div class="subir">
-					<button type="submit" name="btn-add">Subir</button></div>				
-				</form>
-			</div>
-		</div>	
-
-		<div class="container">
-			<div class="view-form">
-				<div class="row">
-					<?php 
-						$stmt=$conn->prepare('SELECT * FROM news ORDER BY id DESC');
-						$stmt->execute();
-						if($stmt->rowCount()>0){
-							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-								extract($row);
-							}
-						}
-					?>
-					<div class="col-sm-3"></div>
-				</div>
-			</div>
+            <p class="title">Crear noticia</p>
+            <form method="post" class="upload" enctype="multipart/form-data">
+                <div class="titulo">
+                    <label class="label">Titulo (max. 50 caracteres)</label>
+                    <input type="text" name="title" class="form-control" maxlength=50 required>
+                </div>
+                <div class="content">
+                    <label class="label">Contenido (max. 500 caracteres)</label>
+                    <textarea type="text" name="content" class="form-control-content" rows=10 maxlength=500 required></textarea>
+                </div>
+                <div class="image">
+                    <label class="label">Imagen</label>
+                    <input type="file" name="image" class="form-control" required accept="*/image">
+                </div>
+                <div class="button">
+                    <button type="submit" class="btn" name="btn-add">Subir</button></div>	
+                </div>			
+            </form>
 		</div>
 		<script src="../../js/scroll.js"></script>
         <script src="../../js/index.js"></script>

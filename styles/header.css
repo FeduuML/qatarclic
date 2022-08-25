@@ -1,6 +1,6 @@
 .header{
 	position:fixed;
-	z-index:1;
+	z-index:2;
 	top:0;
 	width:100%;
 	background:#f3f3f3;
@@ -104,7 +104,7 @@
 
 .navegador_general{
 	top:50;
-	z-index:0;
+	z-index:1;
 	width:100%;
 	background: rgba(16, 2, 44);
 	position:fixed;
