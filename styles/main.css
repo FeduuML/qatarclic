@@ -95,8 +95,8 @@ body
 }
 
 .new_content{
+    margin-top:5%;
     text-align: justify;
     text-justify: inter-word;
     padding:10px;
-    font-size:1.2vw;
 }

@@ -42,10 +42,13 @@
                         echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
                         if($_SESSION['rol_id'] == 1){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='moderador.php'>Gestionar usuarios</a><br><br><a href='../settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='moderador.php'>Gestionar usuarios</a><br><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
+                        }
+                        else if($_SESSION['rol_id'] == 2){
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='administrador.php'>Gestionar noticias</a><br><br><a href='moderador.php'>Gestionar usuarios</a><br><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../settings.php'>Ajustes</a><a href='../../account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
                         }
                     }
                     else{
@@ -53,32 +56,47 @@
                     } ?>
                 </nav>
             </div>
-            <nav class="navegador_general" id="navbar">
-                <div class="perfil">
-                    <h1 class="text">Perfil</h1>
+        </header>
+
+        <div class="margin"></div>
+
+        <nav class="navegador_general" id="navbar">
+            <h1 class="text_nav">Mundial de Qatar 2022</h1>
+
+            <div class="wrapper_nav">
+                <div class="first_element">
+                    <img src="../../images/fixture_violeta.png" alt="Perfil" class="responsive">
+                    <span class="text">Perfil</span>
                 </div>
 
-                <div class="fixture">
-                    <h1 class="text">Fixture</h1>
+                <div class="element">
+                    <img src="../../images/fixture_violeta.png" alt="Fixture" class="responsive">
+                    <span class="text">Fixture</span>
                 </div> 
             
-                <div class="calendario">
-                    <h1 class="text" onclick='calendario()'>Calendario</h1>
+                <div class="element">
+                    <img src="../../images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
+                    <span class="text">Calendario</span>
                 </div>
 
-                <div class="qatar">
-                    <h1 class="text">Sobre Qatar<h1>
+                <div class="element">
+                    <img src="../../images/qatar_rosa.png" alt="Qatar" class="responsive">
+                    <span class="text">Sobre Qatar</span>
                 </div>
 
-                <div class="selecciones">
-                    <h1 class="text">Selecciones<h1>
+                <div class="element">
+                    <img src="../../images/selecciones.png" alt="Selecciones" onclick="selections()" class="responsive">
+                    <span class="text">Equipos</span>
                 </div>
 
-                <div class="comunidad">
-                    <h1 class="text">Comunidad<h1>
+                <div class="element">
+                    <img src="../../images/fixture_violeta.png" alt="Comunidad" class="responsive">
+                    <span class="text">Comunidad</span>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+ 
+        <div class="margin2"></div>
 
         <div>
             <center><table class="table" id="table"></center>

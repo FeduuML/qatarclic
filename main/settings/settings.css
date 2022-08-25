@@ -7,7 +7,6 @@
 }
 
 html,body{
-    height:100%;
     width:100%;
 }
 
@@ -23,7 +22,7 @@ body
 }
 
 .changename, .changepass{
-    padding:50px;
+    padding:20px;
     background-color:white;
     width:30%;
     display:inline-block;
@@ -50,4 +49,9 @@ body
 #changename:hover, #changepass:hover{
     box-shadow: 3px 0px 30px rgba(163,163,163, 1);
     cursor:pointer;
+}
+
+.changetitle{
+    padding:10px;
+    font-size:2.5vw;
 }
