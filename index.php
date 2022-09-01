@@ -23,6 +23,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
     </head>
    
@@ -97,19 +98,30 @@
                 <h2 class="title">Noticias</h2>
                 <hr>
                 <?php 
-			        $stmt=$conn->prepare('SELECT * FROM news ORDER BY id DESC');
+			        $stmt=$conn->prepare('SELECT * FROM `news` ORDER BY id DESC LIMIT 1');
 				    $stmt->execute();
 				    if($stmt->rowCount()>0)
 				    {
+                        $sql=$conn->prepare('SELECT * FROM `news`');
+                        $sql->execute();
+                        $count = $sql->rowCount();
+
 					    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
 					    {
 						    extract($row);
+                            $id = $row['id'];
 				?>
-			    <div class="new_container">
+			    <div id="new_container" class="new_container">
                     <p><?php echo '<h1 class="new_title">'.$title.'</h1>'?></p>			
                     <p><?php echo '<h4 class="new_userdata">Subido por '.$row['user'].' el '.$row['datetime'].'</h4>' ?></p>
                     <div class="new_image_container"><?php echo '<center><img class="new_image" src="uploads/'.$row['image'].'"</center>'?></div>
                     <p><?php echo '<h3 class="new_content">'.$content.'</h3>' ?></p>	
+                    <div class="new_btn_container">
+                        <center>
+                            <button onclick="previous()" id="previous" class="previous" disabled>Anterior</button>
+                            <button onclick="next()" id="next" class="next">Siguiente</button>
+                        </center>
+                    </div>
 			    </div>
 			    <?php 
 				        }
@@ -151,7 +163,36 @@
         window.location.href="main/grupos/selections.php";
     }
 
-    twttr.widgets.createTimeline({sourceType: "profile",screenName: "fifaworldcup_es"},
-        document.getElementById("twitter-timeline")
-    );
+    var id = <?php echo($id); ?>;
+    var count = <?php echo($count); ?>;
+
+    if(id == count-(count-1)){
+        document.getElementById('next').disabled = true;
+    }
+
+    function next(){
+        var parametros = {id};
+
+        $.ajax({
+		    data:parametros,
+		    url:'next.php',
+		    type:'GET',
+            success:function(data){
+                $("#new_container").html(data);
+            }
+	    });
+    }
+
+    function previous(){
+        var parametros = {id};
+
+        $.ajax({
+            data:parametros,
+            url:'previous.php',
+            type:'GET',
+            success:function(data){
+                $("#new_container").html(data);
+            }
+        })
+    }
 </script>

@@ -71,32 +71,45 @@ body
 
 .new_title{
     text-align:center;
-    font-size:4vw;
+    font-size:4vmax;
     padding:10px 10px 0;
 }
 
 .new_userdata{
     padding:0 10px;
     text-align:center;
+    font-size:2.5vmin;
 }
 
 .new_image_container{
     margin-top:1%;
     margin-left:2%;
     width:96%;
+    height:50%;
     position:relative;
 }
 
 .new_image{
     max-width:100%;
-    height:auto;
+    object-fit:fill;
+    height:100%;
     z-index:0;
     position:relative;
 }
 
 .new_content{
-    margin-top:5%;
+    margin-top:1%;
     text-align: justify;
     text-justify: inter-word;
     padding:10px;
+    font-size:3vmin;
+}
+
+.new_btn_container{
+    width:100%;
+}
+
+.previous, .next{
+    width:100px;
+    height:40px;
 }
