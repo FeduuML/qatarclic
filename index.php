@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="images/fixture_violeta.png" alt="Fixture" class="responsive">
+                    <img src="images/fixture_violeta.png" alt="Fixture" onclick="mundialito()" class="responsive">
                     <span class="text">Fixture</span>
                 </div> 
             
@@ -161,6 +161,10 @@
     
     function selections(){
         window.location.href="main/grupos/selections.php";
+    }
+
+    function mundialito(){
+        window.location.href="main/mundialito/mundialito.php";
     }
 
     var id = <?php echo($id); ?>;
