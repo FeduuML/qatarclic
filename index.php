@@ -60,7 +60,7 @@
 
             <div class="wrapper_nav">
                 <div class="first_element">
-                    <img src="images/fixture_violeta.png" alt="Perfil" class="responsive">
+                    <img src="images/perfil.png" alt="Perfil" class="responsive">
                     <span class="text">Perfil</span>
                 </div>
 
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="images/fixture_violeta.png" alt="Comunidad" class="responsive">
+                    <img src="images/comunidad.png" alt="Comunidad" class="responsive">
                     <span class="text">Comunidad</span>
                 </div>
             </div>
@@ -146,11 +146,23 @@
             </div>
         </div>
 
-        <div class="margin3">
+        <div class="margin3"></div>
+    
+        <div class="more_news">
+            <div class="more_news_elements">
+                <img src="images/campeones.png" alt="Qatar" class="responsive">
+                <span class=text>Campeones</span>
+            </div>
+            <div>Argentina y la historia en los mundiales</div>
+            <div>Los más destacados de cada seleccion</div>
+
+
+        </div>
 
         <script src="js/scroll.js"></script>
         <script src="js/index.js"></script>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
     </body>
 </html>
 

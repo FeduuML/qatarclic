@@ -174,3 +174,9 @@
 .link_calendario:visited { 
 	text-decoration: none; color:rgb(255, 255, 255); 
 }
+
+.more_news{
+	width: 100%;
+	height: auto;
+	background-color: rgb(7, 58, 58);
+}
