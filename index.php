@@ -40,7 +40,7 @@
                             echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else if($_SESSION['rol_id'] == 2){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrarMundialito.php'>Gestionar mundialito</a><br><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
                             echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
@@ -66,7 +66,7 @@
 
                 <div class="element">
                     <img src="images/fixture_violeta.png" alt="Fixture" onclick="mundialito()" class="responsive">
-                    <span class="text">Fixture</span>
+                    <span class="text">Mundialito</span>
                 </div> 
             
                 <div class="element">
@@ -80,12 +80,12 @@
                 </div>
 
                 <div class="element">
-                    <img src="images/selecciones.png" alt="Selecciones" onclick="selections()" class="responsive">
+                    <img src="images/teams.jpg" alt="Selecciones" onclick="selections()" class="responsive">
                     <span class="text">Equipos</span>
                 </div>
 
                 <div class="element">
-                    <img src="images/comunidad.png" alt="Comunidad" class="responsive">
+                    <img src="images/selecciones.png" alt="Comunidad" class="responsive">
                     <span class="text">Comunidad</span>
                 </div>
             </div>

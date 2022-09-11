@@ -63,6 +63,51 @@ INSERT INTO `news` VALUES('3', 'Lorrrran', 'Test3', 'Test3', '245070.jpg', '2022
 INSERT INTO `news` VALUES('4', 'Lorrrran', 'Test4', 'Test4', '367687.jpg', '2022-09-09 08:14:31');
 INSERT INTO `news` VALUES('5', 'Lorrrran', 'Test5', 'Test5', '668926.jpg', '2022-09-09 15:36:12');
 
+CREATE TABLE `preguntas_mundialito` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `title` text NOT NULL,
+    `pregunta1` text NOT NULL,
+    `pregunta2` text,
+    `pregunta3` text,
+    `pregunta4` text,
+    `pregunta5` text,
+    `deadline` datetime NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO `preguntas_mundialito` VALUES ('1', 'Final del Mundial',
+'¿Cuál será el primer equipo en llegar a la final?', 
+'¿Cuál será el segundo equipo en llegar a la final?',
+'¿Quién ganará la final?',
+'¿Cuál será el tercer puesto?',
+'¿Cuál será el cuarto puesto?',
+'2022-11-20 00:00:00'),
+
+('2', 'Repechajes',
+'¿Quién será el ganador de Perú VS Australia?',
+'¿Quién será el ganador de Costa Rica VS Nueva Zelanda?',
+'¿Quién será el ganador de Gales VS Ucrania?',
+'¿Quién será el ganador de Portugal VS Macedonia del Norte?',
+'¿Quién será el ganador de Polonia VS Suecia?',
+'2022-10-20 14:30:00'),
+
+('3', 'Reconocimientos individuales',
+'¿Quién será el máximo goleador del torneo?',
+'¿Quién será el máximo asistidor del torneo?',
+NULL,NULL,NULL,'2022-11-20 00:00:00');
+
+CREATE TABLE `respuestas_mundialito` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `id_encuesta` int NOT NULL,
+    `id_usuario` int NOT NULL,
+    `respuesta1` text NOT NULL,
+    `respuesta2` text,
+    `respuesta3` text,
+    `respuesta4` text,
+    `respuesta5` text,
+    PRIMARY KEY(id)
+);
+
 CREATE TABLE `players` (
     id int(3) NOT NULL AUTO_INCREMENT,
     nombre varchar(75) NOT NULL,
@@ -137,7 +182,7 @@ INSERT INTO `players` VALUES
 ('205', 'Dylan Levitt', 'Gales', '19', '21'),('206', 'Joe Morrell', 'Gales', '16', '25'),('207', 'Wes Burns', 'Gales', '7', '27'),('208','Rubin Colwill', 'Gales', '27', '20'),
 ('209', 'Jonathan Williams', 'Gales', '18', '28'),('210', 'Daniel James', 'Gales', '20', '24'),('211', 'Harry Wilson', 'Gales', '8', '25'),('212','Rabbi Matondo', 'Gales', '23', '21'),
 ('213', 'Gareth Bale ', 'Gales', '11', '33'),('214', 'Sorba Thomas', 'Gales', '22', '23'), ('215', 'Brennan Johnson', 'Gales', '9', '21'), ('216', 'Kieffer Moore', 'Gales', '13', '30'),
-('217', '   Mark Harris', 'Gales', '19', '23'),
+('217', 'Mark Harris', 'Gales', '19', '23'),
 
 ('218', 'Emiliano Martínez', 'Argentina', '23', '30'),('219', 'Juan Musso', 'Argentina', '12', '18'),('220', 'Gerónimo Rulli', 'Argentina', '12', '30'),('221', 'Franco Armani', 'Argentina', '1', '35'),
 ('222', 'Cristian Romero', 'Argentina', '13', '24'),('223', 'Lisandro Martínez', 'Argentina', '16', '24'),('224', 'Lucas Martínez Cuarta', 'Argentina', '28', '26'),('225','Facundo Medina', 'Argentina', '14', '23'),
@@ -177,14 +222,6 @@ INSERT INTO `players` VALUES
 ('336', 'Mike Maignan', 'Francia', '16', '27'),('337', 'Alphonse Areola', 'Francia', '23', '29'),('338', 'Hugo Lloris', 'Francia', '1', '35'),('339', 'Jules Koundé', 'Francia', '5', '23'),
 ('340', 'Lucas Hernández', 'Francia', '21', '26'),('341', 'Raphaël Varane', 'Francia', '4', '29'),('342', 'Presnel Kimpembe', 'Francia', '3', '27'),('343','Ibrahima Konaté', 'Francia', '4', '23'),
 ('344', 'William Saliba', 'Francia', '17', '21'),('345', 'Theo Hernández', 'Francia', '22', '24'),('346', 'Lucas Digne', 'Francia', '18', '29'),('347', 'Benjamin Pavard', 'Francia', '2', '26'),
-('348', 'Jonathan Clauss', 'Francia', '15', '29'),('349', 'Aurélien Tchouamen', 'Francia', '8', '22'),('350', 'N Golo Kanté', 'Francia', '13', '31'),('351', 'Boubacar Kamara', 'Francia', '13', '22'),
-('352', 'Mattéo Guendouzi', 'Francia', '6', '23'),('353', 'Adrien Rabiot', 'Francia', '14', '27'),('354', 'Moussa Diaby', 'Francia', '20', '23'),('355','Kingsley Coman', 'Francia', '11', '26'),
-('356', 'Christopher Nkunku', 'Francia', '12', '24'),('357', 'Antoine Griezmann', 'Francia', '7', '31'),('358', 'Kylian Mbappé', 'Francia', '10', '23'),('359','Karim Benzema', 'Francia', '19', '34'),
-('360', 'Wissam Ben Yedder', 'Francia', '9', '32'),
-
-('361', 'Mike Maignan', 'Francia', '16', '27'),('337', 'Alphonse Areola', 'Francia', '23', '29'),('338', 'Hugo Lloris', 'Francia', '1', '35'),('339', 'Jules Koundé', 'Francia', '5', '23'),
-('340', 'Lucas Hernández', 'Francia', '21', '26'),('341', 'Raphaël Varane', 'Francia', '4', '29'),('342', 'Presnel Kimpembe', 'Francia', '3', '27'),('343','Ibrahima Konaté', 'Francia', '4', '23'),
-('344', 'William Saliba', 'Francia', '17', '21'),('345', 'Theo Hernández', 'Francia', '22', '24'),('346', 'Lucas Digne', 'Francia', '18', '29'),('347', 'Benjamin Pavard', 'Francia', '2', '26'),
 ('348', 'Jonathan Clauss', 'Francia', '15', '29'),('349', 'Aurélien Tchouamen', 'Francia', '8', '22'),('350', 'N`Golo Kanté', 'Francia', '13', '31'),('351', 'Boubacar Kamara', 'Francia', '13', '22'),
 ('352', 'Mattéo Guendouzi', 'Francia', '6', '23'),('353', 'Adrien Rabiot', 'Francia', '14', '27'),('354', 'Moussa Diaby', 'Francia', '20', '23'),('355','Kingsley Coman', 'Francia', '11', '26'),
 ('356', 'Christopher Nkunku', 'Francia', '12', '24'),('357', 'Antoine Griezmann', 'Francia', '7', '31'),('358', 'Kylian Mbappé', 'Francia', '10', '23'),('359','Karim Benzema', 'Francia', '19', '34'),
@@ -199,13 +236,6 @@ INSERT INTO `players` VALUES
 ('385', 'Awer Mabil', 'Australia', '17', '26'),('386', 'Craig Goodwin', 'Australia', '19', '30'), ('387', 'Mathew Leckie', 'Australia', '7', '31'), ('388', 'Ben Folami', 'Australia', '11', '23'),
 ('390', 'Martin Boyle', 'Australia', '6', '29'), ('391', 'Marco Tilio', 'Australia', '21', '21'), ('392', 'Nick D`Agostino', 'Australia', '15', '24'), ('393', 'Jamie Maclaren', 'Australia', '9', '29'), 
 ('394', 'Adam Taggart', 'Australia', '9', '29'), ('395', 'Mitchell Duke', 'Australia', '15', '31'), ('396', 'Bruno Fornaroli', 'Australia', '14', '35'),
-
-('397', 'Unai Simón', 'España', '23', '25'),('398', 'David Raya', 'España', '13', '26'),('399', 'Robert Sanchez', 'España', '1', '24'),('400', 'Pau Torres', 'España', '4', '25'),
-('401', 'Iñigo Martínez', 'España', '3', '31'),('402', 'Eric García', 'España', '14', '21'),('403', 'Diego Llorente', 'España', '15', '29'),('404','Marcos Alonso', 'España', '17', '31'),
-('405', 'Jordi Alba', 'España', '18', '33'),('406', 'Daniel Carvajal', 'España', '20', '30'),('407', 'César Azpilicueta', 'España', '2', '33'),('408', 'Rodri', 'España', '16', '26'),
-('409', 'Sergio Busquets', 'España', '5', '34'),('410', 'Gavi', 'España', '9', '18'),('411', 'Carlos Soler', 'España', '19', '25'),('412', 'Marcos Llorente', 'España', '6', '27'),
-('413', 'Koke', 'España', '8', '30'),('414', 'Dani Olmo', 'España', '21', '24'),('415', 'Ansu Fati', 'España', '12', '19'),('416','Ferran Torres', 'España', '11', '22'),
-('417', 'Marco Asensio', 'España', '10', '26'),('418', 'Pablo Sarabia', 'España', '22', '30'),('419', 'Álvaro Morata', 'España', '7', '29'),('420','Raúl de Tomás', 'España', '14', '27'),
 
 ('397', 'Unai Simón', 'España', '23', '25'),('398', 'David Raya', 'España', '13', '26'),('399', 'Robert Sanchez', 'España', '1', '24'),('400', 'Pau Torres', 'España', '4', '25'),
 ('401', 'Iñigo Martínez', 'España', '3', '31'),('402', 'Eric García', 'España', '14', '21'),('403', 'Diego Llorente', 'España', '15', '29'),('404','Marcos Alonso', 'España', '17', '31'),
@@ -242,12 +272,4 @@ INSERT INTO `players` VALUES
 ('505', 'Ryuta Koike', 'Japón', '25', '27'),('506', 'Kento Hashimoto', 'Japón', '15', '29'),('507', 'Joel Chima Fujita', 'Japón', '26', '20'),('508', 'Kota Mizunuma', 'Japón', '18', '32'),
 ('509', 'Tsukasa Morishima', 'Japón', '8', '25'),('510', 'Yasuto Wakizaka', 'Japón', '14', '27'),('511', 'Gakuto Notsuda', 'Japón', '7', '28'),('512','Yuki Soma', 'Japón', '16', '25'),
 ('513', 'Yuto Iwasaki', 'Japón', '10', '24'),('514', 'Makoto Mitsuta', 'Japón', '21', '23'),('515', 'Ryo Miyaichi', 'Japón', '17', '29'),('516', 'Takuma Nishimura', 'Japón', '9', '25'),
-('517', 'Shuto Machino', 'Japón', '11', '22'), ('518', 'Mao Hosoya', 'Japón', '20', '21'),
-
-('519', 'Keisuke Osako', 'Japón', '1', '23'),('494', 'Kosei Tani', 'Japón', '12', '21'),('495', 'Zion Suzuki', 'Japón', '23', '20'),('496', 'Shogo Taniguchi', 'Japón', '3', '31'),
-('497', 'Shinnosuke Nakatani', 'Japón', '4', '26'),('498', 'Shinnosuke Hatanaka', 'Japón', '5', '27'),('499', 'Tomoki Iwata', 'Japón', '6', '25'),('500','Sho Sasaki', 'Japón', '19', '32'),
-('501', 'Hayato Araki', 'Japón', '22', '26'),('502', 'Takuma Ominami', 'Japón', '24', '24'),('503', 'Daiki Sugioka', 'Japón', '17', '25'),('504', 'Miki Yamane', 'Japón', '2', '28'),
-('505', 'Ryuta Koike', 'Japón', '25', '27'),('506', 'Kento Hashimoto', 'Japón', '15', '29'),('507', 'Joel Chima Fujita', 'Japón', '26', '20'),('508', 'Kota Mizunuma', 'Japón', '18', '32'),
-('509', 'Tsukasa Morishima', 'Japón', '8', '25'),('510', 'Yasuto Wakizaka', 'Japón', '14', '27'),('511', 'Gakuto Notsuda', 'Japón', '7', '28'),('512','Yuki Soma', 'Japón', '16', '25'),
-('513', 'Yuto Iwasaki', 'Japón', '10', '24'),('514', 'Makoto Mitsuta', 'Japón', '21', '23'),('515', 'Ryo Miyaichi', 'Japón', '17', '29'),('516', 'Takuma Nishimura', 'Japón', '9', '25'),
-('517', 'Shuto Machino', 'Japón', '11', '22'), ('518', 'Mao Hosoya', 'Japón', '20', '21'),
+('517', 'Shuto Machino', 'Japón', '11', '22'), ('518', 'Mao Hosoya', 'Japón', '20', '21');

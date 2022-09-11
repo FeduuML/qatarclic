@@ -78,18 +78,17 @@ body
 
 .quiz_wrapper{
     width:100%;
-    display: grid;
+    display:grid;
     grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
 }
 
-.quiz1{
-    background-color:black;
+.quiz1,.quiz2,.quiz3{
+    align-self: center;
+    justify-self: center;
 }
 
-.quiz2{
-    background-color:red;
-}
-
-.quiz3{
-    background-color:brown;
+.start{
+    width:8vw;
+    height:10vh;
 }
