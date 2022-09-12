@@ -377,18 +377,6 @@ INSERT INTO `players` VALUES
 ('855', 'Maxi Gómez', 'Uruguay', '18', '26'),('856', 'Luis Suárez', 'Uruguay', '9', '35'),('857', 'Martín Satriano', 'Uruguay', '9', '21'),('858', 'Agustín Álvarez', 'Uruguay', '11', '21'),
 ('859', 'Edinson Cavani', 'Uruguay', '21', '35'),
 
-('819', 'Sergio Rochet', 'Uruguay', '12', '29'),('820', 'Fernando Muslera', 'Uruguay', '1', '36'),('821', 'Sebastián Sosa', 'Uruguay', '23', '36'),('822', 'Santiago Mele', 'Uruguay', '77', '25'),
-('823', 'Guillermo de Amores', 'Uruguay', '12', '27'),('824', 'Gastón Olveira', 'Uruguay', '23', '29'),('825', 'José María Giménez ', 'Uruguay', '2', '27'),('826','Ronald Araújo', 'Uruguay', '4', '23'),
-('827', 'Sebastián Coates', 'Uruguay', '19', '31'),('828', 'Agustín Rogel', 'Uruguay', '3', '24'),('829', 'Leandro Cabrera', 'Uruguay', '4', '31'),('830', 'Sebastián Cáceres', 'Uruguay', '4', '23'),
-('831', 'Bruno Méndez', 'Uruguay', '3', '23'),('832', 'Martín Cáceres', 'Uruguay', '22', '35'),('833', 'Mathías Olivera', 'Uruguay', '16', '24'),('834', 'Matías Viña', 'Uruguay', '17', '24'),
-('835', 'Joaquín Piquerez', 'Uruguay', '22', '24'),('836', 'Guillermo Varela', 'Uruguay', '4', '29'),('837', 'Damián Suárez', 'Uruguay', '13', '34'),('838','Federico Pereira', 'Uruguay', '6', '22'),
-('839', 'Lucas Torreira', 'Uruguay', '14', '26'),('840', 'Manuel Ugarte', 'Uruguay', '6', '21'),('841', 'Federico Valverde', 'Uruguay', '15', '24'),('842', 'Rodrigo Bentancur', 'Uruguay', '30', '25'),
-('843', 'Mauro Arambarri', 'Uruguay', '20', '25'),('844', 'Nicolás de la Cruz', 'Uruguay', '7', '25'),('845', 'Fernando Gorriarán', 'Uruguay', '11', '27'),('846', 'Matías Vecino', 'Uruguay', '5', '31'),
-('847', 'Giorgian de Arrascaeta', 'Uruguay', '10', '28'),('848', 'Rodrigo Zalazar', 'Uruguay', '10', '23'),('849', 'Diego Rossi', 'Uruguay', '8', '24'),('850', 'Facundo Torres', 'Uruguay', '17', '22'),
-('851', 'Agustín Canobbio', 'Uruguay', '9', '23'),('852', 'Facundo Pellistri', 'Uruguay', '8', '20'),('853', 'Brian Ocampo', 'Uruguay', '26', '23'),('854', 'Darwin Núñez', 'Uruguay', '11', '23'),
-('855', 'Maxi Gómez', 'Uruguay', '18', '26'),('856', 'Luis Suárez', 'Uruguay', '9', '35'),('857', 'Martín Satriano', 'Uruguay', '9', '21'),('858', 'Agustín Álvarez', 'Uruguay', '11', '21'),
-('859', 'Edinson Cavani', 'Uruguay', '21', '35'),
-
 ('860', 'Hyeon-woo Jo', 'Corea del Sur', '21', '30'),('861', 'Bum-keun Song', 'Corea del Sur', '12', '24'),('862', 'Dong-jun Kim', 'Corea del Sur', '1', '27'),('863', 'Ji-soo Park', 'Corea del Sur', '18', '28'),
 ('864', 'Kyung-won Kwon', 'Corea del Sur', '20', '30'),('865', 'Yu-min Cho', 'Corea del Sur', '4', '35'),('866', 'Young-gwon Kim', 'Corea del Sur', '19', '32'),('867','Ju-sung Kim ', 'Corea del Sur', '24', '21'),
 ('868', 'Jin-su Kim', 'Corea del Sur', '3', '30'),('869', 'Chul Hong', 'Corea del Sur', '14', '31'),('870', 'Moon-hwan Kim', 'Corea del Sur', '15', '27'),('871', 'Jong-gyu Yoon', 'Corea del Sur', '2', '24'),
