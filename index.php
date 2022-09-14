@@ -9,7 +9,6 @@
         $query = $conn->prepare($sql);
         $query->execute();
         $results = $query -> fetch(PDO::FETCH_ASSOC);
-        
         $username = $results['username'];
     }
 ?>
@@ -65,7 +64,17 @@
                 </div>
 
                 <div class="element">
+                    <?php 
+                        if(isset($_SESSION['user_id'])){ 
+                    ?>
                     <img src="images/fixture_violeta.png" alt="Fixture" onclick="mundialito()" class="responsive">
+                    <?php
+                        }else{
+                    ?>
+                    <img src="images/fixture_violeta.png" alt="Fixture" onclick="notlogged()" class="responsive">
+                    <?php
+                        }
+                    ?>
                     <span class="text">Mundialito</span>
                 </div> 
             
@@ -167,6 +176,10 @@
 </html>
 
 <script>
+    function notlogged(){
+        window.location.href="account/login.php";
+    }
+
     function calendario(){
         window.location.href="main/calendario/calendario.php";
     }

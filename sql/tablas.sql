@@ -105,7 +105,9 @@ CREATE TABLE `respuestas_mundialito` (
     `respuesta3` text,
     `respuesta4` text,
     `respuesta5` text,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    FOREIGN KEY (`id_usuario`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`id_encuesta`) REFERENCES `preguntas_mundialito`(`id`)
 );
 
 CREATE TABLE `players` (

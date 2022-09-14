@@ -58,6 +58,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->    
     </head>
 
 	<body>
@@ -71,10 +72,13 @@
                         extract($row);
             ?>
             <?php echo '<p class="title">'.$title.'</p>'?>
-            <form method="post" class="upload">
+            <form method="post" class="upload" autocomplete="off">
                 <div class="content">
                     <?php echo '<label class="label">'.$pregunta1.'</label>'?>
-                    <input type="text" name="answer1" class="form-control-content" required></input>
+                    <input type="text" id="answer1" name="answer1" class="form-control-content" required oninput="display(this.value)"></input>
+                    <div class="display" id="display">
+                        <span class="displayOptions" id="displayOptions"></span>
+                    </div>
                 </div>
                 <div class="content">
                     <?php echo '<label class="label">'.$pregunta2.'</label>'?>
@@ -105,3 +109,17 @@
         <script src="../../js/index.js"></script>
 	</body>
 </html>
+
+<script> //Validación de disponibilidad de username a través de AJAX
+    function display(answer) {
+	    $.ajax({
+            url:'displayOptions.php',
+            data:'answer='+answer,
+            type:"POST",
+            success:function(data){
+                $("#displayOptions").html(data);
+            },
+            error:function (){}
+        });
+    }
+</script>
