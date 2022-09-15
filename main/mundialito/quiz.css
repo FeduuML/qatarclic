@@ -31,6 +31,7 @@ body
 
 .upload{
     margin-top:3%;
+    width:100%;
 }
 
 .form-control
@@ -84,4 +85,8 @@ body
 
 .btn_label{
     font-size:1vw;
+}
+
+.display{
+    width:200px;
 }

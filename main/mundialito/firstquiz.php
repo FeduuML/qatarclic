@@ -76,9 +76,7 @@
                 <div class="content">
                     <?php echo '<label class="label">'.$pregunta1.'</label>'?>
                     <input type="text" id="answer1" name="answer1" class="form-control-content" required oninput="display(this.value)"></input>
-                    <div class="display" id="display">
-                        <span class="displayOptions" id="displayOptions"></span>
-                    </div>
+                    <div class="display" id="display"></div>
                 </div>
                 <div class="content">
                     <?php echo '<label class="label">'.$pregunta2.'</label>'?>
@@ -110,16 +108,17 @@
 	</body>
 </html>
 
-<script> //Validación de disponibilidad de username a través de AJAX
+<script>
     function display(answer) {
 	    $.ajax({
             url:'displayOptions.php',
             data:'answer='+answer,
             type:"POST",
             success:function(data){
-                $("#displayOptions").html(data);
+                $("#display").html(data);
             },
             error:function (){}
         });
     }
 </script>
+
