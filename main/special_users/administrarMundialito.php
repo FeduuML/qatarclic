@@ -132,34 +132,59 @@
 
 		<div class="container">
             <p class="title">Crear encuesta</p>
-            <form method="post" class="upload">
+            <form method="post" class="upload" autocomplete="off">
                 <div class="titulo">
                     <label class="label">Titulo (max. 50 caracteres)</label>
                     <input type="text" name="title" class="form-control" maxlength=50 required>
                 </div>
                 <div class="content">
-                    <label class="label">Primera pregunta</label>
-                    <input type="text" name="content1" class="form-control-content" required></input>
+                    <label class="label">Primera pregunta (obligatoria)</label>
+                    <input type="text" id="content1" name="content1" class="form-control-content" required></input>
+                    <select class="select">
+                        <option value="paises">Paises</option>
+                        <option value="jugadores">Jugadores</option>
+                        <option value="otros">Otros</option>
+                    </select>
                 </div>
                 <div class="content">
-                    <label class="label">Segunda pregunta</label>
-                    <input type="text" name="content2" class="form-control-content" required></input>
+                    <label class="label">Segunda pregunta<i id="add2" class="navicon fas fa-solid fa-plus" onclick="enable2()"></i></label>
+                    <input type="text" id="content2" name="content2" class="form-control-content" disabled required></input>
+                    <select id="select2" class="select" disabled>
+                        <option value="paises">Paises</option>
+                        <option value="jugadores">Jugadores</option>
+                        <option value="otros">Otros</option>
+                    </select>
                 </div>
                 <div class="content">
-                    <label class="label">Tercera pregunta</label>
-                    <input type="text" name="content3" class="form-control-content" required></input>
+                    <label class="label">Tercera pregunta<i id="add3" class="navicon fas fa-solid fa-plus" onclick="enable3()"></i></label>
+                    <input type="text" id="content3" name="content3" class="form-control-content" disabled required></input>
+                    <select id="select3" class="select" disabled>
+                        <option value="paises">Paises</option>
+                        <option value="jugadores">Jugadores</option>
+                        <option value="otros">Otros</option>
+                    </select>
                 </div>
                 <div class="content">
-                    <label class="label">Cuarta pregunta</label>
-                    <input type="text" name="content4" class="form-control-content" required></input>
+                    <label class="label">Cuarta pregunta<i id="add4" class="navicon fas fa-solid fa-plus" onclick="enable4()"></i></label>
+                    <input type="text" id="content4" name="content4" class="form-control-content" disabled required></input>
+                    <select id="select4" class="select" disabled>
+                        <option value="paises">Paises</option>
+                        <option value="jugadores">Jugadores</option>
+                        <option value="otros">Otros</option>
+                    </select>
                 </div>
                 <div class="content">
-                    <label class="label">Quinta pregunta</label>
-                    <input type="text" name="content5" class="form-control-content" required></input>
+                    <label class="label">Quinta pregunta<i id="add5" class="navicon fas fa-solid fa-plus" onclick="enable5()"></i></label>
+                    <input type="text" id="content5" name="content5" class="form-control-content" disabled required></input>
+                    <select id="select5" class="select" disabled>
+                        <option value="paises">Paises</option>
+                        <option value="jugadores">Jugadores</option>
+                        <option value="otros">Otros</option>
+                    </select>
                 </div>
                 <div class="content">
                     <label class="label">Fecha limite a completar</label>
-                    <input type="datetime-local" name="deadline" class="form-control-content" required></input>
+                    <input type="datetime-local" id="deadline" name="deadline" class="form-control-content" required></input>
                 </div>
                 <div class="button">
                     <button type="submit" class="btn" name="btn-add"><p class="btn_label">Subir</p></button>	
@@ -170,3 +195,78 @@
         <script src="../../js/index.js"></script>
 	</body>
 </html>
+
+<script>
+    document.getElementById("add2").addEventListener("click", () => {
+        document.getElementById("content2").focus();
+        document.getElementById("select2").disabled = false;
+    });
+
+    document.getElementById("add3").addEventListener("click", () => {
+        document.getElementById("content3").focus();
+        document.getElementById("select3").disabled = false;
+    });
+
+    document.getElementById("add4").addEventListener("click", () => {
+        document.getElementById("content4").focus();
+        document.getElementById("select4").disabled = false;
+    });
+
+    document.getElementById("add5").addEventListener("click", () => {
+        document.getElementById("content5").focus();
+        document.getElementById("select5").disabled = false;
+    });
+
+    function enable2(){
+        if(document.getElementById("content2").disabled == false){
+            document.getElementById("content2").disabled = true;
+            document.getElementById("content2").value = "";
+            document.getElementById("content2").style.backgroundColor = 'gray';
+            document.getElementById("select2").disabled = true;
+        }
+        else if(document.getElementById("content2").disabled == true){
+            document.getElementById("content2").disabled = false;
+            document.getElementById("content2").style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
+            document.getElementById("select2").disabled = false;
+        }
+    }
+
+    function enable3(){
+        if(document.getElementById("content3").disabled == false){
+            document.getElementById("content3").disabled = true;
+            document.getElementById("content3").value = "";
+            document.getElementById("content3").style.backgroundColor = 'gray';
+        }
+        else if(document.getElementById("content3").disabled == true){
+            document.getElementById("content3").disabled = false;
+            document.getElementById("content3").style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
+            document.getElementById("select3").disabled = true;
+        }
+    }
+
+    function enable4(){
+        if(document.getElementById("content4").disabled == false){
+            document.getElementById("content4").disabled = true;
+            document.getElementById("content4").value = "";
+            document.getElementById("content4").style.backgroundColor = 'gray';
+        }
+        else if(document.getElementById("content4").disabled == true){
+            document.getElementById("content4").disabled = false;
+            document.getElementById("content4").style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
+            document.getElementById("select4").disabled = true;
+        }
+    }
+
+    function enable5(){
+        if(document.getElementById("content5").disabled == false){
+            document.getElementById("content5").disabled = true;
+            document.getElementById("content5").value = "";
+            document.getElementById("content5").style.backgroundColor = 'gray';
+        }
+        else if(document.getElementById("content5").disabled == true){
+            document.getElementById("content5").disabled = false;
+            document.getElementById("content5").style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
+            document.getElementById("select5").disabled = true;
+        }
+    }
+</script>

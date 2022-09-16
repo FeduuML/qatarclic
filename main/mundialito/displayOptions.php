@@ -6,17 +6,15 @@
         $stmt = $conn->prepare("SELECT id,nombre FROM teams WHERE nombre LIKE '$answer%'");
         $stmt->execute();
         $count = $stmt->rowCount();
-        echo "<div id='wrapper' class='wrapper'>";
-        while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-            extract($row);
-            if($count > 0){
-                echo "<span onclick='fill($id)' id='$id' class='pais'>".$nombre."<br></span>";
+
+        if($count > 0){
+            echo "<div id='wrapper' class='wrapper'>";
+            while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                extract($row);
+                echo "<div onclick='fill($id)' id='$id' class='pais'>".$nombre."<br><hr></div>";
             }
-            else{
-                echo("<script>var displayOptions = document.getElementById('wrapper'); displayOptions.style.display = 'none';");
-            }
+            echo "</div>";
         }
-        echo "</div>";
     }
 ?>
 
@@ -34,17 +32,17 @@
 <style>
     .pais{
         cursor:pointer;
-        font-size:1.4vw;
-        margin-left:5%;
+        font-size:2vw;
+        width:100%;
     }
     .pais:hover{
         background-color:#eeeeee;
     }
 
     .wrapper{
-        width:10%;
+        width:30%;
         padding:5px;
-        margin-top:-1%;
+        margin-top:-1.5%;
         position:absolute;
         background-color:#d6d6d6;
         border-radius:10px;
