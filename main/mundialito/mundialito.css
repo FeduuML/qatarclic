@@ -83,7 +83,7 @@ body
     justify-content: center;
 }
 
-.quiz1,.quiz2,.quiz3{
+.quiz{
     align-self: center;
     justify-self: center;
 }

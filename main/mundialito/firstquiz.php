@@ -64,20 +64,24 @@
 	<body>
 		<div class="container">
             <?php
-                $stmt=$conn->prepare('SELECT * FROM `preguntas_mundialito` WHERE id=1');
-                $stmt->execute();
-                if($stmt->rowCount()>0){
-                    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-                    {
-                        extract($row);
+                if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    $stmt=$conn->prepare("SELECT * FROM preguntas_mundialito WHERE id = $id");
+                    $stmt->execute();
+
+                    if($stmt->rowCount()>0){
+                        while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+                        {
+                            extract($row);
+                            echo '<p class="title">'.$title.'</p>';
+                            echo '<form method="post" class="upload" autocomplete="off">';
+                            echo '<div class="content">';
+                            echo '<label class="label">'.$pregunta1.'</label>';
+                            echo '<input type="text" id="answer1" name="answer1" class="form-control-content" required oninput="display(this.value)"></input>';
+                            echo '<div class="display" id="display"></div>';
+                            echo '</div>';
+                        }
             ?>
-            <?php echo '<p class="title">'.$title.'</p>'?>
-            <form method="post" class="upload" autocomplete="off">
-                <div class="content">
-                    <?php echo '<label class="label">'.$pregunta1.'</label>'?>
-                    <input type="text" id="answer1" name="answer1" class="form-control-content" required oninput="display(this.value)"></input>
-                    <div class="display" id="display"></div>
-                </div>
                 <div class="content">
                     <?php echo '<label class="label">'.$pregunta2.'</label>'?>
                     <input type="text" name="answer2" class="form-control-content" required></input>

@@ -67,34 +67,39 @@ CREATE TABLE `preguntas_mundialito` (
     `id` int NOT NULL AUTO_INCREMENT,
     `title` text NOT NULL,
     `pregunta1` text NOT NULL,
+    `tipopregunta1` text NOT NULL,
     `pregunta2` text,
+    `tipopregunta2` text,
     `pregunta3` text,
+    `tipopregunta3` text,
     `pregunta4` text,
+    `tipopregunta4` text,
     `pregunta5` text,
+    `tipopregunta5` text,
     `deadline` datetime NOT NULL,
     PRIMARY KEY(id)
 );
 
 INSERT INTO `preguntas_mundialito` VALUES ('1', 'Final del Mundial',
-'¿Cuál será el primer equipo en llegar a la final?', 
-'¿Cuál será el segundo equipo en llegar a la final?',
-'¿Quién ganará la final?',
-'¿Cuál será el tercer puesto?',
-'¿Cuál será el cuarto puesto?',
+'¿Cuál será el primer equipo en llegar a la final?', 'Paises',
+'¿Cuál será el segundo equipo en llegar a la final?', 'Paises',
+'¿Quién ganará la final?', 'Paises',
+'¿Cuál será el tercer puesto?', 'Paises',
+'¿Cuál será el cuarto puesto?', 'Paises',
 '2022-11-20 00:00:00'),
 
 ('2', 'Repechajes',
-'¿Quién será el ganador de Perú VS Australia?',
-'¿Quién será el ganador de Costa Rica VS Nueva Zelanda?',
-'¿Quién será el ganador de Gales VS Ucrania?',
-'¿Quién será el ganador de Portugal VS Macedonia del Norte?',
-'¿Quién será el ganador de Polonia VS Suecia?',
+'¿Quién será el ganador de Perú VS Australia?', 'Paises',
+'¿Quién será el ganador de Costa Rica VS Nueva Zelanda?', 'Paises',
+'¿Quién será el ganador de Gales VS Ucrania?', 'Paises',
+'¿Quién será el ganador de Portugal VS Macedonia del Norte?', 'Paises',
+'¿Quién será el ganador de Polonia VS Suecia?', 'Paises',
 '2022-10-20 14:30:00'),
 
 ('3', 'Reconocimientos individuales',
-'¿Quién será el máximo goleador del torneo?',
-'¿Quién será el máximo asistidor del torneo?',
-NULL,NULL,NULL,'2022-11-20 00:00:00');
+'¿Quién será el máximo goleador del torneo?', 'Jugadores',
+'¿Quién será el máximo asistidor del torneo?', 'Jugadores',
+NULL,NULL,NULL,NULL,NULL,NULL,'2022-11-20 00:00:00');
 
 CREATE TABLE `respuestas_mundialito` (
     `id` int NOT NULL AUTO_INCREMENT,

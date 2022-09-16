@@ -22,13 +22,23 @@
         $content3=$_POST['content3'];
         $content4=$_POST['content4'];
         $content5=$_POST['content5'];
+        $select1 = $_POST['select1'];
+        $select2 = $_POST['select2'];
+        $select3 = $_POST['select3'];
+        $select4 = $_POST['select4'];
+        $select5 = $_POST['select5'];
 
-        $stmt=$conn->prepare("INSERT INTO preguntas_mundialito(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, title, deadline) VALUES (:ucont1, :ucont2, :ucont3, :ucont4, :ucont5, :utitl, '$fecha')");
+        $stmt=$conn->prepare("INSERT INTO preguntas_mundialito(pregunta1, tipopregunta1, pregunta2, tipopregunta2, pregunta3, tipopregunta3, pregunta4, tipopregunta4, pregunta5, tipopregunta5, title, deadline) VALUES (:ucont1, :usel1, :ucont2, :usel2, :ucont3, :usel3, :ucont4, :usel4, :ucont5, :usel5, :utitl, '$fecha')");
         $stmt->bindParam(':ucont1', $content1);
         $stmt->bindParam(':ucont2', $content2);
         $stmt->bindParam(':ucont3', $content3);
         $stmt->bindParam(':ucont4', $content4);
         $stmt->bindParam(':ucont5', $content5);
+        $stmt->bindParam(':usel1', $select1);
+        $stmt->bindParam(':usel2', $select2);
+        $stmt->bindParam(':usel3', $select3);
+        $stmt->bindParam(':usel4', $select4);
+        $stmt->bindParam(':usel5', $select5);
         $stmt->bindParam(':utitl', $title);
 
 		if($stmt->execute()){
@@ -90,46 +100,6 @@
             </div>
         </header>
 
-        <div class="margin"></div>
-
-        <nav class="navegador_general" id="navbar">
-            <h1 class="text_nav">Mundial de Qatar 2022</h1>
-
-            <div class="wrapper_nav">
-                <div class="first_element">
-                    <img src="../../images/fixture_violeta.png" alt="Perfil" class="responsive">
-                    <span class="text">Perfil</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/fixture_violeta.png" alt="Fixture" class="responsive">
-                    <span class="text">Fixture</span>
-                </div> 
-            
-                <div class="element">
-                    <img src="../../images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
-                    <span class="text">Calendario</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/qatar_rosa.png" alt="Qatar" class="responsive">
-                    <span class="text">Sobre Qatar</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/selecciones.png" alt="Selecciones" onclick="selections()" class="responsive">
-                    <span class="text">Equipos</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/fixture_violeta.png" alt="Comunidad" class="responsive">
-                    <span class="text">Comunidad</span>
-                </div>
-            </div>
-        </nav>
- 
-        <div class="margin2"></div>
-
 		<div class="container">
             <p class="title">Crear encuesta</p>
             <form method="post" class="upload" autocomplete="off">
@@ -140,43 +110,43 @@
                 <div class="content">
                     <label class="label">Primera pregunta (obligatoria)</label>
                     <input type="text" id="content1" name="content1" class="form-control-content" required></input>
-                    <select class="select">
+                    <select class="select" name="select1">
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
                     </select>
                 </div>
-                <div class="content">
+                <div class="content" id="question2">
                     <label class="label">Segunda pregunta<i id="add2" class="navicon fas fa-solid fa-plus" onclick="enable2()"></i></label>
                     <input type="text" id="content2" name="content2" class="form-control-content" disabled required></input>
-                    <select id="select2" class="select" disabled>
+                    <select id="select2" class="select" name="select2" disabled>
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
                     </select>
                 </div>
-                <div class="content">
+                <div class="content" id="question3" style="display:none">
                     <label class="label">Tercera pregunta<i id="add3" class="navicon fas fa-solid fa-plus" onclick="enable3()"></i></label>
                     <input type="text" id="content3" name="content3" class="form-control-content" disabled required></input>
-                    <select id="select3" class="select" disabled>
+                    <select id="select3" class="select" name="select3" disabled>
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
                     </select>
                 </div>
-                <div class="content">
+                <div class="content" id="question4" style="display:none">
                     <label class="label">Cuarta pregunta<i id="add4" class="navicon fas fa-solid fa-plus" onclick="enable4()"></i></label>
                     <input type="text" id="content4" name="content4" class="form-control-content" disabled required></input>
-                    <select id="select4" class="select" disabled>
+                    <select id="select4" class="select" name="select4" disabled>
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
                     </select>
                 </div>
-                <div class="content">
+                <div class="content" id="question5" style="display:none">
                     <label class="label">Quinta pregunta<i id="add5" class="navicon fas fa-solid fa-plus" onclick="enable5()"></i></label>
                     <input type="text" id="content5" name="content5" class="form-control-content" disabled required></input>
-                    <select id="select5" class="select" disabled>
+                    <select id="select5" class="select" name="select5" disabled>
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
@@ -197,76 +167,97 @@
 </html>
 
 <script>
-    document.getElementById("add2").addEventListener("click", () => {
-        document.getElementById("content2").focus();
-        document.getElementById("select2").disabled = false;
+    var select2 = document.getElementById("select2");
+    var select3 = document.getElementById("select3");
+    var select4 = document.getElementById("select4");
+    var select5 = document.getElementById("select5");
+
+    var question3 = document.getElementById("question3");
+    var question4 = document.getElementById("question4");
+    var question5 = document.getElementById("question5");
+
+    var add2 = document.getElementById("add2");
+    var add3 = document.getElementById("add3");
+    var add4 = document.getElementById("add4");
+    var add5 = document.getElementById("add5");
+
+    var content2 = document.getElementById("content2");
+    var content3 = document.getElementById("content3");
+    var content4 = document.getElementById("content4");
+    var content5 = document.getElementById("content5");
+
+    add2.addEventListener("click", () => {
+        content2.focus();
+        question3.style.display = "block";
     });
 
-    document.getElementById("add3").addEventListener("click", () => {
-        document.getElementById("content3").focus();
-        document.getElementById("select3").disabled = false;
+    add3.addEventListener("click", () => {
+        content3.focus();
+        question4.style.display = "block";
     });
 
-    document.getElementById("add4").addEventListener("click", () => {
-        document.getElementById("content4").focus();
-        document.getElementById("select4").disabled = false;
+    add4.addEventListener("click", () => {
+        content4.focus();
+        question5.style.display = "block";
     });
 
-    document.getElementById("add5").addEventListener("click", () => {
-        document.getElementById("content5").focus();
-        document.getElementById("select5").disabled = false;
+    add5.addEventListener("click", () => {
+        content5.focus();
     });
 
     function enable2(){
-        if(document.getElementById("content2").disabled == false){
-            document.getElementById("content2").disabled = true;
-            document.getElementById("content2").value = "";
-            document.getElementById("content2").style.backgroundColor = 'gray';
-            document.getElementById("select2").disabled = true;
+        if(content2.disabled == false){
+            content2.disabled = true;
+            content2.value = "";
+            content2.style.backgroundColor = 'gray';
+            select2.disabled = true;
         }
-        else if(document.getElementById("content2").disabled == true){
-            document.getElementById("content2").disabled = false;
-            document.getElementById("content2").style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
-            document.getElementById("select2").disabled = false;
+        else if(content2.disabled == true){
+            content2.disabled = false;
+            content2.style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
+            select2.disabled = false;
         }
     }
 
     function enable3(){
-        if(document.getElementById("content3").disabled == false){
-            document.getElementById("content3").disabled = true;
-            document.getElementById("content3").value = "";
-            document.getElementById("content3").style.backgroundColor = 'gray';
+        if(content3.disabled == false){
+            content3.disabled = true;
+            content3.value = "";
+            content3.style.backgroundColor = 'gray';
+            select3.disabled = true;
         }
-        else if(document.getElementById("content3").disabled == true){
-            document.getElementById("content3").disabled = false;
-            document.getElementById("content3").style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
-            document.getElementById("select3").disabled = true;
+        else if(content3.disabled == true){
+            content3.disabled = false;
+            content3.style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
+            select3.disabled = false;
         }
     }
 
     function enable4(){
-        if(document.getElementById("content4").disabled == false){
-            document.getElementById("content4").disabled = true;
-            document.getElementById("content4").value = "";
-            document.getElementById("content4").style.backgroundColor = 'gray';
+        if(content4.disabled == false){
+            content4.disabled = true;
+            content4.value = "";
+            content4.style.backgroundColor = 'gray';
+            select4.disabled = true;
         }
-        else if(document.getElementById("content4").disabled == true){
-            document.getElementById("content4").disabled = false;
-            document.getElementById("content4").style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
-            document.getElementById("select4").disabled = true;
+        else if(content4.disabled == true){
+            content4.disabled = false;
+            content4.style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
+            select4.disabled = false;
         }
     }
 
     function enable5(){
-        if(document.getElementById("content5").disabled == false){
-            document.getElementById("content5").disabled = true;
-            document.getElementById("content5").value = "";
-            document.getElementById("content5").style.backgroundColor = 'gray';
+        if(content5.disabled == false){
+            content5.disabled = true;
+            content5.value = "";
+            content5.style.backgroundColor = 'gray';
+            select5.disabled = true;
         }
-        else if(document.getElementById("content5").disabled == true){
-            document.getElementById("content5").disabled = false;
-            document.getElementById("content5").style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
-            document.getElementById("select5").disabled = true;
+        else if(content5.disabled == true){
+            content5.disabled = false;
+            content5.style.backgroundColor = 'rgba(128, 124, 124, 0.432)';
+            select5.disabled = false;
         }
     }
 </script>

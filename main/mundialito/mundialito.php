@@ -99,19 +99,23 @@
                 <p class="description">Completa las siguentes encuestas y compite con otros usuarios para ganar premios</p>
                 <br>
                 
-                <div class="quiz_wrapper">
-                    <div class="quiz1">
-                        <button class="start" onclick="firstQuiz()">Comenzar (1)</button>
-                    </div>
+                <?php
+                    $stmt = $conn->prepare("SELECT * FROM preguntas_mundialito ORDER BY id");
+                    $stmt->execute();
+                    $count = $stmt->rowCount();
 
-                    <div class="quiz2">
-                        <button class="start" onclick="secondQuiz()">Comenzar (2)</button>
-                    </div>
-                    
-                    <div class="quiz3">
-                        <button class="start" onclick="thirdQuiz()">Comenzar (3)</button>
-                    </div>
-                </div>
+                    if($count > 0){
+                        echo "<div class='quiz_wrapper'>";
+                        while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                            extract($row);
+                            echo "<div class='quiz'>";
+                            // echo "<input type text value $idpregunta hidden>";
+                            echo "<button class='start' onclick='quiz(".$id.")'>Completar encuesta $title</button>";
+                            echo "</div>";
+                        }
+                        echo "</div>";
+                    }
+                ?>
             </div>
         
             <div class="small_container">
@@ -131,15 +135,7 @@
 </html>
 
 <script>
-    function firstQuiz(){
-        window.location.href="firstquiz.php";
-    }
-
-    function secondQuiz(){
-        window.location.href="secondquiz.php";
-    }
-
-    function thirdQuiz(){
-        window.location.href="thirdquiz.php";
+    function quiz(id){
+        window.location.href="firstquiz.php?id=" + id;
     }
 </script>
