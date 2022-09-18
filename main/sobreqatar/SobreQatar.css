@@ -4,37 +4,66 @@ html{
 }
 body{
     margin: 0;
-    min-height: 100vh;
-    background:linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)),url(photos/qatar2.jpg) center center fixed;
+    background:linear-gradient(rgb(255, 2, 171), rgb(192, 3, 3));
 }
 header{
-    background: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)); 
-    height: 10rem;
+    background:url(photos/banner.jpg);
+    height:10rem;
     overflow: hidden;
     color:antiquewhite;
-    font-size: xx-large;
+    font-size: 2.5rem;
     text-align: center;
     overflow: hidden;
     font-family: "Roboto";
 }
-
-.caja
-{
-    background:linear-gradient(rgba(5,7,12,0.75), rgba(5, 30, 94, 0.75));
-    height: 15rem;
-    width: 50rem;
-    border-radius: 4rem;
-    display: inline-block;
-    float: left;
+.infobox{
+    background-color:rgb(241, 226, 193);
+    height: 30rem;
+    width: 126.5rem; 
+    color:rgb(0, 0, 0);
+    font-size: 1rem;
+    text-align: right;
+    display: inline;
+    float: left; 
 }
+.box
+{
+   background-color: aliceblue;
+    color:aliceblue;
+    font-size: 4rem;
+    text-align: right;
+    display: inline;
+    float: left;
+    margin-top: 4rem;
+    margin-left: 1.6rem;
+    height: 700px;
+    width: 400px;
+    border-radius: 4rem;
+    margin-left: 5rem; 
+}
+.box h1
+{
+
+    text-align: center;
+    margin-top: 13rem ;
+}
+/*-------cajas seleccion-------*/
+#box1{
+    background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),url(photos/qatar2.jpg) no-repeat;
+}
+#box2{
+    background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),url(photos/qatar4.jpg) no-repeat center;
+}
+#box3{
+    background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),url(photos/qatar3.jpg) no-repeat center;
+}
+#box4{
+    background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),url(photos/qatar.jpg) no-repeat center;
+}
+
 #photocatar{
     border-radius: 2rem;
     height: 40rem;
     border-style: outset;
     margin-top: 2rem;
-}
-#infocatar{
-    color:aliceblue;
-    font-size: 2rem;
-    text-align: left;
 }
