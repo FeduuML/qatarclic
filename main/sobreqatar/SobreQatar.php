@@ -7,7 +7,6 @@
     </head> 
     <body>
 
-
         <div class="estadios">
             
             <h2><img class="imagen_lusail"src="qatar-fotos/lusail_estadio.jpg"></h2> 
@@ -21,7 +20,8 @@
         </div>
         
         <div class= "descrip">
-            <h2 class="lusail">Estadio con capacidad para 80,000 espectadores, que albergará la final de la Copa Mundial de la FIFA Catar 2022™.</h2>
+            <h2 class="lusail"><br><br>ESTADIO LUSAIL<br><br>Estadio con capacidad para 80,000 espectadores,<br> que albergará la final <br>de la Copa Mundial de la FIFA Catar 2022™. <br>PARTIDOS<br> 6 x Partidos de Grupo<br>
+Octavos de Final<br>Cuartos de Final<br>Semifinal y Final </h2>
             <h2 class="al_bait">Estadio con capacidad para 60,000 espectadores ubicado en la ciudad de Al Khor, célebre por sus actividades de pesca y de buceo para encontrar perlas</h2>
             <h2 class="e974">Un estadio con capacidad para 40,000 espectadores que rinde homenaje a la tradición marítima de Catar.</h2>
             <h2 class="khalifa">Estadio con capacidad para 40,000 espectadores, que ha sido la piedra angular de los deportes en Catar desde 1976.</h2>
