@@ -1,202 +1,55 @@
+html{
+    font-family: 'Permanent Marker', cursive;
+}
+
 body
 {
 	background: linear-gradient(to bottom right,rgb(255, 2, 171), rgb(192, 3, 3));
 	background-attachment: fixed;
 }
-
-.imagen_lusail
-{
+header{
+    background-color:blueviolet;
+    color: white;
+    padding: 2rem 3rem;
+    font-size: x-large;
+    text-align: center;
+    
+}
+.caja{
+    background-color: antiquewhite;
+    height: 40rem;
+    width: 51.2rem;
+    border-radius: 4rem;
     display: inline-block;
-    position: absolute;
-    font-size: 12px;  
-    color: black;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-top: 1px;
-    margin-left: 190px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    float: left
 }
-.lusail
-{
-    width: 820px;  
-    height: 461px;
-    background-color: rgb(238, 238, 228);
-    border-radius: 10px;
-    margin-left: 990px;
-    margin-top: 300px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+section div:hover{
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.4);
 }
-.imagen_al_bait
-{
-    display: inline-block;
-    position: absolute;
-    font-size: 12px;  
-    color: black;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-top: 550px;
-    margin-left: 1000px;
+/*------------------caja estadios----------------------*/
+#lusail{
+    margin-left: 10rem;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-justify: auto;
 }
-.al_bait
-{
-    width: 820px;  
-    height: 461px;
-    background-color: rgb(238, 238, 228);
-    border-radius: 10px;
-    margin-left: 210px;
-    margin-top: 90px;
+#al_bait{
+    margin-left: 3rem;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.imagen_974
-{
-    display: inline-block;
-    position: absolute;
-    font-size: 12px;  
-    color: black;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-top: 1080px;
-    margin-left: 200px;
+/*------------------contenido caja estadios----------------------*/
+section div h2, section div p{
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.e974
-{
-    width: 820px;  
-    height: 461px;
-    background-color: rgb(238, 238, 228);
-    border-radius: 10px;
-    margin-left: 990px;
-    margin-top: 70px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+section div h2{
+    font-size: x-large;
 }
-
-.imagen_khalifa
-{
-    display: inline-block;
-    position: absolute;
-    font-size: 12px;  
-    color: black;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-top: 1610px;
-    margin-left: 1000px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+section div p{
+    font-size: large;
 }
-
-.khalifa
-{
-    width: 820px;  
-    height: 461px;
-    background-color: rgb(238, 238, 228);
-    border-radius: 10px;
-    margin-left: 200px;
-    margin-top: 67px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+/*------------------imagenes estadios----------------------*/
+#photo_lusail{
+    border-radius: 4rem;
 }
-
-.imagen_educity
-{
-    display: inline-block;
-    position: absolute;
-    font-size: 12px;  
-    color: black;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-top: 2150px;
-    margin-left: 190px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.educity
-{
-    width: 820px;  
-    height: 461px;
-    background-color: rgb(238, 238, 228);
-    border-radius: 10px;
-    margin-left: 990px;
-    margin-top: 80px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.imagen_aljanoub
-{
-    display: inline-block;
-    position: absolute;
-    font-size: 12px;  
-    color: black;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-top: 2700px;
-    margin-left: 1005px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.aljanoub
-{
-    width: 820px;  
-    height: 461px;
-    background-color: rgb(238, 238, 228);
-    border-radius: 10px;
-    margin-left: 200px;
-    margin-top: 90px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.imagen_althumama
-{
-    display: inline-block;
-    position: absolute;
-    font-size: 12px;  
-    color: black;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-top: 3250px;
-    margin-left: 190px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.althumama
-{
-    width: 820px;  
-    height: 461px;
-    background-color: rgb(238, 238, 228);
-    border-radius: 10px;
-    margin-left: 1000px;
-    margin-top: 90px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.imagen_ahmadbinali
-{
-    display: inline-block;
-    position: absolute;
-    font-size: 12px;  
-    color: black;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-top: 3803px;
-    margin-left: 1000px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.ahmadbinali
-{
-    width: 820px;  
-    height: 461px;
-    background-color: rgb(238, 238, 228);
-    border-radius: 10px;
-    margin-left: 190px;
-    margin-top: 90px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+#photo_al_bait{
+    border-radius: 4rem;
 }
