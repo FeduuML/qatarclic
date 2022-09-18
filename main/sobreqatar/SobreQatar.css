@@ -15,22 +15,26 @@ header{
     text-align: center;
     
 }
+
 .caja{
+    transition: box-shadow 0.3s ease;
     background-color: antiquewhite;
     height: 40rem;
     width: 51.2rem;
     border-radius: 4rem;
     display: inline-block;
-    float: left
+    float: left;
+    cursor: pointer;
+
 }
-section div:hover{
-    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.4);
+.caja:hover{
+    box-shadow: 0rem 0.4rem 0.8rem rgba(0,0,0,0.4);
 }
+
 /*------------------caja estadios----------------------*/
 #lusail{
     margin-left: 10rem;
     text-align: center;
-    text-justify: auto;
 }
 #al_bait{
     margin-left: 3rem;
