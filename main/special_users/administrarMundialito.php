@@ -22,11 +22,11 @@
         $stmt->bindParam(':utitl', $title);
 
         if($stmt->execute()){
-            $stmt=$conn->prepare("SELECT * FROM encuestas");
-            $stmt->execute();
-            $count = $stmt->rowCount();
+            $stmt=$conn->prepare("SELECT id FROM encuestas ORDER BY id DESC LIMIT 1");
             
             if($stmt->execute()){
+                $row=$stmt->fetch(PDO::FETCH_ASSOC);
+                $count = $row['id'];
                 $i = 0;
                 foreach($_POST['content'] AS $content){
                     $result['content'] = $content;

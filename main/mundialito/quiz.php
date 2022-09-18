@@ -33,6 +33,12 @@
                 if(isset($_GET['id'])){
                     $id_encuesta = $_GET['id'];
 
+                    $stmt=$conn->prepare("SELECT id FROM `preguntas` WHERE id_encuesta=$id_encuesta LIMIT 1;");
+                    $stmt->execute();
+                    $row=$stmt->fetch(PDO::FETCH_ASSOC);
+
+                    $id_pregunta = $row['id'];
+
                     if(isset($_POST['btn-add'])){
                         foreach($_POST['answer'] AS $answer){
                             $stmt=$conn->prepare("INSERT INTO respuestas(id_usuario, id_pregunta, respuesta) VALUES ('$user_id', $id_pregunta, '$answer')");
@@ -43,6 +49,7 @@
                             else{
                                 echo("<script>alert('Ha ocurrido un error');</script>");
                             }
+                            $id_pregunta++;
                         }
                     }
 
