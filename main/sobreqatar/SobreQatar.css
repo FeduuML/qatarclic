@@ -1,0 +1,40 @@
+html{
+    font-family: 'Permanent Marker', cursive;
+    font-family: Yanone Kaffeesatz;
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+    background:linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)),url(photos/qatar2.jpg) center center fixed;
+}
+header{
+    background: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)); 
+    height: 10rem;
+    overflow: hidden;
+    color:antiquewhite;
+    font-size: xx-large;
+    text-align: center;
+    overflow: hidden;
+    font-family: "Roboto";
+}
+
+.caja
+{
+    background:linear-gradient(rgba(5,7,12,0.75), rgba(5, 30, 94, 0.75));
+    height: 15rem;
+    width: 50rem;
+    border-radius: 4rem;
+    display: inline-block;
+    float: left;
+}
+#photocatar{
+    border-radius: 2rem;
+    height: 40rem;
+    border-style: outset;
+    margin-top: 2rem;
+}
+#infocatar{
+    color:aliceblue;
+    font-size: 2rem;
+    text-align: left;
+}

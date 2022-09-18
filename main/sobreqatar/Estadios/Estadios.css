@@ -23,8 +23,8 @@ header{
     height: 40rem;
     width: 51.2rem;
     border-radius: 4rem;
-    display: inline-block;
-    float: left;
+    display: inline;
+    float: right;
     cursor: pointer;
 
 }

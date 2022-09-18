@@ -13,8 +13,9 @@ html,body{
 
 body
 {
-	background: rgba(42, 0, 10, 0.918);
+	background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
 	background-attachment: fixed;
+    
 }
 
 .big_container{

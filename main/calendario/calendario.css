@@ -5,10 +5,12 @@
  	margin: 0px;
  	box-sizing: border-box;
 }
-
+header{
+    position:relative;
+}
 body
 {
-	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
+	background: linear-gradient(to bottom left,rgb(145, 28, 44), rgb(17, 17, 17));
 	background-attachment: fixed;
 }
 
@@ -56,6 +58,7 @@ body
     top:0;
     bottom:0;
     margin:auto;
+    
 }
 
 .table td{
@@ -73,7 +76,8 @@ body
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 200px;
+    border-radius: 3rem;
 }
 
 .container, .meses{
