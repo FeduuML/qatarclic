@@ -28,7 +28,7 @@
     </head>
 
     <body>
-        <header class="header" id="header">
+    <header class="header" id="header">
             <div class="wrapper">
                 <div class="logo"><?php require '../../header/header.php';?></div>
                 <nav>
@@ -37,44 +37,59 @@
                         echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
                         if($_SESSION['rol_id'] == 1){
-                            echo("<div id='user_options' style='height:80%;' class='user_options'><h1>$username</h1><hr><br><a href='../special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='../settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                        }
+                        else if($_SESSION['rol_id'] == 2){
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
-                            echo("<div id='user_options' style='height:60%;' class='user_options'><h1>$username</h1><hr><br><a href='../settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                     }
                     else{
-                        echo("<a href='../../account/login.php'>Iniciar sesion</a>");
+                        echo("<a href='account/login.php'>Iniciar sesion</a>");
                     } ?>
                 </nav>
             </div>
+        </header>
 
-            <nav class="navegador_general" id="navbar">
-                <div class="perfil">
-                    <h1 class="text">Perfil</h1>
+        <div class="margin"></div>
+
+        <nav class="navegador_general" id="navbar">
+            <h1 class="text_nav">Mundial de Qatar 2022</h1>
+
+            <div class="wrapper_nav">
+                <div class="first_element">
+                    <img src="../../images/fixture_violeta.png" alt="Perfil" class="responsive">
+                    <span class="text">Perfil</span>
                 </div>
 
-                <div class="fixture">
-                    <h1 class="text">Fixture</h1>
+                <div class="element">
+                    <img src="../../images/fixture_violeta.png" alt="Fixture" class="responsive">
+                    <span class="text">Fixture</span>
                 </div> 
             
-                <div class="calendario">
-                   <h1 class="text" id="calendario" onclick="calendario()">Calendario</h1>
+                <div class="element">
+                    <img src="../../images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
+                    <span class="text">Calendario</span>
                 </div>
 
-                <div class="qatar">
-                    <h1 class="text">Sobre Qatar<h1>
+                <div class="element">
+                    <img src="../../images/qatar_rosa.png" alt="Qatar" class="responsive">
+                    <span class="text">Sobre Qatar</span>
                 </div>
 
-                <div class="selecciones">
-                    <h1 class="text" id="selections" onclick="selections()">Selecciones<h1>
+                <div class="element">
+                    <img src="../../images/selecciones.png" alt="Selecciones" onclick="selections()" class="responsive">
+                    <span class="text">Equipos</span>
                 </div>
 
-                <div class="comunidad">
-                    <h1 class="text">Comunidad<h1>
+                <div class="element">
+                    <img src="../../images/fixture_violeta.png" alt="Comunidad" class="responsive">
+                    <span class="text">Comunidad</span>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
 
         <div class="wrap">
             <div class="references" id="blur2">
@@ -125,16 +140,16 @@
                     <li class="day">18</li>
                     <li class="day">19</li>
                     <li class="day">20</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle1()">21</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle2()">22</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle3()">23</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle4()">24</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle5()">25</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle6()">26</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle7()">27</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle8()">28</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle9()">29</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle10()">30</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(1)">21</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(2)">22</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(3)">23</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(4)">24</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(5)">25</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(6)">26</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(7)">27</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(8)">28</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(9)">29</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(10)">30</li>
                 </ol>
             </div>
 
@@ -149,24 +164,24 @@
                     <li class="day-name">Sab</li>
                     <li class="day-name">Dom</li>
 
-                    <li class="day" id="first-day-december" type="button" onclick="toggle11()">1</li>
-                    <li class="day" id="grupos" type="button" onclick="toggle12()">2</li>
-                    <li class="day" id="octavos" type="button" onclick="toggle13()">3</li>
-                    <li class="day" id="octavos" type="button" onclick="toggle14()">4</li>
-                    <li class="day" id="octavos" type="button" onclick="toggle15()">5</li>
-                    <li class="day" id="octavos" type="button" onclick="toggle16()">6</li>
+                    <li class="day" id="first-day-december" type="button" onclick="toggle(11)">1</li>
+                    <li class="day" id="grupos" type="button" onclick="toggle(12)">2</li>
+                    <li class="day" id="octavos" type="button" onclick="toggle(13)">3</li>
+                    <li class="day" id="octavos" type="button" onclick="toggle(14)">4</li>
+                    <li class="day" id="octavos" type="button" onclick="toggle(15)">5</li>
+                    <li class="day" id="octavos" type="button" onclick="toggle(16)">6</li>
                     <li class="day">7</li>
                     <li class="day">8</li>
-                    <li class="day" id="cuartos" type="button" onclick="toggle17()">9</li>
-                    <li class="day" id="cuartos" type="button" onclick="toggle18()">10</li>
+                    <li class="day" id="cuartos" type="button" onclick="toggle(17)">9</li>
+                    <li class="day" id="cuartos" type="button" onclick="toggle(18)">10</li>
                     <li class="day" >11</li>
                     <li class="day" >12</li>
-                    <li class="day" id="semifinal" type="button" onclick="toggle19()">13</li>
-                    <li class="day" id="semifinal" type="button" onclick="toggle20()">14</li>
+                    <li class="day" id="semifinal" type="button" onclick="toggle(19)">13</li>
+                    <li class="day" id="semifinal" type="button" onclick="toggle(20)">14</li>
                     <li class="day">15</li>
                     <li class="day">16</li>
-                    <li class="day" id="tercerpuesto" type="button" onclick="toggle21()">17</li>
-                    <li class="day" id="final" type="button" onclick="toggle22()">18</li>
+                    <li class="day" id="tercerpuesto" type="button" onclick="toggle(21)">17</li>
+                    <li class="day" id="final" type="button" onclick="toggle(22)">18</li>
                     <li class="day">19</li>
                     <li class="day">20</li>
                     <li class="day">21</li>
@@ -196,7 +211,7 @@
                 <p> 13:00 </p>
                 <p><img src="../../images/flags/eeuu.jpg">Estados Unidos vs Gales <img src="../../images/flags/gales.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle1()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(1)">Cerrar</button>
             </div>
 
             <div id="popup2">
@@ -210,7 +225,7 @@
                 <p> 13:00 </p>
                 <p><img src="../../images/flags/francia.jpg">Francia vs Australia <img src="../../images/flags/australia.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle2()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(2)">Cerrar</button>
             </div>
 
             <div id="popup3">
@@ -224,7 +239,7 @@
                 <p> 13:00 </p>
                 <p><img src="../../images/flags/belgica.jpg">Belgica vs Canada <img src="../../images/flags/canada.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle3()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(3)">Cerrar</button>
             </div>
 
             <div id="popup4">
@@ -238,7 +253,7 @@
                 <p> 13:00 </p>
                 <p><img src="../../images/flags/brasil.jpg">Brasil vs Serbia <img src="../../images/flags/serbia.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle4()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(4)">Cerrar</button>
             </div>
 
             <div id="popup5">
@@ -252,7 +267,7 @@
                 <p> 13:00 </p>
                 <p><img src="../../images/flags/inglaterra.jpg">Inglaterra vs Estados Unidos <img src="../../images/flags/eeuu.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle5()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(5)">Cerrar</button>
             </div>
 
             <div id="popup6">
@@ -266,7 +281,7 @@
                 <p> 13:00 </p>
                 <p><img src="../../images/flags/argentina.jpg">Argentina vs Mexico<img src="../../images/flags/mexico.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle6()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(6)">Cerrar</button>
             </div>
 
             <div id="popup7">
@@ -280,7 +295,7 @@
                 <p> 13:00 </p>
                 <p><img src="../../images/flags/españa.jpg">España vs Alemania <img src="../../images/flags/alemania.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle7()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(7)">Cerrar</button>
             </div>
 
             <div id="popup8">
@@ -294,7 +309,7 @@
                 <p> 13:00 </p>
                 <p><img src="../../images/flags/portugal.jpg">Portugal vs Uruguay <img src="../../images/flags/uruguay.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle8()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(8)">Cerrar</button>
             </div>
 
             <div id="popup9">
@@ -308,7 +323,7 @@
                 <p> 13:00 </p>
                 <p><p><img src="../../images/flags/iran.jpg">Irán vs Estados Unidos<img src="../../images/flags/eeuu.jpg">16:00</p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle9()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(9)">Cerrar</button>
             </div>
 
             <div id="popup10">
@@ -322,7 +337,7 @@
                 <p> 16:00 </p>
                 <p><img src="../../images/flags/arabia.jpg">Arabia Saudita vs México<img src="../../images/flags/mexico.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle10()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(10)">Cerrar</button>
             </div>
 
             <div id="popup11">
@@ -336,7 +351,7 @@
                 <p> 16:00 </p>
                 <p><img src="../../images/flags/costa_rica.jpg">Costa Rica vs Alemania<img src="../../images/flags/alemania.jpg"> 16:00</p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle11()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(11)">Cerrar</button>
             </div>
 
             <div id="popup12">
@@ -350,7 +365,7 @@
                 <p> 16:00 </p>
                 <p><img src="../../images/flags/serbia.jpg">Serbia vs Suiza<img src="../../images/flags/suiza.jpg"></p>
                 <p> 16:00 </p>
-                <button class="cerrar" href="#" onclick="toggle12()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(12)">Cerrar</button>
             </div>
 
             <div id="popup13">
@@ -360,7 +375,7 @@
                 <p> A definir - 12:00 </p>
                 <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle13()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(13)">Cerrar</button>
             </div>
 
             <div id="popup14">
@@ -370,7 +385,7 @@
                 <p> A definir - 12:00 </p>
                 <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle14()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(14)">Cerrar</button>
             </div>
 
             <div id="popup15">
@@ -380,7 +395,7 @@
                 <p> A definir - 12:00 </p>
                 <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle15()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(15)">Cerrar</button>
             </div>
 
             <div id="popup16">
@@ -390,7 +405,7 @@
                 <p> A definir - 12:00 </p>
                 <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle16()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(16)">Cerrar</button>
             </div>
 
             <div id="popup17">
@@ -400,7 +415,7 @@
                 <p> A definir - 12:00 </p>
                 <p><img src="../../images/flags/definir.jpg">Cuartos de final<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle17()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(17)">Cerrar</button>
             </div>
 
             <div id="popup18">
@@ -410,7 +425,7 @@
                 <p> A definir - 12:00 </p>
                 <p><img src="../../images/flags/definir.jpg">Cuartos de final<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle18()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle1(18)">Cerrar</button>
             </div>
 
             <div id="popup19">
@@ -418,7 +433,7 @@
                 <br>
                 <p><img src="../../images/flags/definir.jpg">Semifinal<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle19()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(19)">Cerrar</button>
             </div>
 
             <div id="popup20">
@@ -426,7 +441,7 @@
                 <br>
                 <p><img src="../../images/flags/definir.jpg">Semifinal<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle20()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(20)">Cerrar</button>
             </div>
 
             <div id="popup21">
@@ -434,7 +449,7 @@
                 <br>
                 <p><img src="../../images/flags/definir.jpg">3° y 4° puesto<img src="../../images/flags/definir.jpg"></p>
                 <p> A definir - 16:00 </p><br><br><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle21()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(21)">Cerrar</button>
             </div>
 
             <div id="popup22">
@@ -442,7 +457,7 @@
                 <br>
                 <p><img src="../../images/flags/definir.jpg">Final<img src="../images/flags/definir.jpg"></p>
                 <p> A definir - 12:00 </p><br><br><br><br><br><br><br>
-                <button class="cerrar" href="#" onclick="toggle22()">Cerrar</button>
+                <button class="cerrar" href="#" onclick="toggle(22)">Cerrar</button>
             </div>
         </div>
         <script src="calendario.js"></script>
