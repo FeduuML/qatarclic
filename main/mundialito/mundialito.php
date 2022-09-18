@@ -100,7 +100,7 @@
                 <br>
                 
                 <?php
-                    $stmt = $conn->prepare("SELECT * FROM preguntas_mundialito ORDER BY id");
+                    $stmt = $conn->prepare("SELECT * FROM encuestas ORDER BY id");
                     $stmt->execute();
                     $count = $stmt->rowCount();
 
@@ -120,7 +120,7 @@
         
             <div class="small_container">
                 <div class="container1">
-                    <p class="warning">Completa la encuenta para ver los resultados</p>
+                    <p class="warning">Haz clic <a href="answers.php">aqui</a> para ver tus respuestas</p>
                 </div>
 
                 <div class="container2">
@@ -136,6 +136,6 @@
 
 <script>
     function quiz(id){
-        window.location.href="firstquiz.php?id=" + id;
+        window.location.href="quiz.php?id=" + id;
     }
 </script>

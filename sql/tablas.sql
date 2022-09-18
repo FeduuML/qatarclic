@@ -63,56 +63,62 @@ INSERT INTO `news` VALUES('3', 'Lorrrran', 'Test3', 'Test3', '245070.jpg', '2022
 INSERT INTO `news` VALUES('4', 'Lorrrran', 'Test4', 'Test4', '367687.jpg', '2022-09-09 08:14:31');
 INSERT INTO `news` VALUES('5', 'Lorrrran', 'Test5', 'Test5', '668926.jpg', '2022-09-09 15:36:12');
 
-CREATE TABLE `preguntas_mundialito` (
+CREATE TABLE `encuestas` (
     `id` int NOT NULL AUTO_INCREMENT,
     `title` text NOT NULL,
-    `pregunta1` text NOT NULL,
-    `tipopregunta1` text NOT NULL,
-    `pregunta2` text,
-    `tipopregunta2` text,
-    `pregunta3` text,
-    `tipopregunta3` text,
-    `pregunta4` text,
-    `tipopregunta4` text,
-    `pregunta5` text,
-    `tipopregunta5` text,
     `deadline` datetime NOT NULL,
     PRIMARY KEY(id)
 );
 
-INSERT INTO `preguntas_mundialito` VALUES ('1', 'Final del Mundial',
-'¿Cuál será el primer equipo en llegar a la final?', 'Paises',
-'¿Cuál será el segundo equipo en llegar a la final?', 'Paises',
-'¿Quién ganará la final?', 'Paises',
-'¿Cuál será el tercer puesto?', 'Paises',
-'¿Cuál será el cuarto puesto?', 'Paises',
-'2022-11-20 00:00:00'),
+INSERT INTO `encuestas` VALUES('1', 'Final del mundial', '2022-11-20 00:00:00'),
+('2', 'Repechajes', '2022-10-20 14:30:00'),
+('3', 'Reconocientos individuales', '2022-11-20 00:00:00');
 
-('2', 'Repechajes',
-'¿Quién será el ganador de Perú VS Australia?', 'Paises',
-'¿Quién será el ganador de Costa Rica VS Nueva Zelanda?', 'Paises',
-'¿Quién será el ganador de Gales VS Ucrania?', 'Paises',
-'¿Quién será el ganador de Portugal VS Macedonia del Norte?', 'Paises',
-'¿Quién será el ganador de Polonia VS Suecia?', 'Paises',
-'2022-10-20 14:30:00'),
-
-('3', 'Reconocimientos individuales',
-'¿Quién será el máximo goleador del torneo?', 'Jugadores',
-'¿Quién será el máximo asistidor del torneo?', 'Jugadores',
-NULL,NULL,NULL,NULL,NULL,NULL,'2022-11-20 00:00:00');
-
-CREATE TABLE `respuestas_mundialito` (
+CREATE TABLE `preguntas` (
     `id` int NOT NULL AUTO_INCREMENT,
     `id_encuesta` int NOT NULL,
+    `pregunta` text NOT NULL,
+    `tipo` text NOT NULL,
+    `respuesta` text,
+    PRIMARY KEY(`id`),
+    FOREIGN KEY (`id_encuesta`) REFERENCES `encuestas`(`id`)
+);
+
+INSERT INTO `preguntas` VALUES ('1', '1', '¿Cuál será el primer equipo en llegar a la final?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 1;
+INSERT INTO `preguntas` VALUES ('2', '1', '¿Cuál será el segundo equipo en llegar a la final?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 1;
+INSERT INTO `preguntas` VALUES ('3', '1', '¿Quién ganará la final?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 1;
+INSERT INTO `preguntas` VALUES ('4', '1', '¿Cuál será el tercer puesto?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 1;
+INSERT INTO `preguntas` VALUES ('5', '1', '¿Cuál será el cuarto puesto?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 1;
+
+INSERT INTO `preguntas` VALUES ('6', '2', '¿Quién será el ganador de Perú VS Australia?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 2;
+INSERT INTO `preguntas` VALUES ('7', '2', '¿Quién será el ganador de Costa Rica VS Nueva Zelanda?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 2;
+INSERT INTO `preguntas` VALUES ('8', '2', '¿Quién será el ganador de Gales VS Ucrania?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 2;
+INSERT INTO `preguntas` VALUES ('9', '2', '¿Quién será el ganador de Portugal VS Macedonia del Norte?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 2;
+INSERT INTO `preguntas` VALUES ('10', '2', '¿Quién será el ganador de Polonia VS Suecia?', 'Paises', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 2;
+
+INSERT INTO `preguntas` VALUES ('11', '3', '¿Quién será el máximo goleador del torneo?', 'Jugadores', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 3;
+INSERT INTO `preguntas` VALUES ('12', '3', '¿Quién será el máximo asistidor del torneo?', 'Jugadores', NULL);
+SELECT e.id FROM encuestas e WHERE e.id = 3;
+
+CREATE TABLE `respuestas` (
+    `id` int NOT NULL AUTO_INCREMENT,
     `id_usuario` int NOT NULL,
-    `respuesta1` text NOT NULL,
-    `respuesta2` text,
-    `respuesta3` text,
-    `respuesta4` text,
-    `respuesta5` text,
+    `id_pregunta` int NOT NULL,
+    `respuesta` text NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY (`id_usuario`) REFERENCES `users`(`id`),
-    FOREIGN KEY (`id_encuesta`) REFERENCES `preguntas_mundialito`(`id`)
+    FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas`(`id`)
 );
 
 CREATE TABLE `players` (

@@ -17,50 +17,41 @@
         date_default_timezone_set('America/Buenos_Aires');
         $fecha = date('Y-m-d H:i:s', strtotime($_POST['deadline']));
         $title=$_POST['title'];
-        $content1=$_POST['content1'];
-        $content2=$_POST['content2'];
-        $content3=$_POST['content3'];
-        $content4=$_POST['content4'];
-        $content5=$_POST['content5'];
-        $select1 = $_POST['select1'];
-        $select2 = $_POST['select2'];
-        $select3 = $_POST['select3'];
-        $select4 = $_POST['select4'];
-        $select5 = $_POST['select5'];
 
-        $stmt=$conn->prepare("INSERT INTO preguntas_mundialito(pregunta1, tipopregunta1, pregunta2, tipopregunta2, pregunta3, tipopregunta3, pregunta4, tipopregunta4, pregunta5, tipopregunta5, title, deadline) VALUES (:ucont1, :usel1, :ucont2, :usel2, :ucont3, :usel3, :ucont4, :usel4, :ucont5, :usel5, :utitl, '$fecha')");
-        $stmt->bindParam(':ucont1', $content1);
-        $stmt->bindParam(':ucont2', $content2);
-        $stmt->bindParam(':ucont3', $content3);
-        $stmt->bindParam(':ucont4', $content4);
-        $stmt->bindParam(':ucont5', $content5);
-        $stmt->bindParam(':usel1', $select1);
-        $stmt->bindParam(':usel2', $select2);
-        $stmt->bindParam(':usel3', $select3);
-        $stmt->bindParam(':usel4', $select4);
-        $stmt->bindParam(':usel5', $select5);
+        $stmt=$conn->prepare("INSERT INTO encuestas(title, deadline) VALUES (:utitl, '$fecha')");
         $stmt->bindParam(':utitl', $title);
 
-		if($stmt->execute()){
+        if($stmt->execute()){
+            $stmt=$conn->prepare("SELECT * FROM encuestas");
+            $stmt->execute();
+            $count = $stmt->rowCount();
+            
+            if($stmt->execute()){
+                $i = 0;
+                foreach($_POST['content'] AS $content){
+                    $result['content'] = $content;
+                    if(isset($_POST['select'])){
+                        $select = $_POST['select'];
+                        $result['select'] = $select[$i];
+                        $tipo = $result['select'];
+                        $i++;
+                        if(!empty($content)){
+                            $stmt=$conn->prepare("INSERT INTO preguntas(id_encuesta, pregunta, tipo, respuesta) VALUES ('$count', '$content', '$tipo', NULL)");
+                            if($stmt->execute()){
+                                echo("<script>alert('Encuesta cargada exitosamente');</script>");
+                                echo("<script>window.location.href = '../../index.php'</script>");
+                            }
+                            else{
+                                echo("<script>alert('Ha ocurrido un error');</script>");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 ?>
-			<script>
-				alert("Encuesta cargada exitosamente");
-				window.location.href=('../../index.php');
-			</script>
 
-			<?php
-		}
-		else{
-			?>
-			<script>
-				alert("Error en la carga de la encuesta");
-				window.location.href=('../../index.php');
-			</script>
-
-			<?php
-		}
-	}
-			?>
 
 <html>
     <head>
@@ -109,8 +100,8 @@
                 </div>
                 <div class="content">
                     <label class="label">Primera pregunta (obligatoria)</label>
-                    <input type="text" id="content1" name="content1" class="form-control-content" required></input>
-                    <select class="select" name="select1">
+                    <input type="text" id="content1" name="content[]" class="form-control-content" required></input>
+                    <select class="select" name="select[]">
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
@@ -118,8 +109,8 @@
                 </div>
                 <div class="content" id="question2">
                     <label class="label">Segunda pregunta<i id="add2" class="navicon fas fa-solid fa-plus" onclick="enable2()"></i></label>
-                    <input type="text" id="content2" name="content2" class="form-control-content" disabled required></input>
-                    <select id="select2" class="select" name="select2" disabled>
+                    <input type="text" id="content2" name="content[]" class="form-control-content" disabled required></input>
+                    <select id="select2" class="select" name="select[]" disabled>
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
@@ -127,8 +118,8 @@
                 </div>
                 <div class="content" id="question3" style="display:none">
                     <label class="label">Tercera pregunta<i id="add3" class="navicon fas fa-solid fa-plus" onclick="enable3()"></i></label>
-                    <input type="text" id="content3" name="content3" class="form-control-content" disabled required></input>
-                    <select id="select3" class="select" name="select3" disabled>
+                    <input type="text" id="content3" name="content[]" class="form-control-content" disabled required></input>
+                    <select id="select3" class="select" name="select[]" disabled>
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
@@ -136,8 +127,8 @@
                 </div>
                 <div class="content" id="question4" style="display:none">
                     <label class="label">Cuarta pregunta<i id="add4" class="navicon fas fa-solid fa-plus" onclick="enable4()"></i></label>
-                    <input type="text" id="content4" name="content4" class="form-control-content" disabled required></input>
-                    <select id="select4" class="select" name="select4" disabled>
+                    <input type="text" id="content4" name="content[]" class="form-control-content" disabled required></input>
+                    <select id="select4" class="select" name="select[]" disabled>
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
@@ -145,8 +136,8 @@
                 </div>
                 <div class="content" id="question5" style="display:none">
                     <label class="label">Quinta pregunta<i id="add5" class="navicon fas fa-solid fa-plus" onclick="enable5()"></i></label>
-                    <input type="text" id="content5" name="content5" class="form-control-content" disabled required></input>
-                    <select id="select5" class="select" name="select5" disabled>
+                    <input type="text" id="content5" name="content[]" class="form-control-content" disabled required></input>
+                    <select id="select5" class="select" name="select[]" disabled>
                         <option value="paises">Paises</option>
                         <option value="jugadores">Jugadores</option>
                         <option value="otros">Otros</option>
