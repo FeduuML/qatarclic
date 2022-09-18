@@ -17,6 +17,7 @@ header{
 }
 
 .caja{
+    margin-top: 8rem;
     transition: box-shadow 0.3s ease;
     background-color: antiquewhite;
     height: 40rem;
@@ -31,15 +32,7 @@ header{
     box-shadow: 0rem 0.4rem 0.8rem rgba(0,0,0,0.4);
 }
 
-/*------------------caja estadios----------------------*/
-#lusail{
-    margin-left: 10rem;
-    text-align: center;
-}
-#al_bait{
-    margin-left: 3rem;
-    text-align: center;
-}
+
 /*------------------contenido caja estadios----------------------*/
 section div h2, section div p{
     text-align: center;
@@ -50,10 +43,21 @@ section div h2{
 section div p{
     font-size: large;
 }
-/*------------------imagenes estadios----------------------*/
-#photo_lusail{
-    border-radius: 4rem;
+
+/*------------------caja estadios----------------------*/
+#left{
+    margin-top: 2rem;
+    margin-left: 10rem;
+    text-align: center;
+    
 }
-#photo_al_bait{
+#right{
+    margin-left: 3rem;
+    text-align: center;
+}
+
+
+/*------------------imagenes estadios----------------------*/
+#photo{
     border-radius: 4rem;
 }
