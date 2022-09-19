@@ -4,20 +4,13 @@ html{
 
 body
 {
-	background: linear-gradient(to bottom right,rgb(255, 2, 171), rgb(192, 3, 3));
+	background: linear-gradient(to bottom right,rgb(192,3,3),rgb(255, 2, 171), rgb(192, 3, 3));
 	background-attachment: fixed;
 }
-header{
-    background-color:blueviolet;
-    color: white;
-    padding: 2rem 3rem;
-    font-size: x-large;
-    text-align: center;
-    
-}
+
 
 .caja{
-    margin-top: 8rem;
+    margin-top: 25rem;
     transition: box-shadow 0.3s ease;
     background-color: antiquewhite;
     height: 40rem;
@@ -26,10 +19,11 @@ header{
     display: inline;
     float: right;
     cursor: pointer;
+   
 
 }
 .caja:hover{
-    box-shadow: 0rem 0.4rem 0.8rem rgba(0,0,0,0.4);
+    box-shadow: 0rem 0.4rem 0.8rem rgba(0,0,0,0.4); 
 }
 
 
@@ -47,20 +41,24 @@ section div p{
 
 /*------------------caja estadios----------------------*/
 #left{
-    margin-top: 5rem;
-    margin-right: 9rem;
+    margin-top: 7rem;
+    margin-right: 10rem;
     text-align: center;
     
 }
 #right{
-    margin-right: 4rem;
-    float:right;
+    margin-top: 12rem;
+    margin-right: 6rem;
     margin-left: 2rem;
     text-align: center;
+    
 }
 
 
 /*------------------imagenes estadios----------------------*/
 #photo{
     border-radius: 4rem;
+}
+section{
+    margin-top: 12rem ;
 }

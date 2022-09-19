@@ -110,6 +110,6 @@
         window.location.href="../grupos/selections.php";
 
     function estadio(){
-        window.location.href="../estadios/estadios.php";
+        window.location.href="estadios/estadios.php";
     }
 </script>
