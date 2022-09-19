@@ -12,14 +12,14 @@ body
 .caja{
     width: 98%;
     max-width: 900px;
-    margin-top: 25rem;
-    transition: box-shadow 0.3s ease;
+    margin: auto;
     background-color: antiquewhite;
     border-radius: 4rem;
     display: inline;
     float: right;
-    /*overflow: hidden;*/
+    overflow: hidden;
     position: relative;
+    text-align: center;
 }
 .caja:hover{
     box-shadow: 0rem 0.4rem 0.8rem rgba(0,0,0,0.4); 
@@ -45,7 +45,7 @@ body
 position: absolute;
 width: 40px;
 height: 40px;
-background: rgba(0,0,0,0.7);
+background: rgba(255,255,255,0.7);
 top: 50%;
 transform: translateY(-50%);
 font-size: 30px;
@@ -79,7 +79,7 @@ section div p{
     font-size: large;
 }
 
-/*------------------caja estadios----------------------*/
+/*------------------caja estadios------------
 #left{
     margin-top: 7rem;
     margin-right: 10rem;
@@ -93,7 +93,7 @@ section div p{
     text-align: center;
     
 }
-
+*/
 
 /*------------------imagenes estadios----------------------*/
 #photo{
