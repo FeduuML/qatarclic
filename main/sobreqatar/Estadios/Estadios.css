@@ -33,6 +33,7 @@ header{
 }
 
 
+
 /*------------------contenido caja estadios----------------------*/
 section div h2, section div p{
     text-align: center;
@@ -46,13 +47,15 @@ section div p{
 
 /*------------------caja estadios----------------------*/
 #left{
-    margin-top: 2rem;
-    margin-left: 10rem;
+    margin-top: 5rem;
+    margin-right: 9rem;
     text-align: center;
     
 }
 #right{
-    margin-left: 3rem;
+    margin-right: 4rem;
+    float:right;
+    margin-left: 2rem;
     text-align: center;
 }
 

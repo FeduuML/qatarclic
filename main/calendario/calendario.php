@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="../../images/qatar_rosa.png" alt="Qatar" class="responsive">
+                    <img src="../../images/qatar_rosa.png" alt="Qatar" onclick="SobreQatar()"class="responsive">
                     <span class="text">Sobre Qatar</span>
                 </div>
 
@@ -472,5 +472,8 @@
     
     function selections(){
         window.location.href="../grupos/selections.php";
+    }
+    function SobreQatar(){
+        window.location.href="../sobreqatar/sobreqatar.php"
     }
 </script>

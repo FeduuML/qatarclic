@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="images/qatar_rosa.png" alt="Qatar" class="responsive">
+                    <img src="images/qatar_rosa.png" alt="Qatar" onclick="SobreQatar()" class="responsive">
                     <span class="text">Sobre Qatar</span>
                 </div>
 
@@ -187,7 +187,9 @@
     function calendario(){
         window.location.href="main/calendario/calendario.php";
     }
-    
+    function SobreQatar(){
+        window.location.href="main/sobreqatar/sobreqatar.php"
+    }
     function selections(){
         window.location.href="main/grupos/selections.php";
     }

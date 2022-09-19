@@ -24,20 +24,6 @@ body{
 	transition:500ms;
     border-radius: 4rem;
     float: left;
-   /* background-color: aliceblue;
-   
-    
-    font-size: 4rem;
-    text-align: right;
-    display: grid;
-    
-    margin-top: 10rem;
-    
-    
-    margin-left: 5rem;
-    border:none;
-    cursor: pointer;
-    transition: 0.3s ease all;*/
 }
 .box:hover{
     background:black;

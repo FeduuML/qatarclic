@@ -96,3 +96,8 @@
 
     </body>
 </html>
+<script>
+    function estadio(){
+        window.location.href="estadios.php";
+    }
+</script>

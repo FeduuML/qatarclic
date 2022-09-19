@@ -80,8 +80,9 @@
         <!--<h2>La Copa Mundial de Fútbol de la FIFA Catar 2022 será la XXII vigésimo segunda edición de la Copa Mundial de Fútbol masculino organizada por la FIFA.</h2>-->
         </div>
     
-        <div class="box" id="box2">
-            <h1>ESTADIOS</h1>
+        <div class="box" id="box2" onclick="estadio()" class="responsive">
+            
+            <h1 >ESTADIOS</h1>
         <!---->
         </div>
     
@@ -96,3 +97,19 @@
     </section>
 </body>
 </html>
+
+<script>
+    function SobreQatar(){
+        window.location.href="SobreQatar.php";
+    }
+    function calendario(){
+        window.location.href="../calendario/calendario.php";
+    }
+    
+    function selections(){
+        window.location.href="../grupos/selections.php";
+
+    function estadio(){
+        window.location.href="../estadios/estadios.php";
+    }
+</script>
