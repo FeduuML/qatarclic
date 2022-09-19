@@ -104,7 +104,6 @@ navegador-->
                 <div class="slider-section">
                     <img id=photo src="qatar-fotos/lusail_estadio.jpg" alt="" class="slider-img"> 
                 </div>
-
         </div>
             <div class="slider-btn slider-btn-right" id="btn-right">&#62</div>
             <div class="slider-btn slider-btn-left" id="btn-left">&#60</div>
@@ -113,11 +112,24 @@ navegador-->
         </div>
         
                 
-        <div class="caja" id="right">
-            <img id=photo src="qatar-fotos/al_bait_estadio.jpg">
+        <!--<div class="caja">
+        <div class="caja-slider" id="slider">
+ 
+            <div class="slider-section">
+                <img id=photo src="qatar-fotos/lusail_estadio2.jpg" alt="" class="slider-img"> 
+            </div>
+            <div class="slider-section">
+                <img id=photo src="qatar-fotos/lusail_estadio3.jpg" alt="" class="slider-img"> 
+            </div>
+            <div class="slider-section">
+                <img id=photo src="qatar-fotos/lusail_estadio.jpg" alt="" class="slider-img"> 
+            </div>
+            </div>
+            <div class="slider-btn slider-btn-right" id="btn-right">&#62</div>
+            <div class="slider-btn slider-btn-left" id="btn-left">&#60</div>
             <h2>Estadio Al Bait</h2>
             <p> Estadio con capacidad para 80,000 espectadores,<br> que albergará la final <br>de la Copa Mundial de la FIFA Catar 2022™.</p>
-        </div>
+        </div>-->
 
     </div>
 
