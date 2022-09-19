@@ -16,53 +16,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link href="../../header.css" rel="stylesheet" type="text/css">
 <body>
-    <!--navegador-->
-<nav class="navegador_general" id="navbar">
-            <h1 class="text_nav">Mundial de Qatar 2022</h1>
-
-            <div class="wrapper_nav">
-                <div class="first_element">
-                    <img src="../../images/perfil.png" alt="Perfil" class="responsive">
-                    <span class="text">Perfil</span>
-                </div>
-
-                <div class="element">
-                    <?php 
-                        if(isset($_SESSION['user_id'])){ 
-                    ?>
-                    <img src="../../images/fixture_violeta.png" alt="Fixture" onclick="mundialito()" class="responsive">
-                    <?php
-                        }else{
-                    ?>
-                    <img src="../../images/fixture_violeta.png" alt="Fixture" onclick="notlogged()" class="responsive">
-                    <?php
-                        }
-                    ?>
-                    <span class="text">Mundialito</span>
-                </div> 
-            
-                <div class="element">
-                    <img src="../../images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
-                    <span class="text">Calendario</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/qatar_rosa.png" alt="Qatar" class="responsive">
-                    <span class="text">Sobre Qatar</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/teams.jpg" alt="Selecciones" onclick="selections()" class="responsive">
-                    <span class="text">Equipos</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/selecciones.png" alt="Comunidad" class="responsive">
-                    <span class="text">Comunidad</span>
-                </div>
-            </div>
-        </nav>
-<!--navegador-->
     
 
 <!--<section>
@@ -91,7 +44,7 @@
         <!--<h2>Qatar un Estado soberano árabe ubicado en el oeste de Asia y que ocupa la pequeña península de Catar en el este de la península arábiga.</h2>-->
         </div>
         <div class="box" id="box4">
-            <h1>
+            <h1>VOLVER</h1>
 
         </div>
     </section>

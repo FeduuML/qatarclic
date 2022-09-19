@@ -18,7 +18,7 @@ body
     border-radius: 4rem;
     display: inline;
     float: right;
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: relative;
 }
 .caja:hover{
