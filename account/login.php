@@ -16,6 +16,7 @@
 
         <header class="header">
             <div class="wrapper">
+                <img id="logoheader"src="../images/logo.png">
                 <div class="logo"><?php require '../header/header.php';?></div>
                 <nav>
                     <a href="../index.php">Volver al modo invitado</a></li>
