@@ -1,9 +1,10 @@
+
 .header{
 	position:fixed;
 	z-index:2;
 	top:0;
 	width:100%;
-	background:#f3f3f3;
+	background:rgba(16, 2, 44);
 	user-select: none;
 }
 
@@ -16,6 +17,15 @@
 .header .logo {
 	font-size:40px;
 	float:left;
+	font-family:'Yanone Kaffeesatz';
+	margin-top: 1.5rem;
+}
+#logoheader{
+	height: 4rem;
+	width:3rem;
+	float: left;
+	margin-top: 1rem;
+	font-family:'Yanone Kaffeesatz';	
 }
 
 .header nav {
@@ -24,14 +34,15 @@
 
 .header nav > a {
 	margin:1% 0 1%;
+	margin-top: 1.5rem;
 	display:inline-block;
 	padding:0 20px;
 	text-decoration:none;
 	line-height:50px;
 	font-size:20px;
 	font-weight:bold;
-	font-family:calibri; 
-	color:rgb(145, 28, 44);
+	font-family:'Roboto'; 
+	color:rgb(255, 255, 255);
 	transition:500ms;
 }
 

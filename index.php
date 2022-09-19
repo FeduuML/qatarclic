@@ -22,14 +22,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
     </head>
    
     <body>
-        <header class="header" id="header">
+        <div class="margin"></div>
+
+        <nav class="navegador_general" id="navbar">
+            <header class="header" id="header">
             <div class="wrapper">
-                <div class="logo"><?php require 'header/header.php';?></div>
+                <img id="logoheader"src="images/logo.png">
+                <div class="logo"><?php require 'header/header.php';?>
+                
+                </div>
                 <nav>
                     <?php 
                     if(isset($_SESSION['user_id'])){
@@ -50,12 +59,7 @@
                     } ?>
                 </nav>
             </div>
-        </header>
-
-        <div class="margin"></div>
-
-        <nav class="navegador_general" id="navbar">
-            <h1 class="text_nav">Mundial de Qatar 2022</h1>
+        
 
             <div class="wrapper_nav">
                 <div class="first_element">
@@ -99,7 +103,7 @@
                 </div>
             </div>
         </nav>
- 
+ </header>
         <div class="margin2"></div>
 
         <div class="big_container">
