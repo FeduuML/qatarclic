@@ -61,7 +61,7 @@
 
                 <div class="wrapper_nav">
                     <div class="first_element">
-                        <img src="images/perfil.png" alt="Perfil" class="responsive">
+                        <img src="images/perfil.png" alt="Perfil" class="responsive" onclick="perfil()">
                         <span class="text">Perfil</span>
                     </div>
 
@@ -179,6 +179,10 @@
 </html>
 
 <script>
+    function perfil(){
+        window.location.href = "main/profile/profile.php";
+    }
+
     function notlogged(){
         window.location.href="account/login.php";
     }
