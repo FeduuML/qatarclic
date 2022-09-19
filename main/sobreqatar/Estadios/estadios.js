@@ -1,23 +1,64 @@
 const slider= document.querySelector("#slider");
-let sliderSection = document.querySelectorAll("slider-section");
-let sliderSectionLast = sliderSection[sliderSection.lenght -1];
+let sliderSection = document.getElementsByClassName("slider-section");
+let sliderSectionLast = sliderSection[sliderSection.length  -1];
 
-const btnleft= document.querySelector("#btn-left");
-const btnright= document.querySelector("#btn-right");
+const btnLeft = document.querySelector("#btn-left");
+const btnRight = document.querySelector("#btn-right");
+slider.style.marginLeft = "0%";
 
-slider.insertAdjacentElement('afterbegin')
+slider.insertAdjacentElement('afterbegin', sliderSectionLast);
 
-function next(){
-    let sliderSectionFirst = document.querySelectorAll("slider-section")[0];
-    slider.stile.marginLeft = "-200%";
-    slider.stile.transition ="all 0.5s";
-    setTimeout(function(){
-        slider.style.transition = "none";
-        slider.insertAdjacentElement('beforeend',sliderSectionfirst);
-        slider.style.marginleft = "-100%"
-    },500);
+function Next(){
+    let sliderSectionFirst = document.getElementsByClassName("slider-section")[0];
+    let mlTarget = slider.style.cssText;
+    let regEx1 = new RegExp('^margin-left: ');
+    let regEx2 = new RegExp('%.*$');
+    let mlValue = parseInt(mlTarget.split(regEx1)[1].split(regEx2)[0]);
+    let newVal = mlValue;
+    newVal -= 100;
+    switch(mlValue){
+        case 0:
+            slider.style.marginLeft = newVal+"%";
+            break;
+        case -100:
+            slider.style.marginLeft = newVal+"%";
+            break;
+        default:
+            slider.style.marginLeft = "0%";
+            break;
+    }
+    slider.style.transition ="all 0.3s";
+   
 }
 
-btnright.addEventListener('click',function(){
+function Prev(){
+    let sliderSectionLast = document.getElementsByClassName("slider-section")[sliderSection.length  -1];
+    let mlTarget = slider.style.cssText;
+    let regEx1 = new RegExp('^margin-left: ');
+    let regEx2 = new RegExp('%.*$');
+    let mlValue = parseInt(mlTarget.split(regEx1)[1].split(regEx2)[0]);
+    let newVal = mlValue;
+    newVal += 100;
+    switch(mlValue){
+        case 0:
+            slider.style.marginLeft = "-200%";
+            break;
+        case -100:
+            slider.style.marginLeft = newVal+"%";
+            break;
+        default:
+            slider.style.marginLeft = newVal+"%";
+            break;
+    }
+    slider.style.transition ="all 0.3s";
+   
+}
+
+
+btnRight.addEventListener('click', function(){
     Next();
+});
+
+btnLeft.addEventListener('click', function(){
+    Prev();
 });
