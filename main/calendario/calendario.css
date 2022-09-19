@@ -46,6 +46,7 @@ body
 #showReferences{
     position:fixed;
     display:none;
+    margin-top:2%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     left:0;
@@ -58,7 +59,6 @@ body
     top:0;
     bottom:0;
     margin:auto;
-    
 }
 
 .table td{
@@ -76,7 +76,6 @@ body
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 200px;
     border-radius: 3rem;
 }
 
@@ -164,7 +163,7 @@ ol{
     position: fixed;
     top:30%;
     left:50%;
-    transform: translate(-50%,-15%);
+    transform: translate(-50%,-14%);
     width:50%;
     height:55%;
     text-align:center;
