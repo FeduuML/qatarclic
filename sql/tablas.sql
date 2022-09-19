@@ -16,6 +16,8 @@ CREATE TABLE users (
     username varchar(20) NOT NULL UNIQUE,
     password varchar(500),
     rol_id int(2),
+    bio varchar(250) NOT NULL,
+    image varchar(255) NOT NULL,
     cooldown_password timestamp NULL,
     cooldown_username timestamp NULL,
     PRIMARY KEY(id),
