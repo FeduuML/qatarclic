@@ -186,9 +186,11 @@
     function calendario(){
         window.location.href="main/calendario/calendario.php";
     }
+
     function SobreQatar(){
-        window.location.href="main/sobreqatar/sobreqatar.php"
+        window.location.href="main/sobreqatar/sobreqatar.php";
     }
+
     function selections(){
         window.location.href="main/grupos/selections.php";
     }

@@ -5,9 +5,11 @@
  	margin: 0px;
  	box-sizing: border-box;
 }
+
 header{
     position:relative;
 }
+
 body
 {
 	background: linear-gradient(to bottom left,rgb(145, 28, 44), rgb(17, 17, 17));
@@ -16,7 +18,7 @@ body
 
 .wrap{
     width:100%;
-    margin-top:16%;
+    margin-top:20%;
     position:relative;
 }
 
@@ -163,7 +165,7 @@ ol{
     position: fixed;
     top:30%;
     left:50%;
-    transform: translate(-50%,-14%);
+    transform: translate(-50%,-18%);
     width:50%;
     height:55%;
     text-align:center;

@@ -66,31 +66,6 @@
     </head>
 
 	<body>
-		<header class="header" id="header">
-            <div class="wrapper">
-                <div class="logo"><?php require '../../header/header.php';?></div>
-                <nav>
-                    <?php 
-                    if(isset($_SESSION['user_id'])){
-                        echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
-
-                        if($_SESSION['rol_id'] == 1){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                        }
-                        else if($_SESSION['rol_id'] == 2){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                        }
-                        else{
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                        }
-                    }
-                    else{
-                        echo("<a href='account/login.php'>Iniciar sesion</a>");
-                    } ?>
-                </nav>
-            </div>
-        </header>
-
 		<div class="container">
             <p class="title">Crear encuesta</p>
             <form method="post" class="upload" autocomplete="off">
