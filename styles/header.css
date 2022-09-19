@@ -53,26 +53,27 @@
 }
 
 .navicon_box{
-    margin-top:15%;
+    margin:10% 0 0 73%;
     width:40px;
     height:40px;
-    border-radius: 10px;
-    transition: 0.5s;
 }
 
 .navicon{
+	font-size:5vw;
     padding:3px 6px;
     cursor:pointer;
-    color:rgb(145, 28, 44) ;
+    color:white;
+	border-radius: 10px;
+	transition: 0.5s;
 }
 
-.navicon_box:hover{
+.navicon:hover{
     background-color:rgb(177, 177, 177);
     transition: 0.5s;
 }
 
 .navicon:hover{
-    color: black;
+    color: rgba(16, 2, 44);
 }
 
 .user_options{

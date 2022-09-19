@@ -115,7 +115,6 @@ CREATE TABLE `respuestas` (
     `id` int NOT NULL AUTO_INCREMENT,
     `id_usuario` int NOT NULL,
     `id_pregunta` int NOT NULL,
-    `id_encuesta` int NOT NULL,
     `respuesta` text NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY (`id_usuario`) REFERENCES `users`(`id`),

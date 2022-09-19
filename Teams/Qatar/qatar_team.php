@@ -1,78 +1,131 @@
+<?php
+    session_start();
+    require '../../account/database.php';
+
+    if(isset($_SESSION['user_id'])){
+        $user_id = $_SESSION['user_id'];
+
+        $sql = "SELECT * FROM users WHERE id = $user_id";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        $username = $results['username'];
+    }
+?>
+
 <html>
     <head>
-        <title>Qatar clic</title>
-        <link href="../Teams/Qatar/qatar_team.css" rel="stylesheet" type="text/css">
-        <link href="../styles/header.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+        <title>Qatar Clic</title>
+        <link href="../../styles/header.css" rel="stylesheet" type="text/css">
+        <link href="qatar_team.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head> 
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
+    </head>
+   
     <body>
+        <div class="margin"></div>
 
-<h1> Qatar </h1>
+        <nav class="navegador_general" id="navbar">
+            <header class="header" id="header">
+                <div class="wrapper">
+                    <img id="logoheader"src="../../images/logo.png">
+                    <div class="logo"><?php require '../../header/header.php';?></div>
+                    <nav>
+                        <?php 
+                        if(isset($_SESSION['user_id'])){
+                            echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
-        <h2> ARQUEROS </h2>
+                            if($_SESSION['rol_id'] == 1){
+                                echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            }
+                            else if($_SESSION['rol_id'] == 2){
+                                echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrarMundialito.php'>Gestionar mundialito</a><br><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            }
+                            else{
+                                echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            }
+                        }
+                        else{
+                            echo("<a href='account/login.php'>Iniciar sesion</a>");
+                        } ?>
+                    </nav>
+                </div>
+        
+                <div class="wrapper_nav">
+                    <div class="first_element">
+                        <img src="../../images/perfil.png" alt="Perfil" class="responsive">
+                        <span class="text">Perfil</span>
+                    </div>
 
+                    <div class="element">
+                        <?php 
+                            if(isset($_SESSION['user_id'])){ 
+                        ?>
+                        <img src="../../images/fixture_violeta.png" alt="Fixture" onclick="mundialito()" class="responsive">
+                        <?php
+                            }else{
+                        ?>
+                        <img src="../../images/fixture_violeta.png" alt="Fixture" onclick="notlogged()" class="responsive">
+                        <?php
+                            }
+                        ?>
+                        <span class="text">Mundialito</span>
+                    </div> 
+                
+                    <div class="element">
+                        <img src="../../images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
+                        <span class="text">Calendario</span>
+                    </div>
 
-<h2><img src="../Qatar/images/1.jpg">1 - Saad Abdullah Al Sheeb    32 años</h2>
-<h2><img src="../Qatar/images/21.jpg">21 - Yousef Hassan Mohamed Ali   26 años</h2>
-<h2><img src="../Qatar/images/22.jpg">22 - Meshaal Aissa Barsham   24 años</h2>
+                    <div class="element">
+                        <img src="../../images/qatar_rosa.png" alt="Qatar" onclick="SobreQatar()" class="responsive">
+                        <span class="text">Sobre Qatar</span>
+                    </div>
 
-        <h2> DEFENSORES </h2>
+                    <div class="element">
+                        <img src="../../images/teams.jpg" alt="Selecciones" onclick="selections()" class="responsive">
+                        <span class="text">Equipos</span>
+                    </div>
 
-<h2><img src="../Qatar/images/2.jpg">2 - Pedro Miguel Correia   31 años</h2>
-<h2><img src="../Qatar/images/3.jpg">3 - Abdelkarim Hassan Al Haj Fadlalla   28 años</h2>
-<h2><img src="../Qatar/images/4.jpg">4 - Mohammed Waed Abdulwahhab Al Bayati   22 años</h2>
-<h2><img src="../Qatar/images/7.jpg">7 - Salem Ali Al Hajri  26 años</h2>
-<h2><img src="../Qatar/images/13.jpg">13 - Mosaab Khoder Jibril   28 años</h2>
-<h2><img src="../Qatar/images/15.jpg">15 - Bassam Hisham Al Rawi  24 años</h2>
-<h2><img src="../Qatar/images/16.jpg">16 - Boualem Khoukhi	Boualem Khoukhi   32 años</h2>
+                    <div class="element">
+                        <img src="../../images/selecciones.png" alt="Comunidad" class="responsive">
+                        <span class="text">Comunidad</span>
+                    </div>
+                </div>
+            </header>
+        </nav>
+        
+        <div class="margin2"></div>
 
-<h2> MEDIOCAMPISTAS </h2>
+        <div class="wrap">
+            <img class="imagen_bandera" src="../../images/netherlands.png">
+            <span class="pais">Qatar</span>
+        </div>
 
-<h2><img src="../Qatar/images/8.jpg">8 - Ahmed FathyAhmed Fathy   29 años</h2>
-<h2><img src="../Qatar/images/5.jpg">5 - Tarek Salman Salman   24 años</h2>
-<h2><img src="../Qatar/images/6.jpg">6 - Hazem Ahmed Shehata   24 años</h2>
-<h2><img src="../Qatar/images/8.jpg">8 - Ali Assadalla Thaimn Qambar  29 años</h2>
-<h2><img src="../Qatar/images/9.jpg">9 - Abdulrahman Mohamed Fahmi Moustafa   25 años</h2>
-<h2><img src="../Qatar/images/12.jpg">12 - Karim Boudiaf   31 años</h2>
-<h2><img src="../Qatar/images/14.jpg">14 - Homam Alamin Ahmed   22 años</h2>
-<h2><img src="../Qatar/images/18.jpg">18 - Naif Abdulraheem Al Hadhrami   22 años</h2>
-<h2><img src="../Qatar/images/20.jpg">20 - Abdullah Abdulsalam Alahrak   25 años</h2>
-<h2><img src="../Qatar/images/23ahmed.jpg">23 - Assim Omer Al Haj Madibo   25 años</h2>
-<h2><img src="../Qatar/images/23.jpg">23 - Mohammed Alaa Eldin Abdelmotaal   28 años</h2>
+        <table>
+            <?php
+                $stmt = $conn->prepare("SELECT * FROM players WHERE pais = 'Qatar'");
+                $stmt->execute();
+                echo"<th>Jugador</th><th>Numero</th><th>Edad</th>";
+                while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    extract($row);
+                    echo"<tr>";
+                    echo"<td>".$nombre."</td>";
+                    echo"<td>".$numero."</td>";
+                    echo"<td>".$edad."</td>";
+                    echo"</tr>";
+                }
+            ?>
+        </table>
 
-<h2> DELANTEROS </h2>
-
-<h2><img src="../Qatar/images/7delantero.jpg">7 - Ahmed Alaa Eldin Abdelmotaal   29 años</h2>
-<h2><img src="../Qatar/images/10.jpg">10 - Khalid Muneer Mazeed   24 años</h2>
-<h2><img src="../Qatar/images/11.jpg">11 - Akram Hassan Afif   25 años</h2>
-<h2><img src="../Qatar/images/17.jpg">17 - Ismaeel Mohammad Mohammad   32 años</h2>
-<h2><img src="../Qatar/images/18.jpg">18 - Yusuf Abdurisag   22 años</h2>
-<h2><img src="../Qatar/images/19.jpg">19 - Almoez Ali Zainalabiddin Abdulla   25 años</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
+        <script src="../../js/scroll.js"></script>
+        <script src="../../js/index.js"></script>
+    </body>
 </html>
