@@ -1,7 +1,4 @@
-html{
-    font-family: 'Permanent Marker', cursive;
-    font-family: Yanone Kaffeesatz;
-}
+
 body{
     margin: 0;
     background:linear-gradient(rgb(255, 2, 171), rgb(192, 3, 3));
@@ -10,18 +7,45 @@ body{
 /*----cajas de seleccion-----*/
 .box
 {
-   background-color: aliceblue;
+	align-items: center;
+    justify-content: center;
     color:aliceblue;
-    font-size: 4rem;
-    text-align: right;
-    display: inline;
-    float: left;
     margin-top: 10rem;
+    margin-left:3rem;
+	display:grid;
     height: 700px;
     width: 400px;
+	padding:0 20px;
+	text-decoration:none;
+	line-height:50px;
+	font-size: 3rem;
+	font-family:'Roboto'; 
+	color:rgb(255, 255, 255);
+	transition:500ms;
     border-radius: 4rem;
+    float: left;
+   /* background-color: aliceblue;
+   
+    
+    font-size: 4rem;
+    text-align: right;
+    display: grid;
+    
+    margin-top: 10rem;
+    
+    
     margin-left: 5rem;
-     
+    border:none;
+    cursor: pointer;
+    transition: 0.3s ease all;*/
+}
+.box:hover{
+    background:black;
+	border-radius:50px;
+	color:white;
+    transition: 500ms;
+    transform: scale(0.9);
+	cursor:pointer;
 }
 .box h1
 {
