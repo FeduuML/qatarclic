@@ -80,11 +80,12 @@ th{
 }
 
 #popup{
-    top:30%;
-    left:50%;
-    transform: translate(-50%,-18%);
+    top:50%;
+    left:25%;
+    transform: translate(0%,10%);
+    position:fixed;
     width:50%;
-    height:55%;
+    height:20%;
     text-align:center;
     font-size:1.2vw;
     padding:20px;
@@ -96,8 +97,31 @@ th{
 }
 
 #popup.active{
-    top: 50%;
+    top:40%;
     visibility: visible;
     opacity: 1;
     transform: 0.5s;
+    overflow:hidden;
+}
+
+.container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.button{
+    width: 30%;
+    font-size:1.5vw;
+    background: rgb(145, 28, 44);
+    color: #ffffff;
+    padding: 7px;
+    margin-top:5%;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+	cursor: pointer;
+}
+
+.button:hover{
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 }

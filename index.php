@@ -92,6 +92,7 @@
 
                     <div class="element">
                         <img src="images/teams.jpg" alt="Selecciones" onclick="selections()" class="responsive">
+                
                         <span class="text">Equipos</span>
                     </div>
 

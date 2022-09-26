@@ -104,7 +104,7 @@
         
         <div class="margin2"></div>
 
-        <div id="blur">
+        <div class="container" id="blur">
             <div class="wrap">
                 <img class="imagen_bandera" src="../../images/shields/qatar.png">
                 <div class="items">
@@ -133,9 +133,9 @@
         </div>
 
         <div id="popup">
-            <span>¿Quieres subscribirte a esta selección?</span>
-            <button>Si</button>
-            <button>No</button>
+            <h1>¿Quieres subscribirte a esta selección?</h1>
+            <button class="button">Si</button>
+            <button class="button" onclick="display()">No</button>
         </div>
 
         <script src="../../js/scroll.js"></script>
@@ -146,5 +146,6 @@
 <script>
     function display(){
         document.getElementById('popup').classList.toggle('active');
+        document.getElementById('blur').classList.toggle('active');
     }
 </script>
