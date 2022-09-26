@@ -18,7 +18,6 @@
         <meta charset="utf-8">
         <title>Qatar Clic</title>
         <link href="../../styles/header.css" rel="stylesheet" type="text/css">
-        <link href="qatar_team.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,47 +103,29 @@
         
         <div class="margin2"></div>
 
-        <div id="blur">
-            <div class="wrap">
-                <img class="imagen_bandera" src="../../images/shields/qatar.png">
-                <div class="items">
-                    <span class="pais">Qatar</span>
-                    <i class="icon fas fa-solid fa-plus fa-2x" onclick="display()"></i>
-                </div>
-            </div>
-
-            <div class="big_container">
-                <table>
-                    <?php
-                        $stmt = $conn->prepare("SELECT * FROM players WHERE pais = 'Qatar'");
-                        $stmt->execute();
-                        echo"<th>Jugador</th><th>Numero</th><th>Edad</th>";
-                        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                            extract($row);
-                            echo"<tr>";
-                            echo"<td>".$nombre."</td>";
-                            echo"<td>".$numero."</td>";
-                            echo"<td>".$edad."</td>";
-                            echo"</tr>";
-                        }
-                    ?>
-                </table>
-            </div>
+        <div class="wrap">
+            <span class="pais">Argentina</span>
         </div>
 
-        <div id="popup">
-            <span>¿Quieres subscribirte a esta selección?</span>
-            <button>Si</button>
-            <button>No</button>
+        <div class="big_container">
+            <table>
+                <?php
+                    $stmt = $conn->prepare("SELECT * FROM players WHERE pais = 'Qatar'");
+                    $stmt->execute();
+                    echo"<th>Jugador</th><th>Numero</th><th>Edad</th>";
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        extract($row);
+                        echo"<tr>";
+                        echo"<td>".$nombre."</td>";
+                        echo"<td>".$numero."</td>";
+                        echo"<td>".$edad."</td>";
+                        echo"</tr>";
+                    }
+                ?>
+            </table>
         </div>
 
         <script src="../../js/scroll.js"></script>
         <script src="../../js/index.js"></script>
     </body>
 </html>
-
-<script>
-    function display(){
-        document.getElementById('popup').classList.toggle('active');
-    }
-</script>
