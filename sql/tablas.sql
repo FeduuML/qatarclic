@@ -16,8 +16,6 @@ CREATE TABLE users (
     username varchar(20) NOT NULL UNIQUE,
     password varchar(500),
     rol_id int(2),
-    bio varchar(250) NOT NULL,
-    image varchar(255) NOT NULL,
     cooldown_password timestamp NULL,
     cooldown_username timestamp NULL,
     PRIMARY KEY(id),
@@ -122,6 +120,43 @@ CREATE TABLE `respuestas` (
     FOREIGN KEY (`id_usuario`) REFERENCES `users`(`id`),
     FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas`(`id`)
 );
+
+CREATE TABLE `argentina` (
+    id int NOT NULL AUTO_INCREMENT,
+    nombre varchar(75) NOT NULL,
+    posicion varchar(20) NOT NULL,
+    numero int NOT NULL,
+    edad int NOT NULL,
+    club varchar(75) NOT NULL,
+    altura varchar(10) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO `argentina` VALUES
+('1', 'Emiliano Martínez', 'Arquero', '23', '30', 'Aston Villa, Inglaterra', '1.96'),
+('2', 'Gerónimo Rulli', 'Arquero', '12', '30', 'Villareal, España', '1.88'),
+('3', 'Franco Armani', 'Arquero', '1', '35', 'River Plate, Argentina', '1.88'),
+('4', 'Lisandro Martínez', 'Defensor', '2', '24', 'Manchester United, Inglaterra', '1.75'),
+('5', 'Cristian Romero', 'Defensor', '13', '24', 'Tottenham Hotspur, Inglaterra', '1.85'),
+('6', 'Nicolás Otamendi', 'Defensor', '19', '34', 'Benfica, Portugal', '1.83'),
+('7', 'Nicolás Tagliafico', 'Defensor', '3', '30', 'Olympique de Lyon, Francia', '1.73'),
+('8', 'Germán Pezzella', 'Defensor', '6', '31', 'Fiorentina, Italia', '1.88'),
+('9', 'Nahuel Molina', 'Defensor', '26', '24', 'Atlético de Madrid, España', '1.75'),
+('10', 'Gonzalo Montiel', 'Defensor', '4', '25', 'Sevilla, España', '1.78'),
+('11', 'Marcos Acuña', 'Defensor', '8', '30', 'Sevilla, España', '1.73'),
+('12', 'Leandro Paredes', 'Centrocampista', '5', '28', 'Juventus, Italia', '1.80'),
+('13', 'Rodrigo De Paul', 'Centrocampista', '7', '28', 'Atletico de Madrid', '1.80'),
+('14', 'Giovani Lo Celso', 'Centrocampista', '20', '26', 'Villareal, España', '1.78'),
+('15', 'Alejandro Gómez', 'Centrocampista', '24', '34', 'Sevilla, España', '1.68'),
+('16', 'Alexis Mac Allister', 'Centrocampista', '8', '23', 'Brighton, Inglaterra', '1.75'),
+('17', 'Guido Rodriguez', 'Centrocampista', '18', '28', 'Real Betis, España', '1.85'),
+('18', 'Paulo Dybala', 'Centrocampista', '21', '28', 'Roma, Italia', '1.78'),
+('19', 'Joaquín Correa', 'Centrocampista', '16', '28', 'Inter de Milan, Italia', '1.88'),
+('20', 'Angel Correa', 'Delantero', '21', '27', 'Atletico de Madrid, España', '1.70'),
+('21', 'Ángel Di Maria', 'Delantero', '11', '34', 'Juventus, Italia', '1.80'),
+('22', 'Lionel Messi', 'Delantero', '10', '35', 'Paris Saint Germain, Francia', '1.70'),
+('23', 'Lautaro Martínez', 'Delantero', '22', '25', 'Inter de Milan, Italia', '1.75'),
+('24', 'Julián Álvarez', 'Delantero', '9', '22', 'Manchester City, Inglaterra', '1.70'),
 
 CREATE TABLE `players` (
     id int(3) NOT NULL AUTO_INCREMENT,
