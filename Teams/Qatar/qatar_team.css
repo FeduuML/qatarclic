@@ -36,16 +36,15 @@ th{
 }
 
 .wrap{
-    width:31%;
+    width:35%;
     height:auto;
     margin-left:2%;
     background-color:white;
-    display:table;
     border-radius:10px;
+    user-select: none;
 }
 
-.items{
-    display:table-cell;
+.wrap > * {
     vertical-align:middle;
 }
 
@@ -53,26 +52,50 @@ th{
     margin:2% 0 2% 2%;
     width:8vw;
     border-radius:5px;
+    user-select: none;
 }
 
 .pais{
+    margin-left:5%;
+    display:inline-block;
     font-size:4vw;
     color:black;
     text-decoration: none;
     font-weight:bold;
+    user-select: none;
 }
 
 .icon{
-    margin-left:15%;
-    padding:2%;
+    margin-left:10%;
+    margin-top:-1%;
+    display:inline-block;
+    font-size:2vw;
+    padding:1%;
+    border-radius:20px;
     transition:.5s;
-    border-radius:10px;
+    background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
     cursor:pointer;
 }
 
-.icon:hover{
-    background-color:black;
+.icon:hover,.icon2:hover{
     color:white;
+}
+
+.icon2{
+    margin-top:-1%;
+    display:inline-block;
+    font-size:2vw;
+    padding:1%;
+    border-radius:20px;
+    transition:.5s;
+    background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
+    cursor:pointer;
+    visibility: hidden;
+}
+
+.icon2.active{
+    margin-left:10%;
+    visibility: visible;
 }
 
 .big_container{
@@ -80,12 +103,12 @@ th{
 }
 
 #popup{
-    top:50%;
+    top:0%;
     left:25%;
     transform: translate(0%,10%);
     position:fixed;
     width:50%;
-    height:20%;
+    height:auto;
     text-align:center;
     font-size:1.2vw;
     padding:20px;
@@ -93,7 +116,9 @@ th{
     background: #fff;
     visibility: hidden;
     opacity: 0;
-    transition: 0.5s;
+    transition: 1s;
+    border-radius:10px;
+    padding:10px;
 }
 
 #popup.active{
@@ -112,6 +137,7 @@ th{
 
 .button{
     width: 30%;
+    height:auto;
     font-size:1.5vw;
     background: rgb(145, 28, 44);
     color: #ffffff;

@@ -10,28 +10,6 @@ CREATE TABLE roles (
 
 INSERT INTO `roles` VALUES ('1', 'Moderador'),('2', 'Administrador');
 
-CREATE TABLE users (
-    id int NOT NULL AUTO_INCREMENT,
-    email varchar(50) NOT NULL,
-    username varchar(20) NOT NULL UNIQUE,
-    password varchar(500),
-    rol_id int(2),
-    bio varchar(250) NOT NULL,
-    image varchar(255) NOT NULL,
-    cooldown_password timestamp NULL,
-    cooldown_username timestamp NULL,
-    PRIMARY KEY(id),
-    FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`)
-);
-
-INSERT INTO `users` VALUES('1', 'liberfedericomanuel@gmail.com', 'FeduuML', '$2y$10$nDIaj0iEP2PDoyqj2vwttex9UEhqoBOJMth43n1L0EYRXVVUbTMXC'/*Contraseña: federico1*/, NULL, NULL, NULL);
-/*SOLO ESTA cuenta permite recuperar contraseña!*/
-INSERT INTO `users` VALUES('2', 'matefer@outlook.com', 'MateFer', '$2y$10$9Cj9EiFXmTcH3ZXsGVMLjuU..RzfVWgsFS./oGpPPl7mTM/WBTnPu'/*Contraseña: ferchomate911*/, '1', NULL, NULL);
-SELECT r.rol FROM roles r WHERE r.rol = 1;
-INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We802Kpgy9gzRiYyttmM/eBeOhiXiRr6//htdWLpJdfjTWMzyItfG'/*Contraseña: AmoFortnite*/, '2', NULL, NULL);
-SELECT r.rol FROM roles r WHERE r.rol = 2;
-INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, NULL, NULL, NULL);
-
 CREATE TABLE teams (
     id int(36) NOT NULL AUTO_INCREMENT,
     nombre varchar(30) NOT NULL,
@@ -48,6 +26,28 @@ INSERT INTO `teams` VALUES
 ('21', 'Belgica', 'F'),('22', 'Canada', 'F'),('23', 'Marruecos', 'F'),('24','Croacia', 'F'),
 ('25', 'Brasil', 'G'),('26', 'Serbia', 'G'),('27', 'Suiza', 'G'),('28','Camerun', 'G'),
 ('29', 'Portugal', 'H'),('30', 'Ghana', 'H'),('31', 'Uruguay', 'H'),('32','Corea del Sur', 'H');
+
+CREATE TABLE users (
+    id int NOT NULL AUTO_INCREMENT,
+    email varchar(50) NOT NULL,
+    username varchar(20) NOT NULL UNIQUE,
+    password varchar(500),
+    rol_id int(2),
+    cooldown_password timestamp NULL,
+    cooldown_username timestamp NULL,
+    seleccion int NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`),
+    FOREIGN KEY (`seleccion`) REFERENCES `teams`(`id`)
+);
+
+INSERT INTO `users` VALUES('1', 'liberfedericomanuel@gmail.com', 'FeduuML', '$2y$10$nDIaj0iEP2PDoyqj2vwttex9UEhqoBOJMth43n1L0EYRXVVUbTMXC'/*Contraseña: federico1*/, NULL, NULL, NULL, NULL);
+/*SOLO ESTA cuenta permite recuperar contraseña!*/
+INSERT INTO `users` VALUES('2', 'matefer@outlook.com', 'MateFer', '$2y$10$9Cj9EiFXmTcH3ZXsGVMLjuU..RzfVWgsFS./oGpPPl7mTM/WBTnPu'/*Contraseña: ferchomate911*/, '1', NULL, NULL, NULL);
+SELECT r.rol FROM roles r WHERE r.rol = 1;
+INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We802Kpgy9gzRiYyttmM/eBeOhiXiRr6//htdWLpJdfjTWMzyItfG'/*Contraseña: AmoFortnite*/, '2', NULL, NULL, NULL);
+SELECT r.rol FROM roles r WHERE r.rol = 2;
+INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, NULL, NULL, NULL, NULL);
 
 CREATE TABLE `news` (
     `id` int(2) NOT NULL AUTO_INCREMENT,
@@ -399,3 +399,40 @@ INSERT INTO `players` VALUES
 ('876', 'Jin-gyu Kim', 'Corea del Sur', '10', '25'),('877', 'Gi-hyuk Lee', 'Corea del Sur', '25', '22'),('878', 'Young-jun Goh', 'Corea del Sur', '23', '21'),('879','Min-kyu Song', 'Corea del Sur', '13', '23'),
 ('880', 'Sang-ho Na', 'Corea del Sur', '7', '26'),('881', 'Chang-hoon Kwon', 'Corea del Sur', '22', '28'),('882', 'Won-sang Um', 'Corea del Sur', '11', '23'),('883', 'Young-wook Cho', 'Corea del Sur', '17', '23'),
 ('884', 'Seong-jin Kang', 'Corea del Sur', '26', '19'),('885', 'Gue-sung Cho', 'Corea del Sur', '9', '24');
+
+CREATE TABLE `argentina` (
+    id int NOT NULL AUTO_INCREMENT,
+    nombre varchar(75) NOT NULL,
+    posicion varchar(20) NOT NULL,
+    numero int NOT NULL,
+    edad int NOT NULL,
+    club varchar(75) NOT NULL,
+    altura varchar(10) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO `argentina` VALUES
+('1', 'Emiliano Martínez', 'Arquero', '23', '30', 'Aston Villa, Inglaterra', '1.96'),
+('2', 'Gerónimo Rulli', 'Arquero', '12', '30', 'Villareal, España', '1.88'),
+('3', 'Franco Armani', 'Arquero', '1', '35', 'River Plate, Argentina', '1.88'),
+('4', 'Lisandro Martínez', 'Defensor', '2', '24', 'Manchester United, Inglaterra', '1.75'),
+('5', 'Cristian Romero', 'Defensor', '13', '24', 'Tottenham Hotspur, Inglaterra', '1.85'),
+('6', 'Nicolás Otamendi', 'Defensor', '19', '34', 'Benfica, Portugal', '1.83'),
+('7', 'Nicolás Tagliafico', 'Defensor', '3', '30', 'Olympique de Lyon, Francia', '1.73'),
+('8', 'Germán Pezzella', 'Defensor', '6', '31', 'Fiorentina, Italia', '1.88'),
+('9', 'Nahuel Molina', 'Defensor', '26', '24', 'Atlético de Madrid, España', '1.75'),
+('10', 'Gonzalo Montiel', 'Defensor', '4', '25', 'Sevilla, España', '1.78'),
+('11', 'Marcos Acuña', 'Defensor', '8', '30', 'Sevilla, España', '1.73'),
+('12', 'Leandro Paredes', 'Centrocampista', '5', '28', 'Juventus, Italia', '1.80'),
+('13', 'Rodrigo De Paul', 'Centrocampista', '7', '28', 'Atletico de Madrid', '1.80'),
+('14', 'Giovani Lo Celso', 'Centrocampista', '20', '26', 'Villareal, España', '1.78'),
+('15', 'Alejandro Gómez', 'Centrocampista', '24', '34', 'Sevilla, España', '1.68'),
+('16', 'Alexis Mac Allister', 'Centrocampista', '8', '23', 'Brighton, Inglaterra', '1.75'),
+('17', 'Guido Rodriguez', 'Centrocampista', '18', '28', 'Real Betis, España', '1.85'),
+('18', 'Paulo Dybala', 'Centrocampista', '21', '28', 'Roma, Italia', '1.78'),
+('19', 'Joaquín Correa', 'Centrocampista', '16', '28', 'Inter de Milan, Italia', '1.88'),
+('20', 'Angel Correa', 'Delantero', '21', '27', 'Atletico de Madrid, España', '1.70'),
+('21', 'Ángel Di Maria', 'Delantero', '11', '34', 'Juventus, Italia', '1.80'),
+('22', 'Lionel Messi', 'Delantero', '10', '35', 'Paris Saint Germain, Francia', '1.70'),
+('23', 'Lautaro Martínez', 'Delantero', '22', '25', 'Inter de Milan, Italia', '1.75'),
+('24', 'Julián Álvarez', 'Delantero', '9', '22', 'Manchester City, Inglaterra', '1.70');

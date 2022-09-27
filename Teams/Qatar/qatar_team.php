@@ -11,6 +11,22 @@
         $results = $query -> fetch(PDO::FETCH_ASSOC);
         $username = $results['username'];
     }
+
+    $stmt = $conn->prepare("SELECT id FROM teams WHERE nombre = 'Qatar'");
+    if($stmt->execute()){
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $pais_id = $row['id'];
+    }
+
+    $stmt = $conn->prepare("SELECT seleccion FROM users WHERE id = $user_id");
+    if($stmt->execute()){
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if(isset($row['seleccion'])){
+            $seleccion = $row['seleccion'];
+            echo("<script>alert('Hola');</script>");
+            echo("<script>alert($seleccion);</script>");
+        }
+    }
 ?>
 
 <html>
@@ -107,10 +123,21 @@
         <div class="container" id="blur">
             <div class="wrap">
                 <img class="imagen_bandera" src="../../images/shields/qatar.png">
-                <div class="items">
-                    <span class="pais">Qatar</span>
-                    <i class="icon fas fa-solid fa-plus fa-2x" onclick="display()"></i>
-                </div>
+                    <span class="pais">QATAR</span>
+                    <i id="icon2" class="icon2 fas fa-solid fa-check" title="Te has suscrito a esta seleccion"></i>
+                    <?php
+                        if(isset($user_id)){
+                            if(isset($row['seleccion'])){
+                                echo '<script>document.getElementById("icon2").classList.toggle("active");</script>';
+                            }
+                            else{
+                                echo '<i id="icon" class="icon fas fa-solid fa-plus" onclick="display()"></i>';
+                            }
+                        }
+                        else{
+                            echo '<i id="icon" class="icon fas fa-solid fa-plus" onclick="notlogged()"></i>';
+                        }
+                    ?>
             </div>
 
             <div class="big_container">
@@ -134,7 +161,7 @@
 
         <div id="popup">
             <h1>¿Quieres subscribirte a esta selección?</h1>
-            <button class="button">Si</button>
+            <button class="button" onclick='subscription("<?php echo $pais_id; ?>" , "<?php echo $user_id; ?>")'>Si</button>
             <button class="button" onclick="display()">No</button>
         </div>
 
@@ -147,5 +174,23 @@
     function display(){
         document.getElementById('popup').classList.toggle('active');
         document.getElementById('blur').classList.toggle('active');
+    }
+
+    function subscription(pais_id, user_id){
+        var parametros = {pais_id, user_id};
+
+        $.ajax({
+		    data:parametros,
+		    url:'../subscription.php',
+		    type:'GET',
+            success:function(data){
+                $("#icon").html(data);
+            }
+	    });
+        display();
+    }
+
+    function notlogged(){
+        window.location.href="../../account/login.php";
     }
 </script>
