@@ -9,33 +9,39 @@ body
 }
 
 .container{
-    width:98%;
+    width: 98px;
     height:auto;
     display:grid;
-    gap:1%;
+    gap: 1%;
     grid-template-columns:repeat(2, 2fr);
 }
 
 .caja{
-    margin: auto;
+    margin-left: -45px; 
+    margin-right: 50px;
     background-color: antiquewhite;
     border-radius: 4rem;
     text-align: center;
+    height: 450px;
+    width: 600px;
 }
-
 .caja:hover{
     box-shadow: 0rem 0.4rem 0.8rem rgba(0,0,0,0.4); 
 }
-
-/*------------------contenido caja estadios----------------------*/
-section div h2, section div p{
+#left{
+    margin-top: 15px;
     text-align: center;
+    
 }
+#right{
+    margin-top: -45px;      
+    text-align: center;}
 
-section div h2{
-    font-size: x-large;
+#left-first{
+    margin-top: 100px;  
+    text-align: center; 
 }
-
-section div p{
-    font-size: large;
+#right-first{
+    margin-top: 30px;  
+    text-align: center;
 }
