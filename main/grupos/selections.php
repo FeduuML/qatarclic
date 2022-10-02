@@ -16,8 +16,8 @@
                 <h1 class="title">Grupo A</h1>
                 <hr>
                 <div class="content">
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/qatar.jpg"><a class="pais" href="../../teams/qatar/qatar_team.php">Qatar</a></div>
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/ecuador.jpg"><a class="pais" href="../../teams/Ecuador/ecuador-team.php">Ecuador</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/qatar.jpg"><a class="pais" href="../../teams/qatar.php">Qatar</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/ecuador.jpg"><a class="pais" href="../../teams/ecuador.php">Ecuador</a></div>
                     <div class="wrap"><img class="imagen_bandera" src="../../images/flags/senegal.jpg"><a class="pais" href="../../teams/Senegal/senegal-team.php">Senegal</a></div>
                     <div class="wrap"><img class="imagen_bandera" src="../../images/flags/holanda.jpg"><a class="pais" href="../../teams/Senegal/senegal-team.php">Holanda</a></div>
                 </div>

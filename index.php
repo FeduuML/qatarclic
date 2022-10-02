@@ -10,6 +10,15 @@
         $query->execute();
         $results = $query -> fetch(PDO::FETCH_ASSOC);
         $username = $results['username'];
+
+        $stmt = $conn->prepare("SELECT u.seleccion, t.nombre FROM users u INNER JOIN teams t ON u.seleccion = t.id WHERE u.id = $user_id");
+        if($stmt->execute()){
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if(is_countable($row)){
+                $seleccion = $row['seleccion'];
+                $seleccion_nombre = $row['nombre'];
+            }
+        }
     }
 ?>
 
@@ -39,22 +48,23 @@
                     <div class="logo"><?php require 'header/header.php';?></div>
                     <nav>
                         <?php 
-                        if(isset($_SESSION['user_id'])){
-                            echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
+                            if(isset($_SESSION['user_id'])){
+                                echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
-                            if($_SESSION['rol_id'] == 1){
-                                echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                            }
-                            else if($_SESSION['rol_id'] == 2){
-                                echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrarMundialito.php'>Gestionar mundialito</a><br><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                if($_SESSION['rol_id'] == 1){
+                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                }
+                                else if($_SESSION['rol_id'] == 2){
+                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrarMundialito.php'>Gestionar mundialito</a><br><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                }
+                                else{
+                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                }
                             }
                             else{
-                                echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                            }
-                        }
-                        else{
-                            echo("<a href='account/login.php'>Iniciar sesion</a>");
-                        } ?>
+                                echo("<a href='account/login.php'>Iniciar sesion</a>");
+                            } 
+                        ?>
                     </nav>
                 </div>
         
@@ -144,13 +154,32 @@
 
             <div class="small_container">
                 <div class="container1">
-                    <h2 class="title">Seleccion</h2>
-                    <br>
-                    <p>Mi seleccion:</p>
-                    <br><br><br>
-                    <p>Goleador de mi seleccion:</p>
-                    <br><br><br>
-                    <p>Proximo partido:
+                    <?php
+                        if(!isset($user_id)){
+                    ?>
+                        <span class="warning">Debes iniciar sesión para suscribirte a selecciones</span>
+                    <?php
+                        }
+                        else{
+                            if(!isset($seleccion)){
+                    ?>
+                        <span class="warning">Aun no te has suscrito a ninguna seleccion</span>
+                    <?php
+                            }else{
+                                $stmt = $conn->prepare("SELECT t.nombre AS rival, p.grupo, p.fecha, p.hora, p.estadio FROM users u INNER JOIN partidos_grupos p ON u.seleccion = p.pais INNER JOIN teams t ON p.rival = t.id WHERE u.id = $user_id AND p.fecha > NOW() LIMIT 1;");
+                                if($stmt->execute()){
+                                    while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                                        extract($row);
+                    ?>
+                        <?php echo '<center><h1 class="seleccion_title">'.$seleccion_nombre.'</h1></center>'?>
+                        <?php echo '<center><p class="seleccion_group">Grupo '.$grupo.'</p></center><br><br>'?>
+                        <?php echo '<p class="seleccion_match">Proximo partido: '.$fecha.' a las '.$hora.' en el Estadio '.$estadio.' contra '.$rival.'</p>'?>
+                    <?php
+                                    }
+                                }
+                            }
+                        }
+                    ?>
                 </div>
 
                 <div class="container2">

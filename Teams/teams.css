@@ -16,7 +16,9 @@ body
 	background-attachment: fixed;
 }
  
-table{  
+table{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
     font-family:sans-serif;
 }
 
@@ -56,7 +58,7 @@ th{
 }
 
 .pais{
-    margin-left:5%;
+    margin-left:10%;
     display:inline-block;
     font-size:4vw;
     color:black;
@@ -75,6 +77,7 @@ th{
     transition:.5s;
     background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
     cursor:pointer;
+    visibility:hidden;
 }
 
 .icon:hover,.icon2:hover{
@@ -83,6 +86,7 @@ th{
 
 .icon2{
     margin-top:-1%;
+    margin-left:-8%;
     display:inline-block;
     font-size:2vw;
     padding:1%;
@@ -93,16 +97,20 @@ th{
     visibility: hidden;
 }
 
+.icon.active{
+    visibility: visible;
+}
+
 .icon2.active{
-    margin-left:10%;
     visibility: visible;
 }
 
 .big_container{
+    column-count:1;
     margin:2%;
 }
 
-#popup{
+#popup,#popup2{
     top:0%;
     left:25%;
     transform: translate(0%,10%);
@@ -121,7 +129,7 @@ th{
     padding:10px;
 }
 
-#popup.active{
+#popup.active,#popup2.active{
     top:40%;
     visibility: visible;
     opacity: 1;

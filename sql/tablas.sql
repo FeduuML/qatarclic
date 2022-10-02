@@ -8,24 +8,23 @@ CREATE TABLE roles (
     PRIMARY KEY(id)
 );
 
-INSERT INTO `roles` VALUES ('1', 'Moderador'),('2', 'Administrador');
+INSERT INTO `roles` VALUES ('0', 'Hincha'),('1', 'Moderador'),('2', 'Administrador');
 
 CREATE TABLE teams (
     id int(36) NOT NULL AUTO_INCREMENT,
     nombre varchar(30) NOT NULL,
-    grupo varchar(1) NOT NULL,
     PRIMARY KEY(id)
 );
 
 INSERT INTO `teams` VALUES
-('1', 'Qatar', 'A'),('2', 'Ecuador', 'A'),('3', 'Senegal', 'A'),('4','Paises Bajos', 'A'),
-('5', 'Inglaterra', 'B'),('6', 'Iran', 'B'),('7', 'Estados Unidos', 'B'),('8','Gales', 'B'),
-('9', 'Argentina', 'C'),('10', 'Arabia Saudita', 'C'),('11', 'Mexico', 'C'),('12','Polonia', 'C'),
-('13', 'Francia', 'D'),('14', 'Australia', 'D'),('15', 'Dinamarca', 'D'),('16', 'Tunez', 'D'),
-('17', 'España', 'E'),('18', 'Costa Rica', 'E'),('19', 'Alemania', 'E'),('20','Japon', 'E'),
-('21', 'Belgica', 'F'),('22', 'Canada', 'F'),('23', 'Marruecos', 'F'),('24','Croacia', 'F'),
-('25', 'Brasil', 'G'),('26', 'Serbia', 'G'),('27', 'Suiza', 'G'),('28','Camerun', 'G'),
-('29', 'Portugal', 'H'),('30', 'Ghana', 'H'),('31', 'Uruguay', 'H'),('32','Corea del Sur', 'H');
+('1', 'Qatar'),('2', 'Ecuador'),('3', 'Senegal'),('4','Paises Bajos'),
+('5', 'Inglaterra'),('6', 'Iran'),('7', 'Estados Unidos'),('8','Gales'),
+('9', 'Argentina'),('10', 'Arabia Saudita'),('11', 'Mexico'),('12','Polonia'),
+('13', 'Francia'),('14', 'Australia'),('15', 'Dinamarca'),('16', 'Tunez'),
+('17', 'España'),('18', 'Costa Rica'),('19', 'Alemania'),('20','Japon'),
+('21', 'Belgica'),('22', 'Canada'),('23', 'Marruecos'),('24','Croacia'),
+('25', 'Brasil'),('26', 'Serbia'),('27', 'Suiza'),('28','Camerun'),
+('29', 'Portugal'),('30', 'Ghana'),('31', 'Uruguay'),('32','Corea del Sur');
 
 CREATE TABLE users (
     id int NOT NULL AUTO_INCREMENT,
@@ -41,13 +40,13 @@ CREATE TABLE users (
     FOREIGN KEY (`seleccion`) REFERENCES `teams`(`id`)
 );
 
-INSERT INTO `users` VALUES('1', 'liberfedericomanuel@gmail.com', 'FeduuML', '$2y$10$nDIaj0iEP2PDoyqj2vwttex9UEhqoBOJMth43n1L0EYRXVVUbTMXC'/*Contraseña: federico1*/, NULL, NULL, NULL, NULL);
+INSERT INTO `users` VALUES('1', 'liberfedericomanuel@gmail.com', 'FeduuML', '$2y$10$nDIaj0iEP2PDoyqj2vwttex9UEhqoBOJMth43n1L0EYRXVVUbTMXC'/*Contraseña: federico1*/, '0', NULL, NULL, NULL);
 /*SOLO ESTA cuenta permite recuperar contraseña!*/
 INSERT INTO `users` VALUES('2', 'matefer@outlook.com', 'MateFer', '$2y$10$9Cj9EiFXmTcH3ZXsGVMLjuU..RzfVWgsFS./oGpPPl7mTM/WBTnPu'/*Contraseña: ferchomate911*/, '1', NULL, NULL, NULL);
 SELECT r.rol FROM roles r WHERE r.rol = 1;
-INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We802Kpgy9gzRiYyttmM/eBeOhiXiRr6//htdWLpJdfjTWMzyItfG'/*Contraseña: AmoFortnite*/, '2', NULL, NULL, NULL);
+INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We802Kpgy9gzRiYyttmM/eBeOhiXiRr6//htdWLpJdfjTWMzyItfG'/*Contraseña: AmoFortnite*/, '2', NULL, NULL, '9');
 SELECT r.rol FROM roles r WHERE r.rol = 2;
-INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, NULL, NULL, NULL, NULL);
+INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, '0', NULL, NULL, NULL);
 
 CREATE TABLE `news` (
     `id` int(2) NOT NULL AUTO_INCREMENT,
@@ -123,6 +122,148 @@ CREATE TABLE `respuestas` (
     FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas`(`id`)
 );
 
+CREATE TABLE `partidos_grupos` (
+    id int NOT NULL AUTO_INCREMENT,
+    pais int NOT NULL,
+    rival int NOT NULL,
+    grupo varchar(1) NOT NULL,
+    fecha date NOT NULL,
+    hora time NOT NULL,
+    estadio varchar(50) NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (`pais`) REFERENCES `teams`(`id`),
+    FOREIGN KEY (`rival`) REFERENCES `teams`(`id`)
+);
+
+INSERT INTO `partidos_grupos` VALUES 
+('1', '1', '2', 'A', '2022-11-20', '13:00:00', 'Al-Bayt'),
+('2', '1', '3', 'A', '2022-11-25', '10:00:00', 'Al-Thumama'),
+('3', '1', '4', 'A', '2022-11-29', '07:00:00', 'Al-Bayt'),
+
+('4', '2', '1', 'A', '2022-11-20', '13:00:00', 'Al-Bayt'),
+('5', '2', '4', 'A', '2022-11-25', '13:00:00', 'Internacional Khalifa'),
+('6', '2', '3', 'A', '2022-11-29', '10:00:00', 'Internacional Khalifa'),
+
+('7', '3', '4', 'A', '2022-11-21', '13:00:00', 'Al-Thumama'),
+('8', '3', '1', 'A', '2022-11-25', '10:00:00', 'Al-Thumama'),
+('9', '3', '2', 'A', '2022-11-29', '10:00:00', 'Internacional Khalifa'),
+
+('10', '4', '3', 'A', '2022-11-21', '13:00:00', 'Al-Thumama'),
+('11', '4', '2', 'A', '2022-11-25', '13:00:00', 'Internacional Khalifa'),
+('12', '4', '1', 'A', '2022-11-29', '07:00:00', 'Al-Bayt'),
+
+('13', '5', '6', 'B', '2022-11-21', '10:00:00', 'Internacional Khalifa'),
+('14', '5', '7', 'B', '2022-11-25', '16:00:00', 'Al-Bayt'),
+('15', '5', '8', 'B', '2022-11-29', '16:00:00', 'Ahmed bin Ali'),
+
+('16', '6', '5', 'B', '2022-11-21', '10:00:00', 'Internacional Khalifa'),
+('17', '6', '8', 'B', '2022-11-25', '07:00:00', 'Ahmed bin Ali'),
+('18', '6', '7', 'B', '2022-11-29', '13:00:00', 'Al-Thumama'),
+
+('19', '7', '8', 'B', '2022-11-21', '16:00:00', 'Ahmed bin Ali'),
+('20', '7', '5', 'B', '2022-11-25', '16:00:00', 'Al-Bayt'),
+('21', '7', '6', 'B', '2022-11-29', '13:00:00', 'Al-Thumama'),
+
+('22', '8', '7', 'B', '2022-11-21', '16:00:00', 'Ahmed bin Ali'),
+('23', '8', '6', 'B', '2022-11-25', '07:00:00', 'Ahmed bin Ali'),
+('24', '8', '5', 'B', '2022-11-29', '16:00:00', 'Ahmed bin Ali'),
+
+('25', '9', '10', 'C', '2022-11-22', '07:00:00', 'Lusail'),
+('26', '9', '11', 'C', '2022-11-26', '16:00:00', 'Lusail'),
+('27', '9', '12', 'C', '2022-11-30', '16:00:00', '974'),
+
+('28', '10', '9', 'C', '2022-11-22', '07:00:00', 'Lusail'),
+('29', '10', '12', 'C', '2022-11-26', '10:00:00', 'Education City'),
+('30', '10', '11', 'C', '2022-11-30', '13:00:00', 'Lusail'),
+
+('31', '11', '12', 'C', '2022-11-22', '13:00:00', '974'),
+('32', '11', '9', 'C', '2022-11-26', '16:00:00', 'Lusail'),
+('33', '11', '10', 'C', '2022-11-30', '13:00:00', 'Lusail'),
+
+('34', '12', '11', 'C', '2022-11-22', '13:00:00', '974'),
+('35', '12', '10', 'C', '2022-11-26', '10:00:00', 'Education City'),
+('36', '12', '9', 'C', '2022-11-30', '16:00:00', '974'),
+
+('37', '13', '14', 'D', '2022-11-22', '16:00:00', 'Al-Janoub'),
+('38', '13', '15', 'D', '2022-11-26', '13:00:00', '974'),
+('39', '13', '16', 'D', '2022-11-30', '07:00:00', 'Education'),
+
+('40', '14', '13', 'D', '2022-11-22', '16:00:00', 'Al-Janoub'),
+('41', '14', '16', 'D', '2022-11-26', '07:00:00', 'Al-Janoub'),
+('42', '14', '15', 'D', '2022-11-30', '10:00:00', 'Al-Janoub'),
+
+('43', '15', '16', 'D', '2022-11-22', '10:00:00', 'Education City'),
+('44', '15', '13', 'D', '2022-11-26', '13:00:00', '974'),
+('45', '15', '14', 'D', '2022-11-30', '10:00:00', 'Al-Janoub'),
+
+('46', '16', '15', 'D', '2022-11-22', '10:00:00', 'Education City'),
+('47', '16', '14', 'D', '2022-11-26', '07:00:00', 'Al-Janoub'),
+('48', '16', '13', 'D', '2022-11-30', '07:00:00', 'Education'),
+
+('49', '17', '18', 'E', '2022-11-23', '13:00:00', 'Al-Thumama'),
+('50', '17', '19', 'E', '2022-11-27', '16:00:00', 'Ahmed bin Ali'),
+('51', '17', '20', 'E', '2022-12-01', '13:00:00', 'Al-Bayt'),
+
+('52', '18', '17', 'E', '2022-11-23', '13:00:00', 'Al-Thumama'),
+('53', '18', '20', 'E', '2022-11-27', '07:00:00', 'Ahmed bin Ali'),
+('54', '18', '19', 'E', '2022-12-01', '16:00:00', 'Internacional Khalifa'),
+
+('55', '19', '20', 'E', '2022-11-23', '10:00:00', 'Internacional Khalifa'),
+('56', '19', '17', 'E', '2022-11-27', '16:00:00', 'Ahmed bin Ali'),
+('57', '19', '18', 'E', '2022-12-01', '16:00:00', 'Internacional Khalifa'),
+
+('58', '20', '19', 'E', '2022-11-23', '10:00:00', 'Internacional Khalifa'),
+('59', '20', '18', 'E', '2022-11-27', '07:00:00', 'Ahmed bin Ali'),
+('60', '20', '17', 'E', '2022-12-01', '13:00:00', 'Al-Bayt'),
+
+('61', '21', '22', 'F', '2022-11-23', '16:00:00', 'Ahmed bin Ali'),
+('62', '21', '23', 'F', '2022-11-27', '10:00:00', 'Internacional Khalifa'),
+('63', '21', '24', 'F', '2022-12-01', '10:00:00', 'Ahmed bin Ali'),
+
+('64', '22', '21', 'F', '2022-11-23', '16:00:00', 'Ahmed bin Ali'),
+('65', '22', '24', 'F', '2022-11-27', '13:00:00', 'Al-Thumama'),
+('66', '22', '23', 'F', '2022-12-01', '07:00:00', 'Al-Thumama'),
+
+('67', '23', '24', 'F', '2022-11-23', '07:00:00', 'Al-Bayt'),
+('68', '23', '21', 'F', '2022-11-27', '10:00:00', 'Internacional Khalifa'),
+('69', '23', '22', 'F', '2022-12-01', '07:00:00', 'Al-Thumama'),
+
+('70', '24', '23', 'F', '2022-11-23', '07:00:00', 'Al-Bayt'),
+('71', '24', '22', 'F', '2022-11-27', '13:00:00', 'Al-Thumama'),
+('72', '24', '21', 'F', '2022-12-01', '10:00:00', 'Ahmed bin Ali'),
+
+('73', '25', '26', 'G', '2022-11-24', '16:00:00', 'Lusail'),
+('74', '25', '27', 'G', '2022-11-28', '13:00:00', '974'),
+('75', '25', '28', 'G', '2022-12-02', '16:00:00', 'Lusail'),
+
+('76', '26', '25', 'G', '2022-11-24', '16:00:00', 'Lusail'),
+('77', '26', '28', 'G', '2022-11-28', '07:00:00', 'Al-Janoub'),
+('78', '26', '27', 'G', '2022-12-02', '13:00:00', '974'),
+
+('79', '27', '28', 'G', '2022-11-24', '07:00:00', 'Al-Janoub'),
+('80', '27', '25', 'G', '2022-11-28', '13:00:00', '974'),
+('81', '27', '26', 'G', '2022-12-02', '13:00:00', '974'),
+
+('82', '28', '27', 'G', '2022-11-24', '07:00:00', 'Al-Janoub'),
+('83', '28', '26', 'G', '2022-11-28', '07:00:00', 'Al-Janoub'),
+('84', '28', '25', 'G', '2022-12-02', '16:00:00', 'Lusail'),
+
+('85', '29', '30', 'H', '2022-11-24', '13:00:00', '974'),
+('86', '29', '31', 'H', '2022-11-28', '16:00:00', 'Lusail'),
+('87', '29', '32', 'H', '2022-12-02', '10:00:00', 'Education City'),
+
+('88', '30', '29', 'H', '2022-11-24', '13:00:00', '974'),
+('89', '30', '32', 'H', '2022-11-28', '10:00:00', 'Education City'),
+('90', '30', '31', 'H', '2022-12-02', '07:00:00', 'Al-Janoub'),
+
+('91', '31', '32', 'H', '2022-11-24', '10:00:00', 'Education City'),
+('92', '31', '29', 'H', '2022-11-28', '16:00:00', 'Lusail'),
+('93', '31', '30', 'H', '2022-12-02', '07:00:00', 'Al-Janoub'),
+
+('94', '32', '31', 'H', '2022-11-24', '10:00:00', 'Education City'),
+('95', '32', '30', 'H', '2022-11-28', '10:00:00', 'Education City'),
+('96', '32', '29', 'H', '2022-12-02', '10:00:00', 'Education City');
+
 CREATE TABLE `players` (
     id int(3) NOT NULL AUTO_INCREMENT,
     nombre varchar(75) NOT NULL,
@@ -143,7 +284,7 @@ INSERT INTO `players` VALUES
 
 ('28', 'Mark Flekken', 'Holanda', '13', '29'),('29', 'Jasper Cillesen', 'Holanda', '1', '33'),('30', 'Kjell Scherpen', 'Holanda', '23', '22'),('31','Matthijs de Ligt', 'Holanda', '3', '22'),
 ('32', 'Jurrien Timber', 'Holanda', '2', '21'),('33', 'Stefan de Vrij', 'Holanda', '6', '30'),('34', 'Nathan Aké', 'Holanda', '6', '27'),('35','Jordan Teze', 'Holanda', '2', '22'),
-('36', 'Bruno Martins Indi', 'Holanda', '4', '30'),('37', 'Tyrell Malacia','Holanda', '5', '22'),('38', 'Daley Blind', 'Holanda', '17', '32'),('39','Hans Hateboer', 'Holanda', '15', '28'),
+('36', 'Virgin van Dijk', 'Holanda', '4', '31'),('37', 'Tyrell Malacia','Holanda', '5', '22'),('38', 'Daley Blind', 'Holanda', '17', '32'),('39','Hans Hateboer', 'Holanda', '15', '28'),
 ('40', 'Teun Koopmeiners', 'Holanda', '20', '24'),('41', 'Jerdy Schouten', 'Holanda', '18', '25'),('42', 'Frenkie de Jong', 'Holanda', '21', '25'),('43', 'Denzel Dumfries',  'Holanda', '22', '26'),
 ('44', 'Steven Berghuis',  'Holanda', '11', '30'),('45', 'Davy Klaassen',  'Holanda', '14', '29'),('46', 'Guus Til',  'Holanda', '8', '24'),('47','Cody Gakpo',  'Holanda', '9', '23'),
 ('48', 'Noa Lang',  'Holanda', '12', '23'),('49', 'Steven Bergwijn',  'Holanda', '7', '24'),('50', 'Memphis Depay',  'Holanda', '10', '28'),('51','Wout Weghworst',  'Holanda', '19', '30'),
@@ -218,7 +359,7 @@ INSERT INTO `players` VALUES
 
 ('277', 'Carlos Acevedo', 'México', '1', '26'),('278', 'Luis Malagón', 'México', '1', '25'),('279', 'César Montes', 'México', '3', '25'),('280', 'Israel Reyes', 'México', '12', '22'),
 ('281', 'Jesús Angulo', 'México', '3', '24'),('282', 'Jesús Gallardo', 'México', '23', '28'),('283', 'Luis Reyes', 'México', '14', '31'),('284','Kevin Álvarez', 'México', '2', '23'),
-('285', 'Julián Araujo', 'México', '5', '32'),('286', 'Emilio Lara', 'México', '23', '20'),('287', 'Luis Chávez', 'México', '18', '26'),('288','Carlos Rodríguez', 'México', '19', '25'),
+('285', 'Andrés Guardado', 'México', '18', '36'),('286', 'Emilio Lara', 'México', '23', '20'),('287', 'Luis Chávez', 'México', '18', '26'),('288','Carlos Rodríguez', 'México', '19', '25'),
 ('289', 'Érick Sánchez', 'México', '6', '22'),('290', 'Luis Romo', 'México', '7', '27'),('291', 'Fernando Beltrán', 'México', '16', '24'),('292', 'Sebastián Córdova', 'México', '8', '25'),
 ('293', 'Rodolfo Pizarro', 'México', '20', '28'),('294', 'Alexis Vega', 'México', '10', '24'),('295', 'Roberto Alvarado', 'México', '25', '24'),('296','Uriel Antuna', 'México', '22', '25'),
 ('297', 'Henry Martín', 'México', '21', '29'),('298', 'Eduardo Aguirre', 'México', '19', '24'),
@@ -260,7 +401,7 @@ INSERT INTO `players` VALUES
 ('417', 'Marco Asensio', 'España', '10', '26'),('418', 'Pablo Sarabia', 'España', '22', '30'),('419', 'Álvaro Morata', 'España', '7', '29'),('420','Raúl de Tomás', 'España', '14', '27'),
 
 ('421', 'Daniel Iversen', 'Dinamarca', '16', '25'),('422', 'Peter Vindahl', 'Dinamarca', '22', '24'),('423', 'Andreas Christensen', 'Dinamarca', '6', '26'),('424', 'Joachim Andersen', 'Dinamarca', '2', '26'),
-('425', 'Jannik Vestergaard', 'Dinamarca', '3', '31'),('426', 'Victor Nelsson', 'Dinamarca', '4', '23'),('427', 'Nicolai Boilesen', 'Dinamarca', '20', '30'),('428','Rasmus Kristensen', 'Dinamarca', '13', '25'),
+('425', 'Jannik Vestergaard', 'Dinamarca', '3', '31'),('426', 'Simon Kjaer', 'Dinamarca', '4', '33'),('427', 'Nicolai Boilesen', 'Dinamarca', '20', '30'),('428','Rasmus Kristensen', 'Dinamarca', '13', '25'),
 ('429', 'Joakim Maehle', 'Dinamarca', '5', '25'),('430', 'Jens Stryger Larsen', 'Dinamarca', '17', '31'),('431', 'Morten Hjulmand', 'Dinamarca', '8', '23'),('432', 'Pierre-Emile Höjbjerg', 'Dinamarca', '23', '27'),
 ('433', 'Philip Billing', 'Dinamarca', '15', '26'),('434', 'Mathias Jensen', 'Dinamarca', '7', '26'),('435', 'Daniel Wass', 'Dinamarca', '18', '33'),('436', 'Andreas Skov Olsen', 'Dinamarca', '11', '22'),
 ('437', 'Christian Eriksen', 'Dinamarca', '10', '30'),('438', 'Mikkel Damsgaard', 'Dinamarca', '14', '22'),('439', 'Robert Skov', 'Dinamarca', '12', '26'),('440','Jonas Wind', 'Dinamarca', '19', '23'),
@@ -283,7 +424,7 @@ INSERT INTO `players` VALUES
 
 ('493', 'Keisuke Osako', 'Japón', '1', '23'),('494', 'Kosei Tani', 'Japón', '12', '21'),('495', 'Zion Suzuki', 'Japón', '23', '20'),('496', 'Shogo Taniguchi', 'Japón', '3', '31'),
 ('497', 'Shinnosuke Nakatani', 'Japón', '4', '26'),('498', 'Shinnosuke Hatanaka', 'Japón', '5', '27'),('499', 'Tomoki Iwata', 'Japón', '6', '25'),('500','Sho Sasaki', 'Japón', '19', '32'),
-('501', 'Hayato Araki', 'Japón', '22', '26'),('502', 'Takuma Ominami', 'Japón', '24', '24'),('503', 'Daiki Sugioka', 'Japón', '17', '25'),('504', 'Miki Yamane', 'Japón', '2', '28'),
+('501', 'Maya Yoshida', 'Japón', '22', '34'),('502', 'Takuma Ominami', 'Japón', '24', '24'),('503', 'Daiki Sugioka', 'Japón', '17', '25'),('504', 'Miki Yamane', 'Japón', '2', '28'),
 ('505', 'Ryuta Koike', 'Japón', '25', '27'),('506', 'Kento Hashimoto', 'Japón', '15', '29'),('507', 'Joel Chima Fujita', 'Japón', '26', '20'),('508', 'Kota Mizunuma', 'Japón', '18', '32'),
 ('509', 'Tsukasa Morishima', 'Japón', '8', '25'),('510', 'Yasuto Wakizaka', 'Japón', '14', '27'),('511', 'Gakuto Notsuda', 'Japón', '7', '28'),('512','Yuki Soma', 'Japón', '16', '25'),
 ('513', 'Yuto Iwasaki', 'Japón', '10', '24'),('514', 'Makoto Mitsuta', 'Japón', '21', '23'),('515', 'Ryo Miyaichi', 'Japón', '17', '29'),('516', 'Takuma Nishimura', 'Japón', '9', '25'),
@@ -397,7 +538,7 @@ INSERT INTO `players` VALUES
 ('868', 'Jin-su Kim', 'Corea del Sur', '3', '30'),('869', 'Chul Hong', 'Corea del Sur', '14', '31'),('870', 'Moon-hwan Kim', 'Corea del Sur', '15', '27'),('871', 'Jong-gyu Yoon', 'Corea del Sur', '2', '24'),
 ('872', 'Dong-hyeon Kim', 'Corea del Sur', '16', '25'),('873', 'In-beom Hwang', 'Corea del Sur', '6', '25'),('874', 'Seung-ho Paik', 'Corea del Sur', '8', '25'),('875', 'Yeong-jae Lee', 'Corea del Sur', '5', '27'),
 ('876', 'Jin-gyu Kim', 'Corea del Sur', '10', '25'),('877', 'Gi-hyuk Lee', 'Corea del Sur', '25', '22'),('878', 'Young-jun Goh', 'Corea del Sur', '23', '21'),('879','Min-kyu Song', 'Corea del Sur', '13', '23'),
-('880', 'Sang-ho Na', 'Corea del Sur', '7', '26'),('881', 'Chang-hoon Kwon', 'Corea del Sur', '22', '28'),('882', 'Won-sang Um', 'Corea del Sur', '11', '23'),('883', 'Young-wook Cho', 'Corea del Sur', '17', '23'),
+('880', 'Heung-min Son', 'Corea del Sur', '7', '30'),('881', 'Chang-hoon Kwon', 'Corea del Sur', '22', '28'),('882', 'Won-sang Um', 'Corea del Sur', '11', '23'),('883', 'Young-wook Cho', 'Corea del Sur', '17', '23'),
 ('884', 'Seong-jin Kang', 'Corea del Sur', '26', '19'),('885', 'Gue-sung Cho', 'Corea del Sur', '9', '24');
 
 CREATE TABLE `argentina` (
@@ -436,3 +577,46 @@ INSERT INTO `argentina` VALUES
 ('22', 'Lionel Messi', 'Delantero', '10', '35', 'Paris Saint Germain, Francia', '1.70'),
 ('23', 'Lautaro Martínez', 'Delantero', '22', '25', 'Inter de Milan, Italia', '1.75'),
 ('24', 'Julián Álvarez', 'Delantero', '9', '22', 'Manchester City, Inglaterra', '1.70');
+
+CREATE TABLE `capitanes` (
+    id int NOT NULL AUTO_INCREMENT,
+    id_pais int NOT NULL,
+    id_jugador int NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (`id_pais`) REFERENCES `teams`(`id`),
+    FOREIGN KEY (`id_jugador`) REFERENCES `players`(`id`)
+);
+
+INSERT INTO `capitanes` VALUES
+('1','1','53'),('2','2','24'),('3','3','83'),('4','4','36'),
+('5','5','131'),('6','6','142'),('7','7','167'),('8','8','213'),
+('9','9','243'),('10','10','267'),('11','11','285'),('12','12','331'),
+('13','13','338'),('14','14','361'),('15','15','426'),('16','16','539'),
+('17','17','409'),('18','18','462'),('19','19','468'),('20','20','501'),
+('21','21','563'),('22','22','583'),('23','23','598'),('24','24','640'),
+('25','25','657'),('26','26','698'),('27','27','719'),('28','28','758'),
+('29','29','784'),('30','30','810'),('31','31','856'),('32','32','880');
+
+CREATE TABLE `conmebol` (
+    id int NOT NULL AUTO_INCREMENT,
+    pais varchar(20) NOT NULL,
+    puntos int NOT NULL,
+    partidos int NOT NULL,
+    ganados int NOT NULL,
+    empatados int NOT NULL,
+    perdidos int NOT NULL,
+    diferencia_gol INT NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO `conmebol` VALUES
+('1','Brasil','45','17','14','3','0','35'),
+('2','Argentina','39','17','11','6','0','19'),
+('3','Uruguay','28','18','8','4','6','0'),
+('4','Ecuador','26','18','7','5','6','8'),
+('5','Peru','24','18','7','3','8','-3'),
+('6','Colombia','23','18','5','8','5','1'),
+('7','Chile','19','18','5','4','9','-7'),
+('8','Paraguay','16','18','3','7','8','-14'),
+('9','Bolivia','15','18','4','3','11','-19'),
+('10','Venezuela','10','18','3','1','14','-20');

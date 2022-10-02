@@ -41,6 +41,7 @@ body
     height:50%;
     background:white;
     border-radius:20px;
+    display:table;
 }
 
 .container2{
@@ -113,4 +114,25 @@ body
 .previous, .next{
     width:100px;
     height:40px;
+}
+
+.warning{
+    font-size:2vw;
+    text-align:center;
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.seleccion_title{
+    font-size:4vw;
+    padding:2%;
+}
+
+.seleccion_group{
+    font-size:2vw;
+}
+
+.seleccion_match{
+    padding:2%;
+    font-size:1.5vw;
 }
