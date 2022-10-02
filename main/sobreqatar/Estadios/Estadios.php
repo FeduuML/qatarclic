@@ -13,6 +13,28 @@
     
 
     <body>
+        <header>
+        <div class="margin"></div>
+
+<nav class="navegador_general" id="navbar">
+    <header class="header" id="header">
+    <div class="wrapper">
+        <img id="logoheader"src="../../../images/logo.png">
+        <div class="logo"><?php require '../../../header/header.php';?>
+    
+    </div>
+    <div class="titulo">
+        <h1>ESTADIOS</h1>
+                    </div>
+
+    <div class="volver">
+        <alt="Qatar" onclick="SobreQatar()" class="responsive">
+        <span>Volver</span>
+    </div>
+
+</nav>
+</header>
+
         <div class="container">
             <div class="caja" id="left-first">
                 <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
