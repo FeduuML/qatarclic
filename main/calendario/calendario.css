@@ -12,7 +12,7 @@ header{
 
 body
 {
-	background: linear-gradient(to bottom left,rgb(145, 28, 44), rgb(17, 17, 17));
+	background: linear-gradient(to bottom left,rgb(194, 15, 39), rgb(17, 17, 17));
 	background-attachment: fixed;
 }
 
@@ -55,8 +55,8 @@ body
     font-size:1.2vw;
     padding:10px;
     background-color:white;
+    
 }
-
 .table{
     top:0;
     bottom:0;
@@ -92,14 +92,16 @@ body
 
 #mes-noviembre
 {
-    border: solid 2px black;
+    border: solid 2px rgb(255, 255, 255);
+    border-radius: 30px;
 }
 
 
 #mes-diciembre
 {
-    border: solid 2px black;
+    border: solid 2px rgb(255, 255, 255);
     margin-left: 5%;
+    border-radius: 30px;
 }
 
 ol{
@@ -111,17 +113,29 @@ ol{
     padding: 10px;
 }
   
-.day, .day-name{
-    color: rgb(31, 29, 29);
+.day{
+    color: rgb(255, 255, 255);
     font-size:2vw;
-    border: solid black 1px;
+    border: solid rgb(255, 255, 255) 1px;
     border-radius: 20px;
-    background-color: rgb(255, 234, 205);
+    background-color: #A9A9A9;
+    transition: 200ms;
 }
-
+.day-name{
+    color: rgb(0, 0, 0);
+    font-size:2vw;
+    border: solid rgb(255, 255, 255) 1px;
+    border-radius: 20px;
+    background-color: #A9A9A9;
+    transition: 200ms;
+}
 .day:hover, .day-name:hover{
     cursor: pointer;
     filter:brightness(50%);
+    border-radius:10px;
+    transition: 200ms;
+    transform: scale(0.87);
+    cursor:pointer;
 }
 
 .mes{
@@ -140,7 +154,7 @@ ol{
 }
   
 .day-name{
-    background: #eee;
+    
     font-weight: bold;
     font-size: 2vw;
     padding: 4px;
@@ -204,25 +218,25 @@ ol{
 }
 
 #grupos{
-    background-color:#A9A9A9;
+    background-color:rgb(172, 30, 30);
 }
 
 #octavos{
-    background: linear-gradient(135deg,#1100ff 10%, #ff7b00);
+    background-color:rgb(172, 30, 30);
 }
 
 #cuartos{
-    background: linear-gradient(135deg,#fffb00, #cc00ff);
+    background-color:rgb(172, 30, 30);
 }
 
 #semifinal{
-    background: linear-gradient(135deg,#ff0000 10%, #33ff00);
+    background-color:rgb(172, 30, 30);
 }
 
 #tercerpuesto{
-    background: linear-gradient(135deg,#ffffff 10%, #000000);
+    background-color:rgb(172, 30, 30);
 }
 
 #final{
-    background: linear-gradient(135deg,#fcc742 10%, #ff6004);
+    background-color:rgb(172, 30, 30);
 }

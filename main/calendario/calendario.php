@@ -111,9 +111,9 @@
                     <h1>Referencias</h1>
                     <table class="table">
                         <tr><td colspan="2" style="background-color:#A9A9A9">Fase de grupos</td></tr>
-                        <tr><td colspan="2" style="background: linear-gradient(135deg,#1100ff 10%, #ff7b00);">Octavos de final</td></tr>
-                        <tr><td colspan="2" style="background: linear-gradient(135deg,#fffb00, #cc00ff);">Cuartos de final</td></tr>
-                        <tr><td colspan="2" style="background: linear-gradient(135deg,#ff0000 10%, #33ff00);">Semifinal</td></tr>
+                        <tr><td colspan="2" style="background:rgb(172, 30, 30)">Octavos de final</td></tr>
+                        <tr><td colspan="2" style="background:rgb(172, 30, 30)">Cuartos de final</td></tr>
+                        <tr><td colspan="2" style="background:rgb(172, 30, 30)">Semifinal</td></tr>
                         <tr><td id="tercerpuesto" colspan="2">Tercer puesto</td></tr>
                         <tr><td id="final" colspan="2">Final</td></tr>
                     </table>
