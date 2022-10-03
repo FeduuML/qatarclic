@@ -16,9 +16,32 @@ body
 	background-attachment: fixed;
 }
  
+.big-container{
+    display:flex;
+    flex-direction:row;
+    width:98%;
+    height:auto;
+    margin:1% 0% 0% 1%;
+    gap:2vw;
+}
+
+.small-container{
+    display:flex;
+    flex-direction:column;
+    width:70%;
+    height:auto;
+    justify-content:flex-start;
+    gap:1vh;
+}
+
+.table-container{
+    position:relative;
+    column-count:1;
+    width:100%;
+    margin:2%;
+}
+
 table{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
     font-family:sans-serif;
 }
 
@@ -33,17 +56,19 @@ td{
 }
 
 th{
-    background-color:#009;
+    background-color:rgba(16, 2, 44);
     color:#fff;
 }
 
 .wrap{
-    width:35%;
+    width:100%;
     height:auto;
     margin-left:2%;
+    margin-bottom: 25px;
     background-color:white;
     border-radius:10px;
     user-select: none;
+    
 }
 
 .wrap > * {
@@ -60,7 +85,7 @@ th{
 .pais{
     margin-left:10%;
     display:inline-block;
-    font-size:4vw;
+    font-size:3vw;
     color:black;
     text-decoration: none;
     font-weight:bold;
@@ -80,11 +105,24 @@ th{
     visibility:hidden;
 }
 
-.icon:hover,.icon2:hover{
+.icon:hover,.icon2:hover,.icon3:hover{
     color:white;
 }
 
 .icon2{
+    margin-top:-1%;
+    margin-left:-8%;
+    display:inline-block;
+    font-size:2vw;
+    padding:1%;
+    border-radius:20px;
+    transition:.5s;
+    background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
+    cursor:pointer;
+    visibility: hidden;
+}
+
+.icon3{
     margin-top:-1%;
     margin-left:-8%;
     display:inline-block;
@@ -105,9 +143,8 @@ th{
     visibility: visible;
 }
 
-.big_container{
-    column-count:1;
-    margin:2%;
+.icon3.active{
+    visibility: visible;
 }
 
 #popup,#popup2{
@@ -158,4 +195,39 @@ th{
 
 .button:hover{
 	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formacion-div{
+    background-color:#fff;
+    padding: 1%;
+    border-radius:10px;
+    width: 650px;
+    height: 390px;
+    margin-left: 65px;
+    margin-top: 60px;
+    transition: 200ms;
+    text-align: center;
+}
+
+.formacion{
+    border-radius:5px;
+    width: 100%;
+    height:auto;
+}
+.formacion-div:hover{
+	border-radius:10px;
+    transition: 200ms;
+    transform: scale(0.98);
+	cursor:pointer;
+    
+    
+}
+.twitter-div{
+    width:90%;
+    height:600px;
+    background:white;
+    border-radius:20px;
+    overflow:auto;
+    margin-left: 25px;
+    margin-top: 25px;
 }

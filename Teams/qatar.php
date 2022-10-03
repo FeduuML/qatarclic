@@ -119,43 +119,57 @@
         
         <div class="margin2"></div>
 
-        <div class="container" id="blur">
-            <div class="wrap">
-                <img class="imagen_bandera" src="../images/shields/qatar.png">
-                    <span class="pais">QATAR</span>
-                    <i id="icon" class="icon fas fa-solid fa-plus" onclick="display()"></i>
-                    <i id="icon2" class="icon2 fas fa-solid fa-check" title="Te has suscrito a esta seleccion" onclick="display2()"></i>
-                    <?php
-                        if(isset($user_id)){
-                            if(isset($seleccion)){
-                                echo '<script>document.getElementById("icon2").classList.toggle("active");</script>';
+        <div class="big-container">
+            <div class="container" id="blur">
+                <div class="wrap">
+                    <img class="imagen_bandera" src="../images/shields/qatar.png">
+                        <span class="pais">QATAR</span>
+                        <i id="icon" class="icon fas fa-solid fa-plus" onclick="display()"></i>
+                        <i id="icon2" class="icon2 fas fa-solid fa-check" title="Te has suscrito a esta seleccion" onclick="display2()"></i>
+                        <i id="icon3" class="icon3 fas fa-solid fa-plus" onclick="notlogged()"></i>
+                        <?php
+                            if(isset($user_id)){
+                                if(isset($seleccion)){
+                                    echo '<script>document.getElementById("icon2").classList.toggle("active");</script>';
+                                }
+                                else{
+                                    echo '<script>document.getElementById("icon").classList.toggle("active");</script>';
+                                }
                             }
                             else{
-                                echo '<script>document.getElementById("icon").classList.toggle("active");</script>';
+                                echo '<script>document.getElementById("icon3").classList.toggle("active");</script>';
                             }
-                        }
-                        else{
-                            echo '<i id="icon" class="icon fas fa-solid fa-plus" onclick="notlogged()"></i>';
-                        }
-                    ?>
+                        ?>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <?php
+                            $stmt = $conn->prepare("SELECT * FROM players WHERE pais = 'Qatar'");
+                            $stmt->execute();
+                            echo"<th>Jugador</th><th>Numero</th><th>Edad</th>";
+                            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                extract($row);
+                                echo"<tr>";
+                                echo"<td>".$nombre."</td>";
+                                echo"<td>".$numero."</td>";
+                                echo"<td>".$edad."</td>";
+                                echo"</tr>";
+                            }
+                        ?>
+                    </table>
+                </div>
             </div>
 
-            <div class="big_container">
-                <table>
-                    <?php
-                        $stmt = $conn->prepare("SELECT * FROM players WHERE pais = 'Qatar'");
-                        $stmt->execute();
-                        echo"<th>Jugador</th><th>Numero</th><th>Edad</th>";
-                        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                            extract($row);
-                            echo"<tr>";
-                            echo"<td>".$nombre."</td>";
-                            echo"<td>".$numero."</td>";
-                            echo"<td>".$edad."</td>";
-                            echo"</tr>";
-                        }
-                    ?>
-                </table>
+            <div class="small-container">
+                <div class="formacion-div">
+                    <img class="formacion" src="../images/formaciones/qatar.jpg">
+                    <h2> Selección de fútbol de Catar </h2> 
+                </div>
+
+                <div class="twitter-div">
+                    <a class="twitter-timeline" href="https://twitter.com/QFA_EN?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by @QFA_EN</a>
+                </div>
             </div>
         </div>
 
@@ -173,6 +187,7 @@
 
         <script src="../js/scroll.js"></script>
         <script src="../js/index.js"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </body>
 </html>
 

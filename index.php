@@ -197,14 +197,11 @@
             </div>
             <div>Argentina y la historia en los mundiales</div>
             <div>Los más destacados de cada seleccion</div>
-
-
         </div>
 
         <script src="js/scroll.js"></script>
         <script src="js/index.js"></script>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    
     </body>
 </html>
 
