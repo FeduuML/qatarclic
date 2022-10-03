@@ -36,7 +36,7 @@ CREATE TABLE users (
     cooldown_username timestamp NULL,
     seleccion int NULL,
     bio varchar(255),
-    image varchar (255),   
+    pfp varchar (255),   
     PRIMARY KEY(id),
     FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`),
     FOREIGN KEY (`seleccion`) REFERENCES `teams`(`id`)
