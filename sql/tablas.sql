@@ -34,9 +34,7 @@ CREATE TABLE users (
     rol_id int(2),
     cooldown_password timestamp NULL,
     cooldown_username timestamp NULL,
-    seleccion int NULL,
-    bio varchar(255),
-    pfp varchar (255),   
+    seleccion int NULL,  
     PRIMARY KEY(id),
     FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`),
     FOREIGN KEY (`seleccion`) REFERENCES `teams`(`id`)

@@ -6,10 +6,10 @@
 }
 
 body{
-	background: #8a1538;
+	background: linear-gradient(to top  ,rgb(177, 0, 24), rgb(0, 0, 0));
 	background-attachment: fixed;
 }
-
+ 
 .wrapper{
     margin-top:2%;
     width:100%;
@@ -30,8 +30,15 @@ body{
     padding:5%;
     text-align:center;
     text-indent:.1em;
+    transition: 100ms;
 }
 
+#top{
+     margin-top: 250px;
+}
+#bottom{
+    margin-top: 15px;
+}
 .title{
     font-size:2vw;
     color:#801537;
@@ -58,6 +65,12 @@ body{
     border: 1px solid gray;
     display:table-cell; 
     vertical-align:middle;
+}
+.imagen_bandera:hover{
+    cursor:pointer;
+    transition: 100ms;
+    transform: scale(0.9);
+    
 }
 
 .pais{

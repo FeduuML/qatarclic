@@ -1,4 +1,7 @@
-
+*{
+    text-decoration: none;
+    color:aliceblue;
+}
 body{
     margin: 0;
     background:linear-gradient(rgb(255, 2, 171), rgb(192, 3, 3));
@@ -25,6 +28,7 @@ body{
 	color:rgb(255, 255, 255);
 	transition:500ms;
     border-radius: 4rem;
+   
     
 }
 .box:hover{
@@ -34,11 +38,14 @@ body{
     transition: 500ms;
     transform: scale(0.9);
 	cursor:pointer;
+    
 }
 .box h1
 {
     text-align: center;
     margin-top: 18rem ;
+    text-decoration:none;    
+    
 
 }
 /*-------fotos cajas seleccion-------*/
@@ -50,6 +57,7 @@ body{
 }
 #box3{
     background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),url(photos/qatar3.jpg) no-repeat center;
+    
 }
 #box4{
     background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),url(photos/qatar.jpg) no-repeat center;

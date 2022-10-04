@@ -39,8 +39,9 @@
         <!---->
         </div>
     
-        <div class="box" id="box3">
-            <h1>FIFA</h1>
+        <div class="box" id="box3" >
+            <a href="https://www.fifa.com/es">
+            <h1>FIFA</h1> </a>
         <!--<h2>Qatar un Estado soberano árabe ubicado en el oeste de Asia y que ocupa la pequeña península de Catar en el este de la península arábiga.</h2>-->
         </div>
         <div class="box" id="box4">
