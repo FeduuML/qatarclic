@@ -13,18 +13,19 @@ INSERT INTO `roles` VALUES ('0', 'Hincha'),('1', 'Moderador'),('2', 'Administrad
 CREATE TABLE teams (
     id int(36) NOT NULL AUTO_INCREMENT,
     nombre varchar(30) NOT NULL,
+    imagen varchar(20) NOT NULL,
     PRIMARY KEY(id)
 );
 
 INSERT INTO `teams` VALUES
-('1', 'Qatar'),('2', 'Ecuador'),('3', 'Senegal'),('4','Paises Bajos'),
-('5', 'Inglaterra'),('6', 'Iran'),('7', 'Estados Unidos'),('8','Gales'),
-('9', 'Argentina'),('10', 'Arabia Saudita'),('11', 'Mexico'),('12','Polonia'),
-('13', 'Francia'),('14', 'Australia'),('15', 'Dinamarca'),('16', 'Tunez'),
-('17', 'España'),('18', 'Costa Rica'),('19', 'Alemania'),('20','Japon'),
-('21', 'Belgica'),('22', 'Canada'),('23', 'Marruecos'),('24','Croacia'),
-('25', 'Brasil'),('26', 'Serbia'),('27', 'Suiza'),('28','Camerun'),
-('29', 'Portugal'),('30', 'Ghana'),('31', 'Uruguay'),('32','Corea del Sur');
+('1', 'Qatar', 'qatar.jpg'),('2', 'Ecuador', 'ecuador.jpg'),('3', 'Senegal', 'senegal.jpg'),('4','Paises Bajos', 'holanda.jpg'),
+('5', 'Inglaterra', 'inglaterra.jpg'),('6', 'Iran', 'iran.jpg'),('7', 'Estados Unidos', 'eeuu.jpg'),('8','Gales', 'gales.jpg'),
+('9', 'Argentina', 'argentina.jpg'),('10', 'Arabia Saudita', 'arabia.jpg'),('11', 'Mexico', 'mexico.jpg'),('12','Polonia', 'polonia.jpg'),
+('13', 'Francia', 'francia.jpg'),('14', 'Australia', 'australia.jpg'),('15', 'Dinamarca', 'dinamarca.jpg'),('16', 'Tunez', 'tunez.jpg'),
+('17', 'España', 'españa.jpg'),('18', 'Costa Rica', 'costa_rica.jpg'),('19', 'Alemania', 'alemania.jpg'),('20','Japon', 'japon.jpg'),
+('21', 'Belgica', 'belgica.jpg'),('22', 'Canada', 'canada.jpg'),('23', 'Marruecos', 'marruecos.jpg'),('24','Croacia', 'croacia.jpg'),
+('25', 'Brasil', 'brasil.jpg'),('26', 'Serbia', 'serbia.jpg'),('27', 'Suiza', 'suiza.jpg'),('28','Camerun', 'camerun.jpg'),
+('29', 'Portugal', 'portugal.jpg'),('30', 'Ghana', 'ghana.jpg'),('31', 'Uruguay', 'uruguay.jpg'),('32','Corea del Sur', 'korea.jpg');
 
 CREATE TABLE users (
     id int NOT NULL AUTO_INCREMENT,
@@ -34,7 +35,11 @@ CREATE TABLE users (
     rol_id int(2),
     cooldown_password timestamp NULL,
     cooldown_username timestamp NULL,
+<<<<<<< Updated upstream
     seleccion int NULL,  
+=======
+    seleccion int NULL,
+>>>>>>> Stashed changes
     PRIMARY KEY(id),
     FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`),
     FOREIGN KEY (`seleccion`) REFERENCES `teams`(`id`)

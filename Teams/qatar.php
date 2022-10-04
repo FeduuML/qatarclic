@@ -119,11 +119,18 @@
         
         <div class="margin2"></div>
 
-        <div class="big-container">
-            <div class="container" id="blur">
+        <div class="big-container" id="blur">
+            <div class="container">
                 <div class="wrap">
-                    <img class="imagen_bandera" src="../images/shields/qatar.png">
+                    <div class="col">
+                        <img class="imagen_bandera" src="../images/shields/qatar.png">
+                    </div>
+
+                    <div class="col">
                         <span class="pais">QATAR</span>
+                    </div>
+                    
+                    <div class="col">
                         <i id="icon" class="icon fas fa-solid fa-plus" onclick="display()"></i>
                         <i id="icon2" class="icon2 fas fa-solid fa-check" title="Te has suscrito a esta seleccion" onclick="display2()"></i>
                         <i id="icon3" class="icon3 fas fa-solid fa-plus" onclick="notlogged()"></i>
@@ -140,6 +147,7 @@
                                 echo '<script>document.getElementById("icon3").classList.toggle("active");</script>';
                             }
                         ?>
+                    </div>
                 </div>
 
                 <div class="table-container">
@@ -164,7 +172,7 @@
             <div class="small-container">
                 <div class="formacion-div">
                     <img class="formacion" src="../images/formaciones/qatar.jpg">
-                    <h2> Selección de fútbol de Catar </h2> 
+                    <h2 class="leyenda">Formación de Qatar</h2> 
                 </div>
 
                 <div class="twitter-div">

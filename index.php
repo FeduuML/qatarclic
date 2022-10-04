@@ -11,12 +11,13 @@
         $results = $query -> fetch(PDO::FETCH_ASSOC);
         $username = $results['username'];
 
-        $stmt = $conn->prepare("SELECT u.seleccion, t.nombre FROM users u INNER JOIN teams t ON u.seleccion = t.id WHERE u.id = $user_id");
+        $stmt = $conn->prepare("SELECT u.seleccion, t.nombre, t.imagen FROM users u INNER JOIN teams t ON u.seleccion = t.id WHERE u.id = $user_id");
         if($stmt->execute()){
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if(is_countable($row)){
                 $seleccion = $row['seleccion'];
                 $seleccion_nombre = $row['nombre'];
+                $seleccion_imagen = $row['imagen'];
             }
         }
     }
@@ -137,7 +138,7 @@
 			    <div id="new_container" class="new_container">
                     <p><?php echo '<h1 class="new_title">'.$title.'</h1>'?></p>			
                     <p><?php echo '<h4 class="new_userdata">Subido por '.$row['user'].' el '.$row['datetime'].'</h4>' ?></p>
-                    <div class="new_image_container"><?php echo '<center><img class="new_image" src="uploads/'.$row['image'].'"</center>'?></div>
+                    <div class="new_image_container"><?php echo '<center><img class="new_image" src="uploads/'.$row['image'].'"></center>'?></div>
                     <p><?php echo '<h3 class="new_content">'.$content.'</h3>' ?></p>	
                     <div class="new_btn_container">
                         <center>
@@ -166,14 +167,24 @@
                         <span class="warning">Aun no te has suscrito a ninguna seleccion</span>
                     <?php
                             }else{
-                                $stmt = $conn->prepare("SELECT t.nombre AS rival, p.grupo, p.fecha, p.hora, p.estadio FROM users u INNER JOIN partidos_grupos p ON u.seleccion = p.pais INNER JOIN teams t ON p.rival = t.id WHERE u.id = $user_id AND p.fecha > NOW() LIMIT 1;");
+                                $stmt = $conn->prepare("SELECT t.nombre AS rival, t.imagen, p.grupo, p.fecha, p.hora, p.estadio FROM users u INNER JOIN partidos_grupos p ON u.seleccion = p.pais INNER JOIN teams t ON p.rival = t.id WHERE u.id = $user_id AND p.fecha > NOW() LIMIT 1;");
                                 if($stmt->execute()){
                                     while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                                         extract($row);
                     ?>
                         <?php echo '<center><h1 class="seleccion_title">'.$seleccion_nombre.'</h1></center>'?>
-                        <?php echo '<center><p class="seleccion_group">Grupo '.$grupo.'</p></center><br><br>'?>
-                        <?php echo '<p class="seleccion_match">Proximo partido: '.$fecha.' a las '.$hora.' en el Estadio '.$estadio.' contra '.$rival.'</p>'?>
+                        <?php echo '<center><p class="seleccion_group">Grupo '.$grupo.'</p></center>'?>
+                        <?php echo '<div class="wrap">'?>
+                            <?php echo '<center><p class="seleccion_match">Proximo partido: '.$fecha.' a las '.$hora.' en el Estadio '.$estadio.'</p></center>'?>
+                            <?php echo '<div class="wrap2">'?>
+                                <?php echo '<center><img class="flag" src="images/flags/'.$seleccion_imagen.'"></center>'?>
+                                <?php echo '<center><h3 class="seleccion_nombre">'.$seleccion_nombre.'</h3></center>'?>
+                            <?php echo '</div>'?>
+                            <?php echo '<div class="wrap2">'?>
+                                <?php echo '<center><img class="flag" src="images/flags/'.$imagen.'"></center>'?>
+                                <?php echo '<center><h3 class="seleccion_nombre">'.$rival.'</h3></center>'?>
+                            <?php echo '</div>'?>
+                        <?php echo '</div>'?>
                     <?php
                                     }
                                 }

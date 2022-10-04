@@ -22,7 +22,7 @@ body
     width:98%;
     height:auto;
     margin:1% 0% 0% 1%;
-    gap:2vw;
+    gap:10vw;
 }
 
 .small-container{
@@ -31,7 +31,7 @@ body
     width:70%;
     height:auto;
     justify-content:flex-start;
-    gap:1vh;
+    gap:2vh;
 }
 
 .table-container{
@@ -62,42 +62,52 @@ th{
 
 .wrap{
     width:100%;
+    background-color:#fff;
     height:auto;
     margin-left:2%;
     margin-bottom: 25px;
-    background-color:white;
     border-radius:10px;
     user-select: none;
-    
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    padding:2%;
 }
 
-.wrap > * {
-    vertical-align:middle;
+.col{
+    position:relative;
+    display:table;
+    text-align:center;
 }
 
 .imagen_bandera{
-    margin:2% 0 2% 2%;
     width:8vw;
     border-radius:5px;
     user-select: none;
+    display:table-cell;
+    vertical-align: middle;
+    text-align:center;
 }
 
 .pais{
-    margin-left:10%;
-    display:inline-block;
+    padding:1%;
     font-size:3vw;
+    display:table-cell;
+    vertical-align: middle;
+    text-align:center;
     color:black;
     text-decoration: none;
     font-weight:bold;
     user-select: none;
 }
 
-.icon{
-    margin-left:10%;
-    margin-top:-1%;
-    display:inline-block;
+.icon,.icon2,.icon3{
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position:absolute;
     font-size:2vw;
-    padding:1%;
+    padding:3%;
     border-radius:20px;
     transition:.5s;
     background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
@@ -109,41 +119,7 @@ th{
     color:white;
 }
 
-.icon2{
-    margin-top:-1%;
-    margin-left:-8%;
-    display:inline-block;
-    font-size:2vw;
-    padding:1%;
-    border-radius:20px;
-    transition:.5s;
-    background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
-    cursor:pointer;
-    visibility: hidden;
-}
-
-.icon3{
-    margin-top:-1%;
-    margin-left:-8%;
-    display:inline-block;
-    font-size:2vw;
-    padding:1%;
-    border-radius:20px;
-    transition:.5s;
-    background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
-    cursor:pointer;
-    visibility: hidden;
-}
-
-.icon.active{
-    visibility: visible;
-}
-
-.icon2.active{
-    visibility: visible;
-}
-
-.icon3.active{
+.icon.active,.icon2.active,.icon3.active{
     visibility: visible;
 }
 
@@ -174,7 +150,7 @@ th{
     overflow:hidden;
 }
 
-.container#blur.active{
+.big-container#blur.active{
     filter: blur(20px);
     pointer-events: none;
     user-select: none;
@@ -201,10 +177,8 @@ th{
     background-color:#fff;
     padding: 1%;
     border-radius:10px;
-    width: 650px;
-    height: 390px;
-    margin-left: 65px;
-    margin-top: 60px;
+    width:80%;
+    height:auto;
     transition: 200ms;
     text-align: center;
 }
@@ -214,18 +188,23 @@ th{
     width: 100%;
     height:auto;
 }
+
 .formacion-div:hover{
 	border-radius:10px;
     transition: 200ms;
     transform: scale(0.98);
-	cursor:pointer;
 }
+
 .twitter-div{
-    width:90%;
-    height:600px;
+    float: none; 
+    width: 80%; 
+    height: 500px;
     background:white;
     border-radius:20px;
     overflow:auto;
-    margin-left: 25px;
-    margin-top: 25px;
+}
+
+.leyenda{
+    font-size:2vw;
+    margin-top:1%;
 }

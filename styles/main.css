@@ -38,15 +38,15 @@ body
 
 .container1{
     width:100%;
-    height:50%;
-    background:white;
+    height:auto;
+    background:#eee;
     border-radius:20px;
     display:table;
 }
 
 .container2{
     width:100%;
-    height:50%;
+    height:auto;
     background:white;
     border-radius:20px;
     overflow:auto;
@@ -135,4 +135,24 @@ body
 .seleccion_match{
     padding:2%;
     font-size:1.5vw;
+}
+
+.flag{
+    width:4vw;
+    height:auto;
+}
+
+.wrap{
+    margin-top:5%;
+}
+
+.wrap2{
+    display: inline-block;
+    margin-top:5%;
+    margin-left:25%;
+}
+
+.seleccion_nombre{
+    padding:5%;
+    font-size:1.2vw;
 }
