@@ -10,8 +10,7 @@ body{
 	background-attachment: fixed;
 }
  
-.wrapper{
-    margin-top:2%;
+.wrapper2{
     width:100%;
     display:grid;
     grid-template-columns:repeat(4, 2fr);
@@ -34,11 +33,13 @@ body{
 }
 
 #top{
-     margin-top: 250px;
+    margin-top: 250px;
 }
+
 #bottom{
     margin-top: 15px;
 }
+
 .title{
     font-size:2vw;
     color:#801537;

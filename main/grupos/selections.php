@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
-       
+        <script src="selections.js"></script>
         <link href="selections.css" rel="stylesheet" type="text/css"> 
         <link href="../../styles/header.css" rel="stylesheet" type="text/css">
     </head> 
@@ -85,7 +85,7 @@
             </header>
         </nav>
         
-        <div class="wrapper">
+        <div class="wrapper2">
             <div class="grupo" id='top'>
                 <h1 class="title">Grupo A</h1>
                 <hr>
@@ -175,5 +175,4 @@
             </div>
         </div>
     </body>
-    
 </html>

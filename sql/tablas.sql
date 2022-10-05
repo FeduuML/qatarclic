@@ -35,23 +35,21 @@ CREATE TABLE users (
     rol_id int(2),
     cooldown_password timestamp NULL,
     cooldown_username timestamp NULL,
-<<<<<<< Updated upstream
+    bio varchar(255),
+    pfp varchar(255),
     seleccion int NULL,  
-=======
-    seleccion int NULL,
->>>>>>> Stashed changes
     PRIMARY KEY(id),
     FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`),
     FOREIGN KEY (`seleccion`) REFERENCES `teams`(`id`)
 );
 
-INSERT INTO `users` VALUES('1', 'liberfedericomanuel@gmail.com', 'FeduuML', '$2y$10$nDIaj0iEP2PDoyqj2vwttex9UEhqoBOJMth43n1L0EYRXVVUbTMXC'/*Contraseña: federico1*/, '0', NULL, NULL, NULL);
+INSERT INTO `users` VALUES('1', 'liberfedericomanuel@gmail.com', 'FeduuML', '$2y$10$nDIaj0iEP2PDoyqj2vwttex9UEhqoBOJMth43n1L0EYRXVVUbTMXC'/*Contraseña: federico1*/, '0', NULL, NULL, NULL, NULL, NULL);
 /*SOLO ESTA cuenta permite recuperar contraseña!*/
-INSERT INTO `users` VALUES('2', 'matefer@outlook.com', 'MateFer', '$2y$10$9Cj9EiFXmTcH3ZXsGVMLjuU..RzfVWgsFS./oGpPPl7mTM/WBTnPu'/*Contraseña: ferchomate911*/, '1', NULL, NULL, NULL);
+INSERT INTO `users` VALUES('2', 'matefer@outlook.com', 'MateFer', '$2y$10$9Cj9EiFXmTcH3ZXsGVMLjuU..RzfVWgsFS./oGpPPl7mTM/WBTnPu'/*Contraseña: ferchomate911*/, '1', NULL, NULL, NULL, NULL, NULL);
 SELECT r.rol FROM roles r WHERE r.rol = 1;
-INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We802Kpgy9gzRiYyttmM/eBeOhiXiRr6//htdWLpJdfjTWMzyItfG'/*Contraseña: AmoFortnite*/, '2', NULL, NULL, '9');
+INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We802Kpgy9gzRiYyttmM/eBeOhiXiRr6//htdWLpJdfjTWMzyItfG'/*Contraseña: AmoFortnite*/, '2', NULL, NULL, NULL, NULL, '9');
 SELECT r.rol FROM roles r WHERE r.rol = 2;
-INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, '0', NULL, NULL, NULL);
+INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, '0', NULL, NULL, NULL, NULL, NULL);
 
 CREATE TABLE `news` (
     `id` int(2) NOT NULL AUTO_INCREMENT,
@@ -88,6 +86,16 @@ CREATE TABLE `preguntas` (
     `respuesta` text,
     PRIMARY KEY(`id`),
     FOREIGN KEY (`id_encuesta`) REFERENCES `encuestas`(`id`)
+);
+
+CREATE TABLE `posts` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `user_id` int NOT NULL,
+    `content` text NOT NULL,
+    `image` varchar (255),
+    `datetime` datetime NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 );
 
 INSERT INTO `preguntas` VALUES ('1', '1', '¿Cuál será el primer equipo en llegar a la final?', 'Paises', NULL);
