@@ -72,7 +72,17 @@
 
                 <div class="wrapper_nav">
                     <div class="first_element">
-                        <img src="images/perfil.png" alt="Perfil" class="responsive" onclick="perfil()">
+                        <?php
+                            if(isset($_SESSION['user_id'])){
+                        ?>
+                            <img src="images/perfil.png" alt="Perfil" class="responsive" onclick="perfil()">
+                        <?php
+                            }else{
+                        ?>
+                            <img src="images/perfil.png" alt="Perfil" class="responsive" onclick="notlogged()">
+                        <?php
+                            }
+                        ?>
                         <span class="text">Perfil</span>
                     </div>
 
@@ -108,7 +118,7 @@
                     </div>
 
                     <div class="element">
-                        <img src="images/selecciones.png" alt="Comunidad" class="responsive">
+                        <img src="images/selecciones.png" alt="Comunidad" onclick="community()" class="responsive">
                         <span class="text">Comunidad</span>
                     </div>
                 </div>
@@ -218,7 +228,7 @@
 
 <script>
     function perfil(){
-        window.location.href = "main/profile/profile.php";
+        window.location.href = "main/myprofile/myprofile.php";
     }
 
     function notlogged(){
@@ -239,6 +249,10 @@
 
     function mundialito(){
         window.location.href="main/mundialito/mundialito.php";
+    }
+
+    function community(){
+        window.location.href="main/community/community.php";
     }
 
     var id = <?php echo($id); ?>;

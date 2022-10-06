@@ -98,6 +98,16 @@ CREATE TABLE `posts` (
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 );
 
+CREATE TABLE `friends` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `user_1` int NOT NULL,
+    `user_2` int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (`user_1`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`user_2`) REFERENCES `users`(`id`)
+);
+
+
 INSERT INTO `preguntas` VALUES ('1', '1', '¿Cuál será el primer equipo en llegar a la final?', 'Paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 1;
 INSERT INTO `preguntas` VALUES ('2', '1', '¿Cuál será el segundo equipo en llegar a la final?', 'Paises', NULL);

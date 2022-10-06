@@ -28,21 +28,6 @@
 		}
 	}
 
-?>
-
-<div class="bio">			
-	<form method="post" class="upload" enctype="multipart/form-data">
-		<div class="bio">
-			<label class="label">Biografia</label>
-			<input type="text" name="bio" class="form-control">
-		</div>
-		<div class="button1">
-			<button type="submit" class="btn" name="btn-add1">Subir</button></div>	
-		</div>			
-	</form>
-</div>
-
-<?php
 	if(isset($_POST['btn-add2'])){
 		$images=$_FILES['pfp']['name'];
 		$tmp_dir=$_FILES['pfp']['tmp_name'];
@@ -59,21 +44,7 @@
 			echo('<script>alert("Imagen cargada exitosamente");</script>');
 		}
 	}
-?>
-		
-<div class="pfp">
-	<form method="post" class="upload" enctype="multipart/form-data">
-		<label class="label">Agregar foto de perfil</label>
-		<input type="file" name="pfp" class="form-control" required accept="*/image">
 
-		<div class="button2">
-			<button type="submit" class="btn" name="btn-add2">Subir</button></div>	
-		</div>			
-	</form>
-</div>
-
-
-<?php
 	if(isset($_POST['btn-add3'])){
 		date_default_timezone_set('America/Buenos_Aires');
 		$fecha = date('Y-m-d H:i:s');
@@ -99,6 +70,29 @@
 		}
 	}
 ?>
+
+<div class="bio">			
+	<form method="post" class="upload" enctype="multipart/form-data">
+		<div class="bio">
+			<label class="label">Biografia</label>
+			<input type="text" name="bio" class="form-control">
+		</div>
+		<div class="button1">
+			<button type="submit" class="btn" name="btn-add1">Subir</button></div>	
+		</div>			
+	</form>
+</div>
+		
+<div class="pfp">
+	<form method="post" class="upload" enctype="multipart/form-data">
+		<label class="label">Agregar foto de perfil</label>
+		<input type="file" name="pfp" class="form-control" required accept="*/image">
+
+		<div class="button2">
+			<button type="submit" class="btn" name="btn-add2">Subir</button></div>	
+		</div>			
+	</form>
+</div>
 
 <div class="container">
 	<p class="title">Crear publicacion</p>
@@ -130,7 +124,7 @@
 ?>
 
 <?php
-	$stmt=$conn->prepare("SELECT p.datetime, p.content, p.image, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.id = $user_id");
+	$stmt=$conn->prepare("SELECT p.datetime, p.content, p.image, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $user_id");
 
 	if($stmt->execute()){
 		while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
