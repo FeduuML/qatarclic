@@ -10,6 +10,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':email', $_POST['email']);
         $stmt->bindParam(':username', $_POST['username']);
+        $username = $_POST['username'];
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT); //Encriptado de la contraseña
         $stmt->bindParam(':password', $password);
 
