@@ -1,0 +1,9 @@
+html{
+    font-family: 'Permanent Marker', cursive;
+}
+
+body
+{
+	background: linear-gradient(to bottom right,rgb(192,3,3),rgb(255, 2, 171), rgb(192, 3, 3));
+	background-attachment: fixed;
+}

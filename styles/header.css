@@ -169,11 +169,11 @@
 
 .text{
 	width: 100%;
-	font-family: Yanone Kaffeesatz;      
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;      
 	text-align: left;
 	color: #eeeee4;     
 	font-size: 5vh;
-	font-size: 1.8vw;
+	font-size: 1.6vw;
 	bottom: 0;
 	text-decoration: none;
 }

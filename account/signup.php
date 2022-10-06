@@ -7,9 +7,10 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
 	    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
+        
     </head>
 
-    <body>
+    <body> 
         <header class="header">
             <div class="wrapper">
                 <img id="logoheader"src="../images/logo.png">

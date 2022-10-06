@@ -27,7 +27,7 @@
         <div class="container">
             <section style="margin-top:120px;">
                 <form action="#" method="post" id="formulario" class="formulario" autocomplete="off">
-                    <h1>Iniciar sesion</h1>
+                    <h1>Iniciar Sesion</h1>
 
                     <div class="formulario__grupo" id="grupo__username">
 				        <div class="formulario__grupo-input">

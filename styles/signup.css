@@ -7,11 +7,11 @@
 
 html,body{
 	width:100%;
-}
+} 
 
 body
 {
-	background: linear-gradient(to bottom right,rgb(145, 28, 44), rgb(17, 17, 17));
+	background: linear-gradient(to top ,rgb(225, 37, 62), rgb(17, 17, 17));
 	background-attachment: fixed;
 }
 
@@ -42,10 +42,12 @@ section
 
 h1
 {
- 	color:rgb(145, 28, 44);
+ 	color:rgba(16, 2, 44);
  	text-align: center;
- 	font-size: 200%;
- 	margin-bottom: 7%;
+ 	font-size: 30px;	
+ 	margin-bottom: 10%;
+	margin-top: 10%;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .formulario__input
@@ -53,13 +55,15 @@ h1
     width: 100%;
     background: rgba(128, 124, 124, 0.432);
     padding: 2%;
-    border-radius: 5px;
-    margin-bottom: 4%;
+    border-radius: 20px;
+    margin-bottom: 1%;
     border: 1px solid #ffffff;
     font-size: 14px;
 	border: solid 3px transparent;
 }
-
+.formulario__input:hover {
+	box-shadow: 1px 0px 5px rgba(163,163,163, 1);
+}
 .alternative
 {
     color:black;
@@ -126,7 +130,7 @@ h1
 .formulario__btn {
 	left: 25%;
     width: 50%;
-    background: rgb(145, 28, 44);
+    background: rgb(225, 37, 62);
     color: #ffffff;
     padding: 7px ;
     margin-left:25%;
@@ -135,10 +139,15 @@ h1
     border: 1px solid #ffffff;
     font-family:'calibri';
 	cursor: pointer;
+	font-size: 100%;
+	transition: 500ms;
+	margin-top: 10%;
 }
 
 .formulario__btn:hover {
-	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+	transition: 500ms;
+    transform: scale(0.9);
+	cursor:pointer;
 }
 
 .formulario__mensaje-exito {
