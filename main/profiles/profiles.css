@@ -1,0 +1,157 @@
+*
+{
+    font-family: Yanone Kaffeesatz;
+ 	padding: 0px;
+ 	margin: 0px;
+ 	box-sizing: border-box;
+}
+
+html,body{
+	height:100%;
+    width:100%;
+}
+
+body
+{
+	background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
+	background-attachment: fixed;
+}
+  
+hr {
+    border: solid;
+    border-width: 1px;
+    border-color: #0B86C3;
+}
+  
+#user_header {
+    width: 100%;
+    height: auto;
+    background: #222 url('https://subtlepatterns.com/patterns/use_your_illusion.png') repeat;
+}
+  
+#user {
+    width: 70%;
+    height: auto;
+    padding:1%;
+}
+  
+#picture_box {
+    float:left;
+    padding-right:20px;
+}
+  
+#user_info {
+    width: 100%;
+    height: 9vw;
+    background-color: rgba(60, 60, 60, 0.4);
+}
+  
+.user_name {
+    padding-top:1%;
+    font-size:2vw;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 1.75px;
+}
+
+.bio_box{
+    margin-top:2%;
+    width:100%;
+}
+
+.user_bio{
+    font-size:1.3vw;
+    display:inline-block;
+    width:fit-content;
+    letter-spacing:1px;
+    color:#0B86C3;
+    cursor:pointer;
+}
+
+.user_bio:hover{
+    color:white;
+}
+
+.img{
+    width:9vw;
+    height:auto;
+}
+
+.username_box{
+    padding:.5%;
+}
+
+.icon{
+    margin-left:1%;
+    color:white;
+    cursor:pointer;
+    transition:0.5s;
+    padding:.5%;
+}
+
+.icon:hover{
+    background-color:white;
+    color:black;
+    border-radius:50%;
+    transition:0.5s;
+}
+
+#popup{
+    top:0%;
+    left:25%;
+    transform: translate(0%,10%);
+    position:fixed;
+    width:50%;
+    height:auto;
+    text-align:center;
+    font-size:1.2vw;
+    padding:20px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    border-radius:10px;
+    padding:10px;
+}
+
+#popup.active{
+    top:40%;
+    visibility: visible;
+    opacity: 1;
+    transform: 0.5s;
+    overflow:hidden;
+}
+
+.container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.bio-input{
+    font-size:1.5vw;
+    margin-top:5%;
+    padding:1%;
+    height:5vh;
+    width:90%;
+}
+
+.button{
+    width: 30%;
+    height:auto;
+    font-size:1.5vw;
+    background: rgb(145, 28, 44);
+    color: #ffffff;
+    padding: 7px;
+    margin-top:5%;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+	cursor: pointer;
+}
+
+.button:hover{
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}

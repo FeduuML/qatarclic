@@ -25,7 +25,11 @@
             $username = $row['username'];
             echo '<div>';
 			echo '<span>'.$row['datetime'].'</span>';
-			echo '<a href="../profiles/'.$username.'.php">'.$username.'</a>';
+            $stmt = $conn->prepare("SELECT id FROM users WHERE username = '$username'");
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			echo '<a href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
 			echo '<span>'.$row['content'].'</span>';
 			echo '<img src="../../posts/'.$row['image'].'"><br>';
             echo '</div>';

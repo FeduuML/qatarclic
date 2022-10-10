@@ -228,7 +228,7 @@
 
 <script>
     function perfil(){
-        window.location.href = "main/myprofile/myprofile.php";
+        window.location.href = "main/profiles/profiles.php";
     }
 
     function notlogged(){
