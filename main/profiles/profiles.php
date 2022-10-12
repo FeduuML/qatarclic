@@ -12,24 +12,8 @@
         
         $username = $results['username'];
         $email = $results['email'];
+		$pfp = $results['pfp'];
     }
-
-	if(isset($_POST['btn-add2'])){
-		$images=$_FILES['pfp']['name'];
-		$tmp_dir=$_FILES['pfp']['tmp_name'];
-		$imageSize=$_FILES['pfp']['size'];
-		$upload_dir=dirname(__DIR__).'../../pfp/';
-		$imgExt=strtolower(pathinfo($images,PATHINFO_EXTENSION));
-		$valid_extensions=array('jpeg', 'jpg', 'png');
-		$pic=rand(1000, 1000000).".".$imgExt;
-		move_uploaded_file($tmp_dir, $upload_dir.$pic);
-		$stmt=$conn->prepare("UPDATE users SET pfp  = :upfp WHERE id = $user_id");
-		$stmt->bindParam(':upfp', $pic);
-
-		if($stmt->execute()){
-			echo('<script>alert("Imagen cargada exitosamente");</script>');
-		}
-	}
 
 	if(isset($_POST['btn-add3'])){
 		date_default_timezone_set('America/Buenos_Aires');
@@ -53,15 +37,6 @@
 		}
 		else{
 			echo("<script>alert('Incorrecto');</script>");
-		}
-	}
-
-	$stmt=$conn->prepare("SELECT * FROM users WHERE id = $user_id");
-	if($stmt->execute()){
-		while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-			extract($row);
-			echo '<span>'.$row['bio'].'</span>';
-			echo '<img src="../../pfp/'.$row['pfp'].'">';
 		}
 	}
 
@@ -185,7 +160,15 @@
 				<div id="user_header">
 					<div id="user">
 						<div id="picture_box">
-							<img class="img" onclick="document.getElementById('popup2').classList.toggle('active'); document.getElementById('blur').classList.toggle('active');" src="https://en.gravatar.com/userimage/54162376/6fa5c4908077ceddb6388f7cad1a1187.jpg?size=100" title="Cambiar imagen">
+							<?php
+								if(isset($results['pfp'])){
+									$pfp = $results['pfp'];
+									echo "<img class='img' id='img' onclick='display()' src='../../pfp/$pfp' title='Cambiar imagen'></img>";
+								}
+								else{
+									echo "<img class='img' id='img' onclick='display()' src='https://en.gravatar.com/userimage/54162376/6fa5c4908077ceddb6388f7cad1a1187.jpg?size=100' title='Cambiar imagen'>";
+								}
+							?>
 						</div>
 
 						<div id="user_info">
@@ -211,17 +194,6 @@
 					</div>
 				</div>
 			</head>
-			
-			<div class="pfp">
-				<form method="post" class="upload" enctype="multipart/form-data">
-					<label class="label">Agregar foto de perfil</label>
-					<input type="file" name="pfp" class="form-control" required accept="*/image">
-
-					<div class="button2">
-						<button type="submit" class="btn" name="btn-add2">Subir</button></div>	
-					</div>			
-				</form>
-			</div>
 
 			<div class="container">
 				<p class="title">Crear publicacion</p>
@@ -276,13 +248,28 @@
 			}
 		}
 	}
+
+	if(isset($_POST['btn-img'])){
+		$images=$_FILES['pfp']['name'];
+		$tmp_dir=$_FILES['pfp']['tmp_name'];
+		$imageSize=$_FILES['pfp']['size'];
+		$upload_dir=dirname(__DIR__).'../../pfp/';
+		$imgExt=strtolower(pathinfo($images,PATHINFO_EXTENSION));
+		$valid_extensions=array('jpeg', 'jpg', 'png');
+		$pic=rand(1000, 1000000).".".$imgExt;
+		move_uploaded_file($tmp_dir, $upload_dir.$pic);
+		$stmt=$conn->prepare("UPDATE users SET pfp  = :upfp WHERE id = $user_id");
+		$stmt->bindParam(':upfp', $pic);
+
+		if($stmt->execute()){
+			echo "<script>document.getElementById('img').src='../../pfp/$pic';</script>";
+		}
+	}
 ?>
 
 <script>
-	function upload(){
-		pfp = document.getElementById("pfp").value;
-		pfp.click():
-
-		alert(pfp);
+	function display(){
+		document.getElementById('popup2').classList.toggle('active');
+		document.getElementById('blur').classList.toggle('active');
 	}
 </script>
