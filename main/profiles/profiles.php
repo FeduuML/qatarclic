@@ -185,7 +185,7 @@
 				<div id="user_header">
 					<div id="user">
 						<div id="picture_box">
-							<img class="img" src="https://en.gravatar.com/userimage/54162376/6fa5c4908077ceddb6388f7cad1a1187.jpg?size=100">
+							<img class="img" onclick="document.getElementById('popup2').classList.toggle('active'); document.getElementById('blur').classList.toggle('active');" src="https://en.gravatar.com/userimage/54162376/6fa5c4908077ceddb6388f7cad1a1187.jpg?size=100" title="Cambiar imagen">
 						</div>
 
 						<div id="user_info">
@@ -212,7 +212,7 @@
 				</div>
 			</head>
 			
-			<!--<div class="pfp">
+			<div class="pfp">
 				<form method="post" class="upload" enctype="multipart/form-data">
 					<label class="label">Agregar foto de perfil</label>
 					<input type="file" name="pfp" class="form-control" required accept="*/image">
@@ -238,7 +238,7 @@
 						<button type="submit" class="btn" name="btn-add3">Subir</button></div>	
 					</div>			
 				</form>
-			</div>!-->
+			</div>
 		</div>
 		
 		<div id="popup">
@@ -247,6 +247,15 @@
 				<input class="bio-input" name="bio" type="text" placeholder="Ingresar descripcion"></input>
 				<button class="button" type="submit" name="btn-bio">Aceptar</button>
 				<button class="button" type="button" onclick="document.getElementById('popup').classList.toggle('active'); document.getElementById('blur').classList.toggle('active');">Cancelar</button>
+			</form>
+        </div>
+
+		<div id="popup2">
+            <h1>Cambiar imagen</h1>
+			<form method="post" class="upload" enctype="multipart/form-data">
+				<input type="file" name="pfp" class="img-input" required accept="*/image"></input><br>
+				<button class="button" type="submit" name="btn-img">Aceptar</button>
+				<button class="button" type="button" onclick="document.getElementById('popup2').classList.toggle('active'); document.getElementById('blur').classList.toggle('active');">Cancelar</button>			
 			</form>
         </div>
 
@@ -268,3 +277,12 @@
 		}
 	}
 ?>
+
+<script>
+	function upload(){
+		pfp = document.getElementById("pfp").value;
+		pfp.click():
+
+		alert(pfp);
+	}
+</script>

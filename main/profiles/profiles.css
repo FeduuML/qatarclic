@@ -98,7 +98,7 @@ hr {
     transition:0.5s;
 }
 
-#popup{
+#popup,#popup2{
     top:0%;
     left:25%;
     transform: translate(0%,10%);
@@ -117,7 +117,7 @@ hr {
     padding:10px;
 }
 
-#popup.active{
+#popup.active,#popup2.active{
     top:40%;
     visibility: visible;
     opacity: 1;
@@ -154,4 +154,23 @@ hr {
 
 .button:hover{
 	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+#pfp{
+    display: none;
+}
+
+.img{
+    cursor:pointer;
+    transition:.5s;
+}
+
+.img:hover{
+    transform: scale(0.9);
+    transition:.5s;
+    border-radius:20%;
+}
+
+.img-input{
+    margin-top:5%;
 }
