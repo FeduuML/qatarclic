@@ -92,7 +92,6 @@ CREATE TABLE `posts` (
     `id` int NOT NULL AUTO_INCREMENT,
     `user_id` int NOT NULL,
     `content` text NOT NULL,
-    `image` varchar (255),
     `datetime` datetime NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)

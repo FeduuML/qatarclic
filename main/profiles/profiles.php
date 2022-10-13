@@ -15,28 +15,26 @@
 		$pfp = $results['pfp'];
     }
 
-	if(isset($_POST['btn-add3'])){
-		date_default_timezone_set('America/Buenos_Aires');
-		$fecha = date('Y-m-d H:i:s');
-		$content=$_POST['content'];
-		$images=$_FILES['image']['name'];
-		$tmp_dir=$_FILES['image']['tmp_name'];
-		$imageSize=$_FILES['image']['size'];
-		$upload_dir=dirname(__DIR__).'../../posts/';
-		$imgExt=strtolower(pathinfo($images,PATHINFO_EXTENSION));
-		$valid_extensions=array('jpeg', 'jpg', 'png', 'gif', 'pdf');
-		$pic=rand(1000, 1000000).".".$imgExt;
-		move_uploaded_file($tmp_dir, $upload_dir.$pic);
-		
-		$stmt=$conn->prepare("INSERT INTO posts(user_id, image, content, datetime) VALUES ($user_id, :uima, :ucont, '$fecha')");
-		$stmt->bindParam(':uima', $pic);
-		$stmt->bindParam(':ucont', $content);
+	if(isset($_GET['id'])){
+		$id = $_GET['id'];
+		$sql = "SELECT * FROM users WHERE id = $id";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        
+        $username = $results['username'];
+        $email = $results['email'];
+		$pfp = $results['pfp'];
 
+		$stmt=$conn->prepare("SELECT p.datetime, p.content, p.image, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $id");
 		if($stmt->execute()){
-			echo("<script>alert('Correcto');</script>");
-		}
-		else{
-			echo("<script>alert('Incorrecto');</script>");
+			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+				extract($row);
+				echo '<span>'.$row['datetime'].'</span>';
+				echo '<span>'.$row['username'].'</span>';
+				echo '<span>'.$row['content'].'</span>';
+				echo '<img src="../../posts/'.$row['image'].'">';
+			}
 		}
 	}
 
@@ -195,20 +193,13 @@
 				</div>
 			</head>
 
-			<div class="container">
-				<p class="title">Crear publicacion</p>
+			<div class="post-container">
+				<p class="post-title">Crear publicacion</p>
 				<form method="post" class="upload" enctype="multipart/form-data">
 					<div class="content">
-						<label class="label">Contenido (max. 500 caracteres)</label>
-						<textarea type="text" name="content" class="form-control-content" ></textarea>
+						<textarea type="text" name="content" class="post-text"></textarea>
 					</div>
-					<div class="image">
-						<label class="label">Imagen</label>
-						<input type="file" name="image" class="form-control" required accept="*/image">
-					</div>
-					<div class="button">
-						<button type="submit" class="btn" name="btn-add3">Subir</button></div>	
-					</div>			
+					<center><button type="submit" class="btn-post" name="btn-post">Subir</button></center>	
 				</form>
 			</div>
 		</div>
@@ -263,6 +254,21 @@
 
 		if($stmt->execute()){
 			echo "<script>document.getElementById('img').src='../../pfp/$pic';</script>";
+		}
+	}
+
+	if(isset($_POST['btn-post'])){
+		date_default_timezone_set('America/Buenos_Aires');
+		$fecha = date('Y-m-d H:i:s');
+		$content=$_POST['content'];
+		$stmt=$conn->prepare("INSERT INTO posts(user_id, content, datetime) VALUES ($user_id, :ucont, '$fecha')");
+		$stmt->bindParam(':ucont', $content);
+
+		if($stmt->execute()){
+			echo("<script>alert('Correcto');</script>");
+		}
+		else{
+			echo("<script>alert('Incorrecto');</script>");
 		}
 	}
 ?>
