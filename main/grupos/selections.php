@@ -92,8 +92,8 @@
                 <div class="content">
                     <div class="wrap"><img class="imagen_bandera" src="../../images/flags/qatar.jpg"><a class="pais" href="../../teams/qatar.php">Qatar</a></div>
                     <div class="wrap"><img class="imagen_bandera" src="../../images/flags/ecuador.jpg"><a class="pais" href="../../teams/ecuador.php">Ecuador</a></div>
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/senegal.jpg"><a class="pais" href="../../teams/Senegal/senegal-team.php">Senegal</a></div>
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/holanda.jpg"><a class="pais" href="../../teams/Senegal/senegal-team.php">Holanda</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/senegal.jpg"><a class="pais" href="../../teams/senegal.php">Senegal</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/holanda.jpg"><a class="pais" href="../../teams/holanda.php">Holanda</a></div>
                 </div>
             </div>
 
@@ -101,10 +101,10 @@
                 <h1 class="title">Grupo B</h1>
                 <hr>
                 <div class="content">
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/inglaterra.jpg"><a class="pais">Inglaterra</a></div>
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/iran.jpg"><a class="pais">Iran</a></div>
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/eeuu.jpg"><a class="pais">Estados Unidos</a></div>
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/gales.jpg"><a class="pais">Gales</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/inglaterra.jpg"><a class="pais" href="../../teams/inglaterra.php">Inglaterra</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/iran.jpg"><a class="pais" href="../../teams/iran.php">Iran</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/eeuu.jpg"><a class="pais" href="../../teams/eeuu.php">Estados Unidos</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/gales.jpg"><a class="pais" href="../../teams/gales.php">Gales</a></div>
                 </div>
             </div> 
 
@@ -112,10 +112,10 @@
                 <h1 class="title">Grupo C</h1>
                 <hr>
                 <div class="content">
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/argentina.jpg"><a class="pais">Argentina</a></div>  
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/arabia.jpg"><a class="pais">Arabia Saudita</a></div>
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/mexico.jpg"><a class="pais">Mexico</a></div>
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/polonia.jpg"><a class="pais">Polonia</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/argentina.jpg"><a class="pais" href="../../teams/argentina.php">Argentina</a></div>  
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/arabia.jpg"><a class="pais" href="../../teams/arabia.php">Arabia Saudita</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/mexico.jpg"><a class="pais" href="../../teams/mexico.php">Mexico</a></div>
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/polonia.jpg"><a class="pais" href="../../teams/polonia.php">Polonia</a></div>
                 </div>
             </div>   
 
@@ -123,10 +123,10 @@
                 <h1 class="title">Grupo D</h1>
                 <hr>
                 <div class="content">
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/francia.jpg"><a class="pais">Francia</a></div>   
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/australia.jpg"><a class="pais">Australia</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/dinamarca.jpg"><a class="pais">Dinamarca</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/tunez.jpg"><a class="pais">Tunez</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/francia.jpg"><a class="pais" href="../../teams/francia.php">Francia</a></div>   
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/australia.jpg"><a class="pais" href="../../teams/australia.php">Australia</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/dinamarca.jpg"><a class="pais" href="../../teams/dinamarca.php">Dinamarca</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/tunez.jpg"><a class="pais" href="../../teams/tunez.php">Tunez</a></div> 
                 </div>
             </div>
 
@@ -134,10 +134,10 @@
                 <h1 class="title">Grupo E</h1>
                 <hr>
                 <div class="content">
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/españa.jpg"><a class="pais">España</a></div>   
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/costa_rica.jpg"><a class="pais">Costa Rica</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/alemania.jpg"><a class="pais">Alemania</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/japon.jpg"><a class="pais">Japon</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/españa.jpg"><a class="pais" href="../../teams/españa.php">España</a></div>   
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/costa_rica.jpg"><a class="pais" href="../../teams/costa rica.php">Costa Rica</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/alemania.jpg"><a class="pais" href="../../teams/alemania.php">Alemania</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/japon.jpg"><a class="pais" href="../../teams/japon.php">Japon</a></div> 
                 </div>
             </div>
 
@@ -145,10 +145,10 @@
                 <h1 class="title">Grupo F</h1>
                 <hr>
                 <div class="content">
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/belgica.jpg"><a class="pais">Belgica</a></div>   
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/canada.jpg"><a class="pais">Canada</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/marruecos.jpg"><a class="pais">Marruecos</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/croacia.jpg"><a class="pais">Croacia</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/belgica.jpg"><a class="pais" href="../../teams/belgica.php">Belgica</a></div>   
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/canada.jpg"><a class="pais" href="../../teams/canada.php">Canada</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/marruecos.jpg"><a class="pais" href="../../teams/marruecos.php">Marruecos</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/croacia.jpg"><a class="pais" href="../../teams/croacia.php">Croacia</a></div> 
                 </div>
             </div>
 
