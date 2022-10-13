@@ -156,10 +156,10 @@
                 <h1 class="title">Grupo G</h1>
                 <hr>
                 <div class="content">
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/brasil.jpg"><a class="pais">Brasil</a></div>   
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/serbia.jpg"><a class="pais">Serbia</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/suiza.jpg"><a class="pais">Suiza</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/camerun.jpg"><a class="pais">Camerun</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/brasil.jpg"><a class="pais" href="../../teams/brasil.php">Brasil</a></div>   
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/serbia.jpg"><a class="pais" href="../../teams/serbia.php">Serbia</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/suiza.jpg"><a class="pais" href="../../teams/suiza.php">Suiza</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/camerun.jpg"><a class="pais" href="../../teams/camerun.php">Camerun</a></div> 
                 </div>
             </div>
 
@@ -167,10 +167,10 @@
                 <h1 class="title">Grupo H</h1>
                 <hr>
                 <div class="content">
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/portugal.jpg"><a class="pais">Portugal</a></div>   
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/ghana.jpg"><a class="pais">Ghana</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/uruguay.jpg"><a class="pais">Uruguay</a></div> 
-                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/korea.jpg"><a class="pais">Corea del Sur</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/portugal.jpg"><a class="pais" href="../../teams/portugal.php">Portugal</a></div>   
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/ghana.jpg"><a class="pais" href="../../teams/ghana.php">Ghana</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/uruguay.jpg"><a class="pais" href="../../teams/uruguay.php">Uruguay</a></div> 
+                    <div class="wrap"><img class="imagen_bandera" src="../../images/flags/korea.jpg"><a class="pais" href="../../teams/corea.php">Corea del Sur</a></div> 
                 </div>
             </div>
         </div>

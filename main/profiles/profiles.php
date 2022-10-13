@@ -26,26 +26,24 @@
         $email = $results['email'];
 		$pfp = $results['pfp'];
 
-		$stmt=$conn->prepare("SELECT p.datetime, p.content, p.image, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $id");
+		$stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $id");
 		if($stmt->execute()){
 			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
 				extract($row);
 				echo '<span>'.$row['datetime'].'</span>';
 				echo '<span>'.$row['username'].'</span>';
 				echo '<span>'.$row['content'].'</span>';
-				echo '<img src="../../posts/'.$row['image'].'">';
 			}
 		}
 	}
 
-	$stmt=$conn->prepare("SELECT p.datetime, p.content, p.image, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $user_id");
+	$stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $user_id");
 	if($stmt->execute()){
 		while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
 			extract($row);
 			echo '<span>'.$row['datetime'].'</span>';
 			echo '<span>'.$row['username'].'</span>';
 			echo '<span>'.$row['content'].'</span>';
-			echo '<img src="../../posts/'.$row['image'].'">';
 		}
 	}
 ?>

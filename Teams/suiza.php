@@ -19,7 +19,7 @@
             }
         }
 
-        $stmt = $conn->prepare("SELECT id FROM teams WHERE nombre = 'CROACIA'");
+        $stmt = $conn->prepare("SELECT id FROM teams WHERE nombre = 'SUIZA'");
         if($stmt->execute()){
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $pais_id = $row['id'];
@@ -123,11 +123,11 @@
             <div class="container" style="width:40%;">
                 <div class="wrap">
                     <div class="col">
-                        <img class="imagen_bandera" src="../images/shields/CROACIA.png">
+                        <img class="imagen_bandera" src="../images/shields/SUIZA.png">
                     </div>
 
                     <div class="col">
-                        <span class="pais">CROACIA</span>
+                        <span class="pais">SUIZA</span>
                     </div>
                     
                     <div class="col">
@@ -153,7 +153,7 @@
                 <div class="table-container">
                     <table>
                         <?php
-                            $stmt = $conn->prepare("SELECT * FROM players WHERE pais = 'CROACIA'");
+                            $stmt = $conn->prepare("SELECT * FROM players WHERE pais = 'SUIZA'");
                             $stmt->execute();
                             echo"<th>Jugador</th><th>Numero</th><th>Edad</th>";
                             while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -171,12 +171,12 @@
 
             <div class="small-container">
                 <div class="formacion-div">
-                    <img class="formacion" src="../images/formaciones/Croacia.jpg">
-                    <h2 class="leyenda">Formación de Croacia</h2> 
+                    <img class="formacion" src="../images/formaciones/SUIZA.jpg">
+                    <h2 class="leyenda">Formación de Suiza</h2> 
                 </div>
 
                 <div class="twitter-div">
-                    <a class="twitter-timeline" href="https://twitter.com/HNS_CFF?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by @HNS_CFF</a>
+                    <a class="twitter-timeline" href="https://twitter.com/sfv_asf">Tweets by @sfv_asf</a>
                 </div>
             </div>
         </div>
