@@ -11,15 +11,15 @@
         $results = $query -> fetch(PDO::FETCH_ASSOC);
         $username = $results['username'];
 
-        $stmt = $conn->prepare("SELECT u.seleccion, t.nombre, t.imagen FROM users u INNER JOIN teams t ON u.seleccion = t.id WHERE u.id = $user_id");
-        if($stmt->execute()){
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if(is_countable($row)){
-                $seleccion = $row['seleccion'];
-                $seleccion_nombre = $row['nombre'];
-                $seleccion_imagen = $row['imagen'];
-            }
-        }
+        //$stmt = $conn->prepare("SELECT u.seleccion, t.nombre, t.imagen FROM users u INNER JOIN teams t ON u.seleccion = t.id WHERE u.id = $user_id");
+        //if($stmt->execute()){
+            //$row = $stmt->fetch(PDO::FETCH_ASSOC);
+            //if(is_countable($row)){
+              //$seleccion = $row['seleccion'];
+                //$seleccion_nombre = $row['nombre'];
+               //$seleccion_imagen = $row['imagen'];
+            //}
+        //}
     }
 ?>
 

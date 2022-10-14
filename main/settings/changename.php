@@ -11,6 +11,12 @@
         $results = $query -> fetch(PDO::FETCH_ASSOC);
         
         $username = $results['username'];
+
+        $records = $conn->prepare("SELECT * FROM `cooldown_username` c INNER JOIN users u ON c.user_id = u.id WHERE u.username = '$username'");
+        if($records->execute()){
+            $count = $records->rowCount();
+            echo("<script>alert($count);</script>");
+        }
     }
 ?>
 
@@ -149,7 +155,8 @@
 
     if(isset($_SESSION['user_id']) && !empty($_POST['actual_password'])){
         $actual_password = $_POST['actual_password'];
-        $mysql = $conn->prepare("SELECT * FROM users WHERE :password = '$actual_password'");
+        $user_id = $_SESSION['user_id'];
+        $mysql = $conn->prepare("SELECT * FROM users WHERE :password = '$actual_password' AND id = $user_id");
         $mysql->bindParam(':password', $_POST['actual_password']);
         $mysql->execute();
         $stmt = $mysql->fetch(PDO::FETCH_ASSOC);
@@ -158,13 +165,28 @@
             if(isset($_POST['username'])){
                 $username = $_POST['username'];
                 $email = $stmt['email'];
-                $records = $conn->prepare("UPDATE users SET username = '$username' WHERE email = '$email'");
-    
-                if($records->execute()){
-                    $result = $records->fetch(PDO::FETCH_ASSOC);
-                    $update = $conn->prepare("UPDATE `users` SET cooldown_username = CURRENT_TIMESTAMP() WHERE email = '$email'");
-                    $update->execute();
-                    echo('<script>window.location.href = "settings.php?val=2";</script>');
+                $records = $conn->prepare("SELECT * FROM `cooldown_username` c INNER JOIN users u ON c.user_id = u.id WHERE c.user_id = '$user_id'");
+                $records->execute();
+                $count = $records->rowCount();
+                echo("<script>alert($count);</script>");
+
+                if($count > 0){
+                    $sql = $conn->prepare("UPDATE cooldown_username SET cooldown = CURRENT_TIMESTAMP() WHERE user_id = $user_id");
+                    if($sql->execute()){
+                        $result = $records->fetch(PDO::FETCH_ASSOC);
+                        $update = $conn->prepare("UPDATE `users` SET username = '$username' WHERE id = $user_id");
+                        $update->execute();
+                        echo('<script>window.location.href = "settings.php?val=2";</script>');
+                    }
+                }
+                else{
+                    $sql = $conn->prepare("INSERT INTO cooldown_username(user_id, cooldown) VALUES ($user_id,CURRENT_TIMESTAMP())");
+                    if($sql->execute()){
+                        $result = $records->fetch(PDO::FETCH_ASSOC);
+                        $update = $conn->prepare("UPDATE `users` SET username = '$username' WHERE id = $user_id");
+                        $update->execute();
+                        echo('<script>window.location.href = "settings.php?val=2";</script>');
+                    }
                 }
             }
         }

@@ -11,8 +11,14 @@
         $results = $query -> fetch(PDO::FETCH_ASSOC);
         
         $username = $results['username'];
-        $time_password = $results['cooldown_password'];
-        $time_username = $results['cooldown_username'];
+
+        $stmt = $conn->prepare("SELECT * FROM cooldown_username WHERE user_id = $user_id");
+        if($stmt->execute()){
+            if($stmt->rowCount() > 0){
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $time_username = $row['cooldown'];
+            }
+        }
     }
 ?>
 
@@ -147,7 +153,7 @@
     }
 
     if(isset($time_username)){
-        if(((time() - strtotime($time_username)) - 18000) < 172800){
+        if(((time() - strtotime($time_username)) - 18000) < 5){
             $cooldown = round((190800 - (time() - strtotime($time_username)))/3600);
             echo('<script>document.getElementById("changedname").innerHTML="Te quedan '.$cooldown.' horas";</script>');
             echo "<script>var boton = document.getElementById('changename'); boton.disabled=true;</script>";

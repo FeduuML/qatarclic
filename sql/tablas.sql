@@ -33,23 +33,48 @@ CREATE TABLE users (
     username varchar(20) NOT NULL UNIQUE,
     password varchar(500),
     rol_id int(2),
-    cooldown_password timestamp NULL,
-    cooldown_username timestamp NULL,
     bio varchar(255),
     pfp varchar(255),
-    seleccion int NULL,  
     PRIMARY KEY(id),
-    FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`),
-    FOREIGN KEY (`seleccion`) REFERENCES `teams`(`id`)
+    FOREIGN KEY (`rol_id`) REFERENCES `roles`(`id`)
 );
 
-INSERT INTO `users` VALUES('1', 'liberfedericomanuel@gmail.com', 'FeduuML', '$2y$10$nDIaj0iEP2PDoyqj2vwttex9UEhqoBOJMth43n1L0EYRXVVUbTMXC'/*Contraseña: federico1*/, '0', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` VALUES('1', 'liberfedericomanuel@gmail.com', 'FeduuML', '$2y$10$nDIaj0iEP2PDoyqj2vwttex9UEhqoBOJMth43n1L0EYRXVVUbTMXC'/*Contraseña: federico1*/, '0', NULL, NULL);
 /*SOLO ESTA cuenta permite recuperar contraseña!*/
-INSERT INTO `users` VALUES('2', 'matefer@outlook.com', 'MateFer', '$2y$10$9Cj9EiFXmTcH3ZXsGVMLjuU..RzfVWgsFS./oGpPPl7mTM/WBTnPu'/*Contraseña: ferchomate911*/, '1', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` VALUES('2', 'matefer@outlook.com', 'MateFer', '$2y$10$9Cj9EiFXmTcH3ZXsGVMLjuU..RzfVWgsFS./oGpPPl7mTM/WBTnPu'/*Contraseña: ferchomate911*/, '1', NULL, NULL);
 SELECT r.rol FROM roles r WHERE r.rol = 1;
-INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We802Kpgy9gzRiYyttmM/eBeOhiXiRr6//htdWLpJdfjTWMzyItfG'/*Contraseña: AmoFortnite*/, '2', NULL, NULL, NULL, NULL, '9');
+INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We802Kpgy9gzRiYyttmM/eBeOhiXiRr6//htdWLpJdfjTWMzyItfG'/*Contraseña: AmoFortnite*/, '2', NULL, NULL);
 SELECT r.rol FROM roles r WHERE r.rol = 2;
-INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, '0', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, '0', NULL, NULL);
+
+CREATE TABLE cooldown_password (
+    id int NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
+    cooldown timestamp NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
+);
+
+CREATE TABLE cooldown_username (
+    id int NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
+    cooldown timestamp NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
+);
+
+CREATE TABLE seleccion (
+    id int NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
+    seleccion_id int NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`seleccion_id`) REFERENCES `teams`(`id`)
+);
+
+INSERT INTO `seleccion` VALUES('1', '1', '9');
+SELECT u.id FROM users u WHERE u.id = 1;
+SELECT t.id FROM teams t WHERE t.id = 9;
 
 CREATE TABLE `news` (
     `id` int(2) NOT NULL AUTO_INCREMENT,
