@@ -272,6 +272,26 @@
 ?>
 
 <script>
+    function calendario(){
+        window.location.href="../../main/calendario/calendario.php";
+    }
+
+    function SobreQatar(){
+        window.location.href="../../main/sobreqatar/sobreqatar.php";
+    }
+
+    function selections(){
+        window.location.href="../../main/grupos/selections.php";
+    }
+
+    function mundialito(){
+        window.location.href="../../main/mundialito/mundialito.php";
+    }
+
+    function community(){
+        window.location.href="../../main/community/community.php";
+    }
+	
 	function display(){
 		document.getElementById('popup2').classList.toggle('active');
 		document.getElementById('blur').classList.toggle('active');

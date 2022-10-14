@@ -111,7 +111,7 @@
                     </div>
 
                     <div class="element">
-                        <img src="../images/selecciones.png" alt="Comunidad" class="responsive">
+                        <img src="../images/selecciones.png" alt="Comunidad" onclick="community()" class="responsive">
                         <span class="text">Comunidad</span>
                     </div>
                 </div>
@@ -257,5 +257,8 @@
 
     function notlogged(){
         window.location.href="../account/login.php";
+    }
+    function community(){
+        window.location.href="../main/community/community.php";
     }
 </script>
