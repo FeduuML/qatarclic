@@ -1,3 +1,18 @@
+<?php
+	require ('../../account/database.php');
+    session_start();
+
+    if(isset($_SESSION['user_id'])){
+        $user_id = $_SESSION['user_id'];
+
+        $sql = "SELECT * FROM users WHERE id = $user_id";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        
+        $username = $results['username'];
+    }
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -78,7 +93,7 @@
                     </div>
 
                     <div class="element">
-                        <img src="../../images/selecciones.png" alt="Comunidad" class="responsive">
+                        <img src="../../images/selecciones.png" alt="Comunidad" onclick="community()" class="responsive">
                         <span class="text">Comunidad</span>
                     </div>
                 </div>
@@ -176,3 +191,31 @@
         </div>
     </body>
 </html>
+
+<script src="../../js/scroll.js"></script>
+<script src="../../js/index.js"></script>
+<script>
+    function calendario(){
+        window.location.href="../calendario/calendario.php";
+    }
+
+    function SobreQatar(){
+        window.location.href="../sobreqatar/sobreqatar.php";
+    }
+
+    function perfil(){
+        window.location.href="../profiles/profiles.php";
+    }
+
+    function mundialito(){
+        window.location.href="../mundialito/mundialito.php";
+    }
+
+    function community(){
+        window.location.href="../community/community.php";
+    }
+
+    function notlogged(){
+        window.location.href="../../account/login.php";
+    }
+</script>

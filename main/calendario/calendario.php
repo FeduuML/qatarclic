@@ -52,12 +52,12 @@
                             echo("<a href='../../account/login.php'>Iniciar sesion</a>");
                         } ?>
                     </nav>
-                </div>
+                </div>  
         
 
                 <div class="wrapper_nav">
                     <div class="first_element">
-                        <img src="../../images/perfil.png" alt="Perfil" class="responsive">
+                        <img src="../../images/perfil.png" alt="Perfil" onclick="perfil()" class="responsive">
                         <span class="text">Perfil</span>
                     </div>
 
@@ -92,7 +92,7 @@
                     </div>
 
                     <div class="element">
-                        <img src="../../images/selecciones.png" alt="Comunidad" class="responsive">
+                        <img src="../../images/selecciones.png" alt="Comunidad " onclick="community()" class="responsive">
                         <span class="text">Comunidad</span>
                     </div>
                 </div>
@@ -477,11 +477,24 @@
     function calendario(){
         window.location.href="calendario.php";
     }
-    
+
     function selections(){
         window.location.href="../grupos/selections.php";
     }
+
     function SobreQatar(){
         window.location.href="../sobreqatar/sobreqatar.php"
+    }
+
+    function perfil(){
+        window.location.href="../../main/profiles/profiles.php";
+    }
+
+    function community(){
+        window.location.href="community/community.php";
+    }
+
+    function mundialito(){
+        window.location.href="../../main/mundialito/mundialito.php";
     }
 </script>

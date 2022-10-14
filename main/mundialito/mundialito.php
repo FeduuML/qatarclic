@@ -56,7 +56,7 @@
 
                 <div class="wrapper_nav">
                     <div class="first_element">
-                        <img src="../../images/perfil.png" alt="Perfil" class="responsive">
+                        <img src="../../images/perfil.png" alt="Perfil" onclick="perfil()" class="responsive">
                         <span class="text">Perfil</span>
                     </div>
 
@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="element">
-                        <img src="../../images/selecciones.png" alt="Comunidad" class="responsive">
+                        <img src="../../images/selecciones.png" alt="Comunidad" onclick="community()" class="responsive">
                         <span class="text">Comunidad</span>
                     </div>
                 </div>
@@ -153,6 +153,31 @@
 </html>
 
 <script>
+  function calendario(){
+        window.location.href="../../main/calendario/calendario.php";
+    }
+
+    function SobreQatar(){
+        window.location.href="../../main/sobreqatar/sobreqatar.php";
+    }
+
+    function selections(){
+        window.location.href="../../main/grupos/selections.php";
+    }
+
+    function perfil(){
+        window.location.href="../../main/profiles/profiles.php";
+    }
+
+    function community(){
+        window.location.href="../../main/community/community.php";
+    }
+
+	function display(){
+		document.getElementById('popup2').classList.toggle('active');
+		document.getElementById('blur').classList.toggle('active');
+	}
+    
     function quiz(id){
         window.location.href="quiz.php?id=" + id;
     }
