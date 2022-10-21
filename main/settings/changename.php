@@ -168,7 +168,6 @@
                 $records = $conn->prepare("SELECT * FROM `cooldown_username` c INNER JOIN users u ON c.user_id = u.id WHERE c.user_id = '$user_id'");
                 $records->execute();
                 $count = $records->rowCount();
-                echo("<script>alert($count);</script>");
 
                 if($count > 0){
                     $sql = $conn->prepare("UPDATE cooldown_username SET cooldown = CURRENT_TIMESTAMP() WHERE user_id = $user_id");

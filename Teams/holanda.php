@@ -11,11 +11,11 @@
         $results = $query -> fetch(PDO::FETCH_ASSOC);
         $username = $results['username'];
 
-        $stmt = $conn->prepare("SELECT seleccion FROM users WHERE id = $user_id");
+        $stmt = $conn->prepare("SELECT seleccion_id FROM seleccion WHERE user_id = $user_id");
         if($stmt->execute()){
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if(isset($row['seleccion'])){
-                $seleccion = $row['seleccion'];
+            if(isset($row['seleccion_id'])){
+                $seleccion = $row['seleccion_id'];
             }
         }
 
@@ -137,7 +137,12 @@
                         <?php
                             if(isset($user_id)){
                                 if(isset($seleccion)){
-                                    echo '<script>document.getElementById("icon2").classList.toggle("active");</script>';
+                                    if($seleccion == $pais_id){
+                                        echo '<script>document.getElementById("icon2").classList.toggle("active");</script>';
+                                    }
+                                    else{
+                                        echo '<script>document.getElementById("icon").classList.toggle("active");</script>';
+                                    }
                                 }
                                 else{
                                     echo '<script>document.getElementById("icon").classList.toggle("active");</script>';
@@ -149,7 +154,7 @@
                         ?>
                     </div>
                 </div>
-
+                
                 <div class="table-container">
                     <table>
                         <?php
