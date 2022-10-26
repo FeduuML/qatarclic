@@ -19,6 +19,14 @@
                 $time_username = $row['cooldown'];
             }
         }
+
+        $stmt = $conn->prepare("SELECT * FROM cooldown_password WHERE user_id = $user_id");
+        if($stmt->execute()){
+            if($stmt->rowCount() > 0){
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $time_password = $row['cooldown'];
+            }
+        }
     }
 ?>
 
@@ -35,68 +43,90 @@
     </head>
    
     <body>
+    <div class="margin"></div>
+
+<nav class="navegador_general" id="navbar">
     <header class="header" id="header">
-            <div class="wrapper">
-                <div class="logo"><?php require '../../header/header.php';?></div>
-                <nav>
-                    <?php 
+        <div class="wrapper">
+            <img id="logoheader"src="../../images/logo.png">
+            <div class="logo"><?php require '../../header/header.php';?></div>
+            <nav>
+                <?php 
                     if(isset($_SESSION['user_id'])){
                         echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
                         if($_SESSION['rol_id'] == 1){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else if($_SESSION['rol_id'] == 2){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../special_users/administrador.php'>Gestionar noticias</a><br><br><a href='../special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrarMundialito.php'>Gestionar mundialito</a><br><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                     }
                     else{
-                        echo("<a href='../../account/login.php'>Iniciar sesion</a>");
-                    } ?>
-                </nav>
+                        echo("<a href='account/login.php'>Iniciar sesion</a>");
+                    } 
+                ?>
+            </nav>
+        </div>
+
+
+        <div class="wrapper_nav">
+            <div class="first_element">
+                <?php
+                    if(isset($_SESSION['user_id'])){
+                ?>
+                    <img src="../../images/perfil.png" alt="Perfil" class="responsive" onclick="perfil()">
+                <?php
+                    }else{
+                ?>
+                    <img src="../../images/perfil.png" alt="Perfil" class="responsive" onclick="notlogged()">
+                <?php
+                    }
+                ?>
+                <span class="text">Perfil</span>
             </div>
-        </header>
 
-        <div class="margin"></div>
-
-        <nav class="navegador_general" id="navbar">
-            <h1 class="text_nav">Mundial de Qatar 2022</h1>
-
-            <div class="wrapper_nav">
-                <div class="first_element">
-                    <img src="../../images/fixture_violeta.png" alt="Perfil" class="responsive">
-                    <span class="text">Perfil</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/fixture_violeta.png" alt="Fixture" class="responsive">
-                    <span class="text">Fixture</span>
-                </div> 
-            
-                <div class="element">
-                    <img src="../../images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
-                    <span class="text">Calendario</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/qatar_rosa.png" alt="Qatar" class="responsive">
-                    <span class="text">Sobre Qatar</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/selecciones.png" alt="Selecciones" onclick="selections()" class="responsive">
-                    <span class="text">Equipos</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/fixture_violeta.png" alt="Comunidad" class="responsive">
-                    <span class="text">Comunidad</span>
-                </div>
+            <div class="element">
+                <?php 
+                    if(isset($_SESSION['user_id'])){ 
+                ?>
+                <img src="../../images/fixture_violeta.png" alt="Fixture" onclick="mundialito()" class="responsive">
+                <?php
+                    }else{
+                ?>
+                <img src="../../images/fixture_violeta.png" alt="Fixture" onclick="notlogged()" class="responsive">
+                <?php
+                    }
+                ?>
+                <span class="text">Mundialito</span>
+            </div> 
+        
+            <div class="element">
+                <img src="../../images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
+                <span class="text">Calendario</span>
             </div>
-        </nav>
+
+            <div class="element">
+                <img src="../../images/qatar_rosa.png" alt="Qatar" onclick="SobreQatar()" class="responsive">
+                <span class="text">Sobre Qatar</span>
+            </div>
+
+            <div class="element">
+                <img src="../../images/teams.jpg" alt="Selecciones" onclick="selections()" class="responsive">
+        
+                <span class="text">Equipos</span>
+            </div>
+
+            <div class="element">
+                <img src="../../images/selecciones.png" alt="Comunidad" onclick="community()" class="responsive">
+                <span class="text">Comunidad</span>
+            </div>
+        </div>
+    </header>
+</nav>
  
         <div class="margin2"></div>
 
@@ -153,7 +183,7 @@
     }
 
     if(isset($time_username)){
-        if(((time() - strtotime($time_username)) - 18000) < 5){
+        if(((time() - strtotime($time_username)) - 18000) < 172800){
             $cooldown = round((190800 - (time() - strtotime($time_username)))/3600);
             echo('<script>document.getElementById("changedname").innerHTML="Te quedan '.$cooldown.' horas";</script>');
             echo "<script>var boton = document.getElementById('changename'); boton.disabled=true;</script>";

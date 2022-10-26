@@ -15,7 +15,6 @@
         $records = $conn->prepare("SELECT * FROM `cooldown_username` c INNER JOIN users u ON c.user_id = u.id WHERE u.username = '$username'");
         if($records->execute()){
             $count = $records->rowCount();
-            echo("<script>alert($count);</script>");
         }
     }
 ?>
@@ -36,7 +35,7 @@
             <div class="wrapper">
                 <div class="logo"><?php require '../../header/header.php';?></div>
                 <nav>
-                    <a href="../../index.php">Volver a la página principal</a></li>
+                    <a href="../../index.php">Volver al inicio</a></li>
                 </nav>
             </div>
         </header>

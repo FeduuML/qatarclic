@@ -11,6 +11,11 @@
         $results = $query -> fetch(PDO::FETCH_ASSOC);
         
         $username = $results['username'];
+
+        $records = $conn->prepare("SELECT * FROM `cooldown_password` c INNER JOIN users u ON c.user_id = u.id WHERE u.username = '$username'");
+        if($records->execute()){
+            $count = $records->rowCount();
+        }
     }
 ?>
 
@@ -27,6 +32,7 @@
     <body>
         <header class="header">
             <div class="wrapper">
+            <img id="logoheader"src="../../images/logo.png">
                 <div class="logo"><?php require '../../header/header.php';?></div>
                 <nav>
                     <a href="../../index.php">Volver a la página principal</a></li>
@@ -182,13 +188,28 @@
         if(is_countable($stmt) > 0 && password_verify($actual_password, $stmt['password'])){
             if(isset($_POST['password'])){
                 $password = password_hash($_POST['password'], PASSWORD_BCRYPT); //Encriptado de la contraseña
-                $records = $conn->prepare("UPDATE users SET password = '$password' WHERE username = '$username'");
+                $email = $stmt['email'];  
+                $records = $conn->prepare("SELECT * FROM `cooldown_password` c INNER JOIN users u ON c.user_id = u.id WHERE c.user_id = '$user_id'");
+                $records->execute();
+                $count = $records->rowCount();
     
-                if($records->execute()){
-                    $result = $records->fetch(PDO::FETCH_ASSOC);
-                    $update = $conn->prepare("UPDATE `users` SET cooldown_password = CURRENT_TIMESTAMP() WHERE username = '$username'");
-                    $update->execute();
-                    echo('<script>window.location.href = "settings.php?val=1";</script>');
+                if($count > 0){
+                    $sql = $conn->prepare("UPDATE cooldown_password SET cooldown = CURRENT_TIMESTAMP() WHERE user_id = $user_id");
+                    if($sql->execute()){
+                        $result = $records->fetch(PDO::FETCH_ASSOC);
+                        $update = $conn->prepare("UPDATE `users` SET password = '$password' WHERE id = $user_id");
+                        $update->execute();
+                        echo('<script>window.location.href = "settings.php?val=2";</script>');
+                    }
+                }
+                else{
+                    $sql = $conn->prepare("INSERT INTO cooldown_password(user_id, cooldown) VALUES ($user_id,CURRENT_TIMESTAMP())");
+                    if($sql->execute()){
+                        $result = $records->fetch(PDO::FETCH_ASSOC);
+                        $update = $conn->prepare("UPDATE `users` SET password = '$password' WHERE id = $user_id");
+                        $update->execute();
+                        echo('<script>window.location.href = "settings.php?val=2";</script>');
+                    }
                 }
             }
         }

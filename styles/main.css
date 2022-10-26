@@ -13,7 +13,8 @@ html,body{
 
 body
 {
-	background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
+	/*background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));*/
+    background: linear-gradient(to bottom ,rgb(26, 25, 25), rgb(95, 2, 2));
 	background-attachment: fixed;
     
 }
