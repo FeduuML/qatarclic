@@ -9,7 +9,7 @@
         $query = $conn->prepare($sql);
         $query->execute();
         $results = $query -> fetch(PDO::FETCH_ASSOC);
-        
+         
         $username = $results['username'];
         $email = $results['email'];
     }

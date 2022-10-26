@@ -192,8 +192,8 @@
     </body>
 </html>
 
-<script src="../../js/scroll.js"></script>
 <script src="../../js/index.js"></script>
+
 <script>
     function calendario(){
         window.location.href="../calendario/calendario.php";
