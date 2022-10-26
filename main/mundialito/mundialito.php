@@ -117,7 +117,7 @@
                         while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                             extract($row);
                             echo "<div class='quiz'>";
-                            echo "<button class='start' onclick='quiz(".$id.")'><span class='quiz_text'>Completar encuesta <br><span class='quiz_title'>$title</span></span></button>";
+                            echo "<button class='start' onclick='quiz(".$id.")'><span class='quiz_text'>Completar encuesta<br> <br><span class='quiz_title'>$title</span></span></button>";
                             echo "</div>";
                         }
                         echo "</div>";
@@ -139,7 +139,7 @@
                     if($count > 0){
                         while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                             extract($row);
-                            echo "<span class='deadline'>Fin de la encuesta <span class='quiz_title'>$title</span>: $deadline</span><br>";
+                            echo "<span class='deadline'>Fin de la encuesta -  <span class='quiz_title'>$title</span>: $deadline</span><br>";
                         }
                     }
                 ?>
