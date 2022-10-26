@@ -7,3 +7,12 @@ body
 	background: linear-gradient(to bottom right,rgb(192,3,3),rgb(255, 2, 171), rgb(192, 3, 3));
 	background-attachment: fixed;
 }
+
+.caja{
+	margin-left: 15%;
+    background-color: antiquewhite;
+    border-radius: 4rem;
+    text-align: center;
+    height: 450px;
+    width: 700px;
+}
