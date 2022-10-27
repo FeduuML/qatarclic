@@ -1,6 +1,6 @@
 *
 {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Yanone Kaffeesatz;
  	padding: 0px;
  	margin: 0px;
  	box-sizing: border-box;
@@ -27,9 +27,9 @@ body
 
 .mundialito{
     width:70%;
-    height: 100%;
+    height: auto;
     background:antiquewhite;
-    border-radius:20px;
+    border-radius:1vw;
 }
 
 .small_container{
@@ -44,7 +44,7 @@ body
     width:100%;
     height:50%;
     background:antiquewhite;
-    border-radius:20px;
+    border-radius:1vw;
     display:table;
     text-align:center;
     padding:30px;
@@ -54,21 +54,17 @@ body
     width:100%;
     height:50%;
     background:antiquewhite;
-    border-radius:20px;
-    display:table;
-    text-align:center;
+    border-radius:1vw;
+}
+
+.deadlines{
+    margin-top:3%;
 }
 
 .deadline{
-    float:left;
-    display:table-cell;
-    vertical-align:middle;
-    padding:8px;
     font-size:1.2vw;
-    background-color: rgb(146, 14, 32);
-    margin-top: 20px;
-    color: aliceblue;
-    border-radius: 20px;
+    margin:2%;
+    color: black;
 }
 
 .title{
@@ -98,11 +94,12 @@ body
 
 .start{
     width:20vw;
-    height:20vh;
+    height:auto;
+    padding:10%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
-    margin-top: 50px;
-    border-radius: 20px;
+    margin-top:5%;
+    border-radius:1vw;
     border: 1px;
     background-color: rgb(146, 14, 32);
     transition:500ms;
@@ -116,10 +113,10 @@ body
     transform: scale(0.95);
 }
 
-.quiz_text{
+.quiz_text, .warning{
     font-size:1.2vw;
 }
 
 .quiz_title{
-    color:rgba(255, 255, 255, 0.918);
+    color:black;
 }

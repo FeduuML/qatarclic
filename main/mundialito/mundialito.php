@@ -117,7 +117,7 @@
                         while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                             extract($row);
                             echo "<div class='quiz'>";
-                            echo "<button class='start' onclick='quiz(".$id.")'><span class='quiz_text'>Completar encuesta<br> <br><span class='quiz_title'>$title</span></span></button>";
+                            echo "<button class='start' id='start' onclick='quiz(".$id.")'><span id='quiz_text' class='quiz_text'>Completar encuesta<br> <br><span class='quiz_title'>$title</span></span></button>";
                             echo "</div>";
                         }
                         echo "</div>";
@@ -131,18 +131,20 @@
                 </div>
 
                 <div class="container2">
-                <?php
-                    $stmt = $conn->prepare("SELECT * FROM encuestas ORDER BY id");
-                    $stmt->execute();
-                    $count = $stmt->rowCount();
+                    <div class="deadlines">
+                    <?php
+                        $stmt = $conn->prepare("SELECT * FROM encuestas ORDER BY id");
+                        $stmt->execute();
+                        $count = $stmt->rowCount();
 
-                    if($count > 0){
-                        while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                            extract($row);
-                            echo "<span class='deadline'>Fin de la encuesta -  <span class='quiz_title'>$title</span>: $deadline</span><br>";
+                        if($count > 0){
+                            while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                                extract($row);
+                                echo "<span class='deadline'>Fin de la encuesta -  <span class='quiz_title'>$title</span>: $deadline</span><br>";
+                            }
                         }
-                    }
-                ?>
+                    ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,3 +184,17 @@
         window.location.href="quiz.php?id=" + id;
     }
 </script>
+
+<?php
+    $stmt = $conn->prepare("SELECT * FROM respuestas WHERE id_usuario = $user_id");
+    $stmt->execute();
+    $count = $stmt->rowCount();
+    //SELECT p.id_encuesta FROM respuestas r JOIN preguntas p ON r.id_pregunta = p.id WHERE id_usuario = 3 GROUP BY p.id_encuesta;
+    if($count>0){
+        echo "<script>var boton = document.getElementById('start'); boton.disabled=true;</script>";
+        echo "<script>boton.style.backgroundColor = 'gray';</script>";
+        echo "<script>boton.style.cursor = 'default';</script>";
+        echo "<script>boton.style.pointerEvents = 'none';</script>";
+        echo "<script>document.getElementById('quiz_text').innerHTML = 'Ya has respondido';</script>";
+    }
+?>

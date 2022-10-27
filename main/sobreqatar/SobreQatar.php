@@ -17,7 +17,6 @@
 <html>
     <head>
         <link href="SobreQatar.css" rel="stylesheet" type="text/css">
-        <link href="../../styles/header.css" rel="stylesheet" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -31,61 +30,43 @@
     </head>
 
     <body>
-        <section>
-            <div class="box" id="box1">
-            <a href="https://www.datosmundial.com/asia/catar/index.php" target="blank">
-                <h1>INFO</h1> </a>
+        <div class="container">
+            <div class="box" id="box1" onclick="info()">
+                <h1 class="label">INFO</h1>
             </div>
         
-            <div class="box" id="box2" onclick="estadio()" class="responsive">
-                <h1>ESTADIOS</h1>
+            <div class="box" id="box2" onclick="estadio()">
+                <h1 class="label">ESTADIOS</h1>
             </div>
         
-            <div class="box" id="box3" >
-                <a href="https://www.fifa.com/es" target="blank">
-                <h1>FIFA</h1> </a>
+            <div class="box" id="box3" onclick="fifa()">
+                <h1 class="label">FIFA</h1>
             </div>
 
-            <div class="box" id="box4">
-                <a href="../../index.php">
-                <h1>VOLVER</h1></a>
+            <div class="box" id="box4" onclick="volver()">
+                <h1 class="label">VOLVER</h1>
             </div>
-
-        </section>
+        </div>
     </body>
 </html>
+
 <script src="../../js/scroll.js"></script>
 <script src="../../js/index.js"></script>
-<script>
-    function SobreQatar(){
-        window.location.href="SobreQatar.php";
-    }
 
-    function calendario(){
-        window.location.href="../calendario/calendario.php";
-    }
-    
-    function selections(){
-        window.location.href="../grupos/selections.php";
+<script>
+    function info(){
+        window.open('https://www.datosmundial.com/asia/catar/index.php', '_blank');
     }
 
     function estadio(){
         window.location.href="estadios/estadios.php";
     }
 
-    function perfil(){
-        window.location.href="estadios/estadios.php";
+    function fifa(){
+        window.open('https://www.fifa.com/es', '_blank');
     }
 
-    function mundialito(){
-        window.location.href="../mundialito/mundialito.php";
-    }
-
-    function community(){
-        window.location.href="../community/community.php";
-    }
-
-    function notlogged(){
-        window.location.href="../../account/login.php";
+    function volver(){
+        window.location.href="../../index.php";
     }
 </script>
