@@ -30,7 +30,16 @@
 	<body>
 		<div class="container">
             <?php
+                $stmt = $conn->prepare("SELECT p.id_encuesta, p.pregunta, r.respuesta FROM respuestas r JOIN preguntas p ON r.id_pregunta = p.id WHERE id_usuario = $user_id ORDER BY p.id_encuesta;");
+                $stmt->execute();
 
+                while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                    extract($row);
+                    echo '<div class="content">';
+                    echo '<label class="label">'.$pregunta.'</label>';
+                    echo '<input type="text" id="answer1" name="answer[]" class="form-control-content" required oninput="display(this.value)" placeholder="'.$respuesta.'" disabled></input>';
+                    echo '</div>';
+                }
             ?>
 		</div>
 		<script src="../../js/scroll.js"></script>
