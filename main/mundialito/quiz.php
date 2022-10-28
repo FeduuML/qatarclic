@@ -66,15 +66,17 @@
                     $stmt->execute();
 
                     if($stmt->rowCount()>0){
+                        $i=1;
                         while($row=$stmt->fetch(PDO::FETCH_ASSOC))
                         {
                             extract($row);
-                            echo '<form method="post" class="upload" autocomplete="off">';
+                            echo '<form method="post" id="form" class="upload" autocomplete="off">';
                             echo '<div class="content">';
                             echo '<label class="label">'.$pregunta.'</label>';
-                            echo '<input type="text" id="answer1" name="answer[]" class="form-control-content" required oninput="display(this.value)"></input>';
+                            echo '<input type="text" id="answer'.$i.'" name="answer[]" class="form-control-content" required oninput="display(this.value,'.$i.')"></input>';
                             echo '<div class="display" id="display"></div>';
                             echo '</div>';
+                            $i++;
                         }
                         echo '<button type="submit" class="btn" name="btn-add"><p class="btn_label">Subir</p></button>';
             ?>
@@ -90,10 +92,11 @@
 </html>
 
 <script>
-    function display(answer) {
+    function display(answer,id_pregunta) {
+        var parametros = {answer,id_pregunta};
 	    $.ajax({
             url:'displayOptions.php',
-            data:'answer='+answer,
+            data:parametros,
             type:"POST",
             success:function(data){
                 $("#display").html(data);
