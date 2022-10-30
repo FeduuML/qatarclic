@@ -26,7 +26,7 @@ hr {
 #user_header {
     width: 100%;
     height: auto;
-    background: #222 url('https://subtlepatterns.com/patterns/use_your_illusion.png') repeat;
+    background: rgb(94, 2, 2) url('https://subtlepatterns.com/patterns/use_your_illusion.png') repeat;
 }
   
 #user {
@@ -43,7 +43,7 @@ hr {
 #user_info {
     width: 100%;
     height: 9vw;
-    background-color: rgba(60, 60, 60, 0.4);
+    background-color:rgb(94, 2, 2);
 }
   
 .user_name {
@@ -126,13 +126,13 @@ hr {
 }
 
 .container{
+    margin-top: -13%;
     width:70%;
     padding:1%;
     margin-left: 15%;
-    border-radius: 5%;
     background: rgb(255, 255, 255) url('https://subtlepatterns.com/patterns/use_your_illusion.png') repeat;
+    box-shadow: 3px 0px 15px rgb(255, 255, 255);
 }
-
 .container#blur.active{
     filter: blur(20px);
     pointer-events: none;
@@ -193,7 +193,7 @@ hr {
 
 .post-title{
     font-size:2vw;
-    text-align:left;
+    text-align:center;
     padding:1%;
 }
 
@@ -215,7 +215,7 @@ hr {
     color: #ffffff;
     padding: 1%;
     margin:1%;
-    margin-top:1%;
+    margin-top:10px;
     border-radius: 10px;
     border: 1px solid #ffffff;
 	cursor: pointer;
