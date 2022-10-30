@@ -1,6 +1,6 @@
 *
 {
-    font-family: Yanone Kaffeesatz;
+    font-family: calibri;
  	padding: 0px;
  	margin: 0px;
  	box-sizing: border-box;
@@ -12,7 +12,7 @@ html,body{
 
 body
 {
-	background: rgba(42, 0, 10, 0.918);
+	background:linear-gradient(to top right,rgb(70, 0, 92),rgb(195, 0, 255));
 	background-attachment: fixed;
 }
 
@@ -101,7 +101,7 @@ body
     margin-top:5%;
     border-radius:1vw;
     border: 1px;
-    background-color: rgb(146, 14, 32);
+    background-color: rgb(255, 72, 0);
     transition:500ms;
 
 }

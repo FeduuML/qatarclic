@@ -23,6 +23,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
     </head>
 
@@ -140,7 +143,7 @@
                         if($count > 0){
                             while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                                 extract($row);
-                                echo "<span class='deadline'>Fin de la encuesta -  <span class='quiz_title'>$title</span>: $deadline</span><br>";
+                                echo "<span class='deadline'><br>Fin de la encuesta -<span class='quiz_title'>$title</span>: $deadline</span><br>";
                             }
                         }
                     ?>

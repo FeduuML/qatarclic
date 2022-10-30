@@ -1,6 +1,6 @@
 *
 {
-    font-family: Yanone Kaffeesatz;
+    font-family: calibri;
  	padding: 0px;
  	margin: 0px;
  	box-sizing: border-box;
@@ -13,7 +13,7 @@ html,body{
 
 body
 {
-	background: linear-gradient(to bottom ,rgb(255, 2, 171), rgb(192, 3, 3));
+	background: linear-gradient(to top right ,rgb(119, 3, 3), rgb(0, 0, 0));
 	background-attachment: fixed;
 }
   
@@ -126,9 +126,11 @@ hr {
 }
 
 .container{
-    width:100%;
+    width:70%;
     padding:1%;
-    background: #333 url('https://subtlepatterns.com/patterns/use_your_illusion.png') repeat;
+    margin-left: 15%;
+    border-radius: 5%;
+    background: rgb(255, 255, 255) url('https://subtlepatterns.com/patterns/use_your_illusion.png') repeat;
 }
 
 .container#blur.active{
@@ -168,13 +170,13 @@ hr {
 
 .img{
     cursor:pointer;
-    transition:.5s;
+    transition:.9s;
 }
 
 .img:hover{
     transform: scale(0.9);
-    transition:.5s;
-    border-radius:20%;
+    transition:.9s;
+    border-radius:10%;
 }
 
 .img-input{
@@ -183,14 +185,15 @@ hr {
 
 .post-container{
     width:80%;
+    margin-top: 10%;
     border-radius:20px;
     background-color:#fff;
     margin:1% 10%;
 }
 
 .post-title{
-    font-size:3vw;
-    text-align:center;
+    font-size:2vw;
+    text-align:left;
     padding:1%;
 }
 
