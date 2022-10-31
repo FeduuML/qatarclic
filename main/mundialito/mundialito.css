@@ -20,8 +20,7 @@ body
     display:flex;
     flex-direction:row;
     width:98%;
-    height:350px;
-    margin:4% 0% 0% 1%;
+    margin:4% 0% 1% 1%;
     gap:1vw;
 }
 
@@ -91,6 +90,7 @@ body
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     grid-gap:1vw;
+    margin-bottom:3%;
 }
 
 .quiz{

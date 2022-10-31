@@ -18,9 +18,8 @@ body
 
 .container{
     width:50%; 
-    height:90%;
     background-color:#ffffff;
-    margin:5% 0 0 25%;
+    margin:3% 0 1% 25%;
     padding:20px;
     border-radius:20px;
 }
@@ -83,4 +82,27 @@ body
 
 .btn:hover {
 	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.new_title{
+    font-size:2vw;
+}
+
+.trash{
+    margin-left:1%;
+    font-size:1.3vw;
+    padding:1.2%;
+    border-radius:35%;
+    transition:.5s;
+}
+
+.trash:hover{
+    background-color:black;
+    color:white;
+    transition:.5s;
+    cursor:pointer;
+}
+
+.new{
+    margin-top:5%;
 }

@@ -20,6 +20,16 @@
                 $seleccion_imagen = $row['imagen'];
             }
         }
+
+        $stmt = $conn->prepare("SELECT min(id) AS min FROM news");
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $last = $row['min'];
+
+        $stmt = $conn->prepare("SELECT max(id) AS max FROM news");
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $first = $row['max'];
     }
 ?>
 
@@ -152,8 +162,8 @@
                     <p><?php echo '<h3 class="new_content">'.$content.'</h3>' ?></p>	
                     <div class="new_btn_container">
                         <center>
-                            <button onclick="previous()" id="previous" class="previous" disabled>Anterior</button>
-                            <button onclick="next()" id="next" class="next">Siguiente</button>
+                            <button onclick="previous(<?php echo($id); ?>)" id="previous" class="previous" disabled>Anterior</button>
+                            <button onclick="next(<?php echo($id); ?>)" id="next" class="next">Siguiente</button>
                         </center>
                     </div>
 			    </div>
@@ -256,13 +266,18 @@
     }
 
     var id = <?php echo($id); ?>;
-    var count = <?php echo($count); ?>;
+    var last = <?php echo($last); ?>;
+    var first = <?php echo($first); ?>;
 
-    if(id == count-(count-1)){
+    if(id == last){
         document.getElementById('next').disabled = true;
     }
 
-    function next(){
+    if(id == first){
+        document.getElementById('previous').disabled = true;
+    }
+
+    function next(id){
         var parametros = {id};
 
         $.ajax({
@@ -275,7 +290,7 @@
 	    });
     }
 
-    function previous(){
+    function previous(id){
         var parametros = {id};
 
         $.ajax({
