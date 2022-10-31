@@ -131,6 +131,8 @@
                         <img src="images/selecciones.png" alt="Comunidad" onclick="community()" class="responsive">
                         <span class="text">Comunidad</span>
                     </div>
+
+
                 </div>
             </header>
         </nav>
@@ -219,16 +221,40 @@
             </div>
         </div>
 
+
+
+
+
+
         <div class="margin3"></div>
     
         <div class="more_news">
-            <div class="more_news_elements">
+              <div class="first_element_more_news">
                 <img src="images/campeones.png" alt="Qatar" class="responsive">
                 <span class=text>Campeones</span>
-            </div>
-            <div>Argentina y la historia en los mundiales</div>
-            <div>Los más destacados de cada seleccion</div>
+              </div>
+              <div class="element_more_news">
+                <img src="images/argentina.png" alt="Qatar" class="responsive">
+                <span class=text>Argentina</span>
+              </div>
+              <div class="element_more_news">
+                <img src="images/afuera.png" alt="Qatar" class="responsive">
+                <span class=text>Afuera de Qatar</span>
+              </div>
+              <div class="element_more_news">
+                <img src="images/campeones.png" alt="Qatar" class="responsive">
+                <span class=text>Campeones</span>
+              </div>
         </div>
+
+
+
+
+
+
+
+
+
 
         <script src="js/scroll.js"></script>
         <script src="js/index.js"></script>
