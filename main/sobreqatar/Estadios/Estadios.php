@@ -28,8 +28,12 @@
                     </div>
 
     <div class="volver">
-        <alt="Qatar" onclick="SobreQatar()" class="responsive">
-        <span>Volver</span>
+        
+        <form>
+        <a href="../../sobreqatar/sobreqatar.php">
+        <input type="button" value="volver">
+        </form>
+    </a>
     </div>
 
 </nav>

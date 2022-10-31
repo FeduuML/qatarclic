@@ -137,5 +137,32 @@
         <div class="margin2"></div>
         <script src="../../js/scroll.js"></script>
         <script src="../../js/index.js"></script>
+
+        
     </body>
 </html>
+<script>
+    function calendario(){
+        window.location.href="../../main/calendario/calendario.php";
+    }
+
+    function selections(){
+        window.location.href="../grupos/selections.php";
+    }
+
+    function SobreQatar(){
+        window.location.href="../sobreqatar/sobreqatar.php"
+    }
+
+    function perfil(){
+        window.location.href="../../main/profiles/profiles.php";
+    }
+
+    function community(){
+        window.location.href="../../main/community/community.php";
+    }
+
+    function mundialito(){
+        window.location.href="../../main/mundialito/mundialito.php";
+    }
+</script>
