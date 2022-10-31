@@ -9,7 +9,7 @@
         $count = $stmt->rowCount();
 
         if($count > 0){
-            echo "<div id='wrapper' class='wrapper'>";
+            echo "<div id='wrapper' class='wrapper".$id_pregunta."'>";
             while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 extract($row);
                 echo "<div onclick='fill($id)' id='$id' class='pais'>".$nombre."<br><hr></div>";
@@ -54,19 +54,36 @@
 <style>
     .pais{
         cursor:pointer;
-        font-size:2vw;
+        font-size:1.2vw;
         width:100%;
     }
+
     .pais:hover{
         background-color:#eeeeee;
     }
 
-    .wrapper{
+    .wrapper1,.wrapper2,.wrapper3,.wrapper4,.wrapper5{
         width:30%;
         padding:5px;
-        margin-top:-1.5%;
-        position:absolute;
         background-color:#d6d6d6;
         border-radius:10px;
+        position:absolute;
+        margin-top:-0.5%;
+    }
+
+    .wrapper2{
+        margin-top:-2%;
+    }
+
+    .wrapper3{
+        margin-top:-2.5%;
+    }
+
+    .wrapper4{
+        margin-top:-3%;
+    }
+
+    .wrapper5{
+        margin-top:-3%;
     }
 </style>

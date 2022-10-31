@@ -27,6 +27,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
     </head>
 
 	<body>
@@ -103,11 +104,11 @@
  
         <div class="margin2"></div>
 
-        <div class="big_container">
+        <div class="big_container" id="blur">
             <div class="mundialito">
                 <h1 class="title">Mundialito</h1>
                 <hr><br>
-                <p class="description">Completa las siguentes encuestas y compite con otros usuarios para ganar premios</p>
+                <p class="description">Completa las siguentes encuestas</p>
                 <br>
                 
                 <?php
@@ -120,7 +121,7 @@
                         while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                             extract($row);
                             echo "<div class='quiz'>";
-                            echo "<button class='start' id='start(".$id.")' onclick='quiz(".$id.")'><span id='quiz_text(".$id.")' class='quiz_text'>Completar encuesta<br> <br><span class='quiz_title'>$title</span></span></button>";
+                            echo "<button class='start' id='start(".$id.")' onclick='quiz(".$id.")'><span id='quiz_text(".$id.")' class='quiz_text'>Completar encuesta<br> <br><span class='quiz_title'>$title</span></i></span></button>";
                             echo "</div>";
                         }
                         echo "</div>";
@@ -158,7 +159,7 @@
 </html>
 
 <script>
-  function calendario(){
+    function calendario(){
         window.location.href="../../main/calendario/calendario.php";
     }
 
@@ -177,11 +178,6 @@
     function community(){
         window.location.href="../../main/community/community.php";
     }
-
-	function display(){
-		document.getElementById('popup2').classList.toggle('active');
-		document.getElementById('blur').classList.toggle('active');
-	}
     
     function quiz(id){
         window.location.href="quiz.php?id=" + id;

@@ -21,8 +21,14 @@ body
     flex-direction:row;
     width:98%;
     height:350px;
-    margin:5% 0% 0% 1%;
+    margin:4% 0% 0% 1%;
     gap:1vw;
+}
+
+.big_container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
 }
 
 .mundialito{

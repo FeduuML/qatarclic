@@ -58,11 +58,11 @@
         <meta charset="utf-8">
         <title>Qatar Clic</title>
         <link href="administrarMundialito.css" rel="stylesheet" type="text/css">
-        <link href="../../styles/header.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
     </head>
 
 	<body>
@@ -127,12 +127,42 @@
                 </div>			
             </form>
 		</div>
+
+        <div class="container">
+            <p class="title">Eliminar encuestas</p>
+            <?php
+                $stmt = $conn->prepare("SELECT * FROM encuestas ORDER BY id");
+                $stmt->execute();
+                $count = $stmt->rowCount();
+
+                if($count > 0){
+                    while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                        extract($row);
+                        echo "<div id='quiz' class='quiz'><span class='quiz_title'>$title</span><i class='trash fa fa-trash' aria-hidden='true' onclick='remove(".$id.")'></i><hr></div>";
+                    }
+                }
+            ?>
+		</div>
+
 		<script src="../../js/scroll.js"></script>
         <script src="../../js/index.js"></script>
 	</body>
 </html>
 
 <script>
+    function remove(id){
+        var parametros = {id};
+
+        $.ajax({
+		    data:parametros,
+		    url:'remove.php',
+		    type:'GET',
+            success:function(data){
+                $("#quiz").html(data);
+            }
+	    });
+    }
+
     var select2 = document.getElementById("select2");
     var select3 = document.getElementById("select3");
     var select4 = document.getElementById("select4");
