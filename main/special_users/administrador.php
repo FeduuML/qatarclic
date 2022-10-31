@@ -67,74 +67,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
     </head>
 
 	<body>
-		<header class="header" id="header">
-            <div class="wrapper">
-                <div class="logo"><?php require '../../header/header.php';?></div>
-                <nav>
-                    <?php 
-                    if(isset($_SESSION['user_id'])){
-                        echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
-
-                        if($_SESSION['rol_id'] == 1){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                        }
-                        else if($_SESSION['rol_id'] == 2){
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                        }
-                        else{
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
-                        }
-                    }
-                    else{
-                        echo("<a href='account/login.php'>Iniciar sesion</a>");
-                    } ?>
-                </nav>
-            </div>
-        </header>
-
-        <div class="margin"></div>
-
-        <nav class="navegador_general" id="navbar">
-            <h1 class="text_nav">Mundial de Qatar 2022</h1>
-
-            <div class="wrapper_nav">
-                <div class="first_element">
-                    <img src="../../images/fixture_violeta.png" alt="Perfil" class="responsive">
-                    <span class="text">Perfil</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/fixture_violeta.png" alt="Fixture" class="responsive">
-                    <span class="text">Fixture</span>
-                </div> 
-            
-                <div class="element">
-                    <img src="../../images/calendario_bordo.png" alt="Calendario" onclick="calendario()" class="responsive">
-                    <span class="text">Calendario</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/qatar_rosa.png" alt="Qatar" class="responsive">
-                    <span class="text">Sobre Qatar</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/selecciones.png" alt="Selecciones" onclick="selections()" class="responsive">
-                    <span class="text">Equipos</span>
-                </div>
-
-                <div class="element">
-                    <img src="../../images/fixture_violeta.png" alt="Comunidad" class="responsive">
-                    <span class="text">Comunidad</span>
-                </div>
-            </div>
-        </nav>
- 
-        <div class="margin2"></div>
-
 		<div class="container">
             <p class="title">Crear noticia</p>
             <form method="post" class="upload" enctype="multipart/form-data">
@@ -155,7 +91,36 @@
                 </div>			
             </form>
 		</div>
-		<script src="../../js/scroll.js"></script>
-        <script src="../../js/index.js"></script>
+
+        <div class="container">
+            <p class="title">Eliminar noticias</p>
+            <?php
+                $stmt = $conn->prepare("SELECT * FROM news ORDER BY id");
+                $stmt->execute();
+                $count = $stmt->rowCount();
+
+                if($count > 0){
+                    while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                        extract($row);
+                        echo "<div id='new".$id."' class='new'><span class='new_title'>$title</span><i class='trash fa fa-trash' aria-hidden='true' onclick='remove(".$id.")'></i><hr></div>";
+                    }
+                }
+            ?>
+		</div>
 	</body>
 </html>
+
+<script>
+    function remove(id){
+        var parametros = {id};
+
+        $.ajax({
+		    data:parametros,
+		    url:'eliminarNoticia.php',
+		    type:'GET',
+            success:function(data){
+                $("#new"+id).html(data);
+            }
+	    });
+    }
+</script>

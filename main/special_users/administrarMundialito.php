@@ -138,7 +138,7 @@
                 if($count > 0){
                     while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                         extract($row);
-                        echo "<div id='quiz' class='quiz'><span class='quiz_title'>$title</span><i class='trash fa fa-trash' aria-hidden='true' onclick='remove(".$id.")'></i><hr></div>";
+                        echo "<div id='quiz".$id."' class='quiz'><span class='quiz_title'>$title</span><i class='trash fa fa-trash' aria-hidden='true' onclick='remove(".$id.")'></i><hr></div>";
                     }
                 }
             ?>
@@ -155,10 +155,10 @@
 
         $.ajax({
 		    data:parametros,
-		    url:'remove.php',
+		    url:'eliminarEncuesta.php',
 		    type:'GET',
             success:function(data){
-                $("#quiz").html(data);
+                $("#quiz"+id).html(data);
             }
 	    });
     }

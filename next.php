@@ -1,6 +1,16 @@
 <?php
     require 'account/database.php';
 
+    $stmt = $conn->prepare("SELECT min(id) AS min FROM news");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $last = $row['min'];
+
+    $stmt = $conn->prepare("SELECT max(id) AS max FROM news");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $first = $row['max'];
+
     if(!empty($_GET['id'])){
         $id = $_GET['id'];
 
@@ -19,8 +29,8 @@
                         <p><?php echo '<h3 class="new_content">'.$content.'</h3>' ?></p>	
                         <div class="new_btn_container">
                             <center>
-                                <button onclick="previous()" id="previous" class="previous">Anterior</button>
-                                <button onclick="next()" id="next" class="next">Siguiente</button>
+                                <button onclick="previous(<?php echo($id); ?>)" id="previous" class="previous">Anterior</button>
+                                <button onclick="next(<?php echo($id); ?>)" id="next" class="next">Siguiente</button>
                             </center>
                         </div>
 			        </div>
@@ -34,12 +44,18 @@
 
 <script>
     var id = <?php echo($id); ?>;
+    var last = <?php echo($last); ?>;
+    var first = <?php echo($first); ?>;
 
-    if(id == 1){
+    if(id == last){
         document.getElementById('next').disabled = true;
     }
 
-    function previous(){
+    if(id == first){
+        document.getElementById('previous').disabled = true;
+    }
+
+    function previous(id){
         var parametros = {id};
 
         $.ajax({
@@ -51,11 +67,8 @@
             }
         })
     }
-</script>
 
-<script>
-    function next(){
-        var id = <?php echo($id); ?>;
+    function next(id){
         var parametros = {id};
 
         $.ajax({

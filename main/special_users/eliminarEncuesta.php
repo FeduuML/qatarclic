@@ -8,7 +8,7 @@
         if($stmt->execute()){
             $sql = $conn->prepare("DELETE FROM encuestas WHERE id=$encuesta_id");
             if($sql->execute()){
-                echo '<script>document.getElementById("quiz").style.display = "none";</script>';
+                echo '<script>document.getElementById("quiz'.$encuesta_id.'").style.display = "none";</script>';
             }
         }
     }
