@@ -203,7 +203,8 @@
 	width: 100%;
 	height: 87%;
 	margin-top: 2.5%;
-	background-color: rgb(59, 2, 37);
+	background: linear-gradient(to bottom ,rgba(76, 1, 1, 0.08), rgb(80, 2, 50));	
+	padding-top: 10px;
 }
 
 .margin4{
@@ -212,12 +213,14 @@
 
 .text1{
 	width: 100%;
-	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;      
+	font-family: 'Montserrat', sans-serif;
 	text-align: left;
 	color: #eeeee4;     
 	font-size: 1.1vw;
 	bottom: 0;
 	text-decoration: none;
+	margin-top: 3%;
+	
 }
 
 .element_more_news1{
@@ -265,7 +268,7 @@
 }
 
 
-.element_more_news1:hover, .element_more_news2:hover, .element_more_news3:hover{
+.element_more_news1:hover, .element_more_news2:hover, .element_more_news3:hover, .element_more_news4:hover{
 	transform: scale(0.9);
 	cursor:pointer;
 }

@@ -75,8 +75,9 @@ hr {
 }
 
 .img{
-    width:9vw;
-    height:auto;
+    width:7vw;
+    height:7vw;
+    border-radius: 50%;
 }
 
 .username_box{

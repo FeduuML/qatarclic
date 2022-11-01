@@ -47,6 +47,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!--Script AJAX-->
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> <!--Source de los iconos-->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     </head>
    
     <body>
@@ -221,11 +222,6 @@
             </div>
         </div>
 
-
-
-
-
-
         <div class="margin3"></div>
     
         <div class="more_news">
@@ -264,15 +260,6 @@
               </div>
         </div>
 
-
-
-
-
-
-
-
-
-
         <script src="js/scroll.js"></script>
         <script src="js/index.js"></script>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -308,17 +295,35 @@
         window.location.href="main/community/community.php";
     }
 
-    var id = <?php echo($id); ?>;
-    var last = <?php echo($last); ?>;
-    var first = <?php echo($first); ?>;
+    <?php
+        if(isset($id)){
+    ?>
+        var id = <?php echo($id); ?>;
+    <?php
+        }
+    ?>
 
-    if(id == last){
-        document.getElementById('next').disabled = true;
-    }
+    <?php
+        if(isset($last)){
+    ?>
+        var last = <?php echo($last); ?>;
+        if(id == last){
+            document.getElementById('next').disabled = true;
+        }
+    <?php
+        }
+    ?>
 
-    if(id == first){
-        document.getElementById('previous').disabled = true;
-    }
+    <?php
+        if(isset($first)){
+    ?>
+        var first = <?php echo($first); ?>;
+        if(id == first){
+            document.getElementById('previous').disabled = true;
+        }
+    <?php
+        }
+    ?>
 
     function next(id){
         var parametros = {id};
