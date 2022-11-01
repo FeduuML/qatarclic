@@ -13,24 +13,6 @@
         $username = $results['username'];
         $email = $results['email'];
     }
-
-    $stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id ORDER BY RAND() LIMIT 3");
-
-	if($stmt->execute()){
-		while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-            extract($row);
-            $username = $row['username'];
-            echo '<div>';
-			echo '<span>'.$row['datetime'].'</span>';
-            $stmt = $conn->prepare("SELECT id FROM users WHERE username = '$username'");
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-			echo '<a href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
-			echo '<span>'.$row['content'].'</span>';
-            echo '</div>';
-		}
-	}
 ?>
 
 <html>
@@ -134,11 +116,31 @@
             </header>
         </nav>
         
-        <div class="margin2"></div>
+        <!--<div class="margin2"></div>-->
         <script src="../../js/scroll.js"></script>
         <script src="../../js/index.js"></script>
 
+        <?php
+            $stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id");
+
+            if($stmt->execute()){
+                while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                    extract($row);
+                    $username = $row['username'];
+                    echo '<div class="container">';
+                    echo '<span class="datetime">'.$row['datetime'].'</span>';
+
+                    $sql = $conn->prepare("SELECT id FROM users WHERE username = '$username'");
+                    $sql->execute();
+                    $result = $sql->fetch(PDO::FETCH_ASSOC);
         
+                    echo '<a class="username" href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
+                    echo '<span class="content"><br><br>'.$row['content'].'</span>';
+                    echo '</div>';
+                }
+            }
+        ?>
+
     </body>
 </html>
 <script>
