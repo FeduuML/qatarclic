@@ -229,21 +229,38 @@
         <div class="margin3"></div>
     
         <div class="more_news">
-              <div class="first_element_more_news">
-                <img src="images/campeones.png" alt="Qatar" class="responsive">
+        <div class="margin4"><h1 class="text1">Más informacion sobre...</h1></div>
+              <br>
+              <div class="element_more_news1">
+                <img src="images/campeones.png" alt="Qatar" class="responsive2">
                 <span class=text>Campeones</span>
               </div>
-              <div class="element_more_news">
-                <img src="images/argentina.png" alt="Qatar" class="responsive">
-                <span class=text>Argentina</span>
+              <div class="element_more_news2">
+                <img src="images/campeon_de_america.png" alt="Qatar" class="responsive2">
+                <span class=text>Campeón de America</span>
               </div>
-              <div class="element_more_news">
-                <img src="images/afuera.png" alt="Qatar" class="responsive">
+              <div class="element_more_news2">
+                <img src="images/afuera.png" alt="Qatar" class="responsive2">
                 <span class=text>Afuera de Qatar</span>
               </div>
-              <div class="element_more_news">
-                <img src="images/campeones.png" alt="Qatar" class="responsive">
-                <span class=text>Campeones</span>
+              <div class="element_more_news3">
+                <img src="images/panini.png" alt="Qatar" class="responsive2">
+                <span class=text>Panini</span>
+              </div>
+              <!--Cajas de abajo -->
+              <div class="margin4"><h1 class="text1">Los mejores de Argentina</h1></div>
+              <br>
+              <div class="element_more_news4">
+                <img src="images/kempes.png" alt="Qatar" class="responsive2">
+                <span class=text>Mario Kempes</span>
+              </div>
+              <div class="element_more_news4">
+                <img src="images/maradona.png" alt="Qatar" class="responsive2">
+                <span class=text>Diego Armando Maradona</span>
+              </div>
+              <div class="element_more_news4">
+                <img src="images/messi.png" alt="Qatar" class="responsive2">
+                <span class=text>Lionel Messi</span>
               </div>
         </div>
 
