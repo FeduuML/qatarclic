@@ -14,7 +14,6 @@
 	overflow:hidden;
 }
 
-
 .header .logo {
 	font-size:2vw;
 	float:left;
@@ -55,25 +54,23 @@
 
 .navicon_box{
     margin:10% 0 0 73%;
-    width:40px;
-    height:40px;
+    width:3vw;
+    height:5vh;
 }
 
 .navicon{
-    padding:3px 6px;
+	font-size:2.5vw;
+    padding:15%;
     cursor:pointer;
     color:white;
-	border-radius: 10px;
+	border-radius:1vw;
 	transition: 0.5s;
 }
 
 .navicon:hover{
     background-color:rgb(177, 177, 177);
     transition: 0.5s;
-}
-
-.navicon:hover{
-    color: rgba(16, 2, 44);
+	color: rgba(16, 2, 44);
 }
 
 .user_options{

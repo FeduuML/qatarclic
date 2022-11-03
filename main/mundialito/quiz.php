@@ -73,7 +73,7 @@
                             echo '<form method="post" id="form" class="upload" autocomplete="off">';
                             echo '<div class="content">';
                             echo '<label class="label">'.$pregunta.'</label>';
-                            echo '<input type="text" id="answer'.$i.'" name="answer[]" class="form-control-content" required oninput="display(this.value,'.$i.')"></input>';
+                            echo '<input type="text" id="answer'.$id_pregunta.'" name="answer[]" class="form-control-content" required oninput="display(this.value,'.$id_pregunta.','.$i.')"></input>';
                             echo '<div class="display" id="display"></div>';
                             echo '</div>';
                             $i++;
@@ -86,14 +86,12 @@
                 }
             ?>
 		</div>
-		<script src="../../js/scroll.js"></script>
-        <script src="../../js/index.js"></script>
 	</body>
 </html>
 
 <script>
-    function display(answer,id_pregunta) {
-        var parametros = {answer,id_pregunta};
+    function display(answer,id_pregunta,i) {
+        var parametros = {answer,id_pregunta,i};
 	    $.ajax({
             url:'displayOptions.php',
             data:parametros,
@@ -105,4 +103,3 @@
         });
     }
 </script>
-

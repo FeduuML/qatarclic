@@ -1,0 +1,19 @@
+.pais{
+    cursor:pointer;
+    font-size:1.2vw;
+    width:100%;
+    padding:1%;
+}
+
+.pais:hover{
+    background-color:#eeeeee;
+}
+
+[class^="wrapper"]{
+    width:30%;
+    padding:5px;
+    background-color:#cccccc;
+    border-radius:10px;
+    position:absolute;
+    margin-top:-0.5%;
+}

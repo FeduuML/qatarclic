@@ -1,26 +1,67 @@
+<style>
+    <?php include 'displayOptions.css'; ?>
+</style>
+
 <?php
     include '../../account/database.php';
 
-    if(!empty($_POST["answer"]) && !empty($_POST["id_pregunta"])){
+    if(!empty($_POST["answer"]) && !empty($_POST["id_pregunta"]) && !empty($_POST["i"])){
         $answer = $_POST["answer"];
         $id_pregunta = $_POST["id_pregunta"];
-        $stmt = $conn->prepare("SELECT id,nombre FROM teams WHERE nombre LIKE '$answer%'");
-        $stmt->execute();
-        $count = $stmt->rowCount();
+        $i = $_POST["i"];
 
-        if($count > 0){
-            echo "<div id='wrapper' class='wrapper".$id_pregunta."'>";
-            while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                extract($row);
-                echo "<div onclick='fill($id)' id='$id' class='pais'>".$nombre."<br><hr></div>";
+        $stmt = $conn->prepare("SELECT tipo FROM preguntas WHERE id = $id_pregunta");
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $tipo = $row['tipo'];
+
+        if($tipo == "paises"){
+            $stmt = $conn->prepare("SELECT id,nombre FROM teams WHERE nombre LIKE '$answer%'");
+            $stmt->execute();
+            $count = $stmt->rowCount();
+
+            if($count > 0){
+                echo "<div id='wrapper' class='wrapper".$id_pregunta."'>";
+                while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                    extract($row);
+                    echo "<div onclick='fill($id)' id='$id' class='pais'>".$nombre."<br><hr></div>";
+                }
+                echo "</div>";
             }
-            echo "</div>";
+        }
+        else if($tipo == "jugadores"){
+            $stmt = $conn->prepare("SELECT id,nombre FROM players WHERE nombre LIKE '%$answer%'");
+            $stmt->execute();
+            $count = $stmt->rowCount();
+
+            if($count > 0){
+                echo "<div id='wrapper' class='wrapper".$id_pregunta."'>";
+                while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                    extract($row);
+                    echo "<div onclick='fill($id)' id='$id' class='pais'>".$nombre."<br><hr></div>";
+                }
+                echo "</div>";
+            }
         }
     }
 ?>
 
 <script>
-    var id_pregunta = <?php echo($id_pregunta);?>;
+    <?php
+        if(isset($id_pregunta)){
+    ?>
+        var id_pregunta = <?php echo($id_pregunta);?>;
+    <?php
+        }
+    ?>
+
+    <?php
+        if(isset($i)){
+    ?>
+        var i = <?php echo($i);?>;
+    <?php
+        }
+    ?>
     var displayOptions = document.getElementById("wrapper");
 
     document.addEventListener('mouseup', function(e) {
@@ -29,61 +70,34 @@
         }
     });
     
-    if(id_pregunta == 2){
-        document.getElementById("wrapper").style.top = "21vw";
+    if(i == 2){
+        displayOptions.style.top = "21vw";
+        displayOptions.style.marginTop = "-2%";
     }
-    else if(id_pregunta == 3){
-        document.getElementById("wrapper").style.top = "27.5vw";
+    else if(i == 3){
+        displayOptions.style.top = "27.5vw";
+        displayOptions.style.marginTop = "-2.5%";
     }
-    else if(id_pregunta == 4){
-        document.getElementById("wrapper").style.top = "33.5vw";
+    else if(i == 4){
+        displayOptions.style.top = "33.5vw";
+        displayOptions.style.marginTop = "-3%";
     }
-    else if(id_pregunta == 5){
-        document.getElementById("wrapper").style.top = "39.5vw";
+    else if(i == 5){
+        displayOptions.style.top = "39.5vw";
+        displayOptions.style.marginTop = "-3%";
     }
 
     function fill(id){
         var pais = document.getElementById(id).innerText;
-        var answer = document.getElementById("answer"+"<?php echo($id_pregunta);?>");
+        <?php
+            if(isset($id_pregunta)){
+        ?>
+            var answer = document.getElementById("answer"+"<?php echo($id_pregunta);?>");
+        <?php
+            }
+        ?>
 
         answer.value = pais;
         displayOptions.style.display = "none";
     }
 </script>
-
-<style>
-    .pais{
-        cursor:pointer;
-        font-size:1.2vw;
-        width:100%;
-    }
-
-    .pais:hover{
-        background-color:#eeeeee;
-    }
-
-    .wrapper1,.wrapper2,.wrapper3,.wrapper4,.wrapper5{
-        width:30%;
-        padding:5px;
-        background-color:#d6d6d6;
-        border-radius:10px;
-        position:absolute;
-        margin-top:-0.5%;
-    }
-
-    .wrapper2{
-        margin-top:-2%;
-    }
-
-    .wrapper3{
-        margin-top:-2.5%;
-    }
-
-    .wrapper4{
-        margin-top:-3%;
-    }
-
-    .wrapper5{
-        margin-top:-3%;
-    }
-</style>

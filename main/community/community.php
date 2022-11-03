@@ -32,7 +32,7 @@
     </head>
    
     <body>
-       <!-- <div class="margin"></div>-->
+        <div class="margin"></div>
 
         <nav class="navegador_general" id="navbar">
             <header class="header" id="header">
@@ -42,7 +42,7 @@
                     <nav>
                         <?php 
                             if(isset($_SESSION['user_id'])){
-                                echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
+                                echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user'></i></div>");
 
                                 if($_SESSION['rol_id'] == 1){
                                     echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
@@ -116,9 +116,7 @@
             </header>
         </nav>
         
-        <!--<div class="margin2"></div>-->
-        <script src="../../js/scroll.js"></script>
-        <script src="../../js/index.js"></script>
+        <div class="margin2"></div>
 
         <?php
             $stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id");
@@ -135,12 +133,15 @@
                     $result = $sql->fetch(PDO::FETCH_ASSOC);
         
                     echo '<a class="username" href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
-                    echo '<span class="content"><br><br>'.$row['content'].'</span>';
+                    echo '<p class="content"><br><br>'.$row['content'].'</p>';
+                    echo '<i class="trash fa fa-trash" aria-hidden="true" onclick="remove()"></i>';
                     echo '</div>';
                 }
             }
         ?>
 
+        <script src="../../js/scroll.js"></script>
+        <script src="../../js/index.js"></script>
     </body>
 </html>
 <script>

@@ -122,41 +122,31 @@ CREATE TABLE `posts` (
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 );
 
-CREATE TABLE `friends` (
-    `id` int NOT NULL AUTO_INCREMENT,
-    `user_1` int NOT NULL,
-    `user_2` int NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (`user_1`) REFERENCES `users`(`id`),
-    FOREIGN KEY (`user_2`) REFERENCES `users`(`id`)
-);
-
-
-INSERT INTO `preguntas` VALUES ('1', '1', '¿Cuál será el primer equipo en llegar a la final?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('1', '1', '¿Cuál será el primer equipo en llegar a la final?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 1;
-INSERT INTO `preguntas` VALUES ('2', '1', '¿Cuál será el segundo equipo en llegar a la final?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('2', '1', '¿Cuál será el segundo equipo en llegar a la final?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 1;
-INSERT INTO `preguntas` VALUES ('3', '1', '¿Quién ganará la final?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('3', '1', '¿Quién ganará la final?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 1;
-INSERT INTO `preguntas` VALUES ('4', '1', '¿Cuál será el tercer puesto?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('4', '1', '¿Cuál será el tercer puesto?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 1;
-INSERT INTO `preguntas` VALUES ('5', '1', '¿Cuál será el cuarto puesto?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('5', '1', '¿Cuál será el cuarto puesto?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 1;
 
-INSERT INTO `preguntas` VALUES ('6', '2', '¿Quién será el ganador de Perú VS Australia?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('6', '2', '¿Quién será el ganador de Perú VS Australia?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 2;
-INSERT INTO `preguntas` VALUES ('7', '2', '¿Quién será el ganador de Costa Rica VS Nueva Zelanda?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('7', '2', '¿Quién será el ganador de Costa Rica VS Nueva Zelanda?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 2;
-INSERT INTO `preguntas` VALUES ('8', '2', '¿Quién será el ganador de Gales VS Ucrania?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('8', '2', '¿Quién será el ganador de Gales VS Ucrania?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 2;
-INSERT INTO `preguntas` VALUES ('9', '2', '¿Quién será el ganador de Portugal VS Macedonia del Norte?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('9', '2', '¿Quién será el ganador de Portugal VS Macedonia del Norte?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 2;
-INSERT INTO `preguntas` VALUES ('10', '2', '¿Quién será el ganador de Polonia VS Suecia?', 'Paises', NULL);
+INSERT INTO `preguntas` VALUES ('10', '2', '¿Quién será el ganador de Polonia VS Suecia?', 'paises', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 2;
 
-INSERT INTO `preguntas` VALUES ('11', '3', '¿Quién será el máximo goleador del torneo?', 'Jugadores', NULL);
+INSERT INTO `preguntas` VALUES ('11', '3', '¿Quién será el máximo goleador del torneo?', 'jugadores', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 3;
-INSERT INTO `preguntas` VALUES ('12', '3', '¿Quién será el máximo asistidor del torneo?', 'Jugadores', NULL);
+INSERT INTO `preguntas` VALUES ('12', '3', '¿Quién será el máximo asistidor del torneo?', 'jugadores', NULL);
 SELECT e.id FROM encuestas e WHERE e.id = 3;
 
 CREATE TABLE `respuestas` (
@@ -588,7 +578,7 @@ INSERT INTO `players` VALUES
 ('880', 'Heung-min Son', 'Corea del Sur', '7', '30'),('881', 'Chang-hoon Kwon', 'Corea del Sur', '22', '28'),('882', 'Won-sang Um', 'Corea del Sur', '11', '23'),('883', 'Young-wook Cho', 'Corea del Sur', '17', '23'),
 ('884', 'Seong-jin Kang', 'Corea del Sur', '26', '19'),('885', 'Gue-sung Cho', 'Corea del Sur', '9', '24');
 
-CREATE TABLE `argentina` (
+/* CREATE TABLE `argentina` (
     id int NOT NULL AUTO_INCREMENT,
     nombre varchar(75) NOT NULL,
     posicion varchar(20) NOT NULL,
@@ -667,3 +657,5 @@ INSERT INTO `conmebol` VALUES
 ('8','Paraguay','16','18','3','7','8','-14'),
 ('9','Bolivia','15','18','4','3','11','-19'),
 ('10','Venezuela','10','18','3','1','14','-20');
+
+*/
