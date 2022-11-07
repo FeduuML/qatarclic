@@ -255,7 +255,7 @@
                 <span class=text>Diego Armando Maradona</span>
               </div>
               <div class="element_more_news4">
-                <img src="images/messi.png" alt="Qatar" class="responsive2">
+                <img onclick="messi()" src="images/messi.png" alt="Qatar" class="responsive2">
                 <span class=text>Lionel Messi</span>
               </div>
         </div>
@@ -293,6 +293,10 @@
 
     function community(){
         window.location.href="main/community/community.php";
+    }
+    
+    function messi(){
+        window.location.href="news/Messi.php";
     }
 
     <?php

@@ -119,23 +119,40 @@
         <div class="margin2"></div>
 
         <?php
-            $stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id");
+            $stmt=$conn->prepare("SELECT p.user_id, p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id");
 
             if($stmt->execute()){
                 while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                     extract($row);
                     $username = $row['username'];
-                    echo '<div class="container">';
-                    echo '<span class="datetime">'.$row['datetime'].'</span>';
+                    $id = $row['user_id'];
 
-                    $sql = $conn->prepare("SELECT id FROM users WHERE username = '$username'");
-                    $sql->execute();
-                    $result = $sql->fetch(PDO::FETCH_ASSOC);
-        
-                    echo '<a class="username" href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
-                    echo '<p class="content"><br><br>'.$row['content'].'</p>';
-                    echo '<i class="trash fa fa-trash" aria-hidden="true" onclick="remove()"></i>';
-                    echo '</div>';
+                    if($id == $_SESSION['user_id']){
+                        echo '<div style="float:right; background-color: rgb(185, 240, 185); border-top-right-radius: 0px; border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-bottom-right-radius: 0px;" class="container">';
+                        echo '<span class="datetime">'.$row['datetime'].'</span>';
+    
+                        $sql = $conn->prepare("SELECT id FROM users WHERE username = '$username'");
+                        $sql->execute();
+                        $result = $sql->fetch(PDO::FETCH_ASSOC);
+            
+                        echo '<a class="username" href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
+                        echo '<p class="content"><br><br>'.$row['content'].'</p>';
+                        echo '<i class="trash fa fa-trash" aria-hidden="true" onclick="remove()"></i>';
+                        echo '</div>';
+                    }
+                    else{
+                        echo '<div style="float:left" class="container">';
+                        echo '<span class="datetime">'.$row['datetime'].'</span>';
+    
+                        $sql = $conn->prepare("SELECT id FROM users WHERE username = '$username'");
+                        $sql->execute();
+                        $result = $sql->fetch(PDO::FETCH_ASSOC);
+            
+                        echo '<a class="username" href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
+                        echo '<p class="content"><br><br>'.$row['content'].'</p>';
+                        echo '<i class="trash fa fa-trash" aria-hidden="true" onclick="remove()"></i>';
+                        echo '</div>';
+                    }
                 }
             }
         ?>
