@@ -86,11 +86,9 @@ CREATE TABLE `news` (
     PRIMARY KEY (id)
 );
 
-INSERT INTO `news` VALUES('1', 'Lorrrran', 'Test1', 'Test1', '175104.jpg', '2022-09-08 14:10:29');
-INSERT INTO `news` VALUES('2', 'Lorrrran', 'Test2', 'Test2', '224875.png', '2022-09-08 17:21:16');
-INSERT INTO `news` VALUES('3', 'Lorrrran', 'Test3', 'Test3', '245070.jpg', '2022-09-08 22:55:27');
-INSERT INTO `news` VALUES('4', 'Lorrrran', 'Test4', 'Test4', '367687.jpg', '2022-09-09 08:14:31');
-INSERT INTO `news` VALUES('5', 'Lorrrran', 'Test5', 'Test5', '668926.jpg', '2022-09-09 15:36:12');
+INSERT INTO `news` VALUES('1', 'Lorrrran', 'Horas cruciales para Giovani Lo Celso', 'El mediocampista tendría un desprendimiento en el músculo que complica su presencia en la cita. El Villarreal confirmó que el lunes darán a conocer la decisión final. El debate a esta hora es si intenta una rehabilitación que le permita meterse en el Mundial pero poniendo en riesgo su físico o si pasa por el quirófano.', '820968.jpg', '2022-11-07 11:00:14');
+INSERT INTO `news` VALUES('2', 'Lorrrran', 'Scaloni recortó la lista a 32 integrantes', 'Algunos de los fútbolistas que quedaron afuera son Lucas Martínez Quarta, Agustín Marchesín, Agustín Rossi, Marcos Senesi, Emiliano Buendía, Lucas Alario, Giovanni Simeone y Lucas Ocampos, entre otros.', '353983.jpg', '2022-11-07 11:04:35');
+INSERT INTO `news` VALUES('3', 'Lorrrran', 'Arabia Saudita sufre la lesión de un jugador clave', 'Se trata de Salma Al-Faraj, capitán y motor del mediocampo del equipo dirigido por el francés Renard, que derroto a Islandia por 1-0 en su cuarto amistoso en las últimas dos semanas. ¿Qué le pasó? Al-Faraj conducía la pelota por la mitad de cancha cuando fue derribado por un rival y, al caer, apoyó mal el brazo izquierdo lo que inmediatamente le provocó un fuerte dolor en el hombro, que lo dejó inmóvil.', '829286.jpg', '2022-11-07 11:07:42');
 
 CREATE TABLE `encuestas` (
     `id` int NOT NULL AUTO_INCREMENT,
@@ -100,7 +98,7 @@ CREATE TABLE `encuestas` (
 );
 
 INSERT INTO `encuestas` VALUES('1', 'Final del mundial', '2022-11-20 00:00:00'),
-('2', 'Repechajes', '2022-10-20 14:30:00'),
+('2', 'Selecciones', '2022-10-20 14:30:00'),
 ('3', 'Reconocientos individuales', '2022-11-20 00:00:00');
 
 CREATE TABLE `preguntas` (
@@ -108,7 +106,6 @@ CREATE TABLE `preguntas` (
     `id_encuesta` int NOT NULL,
     `pregunta` text NOT NULL,
     `tipo` text NOT NULL,
-    `respuesta` text,
     PRIMARY KEY(`id`),
     FOREIGN KEY (`id_encuesta`) REFERENCES `encuestas`(`id`)
 );
@@ -122,31 +119,25 @@ CREATE TABLE `posts` (
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 );
 
-INSERT INTO `preguntas` VALUES ('1', '1', '¿Cuál será el primer equipo en llegar a la final?', 'paises', NULL);
+INSERT INTO `preguntas` VALUES ('1', '1', '¿Cuál será el primer equipo en llegar a la final?', 'paises');
 SELECT e.id FROM encuestas e WHERE e.id = 1;
-INSERT INTO `preguntas` VALUES ('2', '1', '¿Cuál será el segundo equipo en llegar a la final?', 'paises', NULL);
+INSERT INTO `preguntas` VALUES ('2', '1', '¿Cuál será el segundo equipo en llegar a la final?', 'paises');
 SELECT e.id FROM encuestas e WHERE e.id = 1;
-INSERT INTO `preguntas` VALUES ('3', '1', '¿Quién ganará la final?', 'paises', NULL);
+INSERT INTO `preguntas` VALUES ('3', '1', '¿Quién ganará la final?', 'paises');
 SELECT e.id FROM encuestas e WHERE e.id = 1;
-INSERT INTO `preguntas` VALUES ('4', '1', '¿Cuál será el tercer puesto?', 'paises', NULL);
+INSERT INTO `preguntas` VALUES ('4', '1', '¿Cuál será el tercer puesto?', 'paises');
 SELECT e.id FROM encuestas e WHERE e.id = 1;
-INSERT INTO `preguntas` VALUES ('5', '1', '¿Cuál será el cuarto puesto?', 'paises', NULL);
+INSERT INTO `preguntas` VALUES ('5', '1', '¿Cuál será el cuarto puesto?', 'paises');
 SELECT e.id FROM encuestas e WHERE e.id = 1;
 
-INSERT INTO `preguntas` VALUES ('6', '2', '¿Quién será el ganador de Perú VS Australia?', 'paises', NULL);
+INSERT INTO `preguntas` VALUES ('6', '2', '¿Qué seleccion te gustaría ver llegar lejos, excluyendo Argentina?', 'paises');
 SELECT e.id FROM encuestas e WHERE e.id = 2;
-INSERT INTO `preguntas` VALUES ('7', '2', '¿Quién será el ganador de Costa Rica VS Nueva Zelanda?', 'paises', NULL);
-SELECT e.id FROM encuestas e WHERE e.id = 2;
-INSERT INTO `preguntas` VALUES ('8', '2', '¿Quién será el ganador de Gales VS Ucrania?', 'paises', NULL);
-SELECT e.id FROM encuestas e WHERE e.id = 2;
-INSERT INTO `preguntas` VALUES ('9', '2', '¿Quién será el ganador de Portugal VS Macedonia del Norte?', 'paises', NULL);
-SELECT e.id FROM encuestas e WHERE e.id = 2;
-INSERT INTO `preguntas` VALUES ('10', '2', '¿Quién será el ganador de Polonia VS Suecia?', 'paises', NULL);
+INSERT INTO `preguntas` VALUES ('7', '2', '¿Qué selección te gustaría ver fracasar pronto?', 'paises');
 SELECT e.id FROM encuestas e WHERE e.id = 2;
 
-INSERT INTO `preguntas` VALUES ('11', '3', '¿Quién será el máximo goleador del torneo?', 'jugadores', NULL);
+INSERT INTO `preguntas` VALUES ('11', '3', '¿Quién será el máximo goleador del torneo?', 'jugadores');
 SELECT e.id FROM encuestas e WHERE e.id = 3;
-INSERT INTO `preguntas` VALUES ('12', '3', '¿Quién será el máximo asistidor del torneo?', 'jugadores', NULL);
+INSERT INTO `preguntas` VALUES ('12', '3', '¿Quién será el máximo asistidor del torneo?', 'jugadores');
 SELECT e.id FROM encuestas e WHERE e.id = 3;
 
 CREATE TABLE `respuestas` (

@@ -162,14 +162,14 @@
 									echo "<img class='img' id='img' onclick='display()' src='../../pfp/$pfp' title='Cambiar imagen'></img>";
 								}
 								else{
-									echo "<img class='img' id='img' onclick='display()' src='https://en.gravatar.com/userimage/54162376/6fa5c4908077ceddb6388f7cad1a1187.jpg?size=100' title='Cambiar imagen'>";
+									echo "<img class='img' id='img' onclick='display()' src='../../images/logo.png' title='Cambiar imagen'>";
 								}
 							?>
 						</div>
 
 						<div id="user_info">
 							<div class="username_box">
-								<h2 class="user_name"> <?php echo($username); ?><i class="icon fas fa-solid fa-plus"></i></h2>
+								<h2 class="user_name"> <?php echo($username); ?></h2>
 							</div>
 							<hr>
 							<div class="bio_box">

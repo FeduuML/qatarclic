@@ -1,6 +1,6 @@
 *
 {
-    font-family: calibri;
+    font-family: Yanone Kaffeesatz;
  	padding: 0px;
  	margin: 0px;
  	box-sizing: border-box;
@@ -20,7 +20,7 @@ body
     display:flex;
     flex-direction:row;
     width:98%;
-    margin:4% 0% 1% 1%;
+    margin:1%;
     gap:1vw;
 }
 
@@ -64,10 +64,11 @@ body
 
 .deadlines{
     margin-top:-1%;
+    padding:2%;
 }
 
 .deadline{
-    font-size:1.2vw;
+    font-size:1.3vw;
     margin:2%;
     color: black;
 }
@@ -80,7 +81,7 @@ body
 
 .description{
     text-align: center;
-    font-size:1.5vw;
+    font-size:2vw;
     padding:1%;
 }
 
@@ -120,7 +121,7 @@ body
 }
 
 .quiz_text, .warning{
-    font-size:1.2vw;
+    font-size:1.5vw;
 }
 
 .quiz_title{

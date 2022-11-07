@@ -31,6 +31,8 @@
     </head>
 
 	<body>
+        <div class="margin"></div>
+        
         <nav class="navegador_general" id="navbar">
             <header class="header" id="header">
                 <div class="wrapper">
