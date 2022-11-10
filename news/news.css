@@ -55,15 +55,29 @@
 	letter-spacing: 2px;
 }
 
-.image{
+/* Caja de fotos*/
+
+.image{ 
 	display:grid;
     grid-template-columns:repeat(2, 2fr);
-	background-color: blueviolet;
 	width:100%;
+}
+
+
+.grid_images{
+	margin: 10px;
+	height: 5vh;
 }
 
 .images_propiedades{
 	width:100%;
 	height:auto;
 	border-radius: 10px;
+}
+
+.images_propiedades1{
+	width:100%;
+	height:auto;
+	border-radius: 10px;
+	margin-top: 2%;
 }

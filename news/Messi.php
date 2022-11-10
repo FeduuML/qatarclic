@@ -153,10 +153,11 @@
             </div>
 
             <div class="image">
-                <div class="grid_images"><img src="../images/Messi/1.png" class="images_propiedades" alt="Qatar"></div>
+                <div class="grid_images"><img src="../images/Messi/1.png" class="images_propiedades1" alt="Qatar"></div>
+                <div class="grid_images"><img src="../images/Messi/3.png" class="images_propiedades" alt="Qatar"></div>
                 <div class="grid_images"><img src="../images/Messi/2.png" class="images_propiedades" alt="Qatar"></div>
-                <div class="grid_images"><img src="../images/Messi/3.png" class="images_propiedades" alt="Qatar"></div>
-                <div class="grid_images"><img src="../images/Messi/3.png" class="images_propiedades" alt="Qatar"></div>
+                
+                
             </div>
         </div>
 
