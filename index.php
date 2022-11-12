@@ -237,34 +237,34 @@
               <br>
               <div class="element_more_news1">
                 <img src="images/campeones.png" alt="Qatar" class="responsive2">
-                <span class=text>Campeones</span>
+                <a href="https://www.livefutbol.com/ganador/wm/" class=text>Campeones</a>
               </div>
               <div class="element_more_news2">
                 <img src="images/campeon_de_america.png" alt="Qatar" class="responsive2">
-                <span class=text>Campeón de America</span>
+                <a href="https://www.espn.com.ar/futbol/copa-america/nota/_/id/10617462/seleccion-argentina-lionel-messi-scaloni-di-maria-campeon-copa-america-2021-brasil-maracana" class=text>Campeón de America</a>
               </div>
               <div class="element_more_news2">
                 <img src="images/afuera.png" alt="Qatar" class="responsive2">
-                <span class=text>Afuera de Qatar</span>
+                <a href="https://www.infobae.com/america/deportes/2022/10/26/que-paises-no-jugaran-el-mundial-de-qatar/" class=text>Afuera de Qatar</a>
               </div>
               <div class="element_more_news3">
                 <img src="images/panini.png" alt="Qatar" class="responsive2">
-                <span class=text>Panini</span>
+                <a href="https://cnnespanol.cnn.com/2022/10/11/album-virtual-del-mundial-2022-de-panini-como-descargarlo-conseguirlo-y-obtener-sobres-gratuitos-orix/" class=text>Panini</a>
               </div>
               <!--Cajas de abajo -->
               <div class="margin4"><h1 class="text1">Los mejores de Argentina</h1></div>
               <br>
               <div class="element_more_news4">
                 <img src="images/kempes.png" alt="Qatar" class="responsive2">
-                <span class=text>Mario Kempes</span>
+                <a href="https://es.wikipedia.org/wiki/Mario_Alberto_Kempes" class=text>Mario Kempes</a>
               </div>
               <div class="element_more_news4">
                 <img src="images/maradona.png" alt="Qatar" class="responsive2">
-                <span class=text>Diego Armando Maradona</span>
+                <a href="https://es.wikipedia.org/wiki/Diego_Maradona" class=text>Diego Armando Maradona</span>
               </div>
               <div class="element_more_news4">
                 <img onclick="messi()" src="images/messi.png" alt="Qatar" class="responsive2">
-                <span class=text>Lionel Messi</span>
+                <a href="https://es.wikipedia.org/wiki/Lionel_Messi" class=text>Lionel Messi</a>
               </div>
         </div>
 
