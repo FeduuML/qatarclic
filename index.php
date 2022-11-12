@@ -90,7 +90,7 @@
                         <?php
                             }else{
                         ?>
-                            <img src="images/perfil.png" alt="Perfil" class="responsive" onclick="notlogged()">
+                            <img src="images/perfil.png" alt="Perfil" class="responsive" onclick="perfil_notlogged()">
                         <?php
                             }
                         ?>
@@ -105,7 +105,7 @@
                         <?php
                             }else{
                         ?>
-                        <img src="images/fixture_violeta.png" alt="Fixture" onclick="notlogged()" class="responsive">
+                        <img src="images/fixture_violeta.png" alt="Fixture" onclick="mundialito_notlogged()" class="responsive">
                         <?php
                             }
                         ?>
@@ -129,11 +129,19 @@
                     </div>
 
                     <div class="element">
+                        <?php 
+                            if(isset($_SESSION['user_id'])){ 
+                        ?>
                         <img src="images/selecciones.png" alt="Comunidad" onclick="community()" class="responsive">
+                        <?php
+                            }else{
+                        ?>
+                        <img src="images/selecciones.png" alt="Comunidad" onclick="community_notlogged()" class="responsive">
+                        <?php
+                            }
+                        ?>
                         <span class="text">Comunidad</span>
-                    </div>
-
-
+                    </div> 
                 </div>
             </header>
         </nav>
@@ -271,8 +279,8 @@
         window.location.href = "main/profiles/profiles.php";
     }
 
-    function notlogged(){
-        window.location.href="account/login.php";
+    function perfil_notlogged(){
+        window.location.href="account/login.php?id=1";
     }
 
     function calendario(){
@@ -291,10 +299,18 @@
         window.location.href="main/mundialito/mundialito.php";
     }
 
+    function mundialito_notlogged(){
+        window.location.href="account/login.php?id=2";
+    }
+
     function community(){
         window.location.href="main/community/community.php";
     }
     
+    function community_notlogged(){
+        window.location.href="account/login.php?id=3";
+    }
+
     function messi(){
         window.location.href="news/Messi.php";
     }

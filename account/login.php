@@ -113,7 +113,21 @@
                 $_SESSION['user_id'] = $results['id'];
                 $_SESSION['rol_id'] = 3;
             }
-            header("Location: ../index.php");
+
+            if(isset($_GET['id'])){
+                if($_GET['id'] == 1){
+                    header("Location: ../main/profiles/profiles.php");
+                }
+                else if($_GET['id'] == 2){
+                    header("Location: ../main/mundialito/mundialito.php");
+                }
+                else if($_GET['id'] == 3){
+                    header("Location: ../main/community/community.php");
+                }
+            }
+            else{
+                header("Location: ../index.php");
+            }
         }
         else
         {

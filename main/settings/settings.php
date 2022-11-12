@@ -62,7 +62,7 @@
                             echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrarMundialito.php'>Gestionar mundialito</a><br><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
                         }
                         else{
-                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                            echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
                         }
                     }
                     else{
@@ -152,8 +152,28 @@
 </html>
 
 <script>
+    function perfil(){
+        window.location.href="../profiles/profiles.php";
+    }
+
+    function mundialito(){
+        window.location.href="../mundialito/mundialito.php";
+    }
+
+    function SobreQatar(){
+        window.location.href="../sobreqatar/SobreQatar.php";
+    }
+
+    function selections(){
+        window.location.href="../grupos/selections.php";
+    }
+
     function calendario(){
         window.location.href="../calendario/calendario.php";
+    }
+
+    function community(){
+        window.location.href="../community/community.php";
     }
 
     function changename(){

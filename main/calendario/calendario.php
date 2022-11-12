@@ -379,9 +379,9 @@
             <div id="popup13">
                 <h1>Partidos correspondientes al dia 3 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Octavos de final</p>
                 <p> A definir - 12:00 </p>
-                <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Octavos de final</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(13)">Cerrar</button>
             </div>
@@ -389,9 +389,9 @@
             <div id="popup14">
                 <h1>Partidos correspondientes al dia 4 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Octavos de final</p>
                 <p> A definir - 12:00 </p>
-                <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Octavos de final</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(14)">Cerrar</button>
             </div>
@@ -399,9 +399,9 @@
             <div id="popup15">
                 <h1>Partidos correspondientes al dia 5 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Octavos de final</p>
                 <p> A definir - 12:00 </p>
-                <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Octavos de final</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(15)">Cerrar</button>
             </div>
@@ -409,9 +409,9 @@
             <div id="popup16">
                 <h1>Partidos correspondientes al dia 6 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Octavos de final</p>
                 <p> A definir - 12:00 </p>
-                <p><img src="../../images/flags/definir.jpg">Octavos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Octavos de final</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(16)">Cerrar</button>
             </div>
@@ -419,9 +419,9 @@
             <div id="popup17">
                 <h1>Partidos correspondientes al dia 9 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Cuartos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Cuartos de final</p>
                 <p> A definir - 12:00 </p>
-                <p><img src="../../images/flags/definir.jpg">Cuartos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Cuartos de final</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(17)">Cerrar</button>
             </div>
@@ -429,9 +429,9 @@
             <div id="popup18">
                 <h1>Partidos correspondientes al dia 10 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Cuartos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Cuartos de final</p>
                 <p> A definir - 12:00 </p>
-                <p><img src="../../images/flags/definir.jpg">Cuartos de final<img src="../../images/flags/definir.jpg"></p>
+                <p>Cuartos de final</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle1(18)">Cerrar</button>
             </div>
@@ -439,7 +439,7 @@
             <div id="popup19">
                 <h1>Partidos correspondientes al dia 13 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Semifinal<img src="../../images/flags/definir.jpg"></p>
+                <p>Semifinal</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(19)">Cerrar</button>
             </div>
@@ -447,7 +447,7 @@
             <div id="popup20">
                 <h1>Partidos correspondientes al dia 14 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Semifinal<img src="../../images/flags/definir.jpg"></p>
+                <p>Semifinal</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(20)">Cerrar</button>
             </div>
@@ -455,7 +455,7 @@
             <div id="popup21">
                 <h1>Partidos correspondientes al dia 17 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">3° y 4° puesto<img src="../../images/flags/definir.jpg"></p>
+                <p>3° y 4° puesto</p>
                 <p> A definir - 16:00 </p><br><br><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(21)">Cerrar</button>
             </div>
@@ -463,7 +463,7 @@
             <div id="popup22">
                 <h1>Partidos correspondientes al dia 17 de diciembre del 2022</h1>
                 <br>
-                <p><img src="../../images/flags/definir.jpg">Final<img src="../images/flags/definir.jpg"></p>
+                <p>Final</p>
                 <p> A definir - 12:00 </p><br><br><br><br><br><br><br>
                 <button class="cerrar" href="#" onclick="toggle(22)">Cerrar</button>
             </div>
