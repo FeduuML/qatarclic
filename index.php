@@ -5,11 +5,12 @@
     if(isset($_SESSION['user_id'])){
         $user_id = $_SESSION['user_id'];
 
-        $sql = "SELECT * FROM users WHERE id = $user_id";
-        $query = $conn->prepare($sql);
-        $query->execute();
-        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        $sql = $conn->prepare("CALL sp_datos(?)");
+        $sql->bindParam(1, $user_id, PDO::PARAM_INT);
+        $sql->execute();
+        $results = $sql -> fetch(PDO::FETCH_ASSOC);
         $username = $results['username'];
+        $sql->closeCursor();
 
         $stmt = $conn->prepare("SELECT * FROM `seleccion` s INNER JOIN teams t ON t.id = seleccion_id WHERE s.user_id = $user_id");
         if($stmt->execute()){

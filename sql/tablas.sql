@@ -47,6 +47,13 @@ INSERT INTO `users` VALUES('3', 'lorranktn@fortnite.com', 'Lorrrran', '$2y$10$We
 SELECT r.rol FROM roles r WHERE r.rol = 2;
 INSERT INTO `users` VALUES('4', 'pochichaves04@gmail.com', 'MaxiChaves18', '$2y$10$kCv3Xbd0HSa66qoHtaduEetWr0wmBjBbNmCu3q6xqZD/T7yOAOX3i'/*Contraseña: SoyPochi18*/, '0', NULL, NULL);
 
+DELIMITER &&
+CREATE PROCEDURE sp_user(IN user_id INT) 
+BEGIN 
+	SELECT * FROM users WHERE id = user_id;
+END &&
+DELIMITER ;
+
 CREATE TABLE cooldown_password (
     id int NOT NULL AUTO_INCREMENT,
     user_id int NOT NULL,
