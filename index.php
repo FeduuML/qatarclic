@@ -5,7 +5,7 @@
     if(isset($_SESSION['user_id'])){
         $user_id = $_SESSION['user_id'];
 
-        $sql = $conn->prepare("CALL sp_datos(?)");
+        $sql = $conn->prepare("CALL sp_user(?)");
         $sql->bindParam(1, $user_id, PDO::PARAM_INT);
         $sql->execute();
         $results = $sql -> fetch(PDO::FETCH_ASSOC);

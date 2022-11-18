@@ -12,7 +12,18 @@
         
         $username = $results['username'];
         $email = $results['email'];
-		$pfp = $results['pfp'];
+			
+		$stmt = $conn->prepare("SELECT * FROM bio WHERE user_id = $user_id");
+		if($stmt->execute()){
+			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+			$bio = $result['bio'];
+		}
+
+		$stmt = $conn->prepare("SELECT * FROM pfp WHERE user_id = $user_id");
+		if($stmt->execute()){
+			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+			$pfp = $result['pfp'];
+		}
     } 
 
 	if(isset($_GET['id'])){
@@ -24,7 +35,18 @@
         
         $username = $results['username'];
         $email = $results['email'];
-		$pfp = $results['pfp'];
+
+		$stmt = $conn->prepare("SELECT * FROM bio WHERE user_id = $id");
+		if($stmt->execute()){
+			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+			$bio = $result['bio'];
+		}
+
+		$stmt = $conn->prepare("SELECT * FROM pfp WHERE user_id = $id");
+		if($stmt->execute()){
+			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+			$pfp = $result['pfp'];
+		}
 
 		$stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $id");
 		if($stmt->execute()){
@@ -176,8 +198,8 @@
 								<p class="user_bio" id="user_bio" onclick="document.getElementById('popup').classList.toggle('active'); document.getElementById('blur').classList.toggle('active');">Añadir descripcion</p>
 							</div>
 							<?php
-							if(isset($results['bio'])){
-								$bio = $results['bio'];
+							if(isset($result['bio'])){
+								$bio = $result['bio'];
 								echo "<script>var bio = document.getElementById('user_bio'); 
 								bio.innerHTML = '$bio'</script>";
 							}
@@ -230,10 +252,24 @@
 	{
 		if(isset($_POST['bio'])){
 			$bio=$_POST['bio'];
-			$stmt=$conn->prepare("UPDATE users SET bio = '$bio' WHERE id = $user_id");
-			if($stmt->execute()){
-				echo "<script>var bio = document.getElementById('user_bio'); 
-				bio.innerHTML = '$bio'</script>";
+
+			$records = $conn->prepare("SELECT * FROM `bio` b INNER JOIN users u ON b.user_id = u.id WHERE b.user_id = '$user_id'");
+			$records->execute();
+			$count = $records->rowCount();
+
+			if($count > 0){
+				$sql = $conn->prepare("UPDATE bio SET bio = '$bio' WHERE user_id = $user_id");
+				if($sql->execute()){
+					echo "<script>var bio = document.getElementById('user_bio'); 
+					bio.innerHTML = '$bio'</script>";
+				}
+			}
+			else{
+				$sql=$conn->prepare("INSERT INTO bio(user_id,bio) VALUES ($user_id,'$bio')");
+				if($sql->execute()){
+					echo "<script>var bio = document.getElementById('user_bio'); 
+					bio.innerHTML = '$bio'</script>";
+				}
 			}
 		}
 	}
@@ -247,12 +283,24 @@
 		$valid_extensions=array('jpeg', 'jpg', 'png');
 		$pic=rand(1000, 1000000).".".$imgExt;
 		move_uploaded_file($tmp_dir, $upload_dir.$pic);
-		$stmt=$conn->prepare("UPDATE users SET pfp  = :upfp WHERE id = $user_id");
-		$stmt->bindParam(':upfp', $pic);
 
-		if($stmt->execute()){
-			echo "<script>document.getElementById('img').src='../../pfp/$pic';</script>";
+		$records = $conn->prepare("SELECT * FROM `pfp` p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = '$user_id'");
+		$records->execute();
+		$count = $records->rowCount();
+
+		if($count > 0){
+			$sql = $conn->prepare("UPDATE pfp SET pfp = :upfp WHERE user_id = $user_id");
+			if($sql->execute()){
+				echo "<script>document.getElementById('img').src='../../pfp/$pic';</script>";
+			}
 		}
+		else{
+			$sql=$conn->prepare("INSERT INTO pfp(user_id,pfp) VALUES ($user_id, :upfp)");
+			if($sql->execute()){
+				echo "<script>document.getElementById('img').src='../../pfp/$pic';</script>";
+			}
+		}
+		$stmt->bindParam(':upfp', $pic);
 	}
 
 	if(isset($_POST['btn-post'])){
