@@ -3,71 +3,56 @@
     require '../../account/database.php';
 
     if(isset($_SESSION['user_id'])){
-        $user_id = $_SESSION['user_id'];
+		$user_id = $_SESSION['user_id'];
 
-        $sql = "SELECT * FROM users WHERE id = $user_id";
-        $query = $conn->prepare($sql);
-        $query->execute();
-        $results = $query -> fetch(PDO::FETCH_ASSOC);
-        
-        $username = $results['username'];
-        $email = $results['email'];
+		$sql = "SELECT * FROM users WHERE id = $user_id";
+		$query = $conn->prepare($sql);
+		$query->execute();
+		$results = $query -> fetch(PDO::FETCH_ASSOC);
+		
+		$username = $results['username'];
+		$email = $results['email'];
+
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+			$sql = "SELECT * FROM users WHERE id = $id";
+			$query = $conn->prepare($sql);
+			$query->execute();
+			$results = $query -> fetch(PDO::FETCH_ASSOC);
 			
-		$stmt = $conn->prepare("SELECT * FROM bio WHERE user_id = $user_id");
-		if($stmt->execute()){
-			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
-			$bio = $result['bio'];
-		}
-
-		$stmt = $conn->prepare("SELECT * FROM pfp WHERE user_id = $user_id");
-		if($stmt->execute()){
-			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
-			$pfp = $result['pfp'];
-		}
-    } 
-
-	if(isset($_GET['id'])){
-		$id = $_GET['id'];
-		$sql = "SELECT * FROM users WHERE id = $id";
-        $query = $conn->prepare($sql);
-        $query->execute();
-        $results = $query -> fetch(PDO::FETCH_ASSOC);
-        
-        $username = $results['username'];
-        $email = $results['email'];
-
-		$stmt = $conn->prepare("SELECT * FROM bio WHERE user_id = $id");
-		if($stmt->execute()){
-			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
-			$bio = $result['bio'];
-		}
-
-		$stmt = $conn->prepare("SELECT * FROM pfp WHERE user_id = $id");
-		if($stmt->execute()){
-			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
-			$pfp = $result['pfp'];
-		}
-
-		$stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $id");
-		if($stmt->execute()){
-			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-				extract($row);
-				echo '<span>'.$row['datetime'].'</span>';
-				echo '<span>'.$row['username'].'</span>';
-				echo '<span>'.$row['content'].'</span>';
+			$username2 = $results['username'];
+			$email = $results['email'];
+	
+			$stmt = $conn->prepare("SELECT * FROM bio WHERE user_id = $id");
+			if($stmt->execute()){
+				$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+				$bio = $result['bio'];
+			}
+	
+			$stmt = $conn->prepare("SELECT * FROM pfp WHERE user_id = $id");
+			if($stmt->execute()){
+				$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+				$pfp = $result['pfp'];
 			}
 		}
-	}
-
-	$stmt=$conn->prepare("SELECT p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id WHERE p.user_id = $user_id");
-	if($stmt->execute()){
-		while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-			extract($row);
-			echo '<span>'.$row['datetime'].'</span>';
-			echo '<span>'.$row['username'].'</span>';
-			echo '<span>'.$row['content'].'</span>';
+		else{
+			$stmt = $conn->prepare("SELECT * FROM bio WHERE user_id = $user_id");
+			if($stmt->execute()){
+				$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+				if(isset($result['bio'])){
+					$bio = $result['bio'];
+				}
+			}
+	
+			$stmt = $conn->prepare("SELECT * FROM pfp WHERE user_id = $user_id");
+			if($stmt->execute()){
+				$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+				if(isset($result['pfp'])){
+					$pfp = $result['pfp'];
+				}
+			}
 		}
-	}
+    }
 ?>
 
 <html>
@@ -100,13 +85,13 @@
                                 echo("<div id='navicon' onclick='navicon()' class='navicon_box'><i class='navicon fas fa-solid fa-user fa-2x'></i></div>");
 
                                 if($_SESSION['rol_id'] == 1){
-                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
                                 }
                                 else if($_SESSION['rol_id'] == 2){
-                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='main/special_users/administrarMundialito.php'>Gestionar mundialito</a><br><br><a href='main/special_users/administrador.php'>Gestionar noticias</a><br><br><a href='main/special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../special_users/administrarMundialito.php'>Gestionar mundialito</a><br><br><a href='../special_users/administrador.php'>Gestionar noticias</a><br><br><a href='../special_users/moderador.php'>Gestionar usuarios</a><br><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
                                 }
                                 else{
-                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='account/logout.php'>Cerrar sesion</a></div>");
+                                    echo("<div id='user_options' class='user_options'><h1>$username</h1><hr><br><a href='../settings/settings.php'>Ajustes</a><br><br><a href='../../account/logout.php'>Cerrar sesion</a></div>");
                                 }
                             }
                             else{
@@ -179,9 +164,13 @@
 					<div id="user">
 						<div id="picture_box">
 							<?php
-								if(isset($results['pfp'])){
-									$pfp = $results['pfp'];
-									echo "<img class='img' id='img' onclick='display()' src='../../pfp/$pfp' title='Cambiar imagen'></img>";
+								if(isset($pfp)){
+									if(isset($_GET['id'])){
+										echo "<img class='img2' id='img' src='../../pfp/$pfp'></img>";
+									}
+									else{
+										echo "<img class='img' id='img' onclick='display()' src='../../pfp/$pfp' title='Cambiar imagen'></img>";
+									}
 								}
 								else{
 									echo "<img class='img' id='img' onclick='display()' src='../../images/logo.png' title='Cambiar imagen'>";
@@ -191,15 +180,36 @@
 
 						<div id="user_info">
 							<div class="username_box">
-								<h2 class="user_name"> <?php echo($username); ?></h2>
+							<?php
+								if(isset($_GET['id'])){
+							?>
+								<h2 class="user_name"> <?php echo($username2); ?></h2>
+							<?php
+								}else{
+							?>
+								<h2 class="user_name"> <?php echo($username); ?></h2>	
+							<?php
+								}
+							?>
 							</div>
 							<hr>
 							<div class="bio_box">
+							<?php
+								if(!isset($_GET['id'])){
+							?>
 								<p class="user_bio" id="user_bio" onclick="document.getElementById('popup').classList.toggle('active'); document.getElementById('blur').classList.toggle('active');">Añadir descripcion</p>
+							<?php
+								}else{
+							?>
+								<p class="user_bio2" id="user_bio">Añadir descripcion</p>
+							<?php
+								echo "<script>var bio = document.getElementById('user_bio'); 
+								bio.innerHTML = '$bio'</script>";
+								}
+							?>
 							</div>
 							<?php
-							if(isset($result['bio'])){
-								$bio = $result['bio'];
+							if(isset($bio)){
 								echo "<script>var bio = document.getElementById('user_bio'); 
 								bio.innerHTML = '$bio'</script>";
 							}
@@ -213,21 +223,27 @@
 				</div>
 			</head>
 
-			<div class="post-container">
-				<p class="post-title">Crear publicacion</p>
-				<form method="post" class="upload" enctype="multipart/form-data">
-					<div class="content">
-						<textarea type="text" name="content" class="post-text"></textarea>
-					</div>
-					<center><button type="submit" class="btn-post" name="btn-post">Subir</button></center>	
-				</form>
-			</div>
+			<?php
+				if(!isset($_GET['id'])){
+			?>
+				<div class="post-container">
+					<p class="post-title">Crear publicacion</p>
+					<form method="post" class="upload" enctype="multipart/form-data">
+						<div class="content">
+							<textarea type="text" name="content" class="post-text"></textarea>
+						</div>
+						<center><button type="submit" class="btn-post" name="btn-post">Subir</button></center>	
+					</form>
+				</div>
+			<?php
+				}
+			?>
 		</div>
 		
 		<div id="popup">
             <h1>Nueva descripcion</h1>
 			<form method="post" class="upload" enctype="multipart/form-data">
-				<input class="bio-input" name="bio" type="text" placeholder="Ingresar descripcion"></input>
+				<input class="bio-input" name="bio" type="text" placeholder="Ingresar descripcion" required></input>
 				<button class="button" type="submit" name="btn-bio">Aceptar</button>
 				<button class="button" type="button" onclick="document.getElementById('popup').classList.toggle('active'); document.getElementById('blur').classList.toggle('active');">Cancelar</button>
 			</form>
@@ -290,17 +306,18 @@
 
 		if($count > 0){
 			$sql = $conn->prepare("UPDATE pfp SET pfp = :upfp WHERE user_id = $user_id");
+			$sql->bindParam(':upfp', $pic);
 			if($sql->execute()){
 				echo "<script>document.getElementById('img').src='../../pfp/$pic';</script>";
 			}
 		}
 		else{
 			$sql=$conn->prepare("INSERT INTO pfp(user_id,pfp) VALUES ($user_id, :upfp)");
+			$sql->bindParam(':upfp', $pic);
 			if($sql->execute()){
 				echo "<script>document.getElementById('img').src='../../pfp/$pic';</script>";
 			}
 		}
-		$stmt->bindParam(':upfp', $pic);
 	}
 
 	if(isset($_POST['btn-post'])){
