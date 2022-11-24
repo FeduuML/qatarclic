@@ -119,16 +119,17 @@
         <div class="margin2"></div>
 
         <?php
-            $stmt=$conn->prepare("SELECT p.user_id, p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id");
+            $stmt=$conn->prepare("SELECT p.id AS post_id, p.user_id, p.datetime, p.content, u.username FROM posts p INNER JOIN users u ON p.user_id = u.id");
 
             if($stmt->execute()){
                 while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                     extract($row);
                     $username = $row['username'];
                     $id = $row['user_id'];
+                    $post_id = $row['post_id'];
 
                     if($id == $_SESSION['user_id']){
-                        echo '<div style="float:right; background-color: rgb(185, 240, 185); border-top-right-radius: 0px; border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-bottom-right-radius: 0px;" class="container">';
+                        echo '<div id="post'.$post_id.'" style="float:right; background-color: rgb(185, 240, 185); border-top-right-radius: 0px; border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-bottom-right-radius: 0px;" class="container">';
                         echo '<span class="datetime">'.$row['datetime'].'</span>';
     
                         $sql = $conn->prepare("SELECT id FROM users WHERE username = '$username'");
@@ -137,11 +138,11 @@
             
                         echo '<a class="username" href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
                         echo '<p class="content"><br><br>'.$row['content'].'</p>';
-                        echo '<i class="trash fa fa-trash" aria-hidden="true" onclick="remove()"></i>';
+                        echo '<i class="trash fa fa-trash" aria-hidden="true" onclick="remove('.$post_id.')"></i>';
                         echo '</div>';
                     }
                     else{
-                        echo '<div style="float:left" class="container">';
+                        echo '<div id="post'.$post_id.'" style="float:left" class="container">';
                         echo '<span class="datetime">'.$row['datetime'].'</span>';
     
                         $sql = $conn->prepare("SELECT id FROM users WHERE username = '$username'");
@@ -151,7 +152,7 @@
                         echo '<a class="username" href="../profiles/profiles.php?id='.$result['id'].'">'.$username.'</a>';
                         echo '<p class="content"><br><br>'.$row['content'].'</p>';
                         if($_SESSION['rol_id'] == 1 || $_SESSION['rol_id'] == 2){
-                            echo '<i class="trash fa fa-trash" aria-hidden="true" onclick="remove()"></i>';
+                            echo '<i class="trash fa fa-trash" aria-hidden="true" onclick="remove('.$post_id.')"></i>';
                             echo '</div>';
                         }
                     }
@@ -163,7 +164,20 @@
         <script src="../../js/index.js"></script>
     </body>
 </html>
-<script>
+<script>    
+    function remove(id){
+        var parametros = {id};
+
+        $.ajax({
+		    data:parametros,
+		    url:'eliminarPublicacion.php',
+		    type:'GET',
+            success:function(data){
+                $("#post"+id).html(data);
+            }
+	    });
+    }
+
     function calendario(){
         window.location.href="../../main/calendario/calendario.php";
     }
